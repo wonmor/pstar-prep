@@ -1,17 +1,28 @@
 {
   "expo": {
-    "name": "pstar-prep",
+    "name": "PSTAR Prep",
     "slug": "pstar-prep",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "pstarprep",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B2545"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.orchestrsim.pstar_prep",
+      "buildNumber": "1"
     },
     "android": {
+      "package": "com.orchestrsim.pstar_prep",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0B2545",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,7 +30,17 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "name": "PSTAR Prep",
+      "shortName": "PSTAR Prep",
+      "description": "Independent study app for Canada's PSTAR aviation regulations exam. Not affiliated with Transport Canada. Study material reproduced from TP 11919E (Dec 2022); always verify against current CARs and the TC AIM.",
+      "lang": "en",
+      "themeColor": "#0B2545",
+      "backgroundColor": "#0B2545"
+    },
+    "experiments": {
+      "baseUrl": "/pstar-prep"
     }
   }
 }

@@ -1,0 +1,2654 @@
+{
+  "title": "PSTAR — Aviation Regulations Study Guide",
+  "source": "Transport Canada TP 11919E, 7th Edition (Dec 2022)",
+  "sections": [
+    {
+      "id": 1,
+      "name": "Collision Avoidance"
+    },
+    {
+      "id": 2,
+      "name": "Visual Signals"
+    },
+    {
+      "id": 3,
+      "name": "Communications"
+    },
+    {
+      "id": 4,
+      "name": "Aerodromes"
+    },
+    {
+      "id": 5,
+      "name": "Equipment"
+    },
+    {
+      "id": 6,
+      "name": "Pilot Responsibilities"
+    },
+    {
+      "id": 7,
+      "name": "Wake Turbulence"
+    },
+    {
+      "id": 8,
+      "name": "Aeromedical"
+    },
+    {
+      "id": 9,
+      "name": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": 10,
+      "name": "Clearances And Instructions"
+    },
+    {
+      "id": 11,
+      "name": "Aircraft Operations"
+    },
+    {
+      "id": 12,
+      "name": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": 13,
+      "name": "Controlled Airspace"
+    },
+    {
+      "id": 14,
+      "name": "Aviation Occurrences"
+    }
+  ],
+  "questions": [
+    {
+      "id": "1.01",
+      "section": 1,
+      "question": "Which statement is true with regard to aircraft converging at approximately the same altitude?",
+      "options": [
+        "A jet airliner has the right of way over all other aircraft.",
+        "An aircraft towing objects has the right of way over all power-driven heavier-than-air aircraft.",
+        "An aeroplane has the right of way over all other aircraft which are converging from the left.",
+        "Aeroplanes towing gliders must give way to helicopters."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.02",
+      "section": 1,
+      "question": "When two aircraft are converging at approximately the same altitude",
+      "options": [
+        "both aircraft shall alter heading to the left.",
+        "the aircraft on the right shall avoid the other by descending.",
+        "the aircraft that has the other on its right shall give way.",
+        "the aircraft that has the other on its left shall give way."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.03",
+      "section": 1,
+      "question": "When two aircraft are converging at approximately the same altitude, which statement applies?",
+      "options": [
+        "Gliders shall give way to helicopters.",
+        "Aeroplanes shall give way to power-driven heavier-than-air aircraft.",
+        "Gliders shall give way to aeroplanes.",
+        "Power-driven heavier-than-air aircraft shall give way to gliders."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.04",
+      "section": 1,
+      "question": "When two aircraft are converging at approximately the same altitude, which statement applies?",
+      "options": [
+        "Gliders shall give way to helicopters.",
+        "Aeroplanes shall give way to helicopters.",
+        "Helicopters shall give way to aeroplanes.",
+        "Helicopters shall give way to gliders."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.05",
+      "section": 1,
+      "question": "When two aircrafts are converging at approximately the same altitude, which statement applies?",
+      "options": [
+        "Gliders shall give way to helicopters.",
+        "Aeroplanes shall give way to helicopters.",
+        "Helicopters shall give way to aeroplanes.",
+        "Gliders shall give way to balloons."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.06",
+      "section": 1,
+      "question": "When converging at approximately the same altitude",
+      "options": [
+        "balloons shall give way to hang gliders.",
+        "aeroplanes towing gliders shall give way to balloons.",
+        "balloons shall give way to gliders.",
+        "balloons shall give way to airships."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.07",
+      "section": 1,
+      "question": "When two power-driven heavier-than-air aircraft are converging at approximately the same altitude,",
+      "options": [
+        "the one on the left has the right of way.",
+        "both shall alter heading to the left.",
+        "the one on the right has the right of way.",
+        "the one on the right shall give way by descending."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.08",
+      "section": 1,
+      "question": "When two aircraft are approaching head-on or approximately so and there is danger of collision, each pilot shall",
+      "options": [
+        "decrease airspeed.",
+        "increase airspeed.",
+        "alter heading to the right.",
+        "alter heading to the left."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.09",
+      "section": 1,
+      "question": "When overtaking an aircraft at your 12 o’clock position, at your altitude, you should",
+      "options": [
+        "climb.",
+        "descend.",
+        "alter heading to the right.",
+        "alter heading to the left."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "1.10",
+      "section": 1,
+      "question": "Two aircraft are on approach to land, the aircraft at the higher altitude shall",
+      "options": [
+        "have the right of way.",
+        "overtake the lower aircraft on the left.",
+        "give way.",
+        "complete a 360° turn to the right."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Collision Avoidance – Right of Way | CARs 602.19 – Right of Way",
+      "sectionName": "Collision Avoidance"
+    },
+    {
+      "id": "2.01",
+      "section": 2,
+      "question": "A series of green flashes directed at an aircraft means respectively in flight                                     on the ground",
+      "options": [
+        "cleared to land;                              cleared to taxi.",
+        "return for landing;                           cleared for take-off.",
+        "return for landing;                           cleared to taxi.",
+        "cleared to land;                              cleared for take-off."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Visual Signals | TC AIM-RAC – Visual Signals",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.02",
+      "section": 2,
+      "question": "A steady red light directed at an aircraft means in flight                                     on the ground",
+      "options": [
+        "give way to other aircraft and                stop. continue circling;",
+        "give way to other aircraft and                taxi clear of landing area in use. continue circling;",
+        "airport unsafe do not land;                   taxi clear of landing area in use.",
+        "airport unsafe do not land;                   stop."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – Visual Signals | TC AIM-RAC – Visual signals",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.03",
+      "section": 2,
+      "question": "A series of red flashes directed at an aircraft means respectively in flight                                     on the ground",
+      "options": [
+        "airport unsafe, do not land;                  taxi clear of landing area in use.",
+        "give way to other aircraft and                stop. continue circling;",
+        "do not land for time being;                   return to starting point on airport.",
+        "you are in prohibited area,                   stop. alter course;"
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – Visual Signals | TC AIM-RAC – Visual signals",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.04",
+      "section": 2,
+      "question": "A steady green light directed at an aircraft means respectively in flight                                     on the ground",
+      "options": [
+        "cleared to land;                              cleared to taxi.",
+        "return for landing;                           cleared to taxi.",
+        "return for landing;                           cleared for take-off.",
+        "cleared to land;                              cleared for take-off."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Visual Signals | TC AIM-RAC – Visual signals",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.05",
+      "section": 2,
+      "question": "A flashing white light directed at an aircraft on the manoeuvring area of an airport means",
+      "options": [
+        "stop.",
+        "return to starting point on the airport.",
+        "cleared to taxi.",
+        "taxi clear of landing area in use."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Visual Signals",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.06",
+      "section": 2,
+      "question": "Blinking runway lights advises vehicles and pedestrians to",
+      "options": [
+        "return to the apron.",
+        "vacate the runways immediately.",
+        "be aware that an emergency is in progress; continue with caution.",
+        "be aware that an emergency is in progress; hold your position."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Visual Signals",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.07",
+      "section": 2,
+      "question": "Chrome yellow and black strips painted on pylons or on the roof of a building identifies",
+      "options": [
+        "an area where explosives are in use.",
+        "a fur farm.",
+        "an artillery range.",
+        "an open pit mine."
+      ],
+      "answer": 2,
+      "reference": "AIP Part 2 – Fur and Poultry Farms",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "2.08",
+      "section": 2,
+      "question": "Pilots should not overfly reindeer or caribou at an altitude of less than",
+      "options": [
+        "2,500 feet AGL.",
+        "2,000 feet AGL.",
+        "1,500 feet AGL.",
+        "1,000 feet AGL."
+      ],
+      "answer": 2,
+      "reference": "AIP Part 2 – Protection of Wildlife",
+      "sectionName": "Visual Signals"
+    },
+    {
+      "id": "3.01",
+      "section": 3,
+      "question": "When making initial contact with a Canadian ATC unit, the pilot of aircraft C-GFLU should transmit the manufacturer’s name or the type of aircraft, followed by registration as",
+      "options": [
+        "Lima – Uniform.",
+        "Foxtrot – Lima – Uniform.",
+        "Golf – Foxtrot – Lima – Uniform.",
+        "Charlie – Golf – Foxtrot – Lima – Uniform."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-COM– Call Signs / Civil Aircraft",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.02",
+      "section": 3,
+      "question": "When making initial contact with a Canadian ATC unit, the pilot of aircraft C-FBSQ should transmit the registration as",
+      "options": [
+        "FBSQ.",
+        "Fox, Baker, Sugar, Queen.",
+        "Foxtrot, Bravo, Sierra, Québec.",
+        "Bravo, Sierra, Québec."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-COM– Use of Phonetics | TC AIM-COM– Call Signs / Civil Aircraft",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.03",
+      "section": 3,
+      "question": "After a Canadian privately registered aircraft has made initial contact with an ATS unit, which items may be omitted from subsequent transmissions? The aircraft type and",
+      "options": [
+        "any registration letters omitted by ATS in the last communication.",
+        "the first two letters of the registration, if initiated by ATS.",
+        "the first three letters of the registration.",
+        "the phonetic equivalents."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-COM– Call Signs / Civil Aircraft",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.04",
+      "section": 3,
+      "question": "On initial radio contact with an ATS unit the pilot shall transmit the",
+      "options": [
+        "manufacturer’s name or type of aircraft and last four letters of the registration in phonetics.",
+        "last three letters of the registration in phonetics.",
+        "whole registration in phonetics.",
+        "type of aircraft and the last three letters of the registration in phonetics."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-COM– Call Signs / Civil Aircraft",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.05",
+      "section": 3,
+      "question": "ATIS is normally provided",
+      "options": [
+        "to replace the FSS.",
+        "to relieve frequency congestion.",
+        "for the rapid updating of weather forecasts.",
+        "only when VFR conditions exist at airports."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC– ATIS",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.06",
+      "section": 3,
+      "question": "Where ATIS is available the information which should be included on first contact with ATC is the",
+      "options": [
+        "phrase “with the numbers”.",
+        "phrase “ATIS received”.",
+        "phrase “with the information”.",
+        "ATIS phonetic identifier."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC– ATIS",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.07",
+      "section": 3,
+      "question": "Pilots operating VFR en route in uncontrolled airspace should continuously monitor . . . . . and 121.5 MHZ, when practical and not in communication on the MF or ATF frequency.",
+      "options": [
+        "126.7 MHz",
+        "123.2 MHz",
+        "122.8 MHz",
+        "122.2 MHz"
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – Monitoring, Broadcasting on 126.7 MHz",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.08",
+      "section": 3,
+      "question": "En route aircraft should, whenever possible, maintain a listening watch for aircraft in distress on",
+      "options": [
+        "the receiver mode of the ELT.",
+        "121.5 MHz on the aircraft receiver.",
+        "121.5 MHz during the first 5 minutes of each hour.",
+        "the voice frequency of the navigation aid in use."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-SAR– ELT Operating Instructions",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.09",
+      "section": 3,
+      "question": "MF procedures such as frequency, distance and altitude to follow are given in the",
+      "options": [
+        "Canada Flight Supplement (CFS) or Canada Water Aerodrome Supplement (CWAS).",
+        "Designated Airspace Handbook (DAH).",
+        "Transport Canada Aeronautical Information Manual (TC AIM) - TP 14371.",
+        "Flight Training Manual (FTM) - TP1102."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC– Mandatory Frequency",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.10",
+      "section": 3,
+      "question": "Pilots broadcasting on a MF where no ground station is in operation should direct their transmission to the",
+      "options": [
+        "aerodrome UNICOM.",
+        "closest ATC unit.",
+        "aerodrome traffic.",
+        "first aircraft heard on the frequency."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC– Mandatory Frequency | TC AIM-RAC– Use of MF and ATF, CARs 602.98",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.11",
+      "section": 3,
+      "question": "Pilots operating in VMC and intending to land at aerodromes where no UNICOM exists, should broadcast their intentions on the ATF of",
+      "options": [
+        "121.5 MHz.",
+        "123.2 MHz.",
+        "123.45 MHz.",
+        "126.7 MHz."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC– Aerodrome Traffic Frequency",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.12",
+      "section": 3,
+      "question": "If a MF is in use, pilots departing VFR shall monitor that frequency until",
+      "options": [
+        "beyond the specified distance or altitude.",
+        "established en route.",
+        "established at cruise altitude.",
+        "clear of the aerodrome circuit pattern."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC– VFR Com Procedures at Aerodromes With MF and ATF | CARs 602.97 – VFR and IFR Aircraft Operations at Uncontrolled Aerodromes",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.13",
+      "section": 3,
+      "question": "A pilot is cleared to taxi to the runway in use without a hold short clearance. To get there, the aircraft must cross two taxiways and one runway. This authorizes the pilot to taxi to",
+      "options": [
+        "the runway in use, but must hold short.",
+        "the runway in use, but further clearance is required to cross each taxiway and runway en route.",
+        "position on the runway without further clearance.",
+        "the runway in use, but further clearance is required to cross the other runway."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Taxi Information",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.14",
+      "section": 3,
+      "question": "Ground control authorizes “GOLF ALPHA BRAVO CHARLIE TAXI RUNWAY 29 HOLD SHORT OF RUNWAY 04”. The pilot should acknowledge this by replying “GOLF ALPHA BRAVO CHARLIE TO",
+      "options": [
+        "RUNWAY 04”.",
+        "RUNWAY 29”.",
+        "HOLD SHORT OF 29”.",
+        "HOLD SHORT OF 04”."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Taxi Information",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.15",
+      "section": 3,
+      "question": "When a clearance for an “immediate take-off” is accepted, the pilot shall",
+      "options": [
+        "back-track on the runway to use the maximum available length for take-off.",
+        "taxi to a full stop in position on the runway and take off without further clearance.",
+        "taxi onto the runway and take off in one continuous movement.",
+        "complete the pre-take-off check before taxiing onto the runway and taking off."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Takeoff Clearance",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.16",
+      "section": 3,
+      "question": "A pilot flying a heading of 270°, receives the following message from ATC, “Traffic 2 o’clock, 5 miles, eastbound”. This information indicates the traffic is",
+      "options": [
+        "60° to the left, altitude unknown.",
+        "60° to the right, altitude unknown.",
+        "90° to the right, at same altitude.",
+        "90° to the left, at same altitude."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Radar Traffic Information",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.17",
+      "section": 3,
+      "question": "A pilot receives the following ATC clearance “CLEARED TO LAND, TURN RIGHT AT THE FIRST INTERSECTION”. The pilot should",
+      "options": [
+        "land and attempt to turn off even though the speed is considered too high to safely accomplish the turn.",
+        "complete a touch-and-go if it is not possible to safely accomplish the turn.",
+        "land and turn off at the nearest intersection possible commensurate with safety.",
+        "land and do a 180° turn and taxi back to clear the runway at the required intersection."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information | CAR 602.31 – Compliance with Air Traffic Control Instructions and Clearances",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.18",
+      "section": 3,
+      "question": "The radiotelephone distress signal to indicate serious and/or imminent danger requiring immediate assistance is",
+      "options": [
+        "MAYDAY, MAYDAY, MAYDAY.",
+        "PAN PAN, PAN PAN, PAN PAN.",
+        "SECURITY, SECURITY, SECURITY.",
+        "EMERGENCY, EMERGENCY, EMERGENCY."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-COM – Emergency Communications | TC AIM-SAR – Declaring an Emergency | RTORC – Distress Communications",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.19",
+      "section": 3,
+      "question": "The radiotelephone urgency signal to indicate a condition concerning the safety of an aircraft, vehicle or of some person on board which does not require immediate assistance is",
+      "options": [
+        "MAYDAY, MAYDAY, MAYDAY.",
+        "PAN PAN, PAN PAN, PAN PAN.",
+        "EMERGENCY, EMERGENCY, EMERGENCY.",
+        "URGENCY, URGENCY, URGENCY."
+      ],
+      "answer": 2,
+      "reference": "RTORC – Urgency Communications | TC AIM-COM – Emergency Communications | TC AIM-SAR – Declaring an Emergency",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.20",
+      "section": 3,
+      "question": "What should be included along with the call sign of the aircraft and time, to indicate cancellation of a distress message?",
+      "options": [
+        "MAYDAY(three times) , ALL STATIONS, DISTRESS TRAFFIC ENDED, OUT.",
+        "MAYDAY(once), HELLO ALL STATIONS (three times),THIS IS (the call sign of the station transmitting the message, the filing time of the message, the call sign of the station in distress (once)), SEELONCE FEENEE, OUT.",
+        "MAYDAY CANCELLED (three times).",
+        "ALL STATIONS (three times), EMERGENCY OVER."
+      ],
+      "answer": 2,
+      "reference": "RTORC – Cancellation of Distress",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.21",
+      "section": 3,
+      "question": "A departing flight will normally remain on tower frequency until",
+      "options": [
+        "the flight is 2,000 feet AGL.",
+        "25 NM from the airport.",
+        "15 NM from the Control Zone.",
+        "clear of the Control Zone."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Release from Tower Frequency",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.22",
+      "section": 3,
+      "question": "You advise ATC that you are on the downwind leg. If there is other traffic in the circuit, ATC will then",
+      "options": [
+        "inform you of your number in the approach sequence or other appropriate instructions.",
+        "inform you of the runway in use, wind and altimeter.",
+        "advise you of all other circuit traffic.",
+        "clear you to land."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – Initial Clearance",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.23",
+      "section": 3,
+      "question": "A radio equipped aircraft has been cleared to land at a controlled airport. The pilot should acknowledge the clearance by",
+      "options": [
+        "replying ‘Roger’.",
+        "replying ‘Wilco’.",
+        "clicking the microphone button.",
+        "transmitting the aircraft call sign."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-COM – Standard Radio Telephony",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.24",
+      "section": 3,
+      "question": "An initial call to Timmins FSS should be ‘Timmins",
+      "options": [
+        "radio this is...’",
+        "Flight Service Station this is...’",
+        "UNICOM this is...’",
+        "this is...’"
+      ],
+      "answer": 1,
+      "reference": "TC AIM-COM – Ground Stations",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.25",
+      "section": 3,
+      "question": "A responsibility of a Flight Information Center (FIC) specialist is to provide",
+      "options": [
+        "air traffic control.",
+        "flight planning services.",
+        "air traffic service in uncontrolled airspace only.",
+        "terminal radar service."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Flight Service Station (FSS) provides",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.26",
+      "section": 3,
+      "question": "NOTAMs are",
+      "options": [
+        "available at all flight information centres (FIC)",
+        "emailed to all pilots.",
+        "issued for airport/aerodrome facility closures only.",
+        "valid for 24 hours."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-MAP – NOTAM Distribution – Canadian",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.27",
+      "section": 3,
+      "question": "A new or replacing NOTAM without the term “EST” is valid",
+      "options": [
+        "for 48 hours only.",
+        "for the day it was issued.",
+        "until the End Time quoted in the NOTAM.",
+        "until a cancelling NOTAM is issued."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-MAP – New NOTAM",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.28",
+      "section": 3,
+      "question": "The term “EST” in the End Time in a new or replacing NOTAM means the NOTAM is valid",
+      "options": [
+        "for an estimated 24 hours.",
+        "for an estimated 48 hours.",
+        "until the time quoted in the NOTAM.",
+        "until a cancelling (NOTAMC) or replacing (NOTAMR) is issued."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-MAP – New NOTAM",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "3.29",
+      "section": 3,
+      "question": "ATC advises that your radio transmissions are READABILITY THREE this means that your transmissions are",
+      "options": [
+        "readable now and then.",
+        "readable with difficulty.",
+        "readable.",
+        "perfectly readable."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-COM – Communications Checks",
+      "sectionName": "Communications"
+    },
+    {
+      "id": "4.01",
+      "section": 4,
+      "question": "An airport is",
+      "options": [
+        "an aerodrome with paved runways.",
+        "an aerodrome with a control tower.",
+        "an uncertified aerodrome.",
+        "a certified aerodrome."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AGA – Aerodromes and Airports / General | CARs 101.01 – Airport | CARs 302.03 – Issuance of Airport Certificate | Flight Training Manual Chapter 5 – Airport Operations",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.02",
+      "section": 4,
+      "question": "A dry standard wind direction indicator when horizontal indicates a wind speed of at least",
+      "options": [
+        "25 kt.",
+        "15 kt.",
+        "10 kt.",
+        "6 kt."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AGA – Wind Direction Indicators | Flight Training Manual Chapter 5 – Airport Operations",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.03",
+      "section": 4,
+      "question": "No person shall operate any vehicle on any part of an uncontrolled airport used for the movement of aircraft, except in accordance with permission from",
+      "options": [
+        "the operator of the airport.",
+        "the airport security officer.",
+        "a federal peace officer.",
+        "a qualified flying instructor."
+      ],
+      "answer": 1,
+      "reference": "CARs 301.08 – Prohibitions",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.04",
+      "section": 4,
+      "question": "Runways and taxiways or portions thereof that are closed to aircraft are marked by",
+      "options": [
+        "red flags.",
+        "horizontal red squares with yellow diagonals.",
+        "white “Xs” on runways and yellow “Xs” on taxiways.",
+        "white dumbbells."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-AGA – Closed Markings",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.05",
+      "section": 4,
+      "question": "The west end of a runway oriented east and west is numbered",
+      "options": [
+        "09.",
+        "90.",
+        "27.",
+        "270."
+      ],
+      "answer": 1,
+      "reference": "Flight Training Manual Chapter 5 – Airport Operations",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.06",
+      "section": 4,
+      "question": "Where taxiway holding positions have not been established, aircraft waiting to enter an active runway should normally hold",
+      "options": [
+        "clear of the manoeuvring area.",
+        "50 ft from the edge of the runway.",
+        "150 ft from the edge of the runway.",
+        "200 ft from the edge of the runway."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Taxi Holding Positions",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.07",
+      "section": 4,
+      "question": "The manoeuvring area of an airport is that area",
+      "options": [
+        "normally referred to as the ramp or apron.",
+        "which includes the apron, taxiways and runways.",
+        "used when taxiing to and from the parking area.",
+        "used for taxiing, taking off and landing."
+      ],
+      "answer": 4,
+      "reference": "CARs 101.01 – Manoeuvring Area | TC AIM-GEN – Glossary of Aeronautical Terms",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "4.08",
+      "section": 4,
+      "question": "Except for the purpose of taking off or landing, an aircraft shall not be flown over an aerodrome at a height of less than",
+      "options": [
+        "2,000 feet AGL.",
+        "1,500 feet AGL.",
+        "1,000 feet AGL.",
+        "500 feet AGL."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.96 – Operations at or in the Vicinity of an Aerodrome, General | TC AIM-RAC – Minimum Altitudes – Overflying Aerodromes",
+      "sectionName": "Aerodromes"
+    },
+    {
+      "id": "5.01",
+      "section": 5,
+      "question": "Except for ultra-light aeroplanes and balloons, which documents shall be carried on board when flying a radio equipped Canadian privately registered aircraft? Items A, B and A.       Flight Authority (Certificate of Airworthiness or Flight Permit). B.       Certificate of Registration. C.       Technical Records. D.       Crew licences. E.       Aircraft Flight Manual or equivalent document. F.       Type certificate. G.       Aircraft journey log book, where it is planned that the aircraft will land and shutdown at any location other than the point of departure. H.       Proof of liability insurance.",
+      "options": [
+        "C, D, E, G.",
+        "C, D, F, H.",
+        "D, E, F, G.",
+        "D, E, G, H."
+      ],
+      "answer": 4,
+      "reference": "TC AIM–LRA – Radio Operator Certificate | TC AIM–LRA – Flight Authority | CARs 606.02 – Liability Insurance | CARs 605.03 – Flight Authority | CARs 605.95 – Journey Log | CARs 401.03 – Flight Crew Permit/Licence | CARs 202.26 – C of R",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.02",
+      "section": 5,
+      "question": "Taking into account seasonal climatic variations and geographical area, private aeroplanes and helicopters flying VFR 25 NM or more from an aerodrome or operating base may require",
+      "options": [
+        "specified emergency supplies be carried.",
+        "a functioning radio capable of two-way radio communication.",
+        "the aircraft be multi-engined when passengers are carried.",
+        "all of the above"
+      ],
+      "answer": 1,
+      "reference": "CARs 602.61 – Survival Equipment – Flights Over Land",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.03",
+      "section": 5,
+      "question": "A serviceable landing light is required equipment on aircraft",
+      "options": [
+        "carrying passengers at night.",
+        "carrying passengers at night except private aircraft under 5,700 kg.",
+        "using an unlighted aerodrome.",
+        "taking off or landing at night."
+      ],
+      "answer": 1,
+      "reference": "CARs 605.16 – Power-driven Aircraft – Night VFR",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.04",
+      "section": 5,
+      "question": "Unless oxygen and oxygen masks as specified in CARs are readily available, no person shall fly unpressurized aircraft above",
+      "options": [
+        "9,500 feet ASL.",
+        "10,000 feet ASL.",
+        "12,500 feet ASL.",
+        "13,000 feet ASL."
+      ],
+      "answer": 4,
+      "reference": "CARs 605.31 – Oxygen Equipment and Supply",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.05",
+      "section": 5,
+      "question": "No person shall fly an unpressurized aircraft for more than . . . . . at an altitude between 10,000 and 13,000 feet ASL unless there is readily available to each flight crew member, an oxygen mask and a supply of oxygen.",
+      "options": [
+        "15 minutes",
+        "30 minutes",
+        "1 hour",
+        "2 hours"
+      ],
+      "answer": 2,
+      "reference": "CARs 605.31 – Oxygen Equipment and Supply",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.06",
+      "section": 5,
+      "question": "What safety equipment must be available to each person on board a single-engine aircraft which is taking off from or landing on water?",
+      "options": [
+        "An approved life raft.",
+        "An approved life preserver.",
+        "A signal flare.",
+        "A signal mirror."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.62 – Life Preservers and Flotation Devices | CARs 602.63 – Life Rafts and Survival Equipment",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.07",
+      "section": 5,
+      "question": "The International VHF Emergency Frequency is",
+      "options": [
+        "121.5 MHz.",
+        "121.9 MHz.",
+        "122.2 MHz.",
+        "126.7 MHz."
+      ],
+      "answer": 1,
+      "reference": "CFS Emergency Section | TC AIM-COM – Emergency Communications | CARs 602.143 – Emergency Radio Frequency Capability",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.08",
+      "section": 5,
+      "question": "No pilot shall take off from or land at an aerodrome at night unless the",
+      "options": [
+        "aircraft is equipped with a functioning two-way radio.",
+        "aircraft is equipped with a functioning landing light or landing lights.",
+        "aerodrome is lighted as prescribed by the Minister.",
+        "pilot has completed 3 night landings in the previous 90 days."
+      ],
+      "answer": 3,
+      "reference": "CARs 301.07 – Lighting",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.09",
+      "section": 5,
+      "question": "The CARs define an infant passenger as a person",
+      "options": [
+        "weighing less than 30 lb (13.6 kg)",
+        "under 3 years of age.",
+        "weighing less than 50 lb (22.7 kg) and under 5 years of age.",
+        "under 2 years of age."
+      ],
+      "answer": 4,
+      "reference": "CARs 101.01 – Infant",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.10",
+      "section": 5,
+      "question": "When the PIC directs that safety belts be fastened, an infant passenger for which no child restraint system is provided shall be",
+      "options": [
+        "fastened securely in a seat by means of a safety belt.",
+        "held securely in the arms of the responsible an adult person whose safety belt shall be fastened.",
+        "held securely in the arms of the responsible person and a safety belt shall be fastened about both.",
+        "secured by any one of the above methods."
+      ],
+      "answer": 2,
+      "reference": "CARs 605.25 – Entering or Leaving an Aircraft in Flight | CARs 605.26 – Parachute Descents",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "5.11",
+      "section": 5,
+      "question": "Which flight instrument systems and equipment are required on power driven aircraft for day VFR flight? A magnetic direction indicating system or magnetic compass and A. an airspeed indicator. B. an attitude indicator. C. an altimeter. D. a vertical speed indicator. E. a turn and bank indicator. F. a time piece. G. a heading indicator.",
+      "options": [
+        "A, C, F.",
+        "A, B, G.",
+        "A, C, D, E, F.",
+        "B, D, E, G."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.59 – Equipment Standards | CARs 605.14 – Power-driven Aircraft – Day VFR",
+      "sectionName": "Equipment"
+    },
+    {
+      "id": "6.01",
+      "section": 6,
+      "question": "If cleared for take-off immediately following the very low approach and overshoot of a large aircraft, the pilot should",
+      "options": [
+        "take off immediately otherwise the trailing vortices will descend into the flight path.",
+        "taxi to position on the runway and wait until it is considered safe to take off.",
+        "decline take-off clearance and inform ATC of the reason for non-acceptance.",
+        "wait for 2 minutes after the large aircraft has passed then take off."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information | Flight Training Manual Chapter 16 – Take-Off",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.02",
+      "section": 6,
+      "question": "The controller offers the option for a take-off from a runway intersection. The pilot must be aware that",
+      "options": [
+        "the remaining runway length will not be stated by the controller.",
+        "it is the pilot’s responsibility to ensure that the remaining runway length is sufficient for take- off.",
+        "the controller will ensure that the remaining runway length is sufficient for take-off.",
+        "noise abatement procedures have been cancelled."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Take-off Clearance | CARs 602.96 – Operations at or in the Vicinity of an Aerodrome – General",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.03",
+      "section": 6,
+      "question": "A pilot requests an intersection take-off from ATC. If authorized,",
+      "options": [
+        "the controller will always give the remaining runway length.",
+        "the controller will ensure that the remaining runway length is sufficient for take-off.",
+        "it is the pilot’s responsibility to ensure that the remaining runway length is sufficient for take- off.",
+        "any noise abatement procedures for the runway are automatically cancelled."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Take-off Clearance | CARs 602.96 – Operations at or in the Vicinity of an Aerodrome – General",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.04",
+      "section": 6,
+      "question": "When an arriving aircraft is cleared “to the circuit”, the pilot should interpret this to mean join the circuit",
+      "options": [
+        "on the downwind leg at circuit height.",
+        "from the upwind side of the runway in all cases.",
+        "on base leg if convenient.",
+        "on final for a straight in approach."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – Initial Clearance",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.05",
+      "section": 6,
+      "question": "When a NORDO aircraft crosses an airport for the purpose of obtaining landing information it should maintain",
+      "options": [
+        "circuit height.",
+        "1,000 feet above circuit height.",
+        "at least 2,000 feet AGL.",
+        "at least 500 feet above circuit height."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Arrival Procedures – NORDO Aircraft",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.06",
+      "section": 6,
+      "question": "An aircraft is “cleared to the circuit” where a left hand circuit is in effect. Without further approval from ATC a right turn may be made to",
+      "options": [
+        "join the final leg.",
+        "join the base leg.",
+        "join crosswind or a partial right turn to join the downwind leg.",
+        "descend on the downwind leg."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Initial Clearance",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.07",
+      "section": 6,
+      "question": "When instructed to continue an approach to a runway which is clear of traffic, what action should the pilot take if no landing clearance is received?",
+      "options": [
+        "Circle 360° to the left.",
+        "Circle 360° in the direction of the circuit.",
+        "Complete the landing.",
+        "Request landing clearance."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Landing Clearance",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.08",
+      "section": 6,
+      "question": "A NOTAM has been published for an airport, which is 400 feet ASL, stating the circuit height is 1,500 feet ASL. When the ceiling is 1,000 overcast and the visibility is 3 miles, the circuit height in controlled airspace should be",
+      "options": [
+        "500 feet below the cloud base.",
+        "1,500 feet ASL.",
+        "1,100 feet above the airport elevation.",
+        "1,000 feet above the airport elevation."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.114 – Minimum Visual Meteorological Conditions for VFR Flight",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.09",
+      "section": 6,
+      "question": "When the reported ceiling is 1,000 feet overcast and visibility is 3 miles, to remain VFR, an aircraft cleared to the circuit must join",
+      "options": [
+        "as high as possible without entering cloud.",
+        "at 500 feet below cloud base.",
+        "at 700 feet AGL.",
+        "in accordance with Special VFR."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.114 – Minimum Visual Meteorological Conditions for VFR Flight",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.10",
+      "section": 6,
+      "question": "Aircraft flying VFR normally join the circuit at 1,000 feet AAE. This may not always be possible because of",
+      "options": [
+        "the possibility of a “straight in” clearance to the airport in which case the final leg would normally be entered at less than 1,000 feet.",
+        "the existence of a NOTAM which provides for a different circuit altitude.",
+        "weather conditions which may necessitate a circuit height lower than 1,000 feet.",
+        "the existence of any of the above circumstances."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Traffic Circuits – Controlled Airports",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.11",
+      "section": 6,
+      "question": "A pilot on final approach is requested by ATC to reduce airspeed. The pilot should",
+      "options": [
+        "comply, giving due consideration to safe minimum manoeuvring speed of the aircraft.",
+        "acknowledge transmission and execute a 360° turn.",
+        "overshoot and rejoin the circuit.",
+        "reduce airspeed well below normal approach speed range."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information | TC AIM-RAC – Speed Adjustment – Radar Controlled Aircraft | CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.12",
+      "section": 6,
+      "question": "A pilot is cleared to land but is concerned about the high crosswind component. The pilot should",
+      "options": [
+        "use full flaps and approach at a reduced speed.",
+        "alter heading and land on another runway which is more into wind.",
+        "overshoot and request an into-wind runway.",
+        "continue the approach and land as the clearance must be obeyed."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Preferential Runway Assignment | CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.13",
+      "section": 6,
+      "question": "A pilot on a VFR flight is being vectored by ATC towards an extensive unbroken layer of cloud. The responsibility for remaining VFR rests with",
+      "options": [
+        "the radar operator.",
+        "ATC since the flight is designated VFR.",
+        "ATC since the cloud is visible on radar.",
+        "the pilot."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Radar Navigation Assistance To VFR Flights",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.14",
+      "section": 6,
+      "question": "A student pilot on a VFR flight has been given a radar vector by ATC. Ahead, at a lower altitude, is a solid overcast cloud condition. The pilot should",
+      "options": [
+        "climb above the cloud and fly “VFR over the top”.",
+        "alter heading as necessary to remain VFR and advise ATC.",
+        "maintain heading and altitude as it is an ATC clearance.",
+        "maintain heading and altitude because ATC knows of the cloud and will issue further instructions."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-RAC – Radar Navigation Assistance To VFR Flights",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.15",
+      "section": 6,
+      "question": "An aircraft on a Special VFR flight has been cleared for a “straight in” approach. Because of low ceiling and poor visibility, the pilot is concerned about the exact location of a radio mast in the vicinity. Avoiding this obstruction is the responsibility",
+      "options": [
+        "of the pilot.",
+        "of the tower controller as the controller is aware of the obstruction.",
+        "of ATC as the pilot has been given Special VFR clearance.",
+        "shared equally by the pilot and the controller."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.16",
+      "section": 6,
+      "question": "A pilot on a Special VFR flight has been cleared to the circuit. Ahead, at a lower altitude, is a solid layer of stratus cloud. Remaining clear of cloud is the responsibility of",
+      "options": [
+        "the tower controller as it is within a Control Zone.",
+        "ATC because the weather is below VFR.",
+        "the pilot and ATC.",
+        "the pilot."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information | TC AIM-RAC – Control Zones",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.17",
+      "section": 6,
+      "question": "A pilot on a VFR flight in Class C airspace is advised by ATC to maintain a specific heading. In the pilot’s opinion, this heading will cause conflict with another aircraft. The pilot should",
+      "options": [
+        "always change altitude as required to avoid the other aircraft.",
+        "maintain the specified heading to comply with the CARs.",
+        "alter heading to avoid the other aircraft and advise ATC.",
+        "maintain the specified heading as separation will be provided by the controller."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information | CARs 602.19 – Right of Way – General",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.18",
+      "section": 6,
+      "question": "Unless ATC instructs otherwise, pilots operating VFR shall select transponder code 1200 when flying at or below ..... feet ASL and code ..... when flying above that altitude.",
+      "options": [
+        "12,500, 1400.",
+        "12,500, 1300.",
+        "10,000, 1400.",
+        "10,000, 1300."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-COM – VFR Operations",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.19",
+      "section": 6,
+      "question": "Pilots shall activate the transponder “ident” feature",
+      "options": [
+        "before entering control zones.",
+        "only when so instructed by ATC.",
+        "before every change of altitude.",
+        "after every change of an assigned code."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-COM – Phraseology",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.20",
+      "section": 6,
+      "question": "The holder of a student pilot permit may for the sole purpose of the holder’s own flight training act as PIC of an aircraft",
+      "options": [
+        "only when accompanied by a flight instructor.",
+        "by day and night and authorized by a supervising flight instructor.",
+        "by day only and authorized by a supervising flight instructor.",
+        "while carrying passengers."
+      ],
+      "answer": 3,
+      "reference": "CARs 401.19 – Student Pilot Permits – Privileges",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.21",
+      "section": 6,
+      "question": "The PIC of an aircraft shall comply with any light signals or ground marking prescribed in the CARs",
+      "options": [
+        "only while in class C airspace if they are part of an ATC clearance.",
+        "only while in a Control Zone if they are part of an ATC instruction.",
+        "at all times.",
+        "at all times provided safety is not jeopardized."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – ATC Clearances, Instructions and Information | CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.22",
+      "section": 6,
+      "question": "Before setting out on any VFR flight, a pilot is required to",
+      "options": [
+        "read all weather reports received from stations within 100 miles of destination.",
+        "file a flight itinerary.",
+        "be familiar with all available information appropriate to the flight.",
+        "obtain an ATC clearance."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.71 – Pre-flight Information",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "6.23",
+      "section": 6,
+      "question": "Terminal airspace dimensions and VHF sector frequencies for certain high density traffic airports in Canada are shown",
+      "options": [
+        "in the Designated Airspace Handbook and the TC AIM.",
+        "on the VTA chart and in the CFS.",
+        "on the VTA and VNC charts.",
+        "in the CFS and on the VNC chart."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-MAP – VFR Aeronautical Information",
+      "sectionName": "Pilot Responsibilities"
+    },
+    {
+      "id": "7.01",
+      "section": 7,
+      "question": "Avoiding wake turbulence is",
+      "options": [
+        "the sole responsibility of ATC.",
+        "the responsibility of the pilot, only when advised by ATC of the possibility of wake turbulence.",
+        "a responsibility shared by both the pilot and ATC.",
+        "the sole responsibility of the pilot."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Wake Turbulence / Considerations",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.02",
+      "section": 7,
+      "question": "Hazardous wake turbulence caused by aircraft in still air",
+      "options": [
+        "dissipates immediately.",
+        "dissipates rapidly.",
+        "may persist for 5 minutes or more.",
+        "persists indefinitely."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.03",
+      "section": 7,
+      "question": "Which response is most correct with respect to wake turbulence?",
+      "options": [
+        "Wing tip vortices are carried by the ambient wind.",
+        "Wing tip vortices have a circular and downward motion.",
+        "Wake turbulence exists behind all aeroplanes and helicopters in flight.",
+        "All of the above are correct."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Wake Turbulence | TC AIM-AIR – Wake Turbulence / Vortex Characteristics / General",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.04",
+      "section": 7,
+      "question": "The wing tip vortices generated by a heavy aeroplane can cause a lighter aircraft encountering them to",
+      "options": [
+        "go out of control.",
+        "continue descent even when maximum power is applied.",
+        "sustain structural damage.",
+        "experience any of the above situations."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Wake Turbulence | TC AIM-AIR – Wake Turbulence / Vortex Characteristics / General",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.05",
+      "section": 7,
+      "question": "During the two minutes after the passage of a heavy aeroplane in cruising flight, hazardous wing tip vortices will",
+      "options": [
+        "dissipate completely.",
+        "dissipate rapidly.",
+        "dissipate very slowly.",
+        "remain at cruising altitude."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.06",
+      "section": 7,
+      "question": "The pilot of a light aircraft on final approach close behind a heavier aircraft should plan the approach to land",
+      "options": [
+        "beyond the touchdown point of the other aircraft.",
+        "prior to the touchdown point of the other aircraft.",
+        "at the touchdown point of the other aircraft.",
+        "to the right or left of the touchdown point of the other aircraft."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Wake Turbulence / Considerations",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.08",
+      "section": 7,
+      "question": "Wake turbulence is produced by",
+      "options": [
+        "heavy aeroplanes only, regardless of their speed.",
+        "turbo-jet powered aircraft only.",
+        "fast moving aeroplanes only, regardless of their weight.",
+        "all fixed and rotary wing aircraft."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.09",
+      "section": 7,
+      "question": "Wake turbulence caused by a departing large aeroplane begins",
+      "options": [
+        "before rotation.",
+        "with rotation.",
+        "after becoming airborne.",
+        "with full power application."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Wake Turbulence / Vortex Characteristics",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.10",
+      "section": 7,
+      "question": "Wake turbulence caused by a departing aeroplane is most severe immediately",
+      "options": [
+        "before rotation.",
+        "following take-off.",
+        "above its flight path.",
+        "following full power application."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.11",
+      "section": 7,
+      "question": "Which statement concerning wing tip vortices is false?",
+      "options": [
+        "Vortices normally settle below and behind the aircraft.",
+        "With a light crosswind, one vortex can remain stationary over the ground for some time.",
+        "Lateral movement of vortices, even in a no wind condition, may place a vortex core over a parallel runway.",
+        "Vortices are caused directly by ‘jet wash’."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Wake Turbulence / Vortex Characteristics / General",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.12",
+      "section": 7,
+      "question": "Wake turbulence will be greatest when generated by an aeroplane which is",
+      "options": [
+        "heavy, landing configuration and slow speed.",
+        "heavy, clean configuration and slow speed.",
+        "light, clean configuration and high speed.",
+        "heavy, take-off configuration and slow speed."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.13",
+      "section": 7,
+      "question": "A helicopter in forward flight produces hazardous vortices",
+      "options": [
+        "which rise above the helicopter.",
+        "similar to wing tip vortices.",
+        "which remains at the same level as the helicopter.",
+        "ahead of the helicopter."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.14",
+      "section": 7,
+      "question": "Which statement concerning vortices caused by helicopters is correct?",
+      "options": [
+        "Helicopter vortices are generally weak and dissipate rapidly.",
+        "The size and weight of the helicopter has a direct influence on the intensity of the vortices.",
+        "Helicopter vortices are less intense than the vortices of an aeroplane of the same weight.",
+        "Wind does not influence the movement of vortices generated by a helicopter in hovering flight."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Wake Turbulence",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "7.15",
+      "section": 7,
+      "question": "What effect would a light crosswind have on the wing tip vortices generated by a large aeroplane that had just taken off? A light crosswind",
+      "options": [
+        "could cause one vortex to remain over the runway for some time.",
+        "would rapidly dissipate the strength of both vortices.",
+        "would rapidly clear the runway of all vortices.",
+        "would not affect the lateral movement of the vortices."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Wake Turbulence / Vortex Characteristics / General",
+      "sectionName": "Wake Turbulence"
+    },
+    {
+      "id": "8.01",
+      "section": 8,
+      "question": "A flight crew member aware of being under a physical disability that might invalidate licence issue or renewal shall",
+      "options": [
+        "so advise the Minister.",
+        "not commence a flight as a crew member.",
+        "forward the licence to the Regional Aviation Medical Officer.",
+        "fly as crew member only if a back-up member is available."
+      ],
+      "answer": 2,
+      "reference": "CARs 404.06 – Prohibition Regarding Exercise of Privileges",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.02",
+      "section": 8,
+      "question": "What is the recommended treatment for hyperventilation below 8,000 feet?",
+      "options": [
+        "Increase the depth of breathing.",
+        "Hold the breath and perform a Valsalva manoeuvre.",
+        "Slow the breathing rate to below 12 times per minute.",
+        "Increase oxygen flow rates."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-AIR – Hyperventilation",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.03",
+      "section": 8,
+      "question": "Damage to the ear drum in flight is most likely to occur",
+      "options": [
+        "during a climb.",
+        "during a descent.",
+        "when using supplementary oxygen.",
+        "after SCUBA diving."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Middle Ear and Sinus Discomfort or Pain",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.04",
+      "section": 8,
+      "question": "Clearing the ears on a rapid descent may be assisted by",
+      "options": [
+        "swallowing.",
+        "opening the mouth widely or yawning.",
+        "a Valsalva manoeuvre.",
+        "all of the above."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Middle Ear and Sinus Discomfort or Pain",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.05",
+      "section": 8,
+      "question": "Flight crew members who require decompression stops on the way to the surface when SCUBA diving should not fly for",
+      "options": [
+        "4 hours.",
+        "8 hours.",
+        "12 hours.",
+        "24 hours."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – SCUBA Diving",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.06",
+      "section": 8,
+      "question": "With regard to fatigue, which statement is correct according to the information given under the “Medical Information” section of the TC AIM?",
+      "options": [
+        "Financial or family problems do not influence tolerance to fatigue.",
+        "Fatigue slows reaction time and causes foolish inattentive errors.",
+        "A fatigued person recuperates more quickly as altitude is gained.",
+        "A fatigued person must have food immediately before and during flight."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Fatigue",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.07",
+      "section": 8,
+      "question": "A pilot who has donated blood should not act as a flight crew member for at least the next",
+      "options": [
+        "12 hours.",
+        "24 hours.",
+        "36 hours.",
+        "48 hours."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Blood Donation",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.08",
+      "section": 8,
+      "question": "Any pilot who has had a general anaesthetic should not act as a flight crew member",
+      "options": [
+        "during the next 12 hrs.",
+        "during the next 36 hrs.",
+        "during the next 48 hrs.",
+        "unless advised it is safe to do so by a doctor."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-AIR – Anesthetics",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.09",
+      "section": 8,
+      "question": "Any pilot who has had a local anaesthetic for extensive dental procedures should not act as a flight crew member during the next",
+      "options": [
+        "12 hrs.",
+        "24 hrs.",
+        "36 hrs.",
+        "48 hrs."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Anesthetics",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.10",
+      "section": 8,
+      "question": "Relatively small amounts of alcohol affect tolerance to hypoxia (lack of sufficient oxygen). This tolerance",
+      "options": [
+        "deteriorates with increase of altitude.",
+        "improves with increase of altitude.",
+        "is not affected by altitude change.",
+        "remains constant to 6,000 feet ASL."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Alcohol",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.11",
+      "section": 8,
+      "question": "Many common drugs such as cold tablets, cough mixtures, antihistamines and other over-the- counter remedies may seriously impair the judgement and co-ordination needed while flying. The safest rule is to",
+      "options": [
+        "read the manufacturer’s warning to ensure that you are aware of possible reactions to such drugs.",
+        "take no medicine when you plan to fly, except on the advice of a Civil Aviation Medical Examiner…",
+        "allow at least 12 hours between taking any medicine or drugs and flying.",
+        "allow at least 8 hours between taking any medicine or drugs and flying."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Drugs",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.12",
+      "section": 8,
+      "question": "The Canadian Medical Certificate of a private pilot 40 years old and over is valid, in Canada, for a period of",
+      "options": [
+        "12 months.",
+        "24 months.",
+        "36 months.",
+        "48 months."
+      ],
+      "answer": 2,
+      "reference": "CARs 424.04 – Issuance and Validity Period of Medical Certificate | TC AIM-LRA – Medical Validity Periods",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "8.13",
+      "section": 8,
+      "question": "The Canadian Medical Certificate of a private pilot under 40 years of age is valid, in Canada, for a period of",
+      "options": [
+        "72 months.",
+        "60 months.",
+        "48 months.",
+        "24 months."
+      ],
+      "answer": 2,
+      "reference": "CARs 424.04 – Issuance and Validity Period of Medical Certificate | TC AIM-LRA – Medical Validity Periods",
+      "sectionName": "Aeromedical"
+    },
+    {
+      "id": "9.01",
+      "section": 9,
+      "question": "The amount of fuel and oil carried on board any helicopter at the commencement of a day VFR flight must be sufficient, to provide for foreseeable delays having been considered, to fly to the destination aerodrome,",
+      "options": [
+        "and thereafter for 45 minutes at normal cruising speed.",
+        "then to a specified alternate and thereafter for 45 minutes at normal cruising speed.",
+        "and thereafter for 20 minutes at normal cruising speed.",
+        "then to a specified alternate and thereafter for 20 minutes at normal cruising speed."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.88 – Fuel Requirements | TC AIM-RAC – Fuel Requirements",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.02",
+      "section": 9,
+      "question": "The amount of fuel carried on board any propeller-driven aeroplane at the commencement of a day VFR flight must be sufficient, having regard to the meteorological conditions and foreseeable delays that are expected in flight, to fly to the destination aerodrome",
+      "options": [
+        "and then fly for a period of 45 minutes at normal cruising speed.",
+        "and then fly for a period of 30 minutes at normal cruising speed.",
+        "then to a specified alternate aerodrome and then for a period of 45 minutes at normal cruising speed.",
+        "then to a specified alternate aerodrome and then fly for a period of 30 minutes at normal cruising speed."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.88 – Fuel Requirements | TC AIM-RAC – Fuel Requirements",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.03",
+      "section": 9,
+      "question": "If a flight plan is not filed, a flight itinerary must be filed",
+      "options": [
+        "for flights proceeding 25 NM or more from the point of origin.",
+        "only for flights in sparsely settled areas.",
+        "for flights destined to land at aerodromes or places other than the point of origin.",
+        "for all flights."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.73 – Requirement to File a Flight Plan or a Flight Itinerary | TC AIM-RAC – Flight Plans and Flight Itineraries, When Required",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.04",
+      "section": 9,
+      "question": "After landing from a VFR flight for which a flight plan has been filed, the pilot shall report the arrival to the appropriate ATS unit within",
+      "options": [
+        "15 minutes.",
+        "30 minutes.",
+        "45 minutes.",
+        "60 minutes."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.77 – Requirement to file an Arrival Report | TC AIM-RAC – Closing a Flight Plan",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.05",
+      "section": 9,
+      "question": "When there is a deviation from a VFR flight plan, ATC shall be notified of such deviation",
+      "options": [
+        "as soon as possible.",
+        "within 10 minutes.",
+        "within 30 minutes.",
+        "within 60 minutes after landing."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.76 – Changes in a Flight Plan | TC AIM-RAC – Changes to the Information in a Flight Plan or Flight Itinerary",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.06",
+      "section": 9,
+      "question": "Where no search and rescue initiation time is specified in a flight itinerary, when shall the pilot report to the “responsible person”?",
+      "options": [
+        "Within one hour after the expiration of the estimated duration of the flight specified in the flight itinerary.",
+        "Within one hour after landing.",
+        "Within 24 hours after the expiration of the estimated duration of the flight specified in the flight itinerary.",
+        "As soon as practicable after landing but no later than 24 hours after the last reported ETA."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.77 – Requirement to file an Arrival Report | TC AIM-RAC – Closing a Flight Plan",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.07",
+      "section": 9,
+      "question": "With regard to a flight itinerary, the “responsible person” means an individual who",
+      "options": [
+        "has agreed to report the aircraft overdue.",
+        "is 18 years of age or over.",
+        "holds an aeronautical licence.",
+        "has agreed to report the arrival of the aircraft."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.70 – Flight Preparation, Flight Plans and Flight Itineraries, Interpretation, | TC AIM-RAC – Filing",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.08",
+      "section": 9,
+      "question": "Where a VFR flight plan has been filed, an arrival report must be filed by the pilot",
+      "options": [
+        "by advising an ATS unit.",
+        "at each intermediate stop and then reopened on take-off.",
+        "by parking the aircraft in close proximity to the tower.",
+        "except at airports served by a control tower in which case the controller will automatically file the arrival report."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.77 – Requirement to file an Arrival Report | TC AIM-RAC – Closing a Flight Plan",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.09",
+      "section": 9,
+      "question": "Estimated elapsed time A to B                       1 hour 15 minutes. Estimated stopover time at B                       30 minutes. Estimated elapsed time B to C                      1 hour 20 minutes. Using the above information, what time should be entered in the “Elapsed Time” box of a VFR flight plan?",
+      "options": [
+        "3 hours 50 minutes.",
+        "3 hours 20 minutes.",
+        "3 hours 05 minutes.",
+        "2 hours 35 minutes."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Intermediate stops",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.10",
+      "section": 9,
+      "question": "When filing a VFR flight plan with an intermediate stop, the total elapsed time to be entered is the total",
+      "options": [
+        "elapsed time for all legs including the duration of the intermediate stop.",
+        "elapsed time for all legs, plus the intermediate stop, plus 45 minutes.",
+        "flight time for all legs.",
+        "elapsed time to the first landing plus intermediate stops."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-RAC – Intermediate stops",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "9.11",
+      "section": 9,
+      "question": "How is an intermediate stop indicated on the flight plan form for a VFR flight?",
+      "options": [
+        "By including duration of the intermediate stop in ‘Elapsed Time’ box as ATC automatically checks time between points.",
+        "Same as any VFR flight plan if the intermediate time does not exceed 30 minutes at each point.",
+        "By repeating the name of intermediate stop and its duration in the ‘Route’ column.",
+        "By simply indicating “Intermediate Stop” in “Other Information” column."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Intermediate stops",
+      "sectionName": "Flight Plans And Flight Itineraries"
+    },
+    {
+      "id": "10.01",
+      "section": 10,
+      "question": "An ATC instruction",
+      "options": [
+        "must be complied with when received by the pilot providing the safety of the aircraft is not jeopardized.",
+        "must be ‘read back’ in full to the controller and confirmed before becoming effective.",
+        "is in effect advice provided by ATC and does not require acceptance or formal acknowledgement by the pilot concerned.",
+        "is the same as an ATC clearance."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances | TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Clearances And Instructions"
+    },
+    {
+      "id": "10.02",
+      "section": 10,
+      "question": "An ATC clearance",
+      "options": [
+        "is the same as an ATC instruction.",
+        "is advice provided by ATC and does not require acceptance or acknowledgement by the PIC.",
+        "requires compliance when accepted by the PIC.",
+        "must be complied with when received by the PIC."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances | TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Clearances And Instructions"
+    },
+    {
+      "id": "10.03",
+      "section": 10,
+      "question": "A pilot, after accepting a clearance and subsequently finding that all or part of the clearance cannot be complied with, should",
+      "options": [
+        "disregard the clearance.",
+        "comply with only the part that is suitable.",
+        "comply as best as possible under the circumstances to carry out the clearance and need not say anything to ATC.",
+        "comply as best as possible under the circumstances and advise ATC as soon as possible."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances | TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Clearances And Instructions"
+    },
+    {
+      "id": "10.04",
+      "section": 10,
+      "question": "After accepting a clearance and subsequently finding that it cannot be complied with, a pilot should",
+      "options": [
+        "take any immediate action required and advise ATC as soon as possible.",
+        "comply as best as possible under the circumstances and say nothing to ATC.",
+        "disregard the clearance.",
+        "comply with the suitable parts."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances | TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Clearances And Instructions"
+    },
+    {
+      "id": "10.05",
+      "section": 10,
+      "question": "An ATC clearance or instruction is predicated on known traffic only. Therefore, when a pilot is proceeding in accordance with a clearance or instruction",
+      "options": [
+        "ATC is relieved of the responsibility for traffic separation.",
+        "the responsibility for traffic separation is divided between ATC and the pilot.",
+        "the pilot is not relieved of the responsibility for traffic avoidance.",
+        "the pilot is relieved of the responsibility for traffic avoidance."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances | TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Clearances And Instructions"
+    },
+    {
+      "id": "10.06",
+      "section": 10,
+      "question": "If all or part of an ATC clearance is unacceptable, a pilot should",
+      "options": [
+        "comply as best as possible under the circumstances.",
+        "refuse the clearance without giving a reason for refusal.",
+        "acknowledge the clearance and read back only the acceptable parts.",
+        "refuse the clearance and inform ATC of their intentions."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.31 – Compliance with Air Traffic Control Instructions and Clearances | TC AIM-RAC – ATC Clearances, Instructions and Information",
+      "sectionName": "Clearances And Instructions"
+    },
+    {
+      "id": "11.01",
+      "section": 11,
+      "question": "In an emergency requiring the use of an ELT, it should be turned on",
+      "options": [
+        "immediately and left on.",
+        "at the ETA in the flight plan.",
+        "for the first five minutes of each hour UTC.",
+        "during daylight hours only to conserve the battery."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-SAR – ELT Operating Instructions (Emergency Use)",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.02",
+      "section": 11,
+      "question": "An aircraft’s 121.5 MHz ELT may be switched to transmit for test purposes anytime",
+      "options": [
+        "following a hard landing.",
+        "during the first 5 minutes of any hour UTC.",
+        "following a component or battery change.",
+        "prior to flight and listening on 121.5 MHz."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-SAR – ELT Testing Procedures | CARs 605.40 – ELT Activation",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.03",
+      "section": 11,
+      "question": "Before shutting down you can verify that the aircraft’s ELT is not transmitting by",
+      "options": [
+        "checking that the ELT switch is in the off position.",
+        "listening on 121.5 MHz for a signal.",
+        "ensuring that the master switch is off.",
+        "checking the ELT visual warning light."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-SAR – ELT Operating Instructions (Normal Use)",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.04",
+      "section": 11,
+      "question": "All accidental ELT activations should be reported to the",
+      "options": [
+        "airport manager.",
+        "R.C.M.P.",
+        "Minister.",
+        "nearest ATS unit."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-SAR – Accidental ELT Transmissions, CARs 605.40",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.05",
+      "section": 11,
+      "question": "When an aircraft engine is left running on the ground and no person remains onboard, the aircraft’s movement must be restricted and",
+      "options": [
+        "it must remain in sight of the pilot at all times.",
+        "it must not be left unattended.",
+        "its gross weight must be below 4,409 LB (2,000 kg).",
+        "its control locks must be installed."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.10 – Starting and Ground Running of Aircraft Engines",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.06",
+      "section": 11,
+      "question": "When confronted with an approaching thunderstorm, a take-off or landing",
+      "options": [
+        "should be avoided as a sudden wind shift or low level turbulence could cause a loss of control.",
+        "is safe if you can see under the thunderstorm through to the other side.",
+        "should be avoided unless the take-off can be made away from the thunderstorm.",
+        "is safe if the thunderstorm is regarded as light."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Flight Ops Near Thunderstorms / Considerations",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.07",
+      "section": 11,
+      "question": "An isolated thunderstorm is in close proximity to your aerodrome of intended landing. You should",
+      "options": [
+        "land giving due consideration to wind shear on final approach.",
+        "hold over a known point clear of the thunderstorm until it is well past the aerodrome.",
+        "land as quickly as possible.",
+        "add one-half the wind gust factor to the recommended landing speed and land."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Flight Ops Near Thunderstorms / Considerations",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.08",
+      "section": 11,
+      "question": "The take-off thrust blast danger area includes at least that area extending back from the tail of a medium size jet transport aeroplane for",
+      "options": [
+        "1,200 feet.",
+        "900 feet.",
+        "500 feet.",
+        "450 feet."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Jet and Propeller Blast Danger",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.09",
+      "section": 11,
+      "question": "The ground idle blast danger area extends back from the tail of a jumbo jet aeroplane for at least",
+      "options": [
+        "200 feet.",
+        "450 feet.",
+        "600 feet.",
+        "750 feet."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-AIR – Jet and Propeller Blast Danger",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.10",
+      "section": 11,
+      "question": "The ground idle blast danger area extends back from the tail of a medium size jet aeroplane for at least",
+      "options": [
+        "200 feet.",
+        "450 feet.",
+        "600 feet.",
+        "750 feet."
+      ],
+      "answer": 2,
+      "reference": "TC AIM-AIR – Jet and Propeller Blast Danger",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.11",
+      "section": 11,
+      "question": "The ground idle blast danger area extends back from the tail of an executive jet aeroplane for",
+      "options": [
+        "200 feet.",
+        "450 feet.",
+        "600 feet.",
+        "750 feet."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Jet and Propeller Blast Danger",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.12",
+      "section": 11,
+      "question": "A 45 kt blast area can be expected ..... behind the propellers of a large turbo-prop aeroplane during taxi.",
+      "options": [
+        "60 feet.",
+        "80 feet.",
+        "100 feet.",
+        "120 feet."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-AIR – Jet and Propeller Blast Danger",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.13",
+      "section": 11,
+      "question": "ATC advises that simultaneous operations are in progress at an airport. Pilots could expect a clearance to",
+      "options": [
+        "take-off over top of an aircraft on an intersecting runway.",
+        "take-off on a specified parallel runway.",
+        "land and hold short of an intersecting runway.",
+        "land on a specified parallel runway."
+      ],
+      "answer": 3,
+      "reference": "TC AIM-RAC – Operations on Intersecting Runways",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "11.14",
+      "section": 11,
+      "question": "When issued a clearance to land and hold short of an intersecting runway, pilots",
+      "options": [
+        "shall comply regardless of the circumstances.",
+        "may taxi across the intersection after the departing or arriving aircraft has cleared their path.",
+        "who inadvertently go through the intersection should immediately do a 180° turn and backtrack to the hold position.",
+        "should immediately inform ATC if they are unable to comply."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – Operations on Intersecting Runways",
+      "sectionName": "Aircraft Operations"
+    },
+    {
+      "id": "12.01",
+      "section": 12,
+      "question": "ADIZ rules normally apply",
+      "options": [
+        "only to aircraft flying above 12,500 feet.",
+        "only to aircraft flying at true airspeeds of 180 kt or more.",
+        "only to all southbound aircraft.",
+        "to all aircraft."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.145 – ADIZ | TC AIM-RAC – Defence VFR Flight Plans and Defence Flight Itineraries",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.02",
+      "section": 12,
+      "question": "When operating in accordance with VFR, aircraft shall be flown",
+      "options": [
+        "clear of aerodrome traffic zones.",
+        "clear of control zones.",
+        "with visual reference to the surface.",
+        "in compliance with all of the above."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.114 – Minimum Visual Meteorological Conditions for VFR Flight | CARs 602.115 – Minimum Visual Meteorological Conditions for VFR Flight",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.03",
+      "section": 12,
+      "question": "Normally, a helicopter in uncontrolled airspace at less than 1,000 feet AGL may operate during the day in flight visibility which is not less than",
+      "options": [
+        "½ mile.",
+        "1 mile.",
+        "2 miles.",
+        "3 miles."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.115 – Minimum Visual Meteorological Conditions for VFR Flight | TC AIM-RAC – Control Zones, VFR Weather Minima",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.04",
+      "section": 12,
+      "question": "What distance from cloud shall an aircraft maintain when flying below 1,000 feet AGL within uncontrolled airspace?",
+      "options": [
+        "At least 2,000 ft horizontally and 500 ft vertically.",
+        "At least 1 mile horizontally and 500 ft vertically.",
+        "At least 2 miles horizontally and 500 ft vertically.",
+        "Clear of cloud."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.115 – Minimum Visual Meteorological Conditions for VFR Flight | TC AIM-RAC – Control Zones, VFR Weather Minima",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.05",
+      "section": 12,
+      "question": "No person shall drop anything from an aircraft in flight",
+      "options": [
+        "which will create a hazard to persons or property.",
+        "unless approval has been granted by the Minister.",
+        "unless over an authorized jettison area.",
+        "unless it is attached to a parachute."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.23 – Dropping of Objects",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.06",
+      "section": 12,
+      "question": "A person may conduct aerobatic manoeuvres in an aircraft",
+      "options": [
+        "over an airport provided the appropriate frequency is monitored.",
+        "over the suburban area of a city above 2,000 feet AGL.",
+        "within Class F advisory airspace when visibility is 3 miles or greater.",
+        "within Class C airspace when the visibility is 1 mile or greater."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.27 – Aerobatic Manoeuvres – Prohibited Areas and Flight Conditions",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.07",
+      "section": 12,
+      "question": "CARs state that after the consumption of any alcoholic beverage, no person shall act as a crew member of an aircraft within",
+      "options": [
+        "12 hours.",
+        "24hours.",
+        "36 hours.",
+        "48 hours."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.03 – Alcohol or Drugs – Crew Members",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.08",
+      "section": 12,
+      "question": "‘Day’ in Canada is that period of time between",
+      "options": [
+        "sunrise and sunset.",
+        "one hour before sunrise and one hour after sunset.",
+        "the beginning of morning civil twilight and the end of evening civil twilight.",
+        "the end of morning civil twilight and the beginning of evening civil twilight."
+      ],
+      "answer": 3,
+      "reference": "CARs 101.01 – Day | TC AIM-GEN – Glossary of Aeronautical Terms",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.09",
+      "section": 12,
+      "question": "‘Night’ in Canada is that period of time between",
+      "options": [
+        "sunset and sunrise.",
+        "the beginning of evening civil twilight and the end of morning civil twilight.",
+        "one hour after sunset and one hour before sunrise.",
+        "the end of evening civil twilight and the beginning of morning civil twilight."
+      ],
+      "answer": 4,
+      "reference": "CARs 101.01 – Night | TC AIM-GEN – Glossary of Aeronautical Terms",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.10",
+      "section": 12,
+      "question": "Formation flying is permitted only if such flights",
+      "options": [
+        "have been pre-arranged by the pilots-in-command.",
+        "are conducted above 3,000 feet AGL.",
+        "are conducted by commercial pilots.",
+        "are led by a pilot whose licence is endorsed for formation flight."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.24 – Formation Flight",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.11",
+      "section": 12,
+      "question": "Flight through active Class F airspace with the designator CYR",
+      "options": [
+        "may be undertaken only by aircraft equipped with two-way radio communication and a transponder.",
+        "is restricted to military aircraft operating under the authority of the Minister of National Defence.",
+        "will be approved only for aircraft on IFR flight plans under positive radar control.",
+        "is permitted only in accordance with permission issued by the user agency."
+      ],
+      "answer": 4,
+      "reference": "CARs 601.04 – IFR or VFR Flight in Class F Airspace | TC AIM-RAC – Class F Airspace",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.12",
+      "section": 12,
+      "question": "Which statement is correct with regard to “advisory airspace”?",
+      "options": [
+        "A transient aircraft entering active advisory airspace shall be equipped with a serviceable transponder.",
+        "Non-participating VFR aircraft are encouraged to avoid flight in advisory airspace during active periods specified on aeronautical charts and NOTAM.",
+        "Aircraft need to be equipped with a two-way radio to enter active advisory airspace.",
+        "Only military aircraft may enter advisory airspace depicted on aeronautical charts."
+      ],
+      "answer": 2,
+      "reference": "CARs 601.04 – IFR or VFR Flight in Class F Airspace | TC AIM-RAC – Class F Airspace",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.13",
+      "section": 12,
+      "question": "Except as provided by CARs, unless taking off, landing or attempting to land, no person shall fly a helicopter over a built-up area or open air assembly of persons except at an altitude that will permit, in the event of an emergency, the landing of the aircraft without creating a hazard to persons or property on the surface, and such altitude shall not be less than ..... above the highest obstacle within a horizontal radius of ..... from the aircraft.",
+      "options": [
+        "3,000 ft, 1 mile.",
+        "2,000 ft, 1,000 ft.",
+        "1,000 ft, 500 ft.",
+        "500 ft, 500 ft."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.14 – Minimum Altitudes and Distances",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.14",
+      "section": 12,
+      "question": "Over non-populous areas or over open water, a pilot must maintain a minimum distance of ..... feet from any person, vessel, vehicle or structure.",
+      "options": [
+        "200",
+        "500",
+        "1,000",
+        "2,000"
+      ],
+      "answer": 2,
+      "reference": "CARs 602.14 – Minimum Altitudes and Distances",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.15",
+      "section": 12,
+      "question": "Except for balloons and as provided by CARs, no person shall cause any aircraft to take off or attempt to take off from, land on or attempt to land on, any surface within the built-up area of any city or town unless",
+      "options": [
+        "the aircraft is multi-engined.",
+        "all obstacles on approach and departure can be cleared by a minimum of 500 ft.",
+        "that surface is an airport or military aerodrome.",
+        "noise abatement procedures are followed."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.13 – Take-offs, Approaches and Landings Within Built-up Areas",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.16",
+      "section": 12,
+      "question": "What is the height AGL above which an aircraft in VFR flight shall be operated to conform with the Cruising Altitudes Order?",
+      "options": [
+        "700 feet.",
+        "2,200 feet.",
+        "3,000 feet.",
+        "3,500 feet."
+      ],
+      "answer": 3,
+      "reference": "CARs 602.34 – Cruising Altitudes and Cruising Flight Levels | TC AIM-RAC – Cruising Altitudes and Flight Levels",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.17",
+      "section": 12,
+      "question": "An aircraft cruising VFR in level flight above 3,000 feet AGL on a track of 290°M shall be flown at an",
+      "options": [
+        "even thousand foot altitude.",
+        "even thousand plus 500 foot altitude.",
+        "odd thousand foot altitude.",
+        "odd thousand plus 500 foot altitude."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.34 – Cruising Altitudes and Cruising Flight Levels | TC AIM-RAC – Cruising Altitudes and Flight Levels",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.18",
+      "section": 12,
+      "question": "The selection of a cruising altitude in the southern domestic airspace should be based on the",
+      "options": [
+        "true track.",
+        "magnetic track.",
+        "true heading.",
+        "magnetic heading."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.34 – Cruising Altitudes and Cruising Flight Levels | TC AIM-RAC – Cruising Altitudes and Flight Levels",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.19",
+      "section": 12,
+      "question": "Every person who is the holder of any pilot licence or permit shall, on demand, produce such licence or permit for inspection by persons authorized by the Minister, by peace officers and",
+      "options": [
+        "FSS operators.",
+        "Transport Canada airport managers.",
+        "immigration officers.",
+        "all of the above."
+      ],
+      "answer": 3,
+      "reference": "CARs 103.02 – Inspection of Aircraft, Requests for Production of Documents",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.20",
+      "section": 12,
+      "question": "Low Level Airspace is defined as, all airspace",
+      "options": [
+        "extending upwards from 2,200 feet AGL within designated airways.",
+        "extending upwards from 1000 feet AGL within designated airways.",
+        "extending upwards from the surface of the earth within designated airways.",
+        "within the Canadian Domestic Airspace below 18,000 feet ASL."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-RAC – High and Low Level Airspace",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "12.21",
+      "section": 12,
+      "question": "A Control Zone normally is controlled airspace extending upwards from",
+      "options": [
+        "2,200 feet above the surface of the earth.",
+        "700 feet above the surface of the earth.",
+        "the surface of the earth to 3,000 feet.",
+        "a specified height above the surface of the earth."
+      ],
+      "answer": 3,
+      "reference": "CARs Part 101.01 – Control Zone | TC AIM-RAC – Control Zones",
+      "sectionName": "Regulations – Canadian Airspace"
+    },
+    {
+      "id": "13.01",
+      "section": 13,
+      "question": "‘Controlled Airspace’ means all airspace of defined dimensions within which",
+      "options": [
+        "Control Zone regulations are in force.",
+        "security regulations are in force.",
+        "Special VFR flight only is permitted.",
+        "an ATC service is provided."
+      ],
+      "answer": 4,
+      "reference": "CARs 101.01 – Controlled Airspace | TC AIM-RAC – Controlled Airspace",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.02",
+      "section": 13,
+      "question": "When in VFR flight within controlled airspace, a pilot must remain clear of cloud by at least",
+      "options": [
+        "500 feet vertically and 1 mile horizontally.",
+        "500 feet vertically and 2,000 feet horizontally.",
+        "1,000 feet vertically and 1 mile horizontally.",
+        "1,000 feet vertically and 3 miles horizontally."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.114 – Minimum Visual Meteorological Conditions for VFR Flight | TC AIM-RAC – Control Zones, VFR Weather Minima",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.03",
+      "section": 13,
+      "question": "The minimum flight visibility for VFR flight within a low level airway is",
+      "options": [
+        "1 mile.",
+        "1½ miles.",
+        "2 miles.",
+        "3 miles."
+      ],
+      "answer": 4,
+      "reference": "CARs 602.114 – Minimum Visual Meteorological Conditions for VFR Flight | TC AIM-RAC – Control Zones, VFR Weather Minima",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.04",
+      "section": 13,
+      "question": "When in VFR flight within a Control Zone, a pilot must remain clear of cloud by at least",
+      "options": [
+        "500 feet vertically and 2,000 feet horizontally.",
+        "500 feet vertically and 1 mile horizontally.",
+        "1,000 feet vertically and 1 mile horizontally.",
+        "1,000 feet vertically and 3 miles horizontally."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.114 – Minimum Visual Meteorological Conditions for VFR Flight | TC AIM-RAC – Control Zones, VFR Weather Minima",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.05",
+      "section": 13,
+      "question": "VFR cross-country pilots wishing to cross through any part of a Class C Control Zone should",
+      "options": [
+        "advise the associated FSS.",
+        "monitor the Approach Control frequency.",
+        "advise ATC of their intentions and obtain a clearance.",
+        "conform with circuit direction at that airport."
+      ],
+      "answer": 3,
+      "reference": "CARs 601.08 – VFR Flight in Class C Airspace | TC AIM-RAC – VFR Operations Within Class C Airspace",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.06",
+      "section": 13,
+      "question": "ATC may authorize an aircraft equipped with a functioning two-way radio to transit a Control Zone under day SVFR provided the flight visibility and, when reported, ground visibility, are each not less than",
+      "options": [
+        "½ mile.",
+        "1 mile.",
+        "2 miles.",
+        "3 miles."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.117 – Special VFR Flight | TC AIM-RAC – Control Zones, Special VFR Weather Minima",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.07",
+      "section": 13,
+      "question": "ATC may authorize a helicopter equipped with a functioning two-way radio to transit a Control Zone under day SVFR where the flight visibility and, when reported, ground visibility are each not less than",
+      "options": [
+        "1 mile and operated at not less than 500 feet AGL.",
+        "½ mile.",
+        "1 mile.",
+        "½ mile and operated at not less than 500 feet AGL."
+      ],
+      "answer": 2,
+      "reference": "CARs 602.117 – Special VFR Flight | TC AIM-RAC – Control Zones, Special VFR Weather Minima",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.08",
+      "section": 13,
+      "question": "An aircraft flying in accordance with Special VFR would be flying within",
+      "options": [
+        "a Control Zone.",
+        "an Aerodrome Traffic Zone.",
+        "a Terminal Control Area.",
+        "an airway."
+      ],
+      "answer": 1,
+      "reference": "CARs 602.117 – Special VFR Flight | TC AIM-RAC – Control Zones, Special VFR Weather Minima",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.09",
+      "section": 13,
+      "question": "An arriving VFR flight shall make initial radio contact with the control tower",
+      "options": [
+        "upon entering an Aerodrome Traffic Zone.",
+        "prior to entering a Control Zone.",
+        "immediately prior to joining the circuit.",
+        "immediately after entering a Control Zone."
+      ],
+      "answer": 2,
+      "reference": "CARs 601.08 – VFR Flight in Class C Airspace | TC AIM-RAC – Arrival Procedure – Controlled Airports, Initial Contact",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.10",
+      "section": 13,
+      "question": "VFR flight within Class B airspace is permitted",
+      "options": [
+        "only when the flight visibility is 5 miles or better.",
+        "for all aircraft except gliders and balloons.",
+        "if the pilot holds a Class B Airspace Endorsement.",
+        "in accordance with an ATC clearance."
+      ],
+      "answer": 4,
+      "reference": "CARs 601.07 – VFR Flight in Class B Airspace | TC AIM-RAC – Class B Airspace",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.11",
+      "section": 13,
+      "question": "The pilot of an arriving VFR flight shall make initial radio contact with a control tower in Class C airspace",
+      "options": [
+        "immediately after entering the Control Zone.",
+        "10 NM outside the Control Zone.",
+        "prior to entering the Control Zone.",
+        "immediately prior to joining the circuit."
+      ],
+      "answer": 3,
+      "reference": "CARs 601.08 – VFR Flight in Class C Airspace | TC AIM-RAC – Class C Airspace | TC AIM-RAC – Arrival Procedure – Controlled Airports, Initial Contact",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "13.12",
+      "section": 13,
+      "question": "Unless otherwise authorized, a pilot on a VFR flight operating within a Class C terminal control area must",
+      "options": [
+        "exit the airspace whenever the weather deteriorates below VFR limits.",
+        "establish radio contact with the appropriate ATC unit only when transiting the associated control zone.",
+        "establish and maintain radio communication with the appropriate ATC Unit.",
+        "contact radar service only when taking off or landing at the major airport concerned."
+      ],
+      "answer": 3,
+      "reference": "CARs 601.08 – VFR Flight in Class C Airspace | TC AIM-RAC – Class C Airspace | TC AIM-RAC – Arrival Procedure – Controlled Airports, Initial Contact",
+      "sectionName": "Controlled Airspace"
+    },
+    {
+      "id": "14.01",
+      "section": 14,
+      "question": "The primary objective of an aviation safety investigation into an aircraft accident or aircraft incident is to",
+      "options": [
+        "apportion blame and liability.",
+        "determine the adequacy of insurance regulations.",
+        "enforce regulations.",
+        "prevent recurrences."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-GEN – Aviation Safety Investigation",
+      "sectionName": "Aviation Occurrences"
+    },
+    {
+      "id": "14.02",
+      "section": 14,
+      "question": "Details on civil aviation accident reporting procedures can be found in the",
+      "options": [
+        "TC AIM",
+        "Canadian Aviation Regulations.",
+        "Canada Flight Supplement.",
+        "Aviation Safety Manual."
+      ],
+      "answer": 1,
+      "reference": "TC AIM-GEN – Reporting an Aviation Occurrence",
+      "sectionName": "Aviation Occurrences"
+    },
+    {
+      "id": "14.03",
+      "section": 14,
+      "question": "When an aircraft accident occurs, the pilot or operator of the aircraft involved shall ensure that the particulars of the accident are reported to the TSB",
+      "options": [
+        "within 7 days by registered mail.",
+        "within 24 hours by telephone.",
+        "within 48 hours by facsimile.",
+        "as soon as possible and by the quickest means available."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-GEN – Information to Report",
+      "sectionName": "Aviation Occurrences"
+    },
+    {
+      "id": "14.04",
+      "section": 14,
+      "question": "The TSB shall be notified of a reportable aviation accident when",
+      "options": [
+        "a person sustains serious or fatal injury as a result of being in or coming into direct contact with any part of an aircraft.",
+        "an aircraft sustains damage or structural failure adversely affecting performance or flight characteristics and requiring major repair or replacement.",
+        "an aircraft is missing or completely inaccessible.",
+        "any of the above conditions exist."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-GEN – Accidents",
+      "sectionName": "Aviation Occurrences"
+    },
+    {
+      "id": "14.05",
+      "section": 14,
+      "question": "The TSB considers missing aircraft to be",
+      "options": [
+        "a reportable aviation incident.",
+        "an occurrence which need not be reported.",
+        "an aviation incident which need not be reported.",
+        "a reportable aviation accident."
+      ],
+      "answer": 4,
+      "reference": "TC AIM-GEN – Accidents",
+      "sectionName": "Aviation Occurrences"
+    }
+  ]
+}
