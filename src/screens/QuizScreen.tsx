@@ -102,6 +102,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
           {cur.opts.labels.map((label, i) => (
             <OptionRow
               key={i}
+              testID={`opt-${i}`}
               index={i}
               text={label}
               state={optState(i)}

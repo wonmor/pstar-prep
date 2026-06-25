@@ -92,12 +92,14 @@ export function OptionRow({
   state,
   onPress,
   disabled,
+  testID,
 }: {
   index: number; // 0-based; rendered as (1)…(4)
   text: string;
   state: 'idle' | 'selected' | 'correct' | 'wrong';
   onPress?: () => void;
   disabled?: boolean;
+  testID?: string;
 }) {
   const tint = {
     idle: { bg: colors.card, border: colors.border, ring: colors.skyLine, label: colors.textMute },
@@ -108,6 +110,7 @@ export function OptionRow({
   const mark = state === 'correct' ? '✓' : state === 'wrong' ? '✕' : `${index + 1}`;
   return (
     <Pressable
+      testID={testID}
       onPress={onPress}
       disabled={disabled}
       style={({ pressed }) => [

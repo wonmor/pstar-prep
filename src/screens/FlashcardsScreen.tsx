@@ -69,7 +69,7 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
       </View>
 
       {/* The card */}
-      <Pressable style={styles.cardWrap} onPress={() => setFlipped((f) => !f)}>
+      <Pressable testID="flashcard" style={styles.cardWrap} onPress={() => setFlipped((f) => !f)}>
         <View style={[styles.card, flipped ? styles.cardBack : styles.cardFront]}>
           <Text style={[styles.face, { color: flipped ? colors.green : colors.blueBright }]}>
             {flipped ? 'ANSWER' : 'QUESTION'}
