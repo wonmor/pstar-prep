@@ -4,6 +4,8 @@ A cross‑platform (**iOS · Android · Web**) study app for Canada's **PSTAR** 
 *Student Pilot Permit or Private Pilot Licence for Foreign and Military Applicants,
 Aviation Regulations* — built with **Expo / React Native**.
 
+**🌐 Live web app:** https://wonmor.github.io/pstar-prep/ · **Privacy:** https://wonmor.github.io/pstar-prep/privacy.html
+
 All **185 official questions** across **14 sections** are sourced directly from
 Transport Canada **TP 11919E, 7th Edition (Dec 2022)** and its answer key, each with
 the verified correct answer and the original CARs / TC AIM study reference.
