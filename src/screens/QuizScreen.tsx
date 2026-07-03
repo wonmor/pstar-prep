@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { buildQuiz, sectionName, shuffleOptions } from '../data';
+import { shuffleOptions } from '../data';
+import { useExam } from '../exam';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
 import { colors, font, radius, space } from '../theme';
@@ -8,6 +9,7 @@ import { Button, OptionRow, Pill, ProgressBar } from '../components/ui';
 
 export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   const nav = useNav();
+  const { buildQuiz, sectionName } = useExam();
   const { recordAnswer, recordExam, toggleBookmark } = useActions();
   const progress = useProgress();
   const isExam = scope === 'exam';
@@ -15,6 +17,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   // Prepare questions + a stable shuffled option order, once per session.
   const prepared = useMemo(() => {
     return buildQuiz(scope).map((q) => ({ q, opts: shuffleOptions(q) }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scope]);
 
   const [idx, setIdx] = useState(0);

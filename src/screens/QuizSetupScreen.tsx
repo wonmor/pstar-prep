@@ -1,25 +1,29 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { EXAM_SIZE, PASS_PCT, QUESTIONS } from '../data';
+import { useExam } from '../exam';
 import { useNav } from '../nav';
 import { colors, font, space } from '../theme';
 import { Button, Card } from '../components/ui';
 import { SectionList } from '../components/SectionList';
+import { ExamSwitch } from '../components/ExamSwitch';
 
 export default function QuizSetupScreen() {
   const nav = useNav();
+  const { meta, QUESTIONS, EXAM_SIZE, PASS_PCT } = useExam();
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
       <Text style={font.h1}>Practice</Text>
-      <Text style={[font.mute, { marginTop: 4, marginBottom: space.lg }]}>
+      <Text style={[font.mute, { marginTop: 4, marginBottom: space.md }]}>
         Take a full mock exam, or drill one section at a time.
       </Text>
+
+      <ExamSwitch style={{ marginBottom: space.lg }} />
 
       <Card style={styles.examCard}>
         <Text style={styles.examTitle}>📝 Full Mock Exam</Text>
         <Text style={styles.examDesc}>
           {EXAM_SIZE} questions drawn at random from all {QUESTIONS.length}. Pass mark {PASS_PCT}%, just
-          like the real PSTAR. Answers are revealed at the end.
+          like the real {meta.shortName}. Answers are revealed at the end.
         </Text>
         <Button
           label="Start mock exam"

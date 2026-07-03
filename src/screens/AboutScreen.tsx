@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Alert, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { QUESTIONS, SECTIONS } from '../data';
-import { resetProgress, useProgress } from '../storage';
+import { useExam } from '../exam';
+import { useActions, useProgress } from '../storage';
 import { colors, font, radius, space } from '../theme';
 import { Card, Pill } from '../components/ui';
 import { Disclaimer } from '../components/Disclaimer';
-import { APP_VERSION, CONTACT_EMAIL, PRIVACY_URL, SITE_URL, SOURCE_URL } from '../config';
+import { ExamSwitch } from '../components/ExamSwitch';
+import { APP_NAME, APP_VERSION, CONTACT_EMAIL, PRIVACY_URL, SITE_URL } from '../config';
 
 function Row({
   icon,
@@ -38,18 +39,21 @@ function Row({
 export default function AboutScreen() {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   const p = useProgress();
+  const { meta, QUESTIONS, SECTIONS } = useExam();
+  const { resetProgress } = useActions();
 
   function confirmReset() {
     const doReset = () => resetProgress();
+    const msg = `Reset all ${meta.shortName} progress, scores, bookmarks and mastered cards?`;
     if (Platform.OS === 'web') {
       // RN Alert has no buttons on web; use the browser confirm.
       // eslint-disable-next-line no-alert
-      if (typeof window !== 'undefined' && window.confirm('Reset all progress, scores and bookmarks?')) {
+      if (typeof window !== 'undefined' && window.confirm(msg)) {
         doReset();
       }
       return;
     }
-    Alert.alert('Reset everything?', 'This clears all progress, scores, bookmarks and mastered cards.', [
+    Alert.alert(`Reset ${meta.shortName} progress?`, msg, [
       { text: 'Cancel', style: 'cancel' },
       { text: 'Reset', style: 'destructive', onPress: doReset },
     ]);
@@ -61,24 +65,25 @@ export default function AboutScreen() {
         <View style={styles.logo}>
           <Text style={styles.logoMark}>✈</Text>
         </View>
-        <Text style={font.h1}>PSTAR Prep</Text>
+        <Text style={font.h1}>{APP_NAME}</Text>
         <Text style={font.mute}>Version {APP_VERSION}</Text>
-        <View style={{ flexDirection: 'row', gap: 8, marginTop: 10 }}>
-          <Pill label={`${QUESTIONS.length} questions`} tone="sky" />
+        <ExamSwitch style={{ marginTop: 14, alignSelf: 'stretch' }} />
+        <View style={{ flexDirection: 'row', gap: 8, marginTop: 12 }}>
+          <Pill label={`${meta.shortName} · ${QUESTIONS.length} questions`} tone="sky" />
           <Pill label={`${SECTIONS.length} sections`} tone="green" />
         </View>
       </View>
 
-      <Text style={styles.section}>Legal</Text>
+      <Text style={styles.section}>Legal — {meta.shortName}</Text>
       <Card style={styles.group}>
         <Row icon="⚠︎" label="Disclaimer" onPress={() => setShowDisclaimer(true)} />
         <View style={styles.sep} />
         <Row icon="🔒" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
         <View style={styles.sep} />
-        <Row icon="📄" label="Official TC source (TP 11919E)" onPress={() => Linking.openURL(SOURCE_URL)} />
+        <Row icon="📄" label={meta.sourceLabel} onPress={() => Linking.openURL(meta.sourceUrl)} />
       </Card>
 
-      <Text style={styles.section}>Your data</Text>
+      <Text style={styles.section}>Your data — {meta.shortName}</Text>
       <Card style={styles.group}>
         <Row icon="📊" label="Questions seen" value={`${Object.keys(p.stats).length}/${QUESTIONS.length}`} />
         <View style={styles.sep} />
@@ -97,10 +102,10 @@ export default function AboutScreen() {
       </Card>
 
       <Text style={styles.fine}>
-        PSTAR Prep is an independent study aid and is not affiliated with, endorsed by, or sponsored
-        by Transport Canada. Study material reproduced from Transport Canada TP 11919E, 7th Edition
-        (December 2022). Always verify against the current CARs and TC AIM. Local‑only data — nothing
-        leaves your device.
+        An independent study aid, not affiliated with, endorsed by, or sponsored by {meta.authority}.
+        {' '}
+        {meta.shortName} content: {meta.source}. Always verify against current official sources.
+        Local‑only data — nothing leaves your device.
       </Text>
 
       <Disclaimer visible={showDisclaimer} onClose={() => setShowDisclaimer(false)} />

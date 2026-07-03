@@ -1,6 +1,6 @@
-# ✈️ PSTAR Prep
+# ✈️ PSTAR & ROC-A Trainer
 
-A cross‑platform (**iOS · Android · Web**) study app for Canada's **PSTAR** exam —
+A cross‑platform (**iOS · Android · Web**) study app for Canada's **PSTAR** and **ROC-A** exams —
 *Student Pilot Permit or Private Pilot Licence for Foreign and Military Applicants,
 Aviation Regulations* — built with **Expo / React Native**.
 
@@ -36,7 +36,7 @@ npm start         # dev server → scan the QR with Expo Go on a real device
 
 ### Native builds
 
-`app.json` is configured with bundle id **`com.orchestrsim.pstar_prep`** (iOS &
+`app.json` is configured with bundle id **`com.orchestrsim.pstarprep`** (iOS &
 Android). To produce store binaries:
 
 ```bash

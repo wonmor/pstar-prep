@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Disclaimer } from '../components/Disclaimer';
-import { EXAM_SIZE, PASS_PCT, QUESTIONS, SECTIONS } from '../data';
+import { ExamSwitch } from '../components/ExamSwitch';
+import { useExam } from '../exam';
 import { useNav } from '../nav';
 import { useProgress } from '../storage';
 import { colors, font, radius, shadow, space } from '../theme';
@@ -49,6 +50,7 @@ function ModeTile({
 export default function HomeScreen() {
   const nav = useNav();
   const p = useProgress();
+  const { meta, QUESTIONS, SECTIONS, EXAM_SIZE, PASS_PCT } = useExam();
   const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   const seenIds = Object.keys(p.stats);
@@ -62,15 +64,16 @@ export default function HomeScreen() {
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
+      <ExamSwitch style={{ marginBottom: space.md }} />
+
       <View style={styles.hero}>
         <View style={styles.heroRow}>
-          <Text style={styles.kicker}>TRANSPORT CANADA · TP 11919E</Text>
-          <Pill label="7th ED · 2022" tone="navy" />
+          <Text style={styles.kicker}>{meta.kicker}</Text>
+          <Pill label={meta.badge} tone="navy" />
         </View>
-        <Text style={styles.heroTitle}>PSTAR Prep</Text>
+        <Text style={styles.heroTitle}>{meta.title}</Text>
         <Text style={styles.heroSub}>
-          Aviation Regulations for the Student Pilot Permit & Private Pilot Licence. {QUESTIONS.length}{' '}
-          official questions across {SECTIONS.length} sections.
+          {meta.subtitle} {QUESTIONS.length} practice questions across {SECTIONS.length} sections.
         </Text>
         <View style={styles.heroStats}>
           <Stat value={`${EXAM_SIZE}`} label="Exam Qs" />
@@ -137,8 +140,8 @@ export default function HomeScreen() {
 
       <Pressable onPress={() => setShowDisclaimer(true)} style={styles.disclaimerBtn}>
         <Text style={styles.disclaimer}>
-          Study material reproduced from Transport Canada TP 11919E (Dec 2022). Always verify against
-          current CARs and the TC AIM. Not affiliated with Transport Canada.{'\n'}
+          Independent study aid · {meta.source}. Always verify against current official sources. Not
+          affiliated with {meta.authority}.{'\n'}
           <Text style={styles.disclaimerLink}>Read full disclaimer ›</Text>
         </Text>
       </Pressable>

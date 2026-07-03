@@ -2,14 +2,7 @@ import React from 'react';
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { colors, font, radius, shadow, space } from '../theme';
 import { Button } from './ui';
-import { SOURCE_URL } from '../config';
-
-export const DISCLAIMER_PARAGRAPHS = [
-  'PSTAR Prep is an independent study aid. It is NOT affiliated with, endorsed by, or sponsored by Transport Canada or the Government of Canada.',
-  'The questions, answers, and references are reproduced from Transport Canada publication TP 11919E, 7th Edition (December 2022), for educational use. Reproduction is permitted with acknowledgement to the Department of Transport, Canada.',
-  'This material is provided as a study guide only and must not be relied upon as a legal authority. Regulations change. Always verify against the current Canadian Aviation Regulations (CARs) and the Transport Canada Aeronautical Information Manual (TC AIM).',
-  'Passing practice quizzes in this app does not guarantee a pass on the official PSTAR examination. No warranty is made as to accuracy or completeness, and the developers accept no liability for any loss arising from use of this app.',
-];
+import { useExam } from '../exam';
 
 export function Disclaimer({
   visible,
@@ -20,6 +13,7 @@ export function Disclaimer({
   onAccept?: () => void;
   onClose?: () => void; // when present, modal is dismissible (re-opened from About)
 }) {
+  const { meta } = useExam();
   const firstRun = !onClose;
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
@@ -30,13 +24,13 @@ export function Disclaimer({
           </View>
           <Text style={styles.title}>Disclaimer</Text>
           <ScrollView style={styles.body} showsVerticalScrollIndicator={false}>
-            {DISCLAIMER_PARAGRAPHS.map((p, i) => (
+            {meta.disclaimer.map((p, i) => (
               <Text key={i} style={styles.para}>
                 {p}
               </Text>
             ))}
-            <Pressable onPress={() => Linking.openURL(SOURCE_URL)}>
-              <Text style={styles.link}>View the official Transport Canada source →</Text>
+            <Pressable onPress={() => Linking.openURL(meta.sourceUrl)}>
+              <Text style={styles.link}>View the official {meta.authority} source →</Text>
             </Pressable>
           </ScrollView>
           {firstRun ? (

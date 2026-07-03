@@ -5,6 +5,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 
 import { NavContext, Route, TAB_ROOT, TabKey, tabForRoute } from './src/nav';
 import { useDisclaimerGate } from './src/storage';
+import { ExamProvider } from './src/exam';
 import { Disclaimer } from './src/components/Disclaimer';
 import { colors } from './src/theme';
 
@@ -144,9 +145,11 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <StatusBar style="dark" />
-      <Root />
-      {/* First-launch disclaimer — shown once on web and native until acknowledged. */}
-      <Disclaimer visible={accepted === false} onAccept={accept} />
+      <ExamProvider>
+        <Root />
+        {/* First-launch disclaimer — shown once on web and native until acknowledged. */}
+        <Disclaimer visible={accepted === false} onAccept={accept} />
+      </ExamProvider>
     </SafeAreaProvider>
   );
 }

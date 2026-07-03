@@ -1,23 +1,24 @@
 import React, { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { QUESTIONS, questionsForSection, sectionName, shuffle, type Question } from '../data';
+import { shuffle, type Question } from '../data';
+import { useExam } from '../exam';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
 import { colors, font, radius, shadow, space } from '../theme';
 import { Button, Pill, ProgressBar } from '../components/ui';
 
-function deckFor(scope: 'all' | 'bookmarks' | number, bookmarks: string[]): Question[] {
-  if (scope === 'all') return shuffle(QUESTIONS);
-  if (scope === 'bookmarks') return shuffle(QUESTIONS.filter((q) => bookmarks.includes(q.id)));
-  return shuffle(questionsForSection(scope));
-}
-
 export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks' | number }) {
   const nav = useNav();
   const progress = useProgress();
+  const { QUESTIONS, questionsForSection, sectionName } = useExam();
   const { setKnown, toggleBookmark } = useActions();
 
-  const deck = useMemo(() => deckFor(scope, progress.bookmarks), [scope]);
+  const deck = useMemo<Question[]>(() => {
+    if (scope === 'all') return shuffle(QUESTIONS);
+    if (scope === 'bookmarks') return shuffle(QUESTIONS.filter((q) => progress.bookmarks.includes(q.id)));
+    return shuffle(questionsForSection(scope));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scope]);
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
 

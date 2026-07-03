@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
-import { QUESTIONS, SECTIONS, type Question } from '../data';
+import { type Question } from '../data';
+import { useExam } from '../exam';
 import { useActions, useProgress } from '../storage';
 import { colors, font, radius, space } from '../theme';
 import { OptionRow } from '../components/ui';
@@ -43,6 +44,7 @@ function QuestionCard({ q }: { q: Question }) {
 
 export default function ReviewScreen({ initialSection }: { initialSection?: number | 'bookmarks' }) {
   const progress = useProgress();
+  const { QUESTIONS, SECTIONS } = useExam();
   const [filter, setFilter] = useState<Filter>(initialSection ?? 'all');
   const [query, setQuery] = useState('');
 
@@ -60,7 +62,7 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
       );
     }
     return list;
-  }, [filter, query, progress.bookmarks]);
+  }, [QUESTIONS, filter, query, progress.bookmarks]);
 
   return (
     <View style={styles.root}>

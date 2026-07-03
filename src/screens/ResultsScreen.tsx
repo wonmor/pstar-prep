@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { PASS_PCT, QUESTIONS } from '../data';
+import { useExam } from '../exam';
 import { useNav } from '../nav';
 import { colors, font, radius, shadow, space } from '../theme';
 import { Button, Card, OptionRow } from '../components/ui';
@@ -19,6 +19,7 @@ export default function ResultsScreen({
   wrongIds: string[];
 }) {
   const nav = useNav();
+  const { QUESTIONS, PASS_PCT } = useExam();
   const restart = () => {
     nav.resetTab('quizSetup');
     nav.push({ name: 'quiz', scope });

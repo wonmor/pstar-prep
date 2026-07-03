@@ -1,0 +1,1308 @@
+{
+  "title": "ROC-A — Aeronautical Radio Operator Study Guide",
+  "source": "Based on ISED RIC-21, Issue 3 (Feb 2010) — Study Guide for the Restricted Operator Certificate (Aeronautical)",
+  "sections": [
+    {
+      "id": 1,
+      "name": "Certificate & Background"
+    },
+    {
+      "id": 2,
+      "name": "Regulations & Priorities"
+    },
+    {
+      "id": 3,
+      "name": "Phonetic Alphabet & Numbers"
+    },
+    {
+      "id": 4,
+      "name": "Time & Transmission of Numbers"
+    },
+    {
+      "id": 5,
+      "name": "Procedural Words & Phrases"
+    },
+    {
+      "id": 6,
+      "name": "Call Signs"
+    },
+    {
+      "id": 7,
+      "name": "Calling, Replying & Signal Checks"
+    },
+    {
+      "id": 8,
+      "name": "Distress Communications"
+    },
+    {
+      "id": 9,
+      "name": "Urgency Communications"
+    },
+    {
+      "id": 10,
+      "name": "Licensing & Frequencies"
+    }
+  ],
+  "questions": [
+    {
+      "id": "1.01",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "A Restricted Operator Certificate (Aeronautical) is:",
+      "options": [
+        "Valid for five years",
+        "Issued for life, with no revalidation required",
+        "Valid until the holder turns 60",
+        "Renewed each year"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §1 — Intent"
+    },
+    {
+      "id": "1.02",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "An ROC-A is required by:",
+      "options": [
+        "Passengers on commercial flights",
+        "Operators of radiotelephone equipment on aircraft and at aeronautical land stations using aeronautical mobile frequencies",
+        "Air traffic controllers only",
+        "Aircraft maintenance engineers"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §2 — Background"
+    },
+    {
+      "id": "1.03",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "For ROC-A purposes, the radiotelephone equipment must have a power output not exceeding:",
+      "options": [
+        "5 watts",
+        "50 watts",
+        "250 watts e.r.p. (400 watts PEP)",
+        "1000 watts"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §2 — Background"
+    },
+    {
+      "id": "1.04",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "ROC-A examinations are conducted by:",
+      "options": [
+        "Transport Canada inspectors",
+        "NAV CANADA staff",
+        "Examiners accredited by ISED (Industry Canada)",
+        "Any licensed pilot"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §3.1 — Exam"
+    },
+    {
+      "id": "1.05",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "Regarding who may hold an ROC-A, there are:",
+      "options": [
+        "Minimum age and citizenship requirements",
+        "No nationality or age restrictions",
+        "Medical requirements identical to a pilot licence",
+        "A requirement to hold a pilot permit first"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §3.2 — Eligibility"
+    },
+    {
+      "id": "1.06",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "The operation of an aircraft radio station is under the control of:",
+      "options": [
+        "The nearest control tower at all times",
+        "The most senior passenger",
+        "The pilot or other person in charge of the station",
+        "ISED"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §4.3 — Control of Communications"
+    },
+    {
+      "id": "1.07",
+      "section": 1,
+      "sectionName": "Certificate & Background",
+      "question": "If your ROC-A certificate is lost, you should:",
+      "options": [
+        "Re-sit the entire examination",
+        "Contact the district office / Radio Operator Certificate Service Centre for a replacement",
+        "Apply to Transport Canada",
+        "Do nothing — it cannot be replaced"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §1 / Appendix F"
+    },
+    {
+      "id": "2.01",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "In the aeronautical service, the highest priority of communication is:",
+      "options": [
+        "Flight regularity messages",
+        "Meteorological messages",
+        "Distress communications",
+        "Direction-finding communications"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §4.1 — Priorities of Communications"
+    },
+    {
+      "id": "2.02",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "In the order of priority, urgency communications rank:",
+      "options": [
+        "First",
+        "Second, immediately after distress",
+        "Last",
+        "Equal with weather messages"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §4.1 — Priorities of Communications"
+    },
+    {
+      "id": "2.03",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "In the priority list, communications relating to radio direction-finding rank:",
+      "options": [
+        "Above distress",
+        "Third — after distress and urgency",
+        "Below all other messages",
+        "They are prohibited"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §4.1 — Priorities of Communications"
+    },
+    {
+      "id": "2.04",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "Radio operators and anyone who overhears radiocommunications are:",
+      "options": [
+        "Free to share them publicly",
+        "Bound to preserve the privacy of those communications",
+        "Required to record them",
+        "Permitted to sell them"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §4.2 — Privacy of Communications"
+    },
+    {
+      "id": "2.05",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "The privacy-of-communications rule does NOT apply to:",
+      "options": [
+        "Routine position reports",
+        "Company traffic",
+        "Messages of distress, urgency, safety, or those addressed to “ALL STATIONS”",
+        "Clearance read-backs"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §4.2 — Privacy of Communications"
+    },
+    {
+      "id": "2.06",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "Between an aeronautical ground station and an aircraft station, communications control is normally retained by:",
+      "options": [
+        "The aircraft station",
+        "The ground station",
+        "Whichever transmits first",
+        "The busier station"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §4.3 — Control of Communications"
+    },
+    {
+      "id": "2.07",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "In communications between two aircraft stations, the controlling station is:",
+      "options": [
+        "The aircraft being called",
+        "The aircraft calling",
+        "The higher-flying aircraft",
+        "Neither"
+      ],
+      "answer": 1,
+      "reference": "RIC-21 §4.3 — Control of Communications"
+    },
+    {
+      "id": "2.08",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "Superfluous communication and profane or obscene language on aeronautical frequencies are:",
+      "options": [
+        "Permitted when the frequency is quiet",
+        "Strictly prohibited",
+        "Allowed between company aircraft",
+        "Allowed in an emergency"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §4.4 — Superfluous Communications (Radiocommunication Regulations s.32(1))"
+    },
+    {
+      "id": "2.09",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "You may deliberately interfere with another station's working only when:",
+      "options": [
+        "The frequency is congested",
+        "You must transmit a higher-priority call such as distress or urgency",
+        "You are in a hurry",
+        "Never — under any circumstances"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §4.4 — Superfluous Communications and Interference"
+    },
+    {
+      "id": "2.10",
+      "section": 2,
+      "sectionName": "Regulations & Priorities",
+      "question": "Knowingly transmitting a false or fraudulent distress signal is:",
+      "options": [
+        "A minor rule infraction",
+        "Permitted for practice",
+        "An offence under the Radiocommunication Act with substantial penalties",
+        "Allowed if cancelled afterward"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §4.5 — False Distress Signals (Act 9(1)(a))"
+    },
+    {
+      "id": "3.01",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "The phonetic alphabet used in the aeronautical service is the:",
+      "options": [
+        "NATO military code",
+        "ITU phonetic alphabet",
+        "Morse code",
+        "APCO code"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — ITU Phonetic Alphabet"
+    },
+    {
+      "id": "3.02",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "The phonetic word for the letter \"A\" is:",
+      "options": [
+        "Alpha",
+        "Alfa",
+        "Able",
+        "Apple"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — ITU Phonetic Alphabet"
+    },
+    {
+      "id": "3.03",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "The phonetic word for the letter \"J\" is:",
+      "options": [
+        "Juliet",
+        "Juliett",
+        "Jig",
+        "Jupiter"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — ITU Phonetic Alphabet"
+    },
+    {
+      "id": "3.04",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "The phonetic word for the letter \"Q\" is:",
+      "options": [
+        "Queen",
+        "Quebec",
+        "Quick",
+        "Quaker"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — ITU Phonetic Alphabet"
+    },
+    {
+      "id": "3.05",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "Call signs should be:",
+      "options": [
+        "Spoken as ordinary words",
+        "Spelled out phonetically",
+        "Abbreviated to two letters always",
+        "Transmitted only in Morse"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 / §5.6 — Call Signs"
+    },
+    {
+      "id": "3.06",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "When spoken on the radio, the number \"3\" is pronounced:",
+      "options": [
+        "three",
+        "tree",
+        "thuh-ree",
+        "ter"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — Transmission of numbers"
+    },
+    {
+      "id": "3.07",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "When spoken on the radio, the number \"5\" is pronounced:",
+      "options": [
+        "five",
+        "fife",
+        "fiver",
+        "fivey"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — Transmission of numbers"
+    },
+    {
+      "id": "3.08",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "When spoken on the radio, the number \"9\" is pronounced:",
+      "options": [
+        "nine",
+        "niner",
+        "nina",
+        "nyne"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 — Transmission of numbers"
+    },
+    {
+      "id": "3.09",
+      "section": 3,
+      "sectionName": "Phonetic Alphabet & Numbers",
+      "question": "The word used to indicate a decimal point is:",
+      "options": [
+        "point",
+        "decimal",
+        "dot",
+        "comma"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.3 / §5.4 — Transmission of Numbers"
+    },
+    {
+      "id": "4.01",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "The time system used in radiocommunications is the:",
+      "options": [
+        "12-hour clock with a.m./p.m.",
+        "24-hour clock expressed in four figures",
+        "Local sundial time",
+        "Two-figure hour only"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.2 — Time and Date"
+    },
+    {
+      "id": "4.02",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "Time in radiocommunications is normally referenced to:",
+      "options": [
+        "Local standard time",
+        "Coordinated Universal Time (UTC / zulu)",
+        "The pilot's home time zone",
+        "Pacific time"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.2 — Time and Date"
+    },
+    {
+      "id": "4.03",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "1:45 p.m. is expressed as:",
+      "options": [
+        "0145",
+        "1345",
+        "1445",
+        "0345"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.2 — Time and Date"
+    },
+    {
+      "id": "4.04",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "All numbers except whole thousands are transmitted by:",
+      "options": [
+        "Rounding to the nearest ten",
+        "Pronouncing each digit separately",
+        "Spelling them phonetically",
+        "Using group form"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.4 — Transmission of Numbers"
+    },
+    {
+      "id": "4.05",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "The number 11,000 is transmitted as:",
+      "options": [
+        "one one zero zero zero",
+        "eleven thousand",
+        "one one thousand",
+        "eleven zero zero zero"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §5.4 — Transmission of Numbers (whole thousands)"
+    },
+    {
+      "id": "4.06",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "The number 5,800 is transmitted as:",
+      "options": [
+        "fifty-eight hundred",
+        "five thousand eight hundred",
+        "five eight zero zero",
+        "five point eight thousand"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §5.4 — Transmission of Numbers"
+    },
+    {
+      "id": "4.07",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "The frequency 121.5 is transmitted as:",
+      "options": [
+        "one twenty-one point five",
+        "one two one decimal five",
+        "one hundred twenty-one and a half",
+        "twelve fifteen"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.4 — Transmission of Numbers"
+    },
+    {
+      "id": "4.08",
+      "section": 4,
+      "sectionName": "Time & Transmission of Numbers",
+      "question": "An altitude of 2,700 feet above sea level is expressed as:",
+      "options": [
+        "two seven zero zero",
+        "two thousand seven hundred",
+        "twenty-seven hundred",
+        "two point seven"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.4 — Transmission of Numbers (altitude)"
+    },
+    {
+      "id": "5.01",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"ROGER\" means:",
+      "options": [
+        "Yes, that is correct",
+        "I have received all of your last transmission",
+        "I will comply",
+        "Say again"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.02",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"WILCO\" means:",
+      "options": [
+        "Will continue",
+        "Your instructions are received, understood and will be complied with",
+        "Wait one minute",
+        "Wrong — correcting"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.03",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"AFFIRM\" means:",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Standby"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.04",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"NEGATIVE\" means:",
+      "options": [
+        "Go ahead",
+        "No, or that is not correct",
+        "Message received",
+        "Out"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.05",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"OVER\" means:",
+      "options": [
+        "Conversation ended, no reply expected",
+        "My transmission is ended and I expect a response from you",
+        "Change frequency",
+        "Repeat your message"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.06",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"OUT\" means:",
+      "options": [
+        "Go ahead",
+        "Conversation is ended and no response is expected",
+        "Standby",
+        "I am in distress"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.07",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"STANDBY\" means:",
+      "options": [
+        "Proceed with your message",
+        "I must pause; please wait and I will call you",
+        "Message not received",
+        "Cancel the message"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.08",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"DISREGARD\" means:",
+      "options": [
+        "Repeat the message",
+        "Consider this transmission as not sent",
+        "Message understood",
+        "Increase power"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.09",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"SAY AGAIN\" is used to:",
+      "options": [
+        "End the conversation",
+        "Request a repetition of the last transmission",
+        "Confirm receipt",
+        "Acknowledge an error"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.10",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"MONITOR\" means:",
+      "options": [
+        "Transmit continuously",
+        "Listen (on frequency)",
+        "Record the transmission",
+        "Reduce volume"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.11",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"WORDS TWICE\" means:",
+      "options": [
+        "Speak twice as fast",
+        "Because communication is difficult, send each word or group of words twice",
+        "Repeat only the call sign",
+        "Double the transmitter power"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix B — Procedural Words"
+    },
+    {
+      "id": "5.12",
+      "section": 5,
+      "sectionName": "Procedural Words & Phrases",
+      "question": "\"CORRECTION\" is used when:",
+      "options": [
+        "You want the other station to repeat",
+        "An error has been made and the correct version follows",
+        "The frequency is busy",
+        "The message is ended"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.3 / Appendix B"
+    },
+    {
+      "id": "6.01",
+      "section": 6,
+      "sectionName": "Call Signs",
+      "question": "An aircraft's call sign and markings are assigned by:",
+      "options": [
+        "ISED (Industry Canada)",
+        "Transport Canada",
+        "NAV CANADA",
+        "The pilot"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.6 — Call Signs"
+    },
+    {
+      "id": "6.02",
+      "section": 6,
+      "sectionName": "Call Signs",
+      "question": "A Canadian air carrier's call sign is the company name followed by:",
+      "options": [
+        "The aircraft colour",
+        "The flight number or the last three characters of the registration",
+        "The captain's name",
+        "The destination"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.6.1 — Canadian Air Carriers"
+    },
+    {
+      "id": "6.03",
+      "section": 6,
+      "sectionName": "Call Signs",
+      "question": "A Canadian private aircraft uses the manufacturer's name or type followed by:",
+      "options": [
+        "The last four letters of the registration",
+        "The first two letters of the registration",
+        "The flight number",
+        "The aircraft's colour"
+      ],
+      "answer": 1,
+      "reference": "RIC-21 §5.6.2 — Canadian Private Civil Registration"
+    },
+    {
+      "id": "6.04",
+      "section": 6,
+      "sectionName": "Call Signs",
+      "question": "A distinctive call sign should be used at least:",
+      "options": [
+        "On every transmission without exception",
+        "When initial contact is established and when the communication is concluded",
+        "Only in an emergency",
+        "Once per hour"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.6 — Call Signs"
+    },
+    {
+      "id": "6.05",
+      "section": 6,
+      "sectionName": "Call Signs",
+      "question": "An aeronautical ground station is identified by:",
+      "options": [
+        "The operator's name",
+        "The airport name or geographical location plus a word indicating its function",
+        "A numeric code only",
+        "The frequency in use"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.6.3 — Aeronautical Ground Stations"
+    },
+    {
+      "id": "6.06",
+      "section": 6,
+      "sectionName": "Call Signs",
+      "question": "An abbreviated aircraft call sign may be used:",
+      "options": [
+        "At any time the pilot wishes",
+        "After communication is established and if there is no likelihood of interference",
+        "Only by ground stations",
+        "Never"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.4 — Message Handling Procedures"
+    },
+    {
+      "id": "7.01",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "Before transmitting, an operator must:",
+      "options": [
+        "Key the mic and speak at once",
+        "Listen long enough to be sure the transmission will not interfere with communications in progress",
+        "Announce “breaking in”",
+        "Request permission from ATC"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.1 — Calling"
+    },
+    {
+      "id": "7.02",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "When establishing communication, the call sign spoken FIRST is:",
+      "options": [
+        "The calling station's own",
+        "The station being called",
+        "“ALL STATIONS”",
+        "The frequency"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.1 — Calling"
+    },
+    {
+      "id": "7.03",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "In good radio conditions, a call sign in the calling procedure should be spoken:",
+      "options": [
+        "Once",
+        "Three times",
+        "Five times",
+        "Continuously"
+      ],
+      "answer": 1,
+      "reference": "RIC-21 §5.7.1 — Single Station Call"
+    },
+    {
+      "id": "7.04",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "The words spoken between the called and calling call signs are:",
+      "options": [
+        "“COME IN”",
+        "“THIS IS”",
+        "“CALLING”",
+        "“DO YOU COPY”"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.1 — Calling"
+    },
+    {
+      "id": "7.05",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "To tell a calling station to proceed with its message, you say:",
+      "options": [
+        "“STANDBY”",
+        "“GO AHEAD”",
+        "“OVER”",
+        "“ROGER”"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.2 — Replying"
+    },
+    {
+      "id": "7.06",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "If you hear a call but are unsure it is for your station, you should:",
+      "options": [
+        "Answer immediately",
+        "Not reply until the call has been repeated and understood",
+        "Ignore all further calls",
+        "Change frequency"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.2 — Replying"
+    },
+    {
+      "id": "7.07",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "On the readability scale, a report of \"five\" means the signal is:",
+      "options": [
+        "Bad — unreadable",
+        "Excellent — perfectly readable",
+        "Fair — readable with difficulty",
+        "Poor — readable now and then"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.5 — Readability scale"
+    },
+    {
+      "id": "7.08",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "On the readability scale, a report of \"one\" means the signal is:",
+      "options": [
+        "Excellent — perfectly readable",
+        "Good — readable",
+        "Bad — unreadable",
+        "Fair"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §5.7.5 — Readability scale"
+    },
+    {
+      "id": "7.09",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "A signal (radio) check transmission should last no more than:",
+      "options": [
+        "10 seconds",
+        "30 seconds",
+        "One minute",
+        "Five minutes"
+      ],
+      "answer": 1,
+      "reference": "RIC-21 §5.7.5 — Signal (Radio) Checks"
+    },
+    {
+      "id": "7.10",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "A radio check made prior to departure is called a:",
+      "options": [
+        "Signal check",
+        "Preflight check",
+        "Maintenance check",
+        "Ramp check"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.5 — Communications checks"
+    },
+    {
+      "id": "7.11",
+      "section": 7,
+      "sectionName": "Calling, Replying & Signal Checks",
+      "question": "Before transmitting a message, the operator should first:",
+      "options": [
+        "Increase transmitter power",
+        "Plan the content of the message",
+        "Request a frequency change",
+        "Spell every word phonetically"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §5.7.4 — Message Handling Procedures"
+    },
+    {
+      "id": "8.01",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "In radiotelephony, the spoken word for distress is:",
+      "options": [
+        "PAN PAN",
+        "MAYDAY",
+        "SEELONCE",
+        "EMERGENCY"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.4 — Distress Signal"
+    },
+    {
+      "id": "8.02",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "A distress condition is one of:",
+      "options": [
+        "Minor mechanical trouble",
+        "Being threatened by grave and/or imminent danger and requiring immediate assistance",
+        "Being slightly off course",
+        "A routine position report"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.1 — Emergency Conditions"
+    },
+    {
+      "id": "8.03",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "In the distress call, the word \"MAYDAY\" is spoken:",
+      "options": [
+        "Once",
+        "Twice",
+        "Three times",
+        "Continuously"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §6.7 — Distress Call"
+    },
+    {
+      "id": "8.04",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "The distress call has:",
+      "options": [
+        "The same priority as urgency",
+        "Absolute priority over all other transmissions",
+        "Priority only over company traffic",
+        "No special priority"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.5 — Priority of Distress"
+    },
+    {
+      "id": "8.05",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "The first transmission of the distress call should be made on:",
+      "options": [
+        "121.5 MHz only",
+        "The air-ground frequency in use at the time",
+        "Any broadcast station",
+        "The nearest FM frequency"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.3 — Frequencies to be Used"
+    },
+    {
+      "id": "8.06",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "If the frequency in use fails, the distress call should be repeated on:",
+      "options": [
+        "The ATIS frequency",
+        "The aeronautical emergency frequency, 121.5 MHz",
+        "243.0 MHz",
+        "500 kHz"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.3 — Frequencies to be Used"
+    },
+    {
+      "id": "8.07",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "Once distress traffic is under way, each transmission is preceded by \"MAYDAY\" spoken:",
+      "options": [
+        "Three times",
+        "Once",
+        "Twice",
+        "Not at all"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.13 — Distress Traffic"
+    },
+    {
+      "id": "8.08",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "A station relaying another aircraft's distress message begins with:",
+      "options": [
+        "“PAN PAN RELAY”",
+        "“MAYDAY RELAY” spoken three times",
+        "“RELAY MAYDAY” once",
+        "“ALL STATIONS”"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.16 — Relay of a Distress Message"
+    },
+    {
+      "id": "8.09",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "The acknowledgment of receipt of a distress message ends with the words:",
+      "options": [
+        "“ROGER MAYDAY”",
+        "“RECEIVED MAYDAY”",
+        "“MAYDAY OUT”",
+        "“DISTRESS ACKNOWLEDGED”"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.14 — Acknowledgment of Receipt"
+    },
+    {
+      "id": "8.10",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "To impose radio silence, the station controlling distress traffic uses the expression:",
+      "options": [
+        "“SEELONCE FEENEE”",
+        "“SEELONCE MAYDAY”",
+        "“SILENCE PLEASE”",
+        "“STOP TRANSMITTING”"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.17 — Imposition of Silence"
+    },
+    {
+      "id": "8.11",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "The expression indicating that the distress situation has ended is:",
+      "options": [
+        "“SEELONCE MAYDAY”",
+        "“SEELONCE DISTRESS”",
+        "“SEELONCE FEENEE”",
+        "“MAYDAY OUT”"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §6.18 / Appendix B"
+    },
+    {
+      "id": "8.12",
+      "section": 8,
+      "sectionName": "Distress Communications",
+      "question": "Immediately after the distress call, the station in distress should:",
+      "options": [
+        "Shut off the radio",
+        "Transmit the distress message and listen for acknowledgment",
+        "Change to a company frequency",
+        "Wait one hour"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.10 — Action by Station in Distress"
+    },
+    {
+      "id": "9.01",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "The spoken urgency signal is:",
+      "options": [
+        "MAYDAY",
+        "PAN PAN",
+        "SECURITE",
+        "PRIORITY"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §7.1 — Urgency Signal"
+    },
+    {
+      "id": "9.02",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "The urgency signal \"PAN PAN\" is spoken:",
+      "options": [
+        "Once",
+        "Twice",
+        "Three times",
+        "Continuously"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §7.1 — Urgency Signal"
+    },
+    {
+      "id": "9.03",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "An urgency condition concerns the safety of an aircraft or a person but:",
+      "options": [
+        "Requires immediate assistance",
+        "Does not require immediate assistance",
+        "Is only about the weather",
+        "Is a routine call"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.1 / §7.1 — Urgency"
+    },
+    {
+      "id": "9.04",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "The urgency signal has priority over all communications except:",
+      "options": [
+        "Meteorological messages",
+        "Distress",
+        "Flight regularity",
+        "Direction-finding"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §7.2 — Priority"
+    },
+    {
+      "id": "9.05",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "Stations hearing the urgency signal should continue to listen for at least:",
+      "options": [
+        "30 seconds",
+        "One minute",
+        "Three minutes",
+        "Ten minutes"
+      ],
+      "answer": 3,
+      "reference": "RIC-21 §7.2 — Priority"
+    },
+    {
+      "id": "9.06",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "The first transmission of the urgency signal should be made on:",
+      "options": [
+        "121.5 MHz only",
+        "The air-ground frequency in use at the time",
+        "The ATIS frequency",
+        "Any HF frequency"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §7.3 — Frequencies to be Used"
+    },
+    {
+      "id": "9.07",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "An urgency message may be addressed to:",
+      "options": [
+        "Only the nearest tower",
+        "All stations or a specific station",
+        "Only company aircraft",
+        "Only search-and-rescue"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §7.1 — Urgency Signal"
+    },
+    {
+      "id": "9.08",
+      "section": 9,
+      "sectionName": "Urgency Communications",
+      "question": "The urgency signal is sent only on the authority of:",
+      "options": [
+        "Any crew member",
+        "The person in charge of the station",
+        "The nearest ground station",
+        "A passenger"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §7.1 — Urgency Signal"
+    },
+    {
+      "id": "10.01",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "In Canada, radio stations must be licensed by the Minister unless:",
+      "options": [
+        "They operate below 5 watts",
+        "They are otherwise exempted",
+        "They use VHF only",
+        "They are privately owned"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix D — Radio Station Licences"
+    },
+    {
+      "id": "10.02",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "Under certain conditions, aeronautical (aircraft) stations are:",
+      "options": [
+        "Always individually licensed per flight",
+        "Exempt from requiring a radio station licence",
+        "Licensed by Transport Canada",
+        "Unregulated"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix D — Radio Station Licences"
+    },
+    {
+      "id": "10.03",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "A radio station licence generally specifies the call sign, the frequencies to be used and:",
+      "options": [
+        "The pilot's name",
+        "Any special conditions of operation",
+        "The aircraft's colour",
+        "The fuel type"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix D — Radio Station Licences"
+    },
+    {
+      "id": "10.04",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "Radio station licence fees are due each year on:",
+      "options": [
+        "January 1",
+        "April 1",
+        "The anniversary of issue",
+        "December 31"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix D — Radio Station Licences"
+    },
+    {
+      "id": "10.05",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "To be eligible for licensing in Canada, radio equipment must be:",
+      "options": [
+        "Built in Canada",
+        "Type-approved / technically acceptable to the Department",
+        "Less than five years old",
+        "Painted a specific colour"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix D — Radio Station Licences"
+    },
+    {
+      "id": "10.06",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "The aeronautical emergency frequency is:",
+      "options": [
+        "118.0 MHz",
+        "121.5 MHz",
+        "126.7 MHz",
+        "243.0 MHz"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 §6.3 / Appendix E"
+    },
+    {
+      "id": "10.07",
+      "section": 10,
+      "sectionName": "Licensing & Frequencies",
+      "question": "In the frequency assignment table, the band 121.9825–123.5875 MHz is primarily used for:",
+      "options": [
+        "Air Traffic Control Services",
+        "General Aviation Communications",
+        "Aeronautical Radionavigation",
+        "Broadcasting"
+      ],
+      "answer": 2,
+      "reference": "RIC-21 Appendix E — Frequency Assignments"
+    }
+  ]
+}

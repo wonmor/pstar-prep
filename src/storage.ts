@@ -1,8 +1,16 @@
 // Persistence layer for progress, per-section stats, and bookmarks.
+// Progress is kept independently for each exam (PSTAR / ROC-A) so switching
+// exams never mixes scores or bookmarks.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useCallback, useEffect, useState } from 'react';
+import { useExamId } from './exam';
+import type { ExamId } from './exams';
 
-const KEY = 'pstar:progress:v1';
+// PSTAR keeps the original (unsuffixed) key so existing progress survives;
+// other exams are namespaced by id.
+function keyFor(exam: ExamId): string {
+  return exam === 'pstar' ? 'pstar:progress:v1' : `pstar:progress:v1:${exam}`;
+}
 
 export type QStat = { seen: number; correct: number; lastCorrect: boolean | null };
 
@@ -26,34 +34,39 @@ const EMPTY: Progress = {
   examsTaken: 0,
 };
 
-let cache: Progress | null = null;
-const listeners = new Set<(p: Progress) => void>();
+const caches: Partial<Record<ExamId, Progress>> = {};
+const listenerMap: Partial<Record<ExamId, Set<(p: Progress) => void>>> = {};
 
-async function load(): Promise<Progress> {
-  if (cache) return cache;
+function listenersFor(exam: ExamId): Set<(p: Progress) => void> {
+  return (listenerMap[exam] ??= new Set());
+}
+
+async function load(exam: ExamId): Promise<Progress> {
+  const cached = caches[exam];
+  if (cached) return cached;
   let next: Progress;
   try {
-    const raw = await AsyncStorage.getItem(KEY);
+    const raw = await AsyncStorage.getItem(keyFor(exam));
     next = raw ? { ...EMPTY, ...JSON.parse(raw) } : { ...EMPTY };
   } catch {
     next = { ...EMPTY };
   }
-  cache = next;
+  caches[exam] = next;
   return next;
 }
 
-async function persist(next: Progress) {
-  cache = next;
-  listeners.forEach((l) => l(next));
+async function persist(exam: ExamId, next: Progress) {
+  caches[exam] = next;
+  listenersFor(exam).forEach((l) => l(next));
   try {
-    await AsyncStorage.setItem(KEY, JSON.stringify(next));
+    await AsyncStorage.setItem(keyFor(exam), JSON.stringify(next));
   } catch {
     /* best-effort */
   }
 }
 
-export async function recordAnswer(id: string, correct: boolean) {
-  const p = await load();
+export async function recordAnswer(exam: ExamId, id: string, correct: boolean) {
+  const p = await load(exam);
   const prev = p.stats[id] ?? { seen: 0, correct: 0, lastCorrect: null };
   const stats = {
     ...p.stats,
@@ -63,38 +76,38 @@ export async function recordAnswer(id: string, correct: boolean) {
       lastCorrect: correct,
     },
   };
-  await persist({ ...p, stats });
+  await persist(exam, { ...p, stats });
 }
 
-export async function recordExam(pct: number) {
-  const p = await load();
-  await persist({
+export async function recordExam(exam: ExamId, pct: number) {
+  const p = await load(exam);
+  await persist(exam, {
     ...p,
     examsTaken: p.examsTaken + 1,
     bestExamPct: p.bestExamPct == null ? pct : Math.max(p.bestExamPct, pct),
   });
 }
 
-export async function toggleBookmark(id: string) {
-  const p = await load();
+export async function toggleBookmark(exam: ExamId, id: string) {
+  const p = await load(exam);
   const has = p.bookmarks.includes(id);
   const bookmarks = has ? p.bookmarks.filter((x) => x !== id) : [...p.bookmarks, id];
-  await persist({ ...p, bookmarks });
+  await persist(exam, { ...p, bookmarks });
 }
 
-export async function setKnown(id: string, known: boolean) {
-  const p = await load();
+export async function setKnown(exam: ExamId, id: string, known: boolean) {
+  const p = await load(exam);
   const has = p.known.includes(id);
   if (known === has) return;
   const list = known ? [...p.known, id] : p.known.filter((x) => x !== id);
-  await persist({ ...p, known: list });
+  await persist(exam, { ...p, known: list });
 }
 
-export async function resetProgress() {
-  await persist({ ...EMPTY });
+export async function resetProgress(exam: ExamId) {
+  await persist(exam, { ...EMPTY });
 }
 
-// --- One-time disclaimer acknowledgement (separate key from progress) ---
+// --- One-time disclaimer acknowledgement (separate key, shared across exams) ---
 const DISCLAIMER_KEY = 'pstar:disclaimer:v1';
 
 export function useDisclaimerGate() {
@@ -116,28 +129,32 @@ export function useDisclaimerGate() {
   return { accepted, accept };
 }
 
-// React hook: subscribe to progress state.
+// React hook: subscribe to the active exam's progress state.
 export function useProgress(): Progress {
-  const [state, setState] = useState<Progress>(cache ?? EMPTY);
+  const exam = useExamId();
+  const [state, setState] = useState<Progress>(caches[exam] ?? EMPTY);
   useEffect(() => {
     let active = true;
-    load().then((p) => active && setState(p));
+    setState(caches[exam] ?? EMPTY);
+    load(exam).then((p) => active && setState(p));
     const l = (p: Progress) => setState(p);
-    listeners.add(l);
+    listenersFor(exam).add(l);
     return () => {
       active = false;
-      listeners.delete(l);
+      listenersFor(exam).delete(l);
     };
-  }, []);
+  }, [exam]);
   return state;
 }
 
+// Actions bound to the active exam.
 export function useActions() {
+  const exam = useExamId();
   return {
-    recordAnswer: useCallback(recordAnswer, []),
-    recordExam: useCallback(recordExam, []),
-    toggleBookmark: useCallback(toggleBookmark, []),
-    setKnown: useCallback(setKnown, []),
-    resetProgress: useCallback(resetProgress, []),
+    recordAnswer: useCallback((id: string, correct: boolean) => recordAnswer(exam, id, correct), [exam]),
+    recordExam: useCallback((pct: number) => recordExam(exam, pct), [exam]),
+    toggleBookmark: useCallback((id: string) => toggleBookmark(exam, id), [exam]),
+    setKnown: useCallback((id: string, known: boolean) => setKnown(exam, id, known), [exam]),
+    resetProgress: useCallback(() => resetProgress(exam), [exam]),
   };
 }

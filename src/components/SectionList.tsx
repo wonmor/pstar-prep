@@ -1,12 +1,13 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { SECTIONS, countForSection } from '../data';
+import { useExam } from '../exam';
 import { useProgress } from '../storage';
 import { colors, radius, space } from '../theme';
 
-// A tappable list of the 14 PSTAR sections, each showing question count + mastery.
+// A tappable list of the active exam's sections, each showing count + mastery.
 export function SectionList({ onPick }: { onPick: (sectionId: number) => void }) {
   const p = useProgress();
+  const { SECTIONS, countForSection } = useExam();
   return (
     <View style={{ gap: 10 }}>
       {SECTIONS.map((s) => {

@@ -1,11 +1,12 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { QUESTIONS } from '../data';
+import { useExam } from '../exam';
 import { useNav } from '../nav';
 import { useProgress } from '../storage';
 import { colors, font, space } from '../theme';
 import { Card, Pill } from '../components/ui';
 import { SectionList } from '../components/SectionList';
+import { ExamSwitch } from '../components/ExamSwitch';
 import { Pressable } from 'react-native';
 
 function BigChoice({
@@ -42,12 +43,15 @@ function BigChoice({
 export default function CardsSetupScreen() {
   const nav = useNav();
   const p = useProgress();
+  const { QUESTIONS } = useExam();
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
       <Text style={font.h1}>Flashcards</Text>
-      <Text style={[font.mute, { marginTop: 4, marginBottom: space.lg }]}>
+      <Text style={[font.mute, { marginTop: 4, marginBottom: space.md }]}>
         Tap a card to flip it — front shows the question, back reveals the answer & reference.
       </Text>
+
+      <ExamSwitch style={{ marginBottom: space.lg }} />
 
       <Card style={{ gap: space.md, padding: space.md }}>
         <BigChoice

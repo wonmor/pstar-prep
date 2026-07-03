@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "PSTAR Prep",
+    "name": "PSTAR & ROC-A Trainer",
     "slug": "pstar-prep",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,11 +15,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.orchestrsim.pstar_prep",
-      "buildNumber": "1"
+      "bundleIdentifier": "com.orchestrsim.pstarprep",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "package": "com.orchestrsim.pstar_prep",
+      "package": "com.orchestrsim.pstarprep",
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#0B2545",
@@ -32,15 +35,21 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro",
-      "name": "PSTAR Prep",
-      "shortName": "PSTAR Prep",
-      "description": "Independent study app for Canada's PSTAR aviation regulations exam. Not affiliated with Transport Canada. Study material reproduced from TP 11919E (Dec 2022); always verify against current CARs and the TC AIM.",
+      "name": "PSTAR & ROC-A Trainer",
+      "shortName": "PSTAR·ROC-A",
+      "description": "Independent study app for Canada's PSTAR aviation regulations exam and the ROC-A aeronautical radio operator certificate. Not affiliated with Transport Canada or ISED. Study material based on TP 11919E (Dec 2022) and RIC-21; always verify against current CARs, RIC-21 and the TC AIM.",
       "lang": "en",
       "themeColor": "#0B2545",
       "backgroundColor": "#0B2545"
     },
     "experiments": {
       "baseUrl": "/pstar-prep"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3bd0e9f3-a693-4844-9b4e-931e482fdada"
+      }
+    },
+    "owner": "wonmor"
   }
 }
