@@ -1,6 +1,6 @@
 # Privacy Policy — PSTAR & ROC-A Trainer
 
-_Last updated: 2026-07-07_
+_Last updated: 2026-10-20_
 
 PSTAR & ROC-A Trainer ("the app") is an independent study aid for Canada's PSTAR
 aviation regulations examination and the ROC-A aeronautical radio operator
@@ -8,9 +8,18 @@ certificate.
 
 ## What we collect
 
-**Nothing.** The app does not collect, transmit, or share any personal
-information. There are no user accounts, no analytics, no advertising, and no
-third‑party tracking SDKs.
+The app does not collect personal information. There are no user accounts, no
+analytics, no advertising, and no third‑party tracking.
+
+**In‑app purchases (iOS & Android only).** If you buy or restore PSTAR Pro,
+payment is handled entirely by Apple (App Store) or Google (Google Play). We use
+RevenueCat, Inc. to validate purchases and check whether Pro is active. For that,
+RevenueCat receives an anonymous, randomly generated app user ID, your purchase
+history for this app (product, price, date, store receipt) and basic device
+information (OS, app version, country/storefront). It is not linked to your name
+or email and is not used for tracking or advertising. See RevenueCat's privacy
+policy: https://www.revenuecat.com/privacy. We never see your payment details.
+The web version has no payments and makes no such requests.
 
 ## Data stored on your device
 
@@ -21,9 +30,10 @@ device. Deleting the app removes it.
 
 ## Network use
 
-The only network requests the app can make are when you tap a link to view an
-official source document (Transport Canada TP 11919E or ISED RIC-21), which opens
-in your browser.
+Apart from purchase validation (above), the only network requests the app makes
+are when you tap a link to view an official source document (Transport Canada TP
+11919E or ISED RIC-21), the privacy policy or the store listing, which open in
+your browser.
 
 ## Children's privacy
 
