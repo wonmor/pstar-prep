@@ -1,24 +1,38 @@
-import React, { useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { shuffleOptions } from '../data';
 import { useExam } from '../exam';
+import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, font, radius, space } from '../theme';
-import { Button, OptionRow, Pill, ProgressBar } from '../components/ui';
+import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
+import { Button, FlowBar, Glyph, IconButton, OptionRow } from '../components/ui';
 
 export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   const nav = useNav();
   const { buildQuiz, sectionName } = useExam();
   const { recordAnswer, recordExam, toggleBookmark } = useActions();
+  const gate = useGate();
   const progress = useProgress();
   const isExam = scope === 'exam';
+  const insets = useSafeAreaInsets();
 
   // Prepare questions + a stable shuffled option order, once per session.
   const prepared = useMemo(() => {
     return buildQuiz(scope).map((q) => ({ q, opts: shuffleOptions(q) }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scope]);
+
+  // A started mock exam uses up the free tier's daily mock (no-op for Pro).
+  const counted = useRef(false);
+  useEffect(() => {
+    if (isExam && !counted.current) {
+      counted.current = true;
+      gate.noteMock();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [idx, setIdx] = useState(0);
   // selected shuffled-option index per question (-1 = unanswered)
@@ -31,6 +45,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   const picked = picks[idx];
   const showFeedback = !isExam && revealed;
   const bookmarked = progress.bookmarks.includes(cur.q.id);
+  const isRight = picked === cur.opts.correctIndex;
 
   function choose(optionIndex: number) {
     if (isExam) {
@@ -78,30 +93,38 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
 
   return (
     <View style={styles.root}>
-      {/* App bar */}
-      <View style={styles.bar}>
-        <Pressable onPress={nav.back} hitSlop={10} style={styles.barBtn}>
-          <Text style={styles.barBtnText}>✕</Text>
-        </Pressable>
-        <View style={{ flex: 1, paddingHorizontal: space.md }}>
-          <ProgressBar value={(idx + (revealed || isExam ? 1 : 0)) / total} />
-        </View>
-        <Pressable onPress={() => toggleBookmark(cur.q.id)} hitSlop={10} style={styles.barBtn}>
-          <Text style={[styles.barBtnText, { fontSize: 18 }]}>{bookmarked ? '★' : '☆'}</Text>
-        </Pressable>
-      </View>
+      <FlowBar
+        onClose={nav.back}
+        closeLabel={isExam ? 'Quit mock exam' : 'Quit practice'}
+        progress={(idx + (revealed || isExam ? 1 : 0)) / total}
+        right={
+          <IconButton
+            glyphText={bookmarked ? glyph.star : glyph.starOpen}
+            color={bookmarked ? colors.red : colors.ink}
+            label={bookmarked ? 'Remove bookmark' : 'Bookmark question'}
+            onPress={() => toggleBookmark(cur.q.id)}
+          />
+        }
+      />
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.metaRow}>
-          <Pill label={isExam ? 'MOCK EXAM' : sectionName(cur.q.section).toUpperCase()} tone="sky" />
-          <Text style={font.mute}>
-            {idx + 1} / {total}
+          <Text style={styles.kicker} numberOfLines={1}>
+            {isExam ? 'MOCK EXAM' : sectionName(cur.q.section).toUpperCase()}
+          </Text>
+          <Text style={styles.counter} accessibilityLabel={`Question ${idx + 1} of ${total}`}>
+            <Text style={{ color: isExam ? colors.red : colors.blue }}>
+              {String(idx + 1).padStart(2, '0')}
+            </Text>
+            <Text style={{ color: colors.inkSoft }}>/{total}</Text>
           </Text>
         </View>
 
-        <Text style={styles.question}>{cur.q.question}</Text>
+        <Text style={styles.question} accessibilityRole="header">
+          {cur.q.question}
+        </Text>
 
-        <View style={{ gap: 10, marginTop: space.lg }}>
+        <View style={{ gap: space.sm, marginTop: space.xl }}>
           {cur.opts.labels.map((label, i) => (
             <OptionRow
               key={i}
@@ -117,22 +140,20 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
 
         {showFeedback && (
           <View
-            style={[
-              styles.feedback,
-              { backgroundColor: picked === cur.opts.correctIndex ? colors.greenSoft : colors.redSoft },
-            ]}
+            style={[styles.feedback, { borderLeftColor: isRight ? colors.blue : colors.red }]}
+            accessibilityLiveRegion="polite"
           >
-            <Text
-              style={[
-                styles.feedbackTitle,
-                { color: picked === cur.opts.correctIndex ? colors.green : colors.red },
-              ]}
-            >
-              {picked === cur.opts.correctIndex ? '✓ Correct' : '✕ Not quite'}
-            </Text>
+            <View style={styles.feedbackHead}>
+              <Glyph size={30} color={isRight ? colors.blue : colors.red}>
+                {isRight ? glyph.check : glyph.close}
+              </Glyph>
+              <Text style={[styles.feedbackTitle, { color: isRight ? colors.blue : colors.red }]}>
+                {isRight ? 'Correct' : 'Not quite'}
+              </Text>
+            </View>
             {cur.q.reference ? (
               <Text style={styles.refText}>
-                <Text style={{ fontWeight: '700' }}>Reference: </Text>
+                <Text style={{ fontFamily: fonts.bold, color: colors.ink }}>REFERENCE </Text>
                 {cur.q.reference}
               </Text>
             ) : null}
@@ -140,21 +161,20 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
         )}
       </ScrollView>
 
-      {/* Footer */}
-      <View style={styles.footer}>
+      <View style={[styles.footer, { paddingBottom: Math.max(insets.bottom, space.lg) }]}>
         {isExam ? (
           <View style={styles.footRow}>
             <Button
               label="Back"
               variant="ghost"
-              small
               disabled={idx === 0}
               onPress={() => setIdx(Math.max(0, idx - 1))}
               style={{ flex: 1 }}
             />
             <Button
-              label={idx === total - 1 ? `Submit (${answeredCount}/${total})` : 'Next'}
-              variant={idx === total - 1 ? 'success' : 'primary'}
+              label={idx === total - 1 ? `Submit ${answeredCount}/${total}` : 'Next'}
+              variant={idx === total - 1 ? 'red' : 'primary'}
+              trailing={glyph.arrow}
               onPress={idx === total - 1 ? finish : () => setIdx(idx + 1)}
               style={{ flex: 2 }}
             />
@@ -163,6 +183,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
           <Button
             label={revealed ? (idx === total - 1 ? 'See results' : 'Next question') : 'Select an answer'}
             variant={revealed ? 'primary' : 'ghost'}
+            trailing={revealed ? glyph.arrow : undefined}
             disabled={!revealed}
             onPress={next}
           />
@@ -172,28 +193,36 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   );
 }
 
-const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: colors.bg },
-  bar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: space.md,
-    paddingVertical: space.sm,
-  },
-  barBtn: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
-  barBtnText: { fontSize: 20, color: colors.navy, fontWeight: '700' },
-  content: { padding: space.lg, paddingBottom: 24 },
-  metaRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  question: { fontSize: 20, fontWeight: '700', color: colors.text, lineHeight: 28, marginTop: space.md },
-  feedback: { borderRadius: radius.md, padding: space.md, marginTop: space.lg },
-  feedbackTitle: { fontSize: 15, fontWeight: '800' },
-  refText: { fontSize: 13, color: colors.textMute, lineHeight: 19, marginTop: 6 },
-  footer: {
-    padding: space.lg,
-    paddingTop: space.md,
-    borderTopWidth: 1,
-    borderTopColor: colors.border,
-    backgroundColor: colors.card,
-  },
-  footRow: { flexDirection: 'row', gap: space.md },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    root: { flex: 1, backgroundColor: colors.paper },
+    content: { padding: space.lg, paddingBottom: 24 },
+    metaRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', gap: space.md },
+    kicker: { ...type.kicker, flex: 1 },
+    counter: { fontFamily: fonts.black, fontSize: 28, letterSpacing: -1 },
+    question: {
+      fontFamily: fonts.bold,
+      fontSize: 22,
+      lineHeight: 29,
+      color: colors.ink,
+      marginTop: space.md,
+    },
+    feedback: {
+      borderLeftWidth: rule.heavy,
+      paddingLeft: space.md,
+      paddingVertical: space.xs,
+      marginTop: space.xl,
+    },
+    feedbackHead: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
+    feedbackTitle: { fontFamily: fonts.black, fontSize: 22, textTransform: 'uppercase', letterSpacing: 1 },
+    refText: { fontFamily: fonts.regular, fontSize: 14, color: colors.inkSoft, lineHeight: 20, marginTop: 6 },
+    footer: {
+      padding: space.lg,
+      paddingTop: space.md,
+      borderTopWidth: rule.thick,
+      borderTopColor: colors.ink,
+      backgroundColor: colors.paper,
+    },
+    footRow: { flexDirection: 'row', gap: space.md },
+  }),
+);

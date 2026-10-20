@@ -1,44 +1,58 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
+import { useGate } from '../entitlements';
 import { useProgress } from '../storage';
-import { colors, radius, space } from '../theme';
+import { colors, fonts, rule, space, themed } from '../theme';
+import { Glyph, LockTag, ProgressBar } from './ui';
 
-// A tappable list of the active exam's sections, each showing count + mastery.
-export function SectionList({ onPick }: { onPick: (sectionId: number) => void }) {
+// The active exam's sections as a ruled index: big numeral · name · mastery.
+// Locked sections (free tier) show ■ PRO and open the paywall instead.
+export function SectionList({
+  onPick,
+  onLocked,
+}: {
+  onPick: (sectionId: number) => void;
+  onLocked: (sectionId: number) => void;
+}) {
   const p = useProgress();
-  const { SECTIONS, countForSection } = useExam();
+  const { SECTIONS, questionsForSection } = useExam();
+  const gate = useGate();
   return (
-    <View style={{ gap: 10 }}>
+    <View style={styles.list}>
       {SECTIONS.map((s) => {
-        const total = countForSection(s.id);
-        const ids = Array.from({ length: total }, (_, i) => `${s.id}.${String(i + 1).padStart(2, '0')}`);
-        const correct = ids.filter((id) => p.stats[id]?.lastCorrect).length;
+        const qs = questionsForSection(s.id);
+        const total = qs.length;
+        const correct = qs.filter((q) => p.stats[q.id]?.lastCorrect).length;
         const pct = total ? correct / total : 0;
+        const open = gate.canSection(s.id);
+        const num = String(s.id).padStart(2, '0');
         return (
           <Pressable
             key={s.id}
-            onPress={() => onPick(s.id)}
-            style={({ pressed }) => [styles.row, pressed && { opacity: 0.9 }]}
+            onPress={() => (open ? onPick(s.id) : onLocked(s.id))}
+            accessibilityRole="button"
+            accessibilityLabel={`Section ${s.id}, ${s.name}, ${total} questions, ${Math.round(pct * 100)} percent${open ? '' : ', locked, Pro only'}`}
+            style={({ pressed }) => [styles.row, pressed && { backgroundColor: colors.paperDeep }]}
           >
-            <View style={styles.num}>
-              <Text style={styles.numText}>{s.id}</Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.name}>{s.name}</Text>
-              <View style={styles.barTrack}>
-                <View
-                  style={[
-                    styles.barFill,
-                    { width: `${pct * 100}%`, backgroundColor: pct >= 0.9 ? colors.green : colors.blueBright },
-                  ]}
-                />
-              </View>
+            <Glyph
+              size={30}
+              color={open ? (pct >= 0.9 ? colors.blue : colors.ink) : colors.inkSoft}
+              style={styles.num}
+            >
+              {num}
+            </Glyph>
+            <View style={{ flex: 1, gap: 6 }}>
+              <Text style={[styles.name, !open && { color: colors.inkSoft }]}>{s.name}</Text>
+              {open ? <ProgressBar value={pct} color={pct >= 0.9 ? colors.blue : colors.red} /> : <LockTag />}
             </View>
             <View style={styles.meta}>
-              <Text style={styles.metaCount}>{total} Qs</Text>
-              <Text style={styles.metaPct}>{total ? `${Math.round(pct * 100)}%` : '—'}</Text>
+              <Text style={styles.metaPct}>{open ? (total ? `${Math.round(pct * 100)}%` : '—') : ''}</Text>
+              <Text style={styles.metaCount}>{total} Q</Text>
             </View>
+            <Glyph size={18} color={open ? colors.ink : colors.inkSoft}>
+              {open ? '→' : '■'}
+            </Glyph>
           </Pressable>
         );
       })}
@@ -46,36 +60,23 @@ export function SectionList({ onPick }: { onPick: (sectionId: number) => void })
   );
 }
 
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-    padding: space.md,
-    gap: space.md,
-  },
-  num: {
-    width: 34,
-    height: 34,
-    borderRadius: 10,
-    backgroundColor: colors.sky,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  numText: { color: colors.blue, fontWeight: '800', fontSize: 15 },
-  name: { fontSize: 14, fontWeight: '700', color: colors.text },
-  barTrack: {
-    height: 5,
-    borderRadius: 99,
-    backgroundColor: colors.skyLine,
-    marginTop: 7,
-    overflow: 'hidden',
-  },
-  barFill: { height: 5, borderRadius: 99 },
-  meta: { alignItems: 'flex-end', minWidth: 44 },
-  metaCount: { fontSize: 11, color: colors.textFaint, fontWeight: '600' },
-  metaPct: { fontSize: 14, color: colors.navy, fontWeight: '800', marginTop: 2 },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    list: { borderTopWidth: rule.thick, borderTopColor: colors.ink },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      minHeight: 64,
+      paddingVertical: space.md,
+      paddingRight: space.xs,
+      gap: space.md,
+      borderBottomWidth: rule.hair,
+      borderBottomColor: colors.ink,
+    },
+    num: { width: 46, letterSpacing: -1 },
+    name: { fontFamily: fonts.bold, fontSize: 15, lineHeight: 19, color: colors.ink },
+    meta: { alignItems: 'flex-end', minWidth: 40 },
+    metaPct: { fontFamily: fonts.heavy, fontSize: 15, color: colors.ink },
+    metaCount: { fontFamily: fonts.medium, fontSize: 12, color: colors.inkSoft },
+  }),
+);

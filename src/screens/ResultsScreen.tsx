@@ -1,9 +1,11 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
+import { useGate } from '../entitlements';
 import { useNav } from '../nav';
-import { colors, font, radius, shadow, space } from '../theme';
-import { Button, Card, OptionRow } from '../components/ui';
+import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
+import { Button, Glyph, OptionRow, Rule } from '../components/ui';
+import { ProBanner } from '../components/ProBanner';
 
 export default function ResultsScreen({
   scope,
@@ -19,49 +21,73 @@ export default function ResultsScreen({
   wrongIds: string[];
 }) {
   const nav = useNav();
+  const gate = useGate();
   const { QUESTIONS, PASS_PCT } = useExam();
   const restart = () => {
     nav.resetTab('quizSetup');
-    nav.push({ name: 'quiz', scope });
+    if (isExam && !gate.canMock) nav.push({ name: 'paywall', reason: 'mock' });
+    else nav.push({ name: 'quiz', scope });
   };
   const pct = Math.round((correct / total) * 100);
   const passed = pct >= PASS_PCT;
   const wrong = QUESTIONS.filter((q) => wrongIds.includes(q.id));
+  const bg = passed ? colors.blue : colors.ink;
 
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-      <View style={[styles.scoreCard, { backgroundColor: passed ? colors.green : colors.navy }]}>
-        <Text style={styles.scoreEmoji}>{passed ? '🎉' : '✈️'}</Text>
-        <Text style={styles.scoreBig}>{pct}%</Text>
+      <View
+        style={[styles.score, { backgroundColor: bg }]}
+        accessible
+        accessibilityLabel={`Score ${pct} percent. ${correct} of ${total} correct.${isExam ? (passed ? ' Pass.' : ' Below pass mark.') : ''}`}
+      >
+        <View style={styles.scoreTop}>
+          <Text style={styles.scoreKicker}>{isExam ? 'MOCK EXAM RESULT' : 'PRACTICE RESULT'}</Text>
+          <Glyph size={30} color={passed ? colors.yellow : colors.red}>
+            {passed ? glyph.check : glyph.triangle}
+          </Glyph>
+        </View>
+        <Text style={styles.scoreBig} maxFontSizeMultiplier={1.2}>
+          {pct}
+          <Text style={styles.scorePct}>%</Text>
+        </Text>
+        <Rule color={colors.paper} weight={rule.mid} />
         <Text style={styles.scoreSub}>
           {correct} of {total} correct
         </Text>
         {isExam && (
-          <View style={styles.verdict}>
-            <Text style={styles.verdictText}>
-              {passed ? `PASS · ${PASS_PCT}% required` : `Below ${PASS_PCT}% pass mark — keep studying`}
-            </Text>
-          </View>
+          <Text style={[styles.verdict, { color: colors.paper }]}>
+            {passed
+              ? `PASS ${glyph.dot} ${PASS_PCT}% REQUIRED`
+              : `BELOW ${PASS_PCT}% PASS MARK ${glyph.dot} KEEP STUDYING`}
+          </Text>
         )}
       </View>
 
       <View style={styles.actions}>
-        <Button label="Try again" variant="primary" onPress={restart} style={{ flex: 1 }} />
+        <Button
+          label="Try again"
+          variant="red"
+          trailing={glyph.refresh}
+          onPress={restart}
+          style={{ flex: 1 }}
+        />
         <Button label="Home" variant="ghost" onPress={() => nav.resetTab('home')} style={{ flex: 1 }} />
       </View>
 
+      {!gate.isPro && <ProBanner reason="results" style={{ marginTop: space.xl }} />}
+
       {wrong.length > 0 ? (
         <>
-          <Text style={[font.h2, { marginTop: space.lg }]}>Review your misses</Text>
-          <Text style={[font.mute, { marginBottom: space.md }]}>
-            {wrong.length} to revisit — correct answer marked in green.
+          <Text style={[type.h2, { marginTop: space.xxl }]}>Review your misses</Text>
+          <Text style={[type.mute, { marginBottom: space.md }]}>
+            {wrong.length} to revisit — correct answer marked {glyph.check}.
           </Text>
-          <View style={{ gap: space.md }}>
+          <View style={{ gap: space.xl }}>
             {wrong.map((q) => (
-              <Card key={q.id} style={{ padding: space.md }}>
+              <View key={q.id} style={styles.miss}>
                 <Text style={styles.qNum}>Q {q.id}</Text>
                 <Text style={styles.qText}>{q.question}</Text>
-                <View style={{ gap: 8, marginTop: 10 }}>
+                <View style={{ gap: space.sm, marginTop: space.md }}>
                   {q.options.map((opt, i) => (
                     <OptionRow
                       key={i}
@@ -72,43 +98,61 @@ export default function ResultsScreen({
                     />
                   ))}
                 </View>
-                {q.reference ? <Text style={styles.ref}>📖 {q.reference}</Text> : null}
-              </Card>
+                {q.reference ? (
+                  <Text style={styles.ref}>
+                    REF {glyph.dot} {q.reference}
+                  </Text>
+                ) : null}
+              </View>
             ))}
           </View>
         </>
       ) : (
-        <Card style={{ alignItems: 'center', marginTop: space.lg }}>
-          <Text style={{ fontSize: 40 }}>🥇</Text>
-          <Text style={[font.h3, { marginTop: 8 }]}>Perfect run — nothing to review!</Text>
-        </Card>
+        <View style={styles.perfect}>
+          <Glyph size={64} color={colors.blue}>
+            {glyph.check}
+          </Glyph>
+          <Text style={type.h3}>Perfect run — nothing to review.</Text>
+        </View>
       )}
       <View style={{ height: 20 }} />
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  content: { padding: space.lg, paddingBottom: 40 },
-  scoreCard: {
-    borderRadius: radius.xl,
-    padding: space.xl,
-    alignItems: 'center',
-    ...shadow.float,
-  },
-  scoreEmoji: { fontSize: 40 },
-  scoreBig: { color: colors.white, fontSize: 56, fontWeight: '900', marginTop: 4 },
-  scoreSub: { color: 'rgba(255,255,255,0.85)', fontSize: 15, fontWeight: '600' },
-  verdict: {
-    marginTop: 14,
-    backgroundColor: 'rgba(255,255,255,0.18)',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: radius.pill,
-  },
-  verdictText: { color: colors.white, fontWeight: '800', fontSize: 13, letterSpacing: 0.3 },
-  actions: { flexDirection: 'row', gap: space.md, marginTop: space.lg },
-  qNum: { fontSize: 11, fontWeight: '800', color: colors.blue, letterSpacing: 0.5 },
-  qText: { fontSize: 15, fontWeight: '700', color: colors.text, marginTop: 4, lineHeight: 21 },
-  ref: { fontSize: 12, color: colors.textMute, marginTop: 10, lineHeight: 18 },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    content: { padding: space.lg, paddingBottom: 40 },
+    score: { padding: space.xl },
+    scoreTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+    scoreKicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.paper },
+    scoreBig: {
+      fontFamily: fonts.black,
+      fontSize: 120,
+      lineHeight: 120,
+      color: colors.paper,
+      letterSpacing: -5,
+    },
+    scorePct: { fontSize: 48, letterSpacing: 0 },
+    scoreSub: { fontFamily: fonts.bold, fontSize: 17, color: colors.paper, marginTop: space.sm },
+    verdict: { fontFamily: fonts.heavy, fontSize: 13, letterSpacing: 1.5, marginTop: space.sm },
+    actions: { flexDirection: 'row', gap: space.md, marginTop: space.lg },
+    miss: { borderTopWidth: rule.thick, borderTopColor: colors.ink, paddingTop: space.md },
+    qNum: { ...type.kicker, color: colors.red },
+    qText: { fontFamily: fonts.bold, fontSize: 17, color: colors.ink, marginTop: 4, lineHeight: 23 },
+    ref: {
+      fontFamily: fonts.regular,
+      fontSize: 13,
+      color: colors.inkSoft,
+      marginTop: space.md,
+      lineHeight: 19,
+    },
+    perfect: {
+      alignItems: 'center',
+      gap: space.sm,
+      marginTop: space.xl,
+      borderTopWidth: rule.thick,
+      paddingTop: space.lg,
+    },
+  }),
+);

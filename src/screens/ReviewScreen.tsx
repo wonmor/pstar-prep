@@ -2,19 +2,48 @@ import React, { useMemo, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { type Question } from '../data';
 import { useExam } from '../exam';
+import { useGate } from '../entitlements';
+import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, font, radius, space } from '../theme';
-import { OptionRow } from '../components/ui';
+import { colors, fonts, glyph, rule, space, TOUCH, type, themed } from '../theme';
+import { Glyph, IconButton, OptionRow, ScreenHeader } from '../components/ui';
+import { ProBanner } from '../components/ProBanner';
 
 type Filter = 'all' | 'bookmarks' | number;
 
-function Chip({ label, active, onPress }: { label: string; active: boolean; onPress: () => void }) {
+function Chip({
+  label,
+  active,
+  locked,
+  onPress,
+}: {
+  label: string;
+  active: boolean;
+  locked?: boolean;
+  onPress: () => void;
+}) {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.chip, active ? styles.chipOn : styles.chipOff]}
+      accessibilityRole="button"
+      accessibilityLabel={`${label}${locked ? ', locked, Pro only' : ''}`}
+      accessibilityState={{ selected: active }}
+      style={({ pressed }) => [
+        styles.chip,
+        active && styles.chipOn,
+        pressed && !active && { backgroundColor: colors.paperDeep },
+      ]}
     >
-      <Text style={[styles.chipText, { color: active ? colors.white : colors.blue }]}>{label}</Text>
+      {locked ? (
+        <Glyph size={11} color={colors.red}>
+          {glyph.lock}
+        </Glyph>
+      ) : null}
+      <Text
+        style={[styles.chipText, { color: active ? colors.paper : locked ? colors.inkSoft : colors.ink }]}
+      >
+        {label}
+      </Text>
     </Pressable>
   );
 }
@@ -27,28 +56,38 @@ function QuestionCard({ q }: { q: Question }) {
     <View style={styles.card}>
       <View style={styles.cardHead}>
         <Text style={styles.qNum}>Q {q.id}</Text>
-        <Pressable onPress={() => toggleBookmark(q.id)} hitSlop={10}>
-          <Text style={[styles.star, marked && { color: colors.amber }]}>{marked ? '★' : '☆'}</Text>
-        </Pressable>
+        <IconButton
+          glyphText={marked ? glyph.star : glyph.starOpen}
+          color={marked ? colors.red : colors.ink}
+          size={22}
+          label={marked ? `Remove bookmark from question ${q.id}` : `Bookmark question ${q.id}`}
+          onPress={() => toggleBookmark(q.id)}
+        />
       </View>
       <Text style={styles.qText}>{q.question}</Text>
-      <View style={{ gap: 8, marginTop: 10 }}>
+      <View style={{ gap: space.sm, marginTop: space.md }}>
         {q.options.map((opt, i) => (
           <OptionRow key={i} index={i} text={opt} state={i === q.answer - 1 ? 'correct' : 'idle'} disabled />
         ))}
       </View>
-      {q.reference ? <Text style={styles.ref}>📖 {q.reference}</Text> : null}
+      {q.reference ? (
+        <Text style={styles.ref}>
+          REF {glyph.dot} {q.reference}
+        </Text>
+      ) : null}
     </View>
   );
 }
 
 export default function ReviewScreen({ initialSection }: { initialSection?: number | 'bookmarks' }) {
+  const nav = useNav();
   const progress = useProgress();
+  const gate = useGate();
   const { QUESTIONS, SECTIONS } = useExam();
   const [filter, setFilter] = useState<Filter>(initialSection ?? 'all');
   const [query, setQuery] = useState('');
 
-  const data = useMemo(() => {
+  const { data, hidden } = useMemo(() => {
     let list = QUESTIONS;
     if (filter === 'bookmarks') list = list.filter((q) => progress.bookmarks.includes(q.id));
     else if (typeof filter === 'number') list = list.filter((q) => q.section === filter);
@@ -61,30 +100,34 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
           q.id.includes(term),
       );
     }
-    return list;
-  }, [QUESTIONS, filter, query, progress.bookmarks]);
+    const visible = gate.visible(list);
+    return { data: visible, hidden: list.length - visible.length };
+  }, [QUESTIONS, filter, query, progress.bookmarks, gate]);
+
+  const pickSection = (id: number) =>
+    gate.canSection(id) ? setFilter(id) : nav.push({ name: 'paywall', reason: 'section' });
 
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <Text style={font.h1}>Answer Key</Text>
-        <Text style={[font.mute, { marginTop: 2 }]}>
-          Every question with the correct answer in green.
-        </Text>
+        <ScreenHeader
+          index="04"
+          title="Answer Key"
+          accent="blue"
+          sub={`Every question with the correct answer marked ${glyph.check}.`}
+        />
         <View style={styles.search}>
-          <Text style={{ color: colors.textFaint, fontSize: 15 }}>🔍</Text>
           <TextInput
             value={query}
             onChangeText={setQuery}
             placeholder="Search questions…"
-            placeholderTextColor={colors.textFaint}
+            placeholderTextColor={colors.inkSoft}
             style={styles.searchInput}
             returnKeyType="search"
+            accessibilityLabel="Search questions"
           />
           {query ? (
-            <Pressable onPress={() => setQuery('')} hitSlop={8}>
-              <Text style={{ color: colors.textFaint, fontSize: 16 }}>✕</Text>
-            </Pressable>
+            <IconButton glyphText={glyph.close} size={18} label="Clear search" onPress={() => setQuery('')} />
           ) : null}
         </View>
       </View>
@@ -96,11 +139,13 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.listContent}
         keyboardShouldPersistTaps="handled"
+        initialNumToRender={6}
+        windowSize={7}
         ListHeaderComponent={
           <View style={styles.chipsWrap}>
             <Chip label="All" active={filter === 'all'} onPress={() => setFilter('all')} />
             <Chip
-              label={`★ Saved (${progress.bookmarks.length})`}
+              label={`${glyph.star} Saved ${progress.bookmarks.length}`}
               active={filter === 'bookmarks'}
               onPress={() => setFilter('bookmarks')}
             />
@@ -109,55 +154,82 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
                 key={s.id}
                 label={`${s.id}. ${s.name}`}
                 active={filter === s.id}
-                onPress={() => setFilter(s.id)}
+                locked={!gate.canSection(s.id)}
+                onPress={() => pickSection(s.id)}
               />
             ))}
           </View>
         }
+        ListFooterComponent={
+          hidden > 0 ? (
+            <View style={{ marginTop: space.md }}>
+              <Text style={[type.mute, { marginBottom: space.sm }]}>
+                {glyph.lock} {hidden} more {hidden === 1 ? 'answer' : 'answers'} in locked sections.
+              </Text>
+              <ProBanner reason="answers" />
+            </View>
+          ) : null
+        }
         ListEmptyComponent={
-          <View style={styles.emptyState}>
-            <Text style={{ fontSize: 34 }}>🔎</Text>
-            <Text style={[font.mute, { marginTop: 8 }]}>No questions match.</Text>
-          </View>
+          hidden > 0 ? null : (
+            <View style={styles.emptyState}>
+              <Glyph size={56} color={colors.red}>
+                {glyph.close}
+              </Glyph>
+              <Text style={[type.mute, { marginTop: 8 }]}>No questions match.</Text>
+            </View>
+          )
         }
       />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: colors.bg },
-  header: { paddingHorizontal: space.lg, paddingTop: space.md, paddingBottom: space.sm },
-  search: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    backgroundColor: colors.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-    paddingHorizontal: space.md,
-    marginTop: space.md,
-  },
-  searchInput: { flex: 1, paddingVertical: 11, fontSize: 15, color: colors.text },
-  chipsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, paddingBottom: space.md },
-  chip: { paddingVertical: 7, paddingHorizontal: 13, borderRadius: radius.pill, borderWidth: 1 },
-  chipOn: { backgroundColor: colors.blueBright, borderColor: colors.blueBright },
-  chipOff: { backgroundColor: colors.card, borderColor: colors.skyLine },
-  chipText: { fontSize: 12.5, fontWeight: '700' },
-  listContent: { paddingHorizontal: space.lg, paddingBottom: 40 },
-  card: {
-    backgroundColor: colors.card,
-    borderRadius: radius.lg,
-    borderWidth: 1,
-    borderColor: colors.border,
-    padding: space.md,
-    marginBottom: space.md,
-  },
-  cardHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  qNum: { fontSize: 11, fontWeight: '800', color: colors.blue, letterSpacing: 0.5 },
-  star: { fontSize: 20, color: colors.textFaint },
-  qText: { fontSize: 16, fontWeight: '700', color: colors.text, marginTop: 4, lineHeight: 22 },
-  ref: { fontSize: 12, color: colors.textMute, marginTop: 10, lineHeight: 18 },
-  emptyState: { alignItems: 'center', paddingVertical: 60 },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    root: { flex: 1, backgroundColor: colors.paper },
+    header: { paddingHorizontal: space.lg, paddingTop: space.lg },
+    search: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: space.sm,
+      borderWidth: rule.mid,
+      borderColor: colors.ink,
+      paddingLeft: space.md,
+      minHeight: TOUCH + 4,
+      marginBottom: space.md,
+    },
+    searchInput: { flex: 1, paddingVertical: 10, fontSize: 16, fontFamily: fonts.medium, color: colors.ink },
+    chipsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: space.sm, paddingBottom: space.lg },
+    chip: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      minHeight: TOUCH,
+      paddingVertical: 6,
+      paddingHorizontal: 10,
+      borderWidth: rule.mid,
+      borderColor: colors.ink,
+    },
+    chipOn: { backgroundColor: colors.ink },
+    chipText: { fontFamily: fonts.bold, fontSize: 13 },
+    listContent: { paddingHorizontal: space.lg, paddingBottom: 40 },
+    card: {
+      borderTopWidth: rule.thick,
+      borderTopColor: colors.ink,
+      paddingTop: space.xs,
+      marginBottom: space.xl,
+    },
+    cardHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+    qNum: { ...type.kicker, color: colors.blue },
+    qText: { fontFamily: fonts.bold, fontSize: 17, color: colors.ink, lineHeight: 23 },
+    ref: {
+      fontFamily: fonts.regular,
+      fontSize: 13,
+      color: colors.inkSoft,
+      marginTop: space.md,
+      lineHeight: 19,
+    },
+    emptyState: { alignItems: 'center', paddingVertical: 60 },
+  }),
+);

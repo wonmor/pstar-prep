@@ -2,26 +2,36 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useExam, useSetExam } from '../exam';
 import { EXAM_ORDER, EXAMS } from '../exams';
-import { colors, radius, space } from '../theme';
+import { colors, fonts, rule, TOUCH, themed } from '../theme';
+import { Glyph } from './ui';
 
-// Segmented control that switches the active exam (PSTAR / ROC-A). The whole
-// app re-renders against the newly selected exam's data and progress.
+// Two-cell switch for the active exam (PSTAR / ROC-A). A strict grid: equal
+// cells, thick ink frame, the active cell inverted to ink.
 export function ExamSwitch({ style }: { style?: any }) {
   const { id } = useExam();
   const setExam = useSetExam();
   return (
-    <View style={[styles.wrap, style]}>
-      {EXAM_ORDER.map((exam) => {
+    <View style={[styles.wrap, style]} accessibilityRole="radiogroup">
+      {EXAM_ORDER.map((exam, i) => {
         const on = exam === id;
         return (
           <Pressable
             key={exam}
             onPress={() => setExam(exam)}
-            style={[styles.seg, on && styles.segOn]}
-            accessibilityRole="button"
-            accessibilityState={{ selected: on }}
+            style={({ pressed }) => [
+              styles.seg,
+              i > 0 && styles.segDivider,
+              on && styles.segOn,
+              pressed && !on && { backgroundColor: colors.paperDeep },
+            ]}
+            accessibilityRole="radio"
+            accessibilityLabel={`${EXAMS[exam].shortName} exam`}
+            accessibilityState={{ selected: on, checked: on }}
           >
-            <Text style={[styles.label, { color: on ? colors.white : colors.blue }]}>
+            <Glyph size={14} color={on ? colors.yellow : colors.inkSoft}>
+              {on ? '●' : '○'}
+            </Glyph>
+            <Text style={[styles.label, { color: on ? colors.paper : colors.ink }]}>
               {EXAMS[exam].shortName}
             </Text>
           </Pressable>
@@ -31,21 +41,20 @@ export function ExamSwitch({ style }: { style?: any }) {
   );
 }
 
-const styles = StyleSheet.create({
-  wrap: {
-    flexDirection: 'row',
-    backgroundColor: colors.sky,
-    borderRadius: radius.pill,
-    padding: 4,
-    gap: 4,
-  },
-  seg: {
-    flex: 1,
-    paddingVertical: 8,
-    borderRadius: radius.pill,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  segOn: { backgroundColor: colors.blueBright },
-  label: { fontSize: 13, fontWeight: '800', letterSpacing: 0.3 },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    wrap: { flexDirection: 'row', borderWidth: rule.mid, borderColor: colors.ink },
+    seg: {
+      flex: 1,
+      minHeight: TOUCH,
+      flexDirection: 'row',
+      gap: 8,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.paper,
+    },
+    segDivider: { borderLeftWidth: rule.mid, borderLeftColor: colors.ink },
+    segOn: { backgroundColor: colors.ink },
+    label: { fontFamily: fonts.heavy, fontSize: 15, letterSpacing: 2 },
+  }),
+);

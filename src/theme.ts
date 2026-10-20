@@ -1,52 +1,126 @@
-// Central design tokens — aviation / Transport-Canada inspired palette.
-export const colors = {
-  navy: '#0B2545',
-  navySoft: '#13315C',
-  blue: '#1B6CA8',
-  blueBright: '#2E86DE',
-  sky: '#EAF2FB',
-  skyLine: '#D4E4F7',
-  bg: '#F4F7FB',
-  card: '#FFFFFF',
-  text: '#0B2545',
-  textMute: '#5A6B82',
-  textFaint: '#8A99AE',
-  green: '#16A34A',
-  greenSoft: '#E7F7EE',
-  red: '#E5484D',
-  redSoft: '#FDECEC',
-  amber: '#E8A30C',
-  amberSoft: '#FCF3DC',
-  border: '#E2E9F2',
-  shadow: '#0B2545',
+// Bauhaus design tokens.
+// Flat primaries, a black (default) or off-white ground, heavy geometric type
+// (Jost — a Futura-like grotesk). No gradients, no soft shadows, no rounded
+// cards: structure comes from a strict grid, thick rules and typographic glyphs.
+// Every text/background pair is ≥ 4.5:1 (WCAG AA) in both modes.
+// Two Bauhaus palettes that share token names. `paper` is always the ground
+// and `ink` the foreground, so a block "inverted to ink" works in both.
+// Black is the default; "Paper" (off-white) is selectable in About.
+export type ThemeMode = 'dark' | 'light';
+
+const light = {
+  paper: '#F3EEE3', // off-white ground
+  paperDeep: '#E8E1D2', // pressed / inset ground
+  ink: '#141414', // black — text + rules
+  inkSoft: '#5B574F', // secondary text (6.2:1 on paper)
+  red: '#C8231B', // 4.9:1 on paper; carries onAccent text at 5.7:1
+  blue: '#1D4E9E', // 6.9:1 on paper; onAccent 8.0:1
+  yellow: '#F2C230', // only behind onYellow text (11:1) or as a decorative glyph
+  onAccent: '#FFFFFF', // text on red / blue fills
+  onYellow: '#141414', // text on yellow, both modes
   white: '#FFFFFF',
+  backdrop: 'rgba(20,20,20,0.72)',
 };
 
-export const radius = { sm: 8, md: 12, lg: 18, xl: 26, pill: 999 };
+const dark: typeof light = {
+  paper: '#121212', // black ground
+  paperDeep: '#2A2A2A',
+  ink: '#F3EEE3', // off-white foreground (16:1)
+  inkSoft: '#B3AC9E', // 8.3:1
+  red: '#FF5B47', // 6.1:1 on black, black text on it 6.1:1
+  blue: '#6E9BEA', // 6.7:1
+  yellow: '#F2C230', // 11:1
+  onAccent: '#121212',
+  onYellow: '#141414',
+  white: '#FFFFFF',
+  backdrop: 'rgba(0,0,0,0.78)',
+};
+
+// Mutable: `applyTheme` swaps the values in place, then the app re-renders.
+export const colors = { ...dark };
+let themeVersion = 0;
+let currentMode: ThemeMode = 'dark';
+
+export function applyTheme(mode: ThemeMode) {
+  if (mode === currentMode) return;
+  currentMode = mode;
+  Object.assign(colors, mode === 'dark' ? dark : light);
+  themeVersion++;
+}
+export const themeMode = () => currentMode;
+
+// Lazily-built, theme-aware style objects: `themed(() => StyleSheet.create({...}))`
+// re-runs the factory after a theme switch, so module-level styles follow it.
+export function themed<T extends object>(factory: () => T): T {
+  let cache: T | null = null;
+  let builtFor = -1;
+  return new Proxy({} as T, {
+    get(_t, key) {
+      if (builtFor !== themeVersion || !cache) {
+        cache = factory();
+        builtFor = themeVersion;
+      }
+      return (cache as any)[key];
+    },
+  });
+}
+
+// Jost weights loaded in App.tsx. With custom fonts React Native ignores
+// `fontWeight` on Android, so each weight is its own family.
+export const fonts = {
+  regular: 'Jost_400Regular',
+  medium: 'Jost_500Medium',
+  bold: 'Jost_700Bold',
+  heavy: 'Jost_800ExtraBold',
+  black: 'Jost_900Black',
+};
+
 export const space = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32 };
 
-export const shadow = {
-  card: {
-    shadowColor: colors.shadow,
-    shadowOpacity: 0.08,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 6 },
-    elevation: 3,
-  },
-  float: {
-    shadowColor: colors.shadow,
-    shadowOpacity: 0.16,
-    shadowRadius: 24,
-    shadowOffset: { width: 0, height: 10 },
-    elevation: 8,
-  },
+// Rule weights — the Bauhaus "thick line" vocabulary.
+export const rule = { hair: 1, mid: 2, thick: 4, heavy: 8 };
+
+// Minimum touch target (Apple HIG / Material).
+export const TOUCH = 44;
+
+// Typographic glyphs used instead of drawn shapes. ︎ forces text (not
+// emoji) presentation where a platform might otherwise swap in a colour emoji.
+export const glyph = {
+  circle: '●',
+  square: '■',
+  triangle: '▲',
+  arrow: '→',
+  back: '←',
+  close: '✕',
+  check: '✓',
+  star: '★︎',
+  starOpen: '☆︎',
+  lock: '■', // locked content is marked with a solid square + the word LOCKED
+  open: '□',
+  plus: '+',
+  dot: '·',
+  slash: '/',
+  diamond: '◆',
+  refresh: '↺',
 };
 
-export const font = {
-  h1: { fontSize: 26, fontWeight: '800' as const, color: colors.text },
-  h2: { fontSize: 20, fontWeight: '700' as const, color: colors.text },
-  h3: { fontSize: 16, fontWeight: '700' as const, color: colors.text },
-  body: { fontSize: 15, fontWeight: '500' as const, color: colors.text },
-  mute: { fontSize: 13, fontWeight: '500' as const, color: colors.textMute },
-  tiny: { fontSize: 11, fontWeight: '600' as const, color: colors.textFaint },
-};
+export const type = themed(() => ({
+  display: { fontFamily: fonts.black, fontSize: 56, lineHeight: 56, color: colors.ink, letterSpacing: -1.5 },
+  h1: { fontFamily: fonts.black, fontSize: 34, lineHeight: 36, color: colors.ink, letterSpacing: -0.8 },
+  h2: { fontFamily: fonts.heavy, fontSize: 22, lineHeight: 26, color: colors.ink, letterSpacing: -0.3 },
+  h3: { fontFamily: fonts.bold, fontSize: 17, lineHeight: 22, color: colors.ink },
+  body: { fontFamily: fonts.medium, fontSize: 16, lineHeight: 23, color: colors.ink },
+  mute: { fontFamily: fonts.medium, fontSize: 14, lineHeight: 20, color: colors.inkSoft },
+  kicker: {
+    fontFamily: fonts.bold,
+    fontSize: 12,
+    lineHeight: 16,
+    letterSpacing: 2,
+    color: colors.ink,
+    textTransform: 'uppercase' as const,
+  },
+  tiny: { fontFamily: fonts.bold, fontSize: 11, lineHeight: 14, letterSpacing: 1.5, color: colors.inkSoft },
+}));
+
+// Back-compat name used by older imports.
+export const font = type;

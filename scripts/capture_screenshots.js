@@ -44,7 +44,7 @@ async function runTarget(browser, t) {
   await page.goto(BASE, { waitUntil: 'networkidle', timeout: 30000 });
   // First-launch disclaimer
   await clickText(page, 'I understand & agree');
-  await page.getByText('PSTAR Prep', { exact: true }).first().waitFor({ timeout: 8000 });
+  await page.getByText('Study modes', { exact: true }).first().waitFor({ timeout: 8000 });
   await shot(page, dir, '01-home');
 
   // Practice setup

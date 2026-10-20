@@ -1,44 +1,77 @@
 import React, { useState } from 'react';
 import { Alert, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
+import { useEntitlements } from '../entitlements';
+import { useNav } from '../nav';
+import { useThemeMode } from '../themeMode';
 import { useActions, useProgress } from '../storage';
-import { colors, font, radius, space } from '../theme';
-import { Card, Pill } from '../components/ui';
+import { colors, fonts, glyph, rule, space, TOUCH, type, themed } from '../theme';
+import { Glyph, ScreenHeader } from '../components/ui';
 import { Disclaimer } from '../components/Disclaimer';
 import { ExamSwitch } from '../components/ExamSwitch';
-import { APP_NAME, APP_VERSION, CONTACT_EMAIL, PRIVACY_URL, SITE_URL } from '../config';
+import {
+  APP_NAME,
+  APP_STORE_URL,
+  APP_VERSION,
+  CONTACT_EMAIL,
+  PLAY_STORE_URL,
+  PRIVACY_URL,
+  SITE_URL,
+} from '../config';
 
 function Row({
-  icon,
+  mark,
+  tint = colors.ink,
   label,
   value,
   onPress,
   danger,
+  testID,
 }: {
-  icon: string;
+  mark: string;
+  tint?: string;
   label: string;
   value?: string;
   onPress?: () => void;
   danger?: boolean;
+  testID?: string;
 }) {
   return (
     <Pressable
+      testID={testID}
       onPress={onPress}
       disabled={!onPress}
-      style={({ pressed }) => [styles.row, pressed && onPress && { opacity: 0.6 }]}
+      accessibilityRole={onPress ? 'button' : 'text'}
+      accessibilityLabel={value ? `${label}: ${value}` : label}
+      style={({ pressed }) => [styles.row, pressed && onPress && { backgroundColor: colors.paperDeep }]}
     >
-      <Text style={styles.rowIcon}>{icon}</Text>
+      <Glyph size={18} color={danger ? colors.red : tint} style={styles.rowMark}>
+        {mark}
+      </Glyph>
       <Text style={[styles.rowLabel, danger && { color: colors.red }]}>{label}</Text>
       <View style={{ flex: 1 }} />
       {value ? <Text style={styles.rowValue}>{value}</Text> : null}
-      {onPress ? <Text style={styles.rowChev}>›</Text> : null}
+      {onPress ? <Glyph size={18}>{glyph.arrow}</Glyph> : null}
     </Pressable>
   );
 }
 
+function Group({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <View style={{ marginTop: space.xl }}>
+      <Text style={styles.groupTitle}>{title}</Text>
+      <View style={styles.group}>{children}</View>
+    </View>
+  );
+}
+
 export default function AboutScreen() {
+  const nav = useNav();
   const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [restoreMsg, setRestoreMsg] = useState<string | null>(null);
   const p = useProgress();
+  const ent = useEntitlements();
+  const theme = useThemeMode();
   const { meta, QUESTIONS, SECTIONS } = useExam();
   const { resetProgress } = useActions();
 
@@ -59,53 +92,116 @@ export default function AboutScreen() {
     ]);
   }
 
+  async function restore() {
+    setRestoreMsg('Restoring…');
+    const ok = await ent.restore();
+    setRestoreMsg(
+      ok
+        ? 'Pro restored.'
+        : ent.storeAvailable
+          ? 'No previous Pro purchase found.'
+          : 'Store unavailable right now.',
+    );
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-      <View style={styles.head}>
-        <View style={styles.logo}>
-          <Text style={styles.logoMark}>✈</Text>
+      <ScreenHeader index="05" title="About" accent="red" />
+
+      <View style={styles.brand}>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.brandName}>{APP_NAME}</Text>
+          <Text style={type.mute}>Version {APP_VERSION}</Text>
         </View>
-        <Text style={font.h1}>{APP_NAME}</Text>
-        <Text style={font.mute}>Version {APP_VERSION}</Text>
-        <ExamSwitch style={{ marginTop: 14, alignSelf: 'stretch' }} />
-        <View style={{ flexDirection: 'row', gap: 8, marginTop: 12 }}>
-          <Pill label={`${meta.shortName} · ${QUESTIONS.length} questions`} tone="sky" />
-          <Pill label={`${SECTIONS.length} sections`} tone="green" />
+        <View style={styles.brandGlyphs}>
+          <Glyph size={30} color={colors.red}>
+            {glyph.circle}
+          </Glyph>
+          <Glyph size={30} color={colors.blue}>
+            {glyph.square}
+          </Glyph>
+          <Glyph size={30} color={colors.yellow}>
+            {glyph.triangle}
+          </Glyph>
         </View>
       </View>
+      <ExamSwitch style={{ marginTop: space.lg }} />
+      <Text style={[type.mute, { marginTop: space.sm }]}>
+        {meta.shortName} {glyph.dot} {QUESTIONS.length} questions {glyph.dot} {SECTIONS.length} sections
+      </Text>
 
-      <Text style={styles.section}>Legal — {meta.shortName}</Text>
-      <Card style={styles.group}>
-        <Row icon="⚠︎" label="Disclaimer" onPress={() => setShowDisclaimer(true)} />
-        <View style={styles.sep} />
-        <Row icon="🔒" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
-        <View style={styles.sep} />
-        <Row icon="📄" label={meta.sourceLabel} onPress={() => Linking.openURL(meta.sourceUrl)} />
-      </Card>
+      <Group title="APPEARANCE">
+        <Row
+          testID="theme-toggle"
+          mark={theme.mode === 'dark' ? glyph.square : glyph.open}
+          label="Theme"
+          value={theme.mode === 'dark' ? 'Black' : 'Paper'}
+          onPress={() => theme.setMode(theme.mode === 'dark' ? 'light' : 'dark')}
+        />
+      </Group>
 
-      <Text style={styles.section}>Your data — {meta.shortName}</Text>
-      <Card style={styles.group}>
-        <Row icon="📊" label="Questions seen" value={`${Object.keys(p.stats).length}/${QUESTIONS.length}`} />
-        <View style={styles.sep} />
-        <Row icon="★" label="Bookmarks" value={`${p.bookmarks.length}`} />
-        <View style={styles.sep} />
-        <Row icon="🎓" label="Cards mastered" value={`${p.known.length}`} />
-        <View style={styles.sep} />
-        <Row icon="🗑" label="Reset all progress" danger onPress={confirmReset} />
-      </Card>
+      <Group title="PRO">
+        {ent.isWeb ? (
+          <>
+            <Row mark={glyph.check} tint={colors.blue} label="Everything is unlocked on the web" />
+            <Row
+              mark={glyph.arrow}
+              label="Get the iPhone & iPad app"
+              onPress={() => Linking.openURL(APP_STORE_URL)}
+            />
+            <Row
+              mark={glyph.arrow}
+              label="Get the Android app"
+              onPress={() => Linking.openURL(PLAY_STORE_URL)}
+            />
+          </>
+        ) : ent.isPro ? (
+          <Row mark={glyph.check} tint={colors.blue} label="Pro" value="Active" />
+        ) : (
+          <Row
+            testID="about-upgrade"
+            mark={glyph.square}
+            tint={colors.red}
+            label="Unlock Pro"
+            value="All sections"
+            onPress={() => nav.push({ name: 'paywall', reason: 'about' })}
+          />
+        )}
+        {!ent.isWeb && <Row mark={glyph.refresh} label="Restore purchases" onPress={restore} />}
+      </Group>
+      {restoreMsg ? (
+        <Text style={[type.mute, { marginTop: space.sm }]} accessibilityLiveRegion="polite">
+          {restoreMsg}
+        </Text>
+      ) : null}
 
-      <Text style={styles.section}>About</Text>
-      <Card style={styles.group}>
-        <Row icon="🌐" label="Website" onPress={() => Linking.openURL(SITE_URL)} />
-        <View style={styles.sep} />
-        <Row icon="✉️" label="Contact" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} />
-      </Card>
+      <Group title={`LEGAL ${glyph.dot} ${meta.shortName}`}>
+        <Row
+          mark={glyph.triangle}
+          tint={colors.yellow}
+          label="Disclaimer"
+          onPress={() => setShowDisclaimer(true)}
+        />
+        <Row mark={glyph.square} label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
+        <Row mark={glyph.circle} label={meta.sourceLabel} onPress={() => Linking.openURL(meta.sourceUrl)} />
+      </Group>
+
+      <Group title={`YOUR DATA ${glyph.dot} ${meta.shortName}`}>
+        <Row mark="#" label="Questions seen" value={`${Object.keys(p.stats).length}/${QUESTIONS.length}`} />
+        <Row mark={glyph.star} tint={colors.red} label="Bookmarks" value={`${p.bookmarks.length}`} />
+        <Row mark={glyph.check} tint={colors.blue} label="Cards mastered" value={`${p.known.length}`} />
+        <Row mark={glyph.close} label="Reset all progress" danger onPress={confirmReset} />
+      </Group>
+
+      <Group title="ABOUT">
+        <Row mark={glyph.circle} label="Website" onPress={() => Linking.openURL(SITE_URL)} />
+        <Row mark="@" label="Contact" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} />
+      </Group>
 
       <Text style={styles.fine}>
-        An independent study aid, not affiliated with, endorsed by, or sponsored by {meta.authority}.
-        {' '}
-        {meta.shortName} content: {meta.source}. Always verify against current official sources.
-        Local‑only data — nothing leaves your device.
+        An independent study aid, not affiliated with, endorsed by, or sponsored by {meta.authority}.{' '}
+        {meta.shortName} content: {meta.source}. Always verify against current official sources. Your study
+        data stays on your device; purchases are handled by Apple / Google via RevenueCat.
       </Text>
 
       <Disclaimer visible={showDisclaimer} onClose={() => setShowDisclaimer(false)} />
@@ -114,33 +210,32 @@ export default function AboutScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  content: { padding: space.lg, paddingBottom: 40 },
-  head: { alignItems: 'center', paddingVertical: space.lg },
-  logo: {
-    width: 72,
-    height: 72,
-    borderRadius: 20,
-    backgroundColor: colors.navy,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: space.md,
-  },
-  logoMark: { fontSize: 36, color: colors.white },
-  section: {
-    ...font.tiny,
-    color: colors.textMute,
-    letterSpacing: 1,
-    marginTop: space.lg,
-    marginBottom: space.sm,
-    marginLeft: 4,
-  },
-  group: { padding: 0, overflow: 'hidden' },
-  row: { flexDirection: 'row', alignItems: 'center', paddingVertical: 14, paddingHorizontal: space.md, gap: 12 },
-  rowIcon: { fontSize: 17, width: 22, textAlign: 'center' },
-  rowLabel: { fontSize: 15, fontWeight: '600', color: colors.text },
-  rowValue: { fontSize: 14, fontWeight: '700', color: colors.textMute },
-  rowChev: { fontSize: 22, color: colors.textFaint, fontWeight: '300', marginLeft: 6 },
-  sep: { height: 1, backgroundColor: colors.border, marginLeft: space.md },
-  fine: { fontSize: 11, color: colors.textFaint, lineHeight: 16, marginTop: space.lg, textAlign: 'center' },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    content: { padding: space.lg, paddingBottom: 40 },
+    brand: { flexDirection: 'row', alignItems: 'center', gap: space.md },
+    brandName: { fontFamily: fonts.heavy, fontSize: 20, color: colors.ink },
+    brandGlyphs: { flexDirection: 'row', gap: 4 },
+    groupTitle: { ...type.kicker, marginBottom: space.sm },
+    group: { borderTopWidth: rule.thick, borderTopColor: colors.ink },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      minHeight: TOUCH + 8,
+      paddingVertical: space.sm,
+      gap: space.md,
+      borderBottomWidth: rule.hair,
+      borderBottomColor: colors.ink,
+    },
+    rowMark: { width: 22, textAlign: 'center' },
+    rowLabel: { fontFamily: fonts.bold, fontSize: 16, color: colors.ink, flexShrink: 1 },
+    rowValue: { fontFamily: fonts.heavy, fontSize: 15, color: colors.inkSoft },
+    fine: {
+      fontFamily: fonts.regular,
+      fontSize: 12,
+      color: colors.inkSoft,
+      lineHeight: 17,
+      marginTop: space.xl,
+    },
+  }),
+);

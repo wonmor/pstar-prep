@@ -16,7 +16,8 @@ export type Route =
   | { name: 'cardsSetup' }
   | { name: 'cards'; scope: 'all' | 'bookmarks' | number }
   | { name: 'review'; initialSection?: number | 'bookmarks' }
-  | { name: 'about' };
+  | { name: 'about' }
+  | { name: 'paywall'; reason?: string };
 
 export type TabKey = 'home' | 'quizSetup' | 'cardsSetup' | 'review' | 'about';
 
@@ -45,8 +46,9 @@ export const TAB_ROOT: Record<TabKey, Route> = {
   about: { name: 'about' },
 };
 
-// Which tab "owns" a given route (controls tab-bar highlight).
-export function tabForRoute(r: Route): TabKey {
+// Which tab "owns" a given route (controls tab-bar highlight). `null` means
+// "push onto whichever tab is active" (the paywall can open from anywhere).
+export function tabForRoute(r: Route): TabKey | null {
   switch (r.name) {
     case 'home':
       return 'home';
@@ -61,5 +63,7 @@ export function tabForRoute(r: Route): TabKey {
       return 'review';
     case 'about':
       return 'about';
+    case 'paywall':
+      return null;
   }
 }

@@ -1,21 +1,27 @@
 import React, { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { shuffle, type Question } from '../data';
 import { useExam } from '../exam';
+import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, font, radius, shadow, space } from '../theme';
-import { Button, Pill, ProgressBar } from '../components/ui';
+import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
+import { Button, FlowBar, Glyph, IconButton } from '../components/ui';
 
 export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks' | number }) {
   const nav = useNav();
+  const insets = useSafeAreaInsets();
   const progress = useProgress();
+  const gate = useGate();
   const { QUESTIONS, questionsForSection, sectionName } = useExam();
   const { setKnown, toggleBookmark } = useActions();
 
+  // Free tier: "all" and "bookmarks" decks only draw from free sections.
   const deck = useMemo<Question[]>(() => {
-    if (scope === 'all') return shuffle(QUESTIONS);
-    if (scope === 'bookmarks') return shuffle(QUESTIONS.filter((q) => progress.bookmarks.includes(q.id)));
+    if (scope === 'all') return shuffle(gate.visible(QUESTIONS));
+    if (scope === 'bookmarks')
+      return shuffle(gate.visible(QUESTIONS.filter((q) => progress.bookmarks.includes(q.id))));
     return shuffle(questionsForSection(scope));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scope]);
@@ -25,9 +31,16 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
   if (deck.length === 0) {
     return (
       <View style={styles.empty}>
-        <Text style={{ fontSize: 40 }}>🗂️</Text>
-        <Text style={[font.h3, { marginTop: 10 }]}>No cards in this deck yet.</Text>
-        <Button label="Back" variant="ghost" onPress={nav.back} style={{ marginTop: space.lg }} />
+        <Glyph size={72} color={colors.yellow}>
+          {glyph.square}
+        </Glyph>
+        <Text style={[type.h3, { marginTop: 10 }]}>No cards in this deck yet.</Text>
+        <Button
+          label="Back"
+          variant="ghost"
+          onPress={nav.back}
+          style={{ marginTop: space.lg, alignSelf: 'stretch' }}
+        />
       </View>
     );
   }
@@ -35,8 +48,7 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
   const q = deck[idx];
   const isKnown = progress.known.includes(q.id);
   const bookmarked = progress.bookmarks.includes(q.id);
-  const title =
-    scope === 'all' ? 'All cards' : scope === 'bookmarks' ? 'Bookmarked' : sectionName(scope);
+  const title = scope === 'all' ? 'All cards' : scope === 'bookmarks' ? 'Bookmarked' : sectionName(scope);
 
   function advance(known: boolean) {
     setKnown(q.id, known);
@@ -50,134 +62,175 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
 
   return (
     <View style={styles.root}>
-      <View style={styles.bar}>
-        <Pressable onPress={nav.back} hitSlop={10} style={styles.barBtn}>
-          <Text style={styles.barBtnText}>✕</Text>
-        </Pressable>
-        <View style={{ flex: 1, paddingHorizontal: space.md }}>
-          <ProgressBar value={(idx + 1) / deck.length} />
-        </View>
-        <Pressable onPress={() => toggleBookmark(q.id)} hitSlop={10} style={styles.barBtn}>
-          <Text style={[styles.barBtnText, { fontSize: 18 }]}>{bookmarked ? '★' : '☆'}</Text>
-        </Pressable>
-      </View>
+      <FlowBar
+        onClose={nav.back}
+        closeLabel="Close flashcards"
+        progress={(idx + 1) / deck.length}
+        right={
+          <IconButton
+            glyphText={bookmarked ? glyph.star : glyph.starOpen}
+            color={bookmarked ? colors.red : colors.ink}
+            label={bookmarked ? 'Remove bookmark' : 'Bookmark card'}
+            onPress={() => toggleBookmark(q.id)}
+          />
+        }
+      />
 
       <View style={styles.metaRow}>
-        <Pill label={title.toUpperCase()} tone="sky" />
-        <Text style={font.mute}>
-          {idx + 1} / {deck.length}
+        <Text style={[type.kicker, { flex: 1 }]} numberOfLines={1}>
+          {title.toUpperCase()}
+        </Text>
+        <Text style={styles.counter}>
+          <Text style={{ color: colors.red }}>{String(idx + 1).padStart(2, '0')}</Text>
+          <Text style={{ color: colors.inkSoft }}>/{deck.length}</Text>
         </Text>
       </View>
 
-      {/* The card */}
-      <Pressable testID="flashcard" style={styles.cardWrap} onPress={() => setFlipped((f) => !f)}>
-        <View style={[styles.card, flipped ? styles.cardBack : styles.cardFront]}>
-          <Text style={[styles.face, { color: flipped ? colors.green : colors.blueBright }]}>
-            {flipped ? 'ANSWER' : 'QUESTION'}
-          </Text>
-          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
+      <Pressable
+        testID="flashcard"
+        style={styles.cardWrap}
+        onPress={() => setFlipped((f) => !f)}
+        accessibilityRole="button"
+        accessibilityHint={flipped ? 'Shows the question' : 'Reveals the answer'}
+      >
+        <View style={[styles.card, flipped && styles.cardBack]}>
+          <View style={[styles.face, { backgroundColor: flipped ? colors.blue : colors.yellow }]}>
+            <Text style={[styles.faceText, { color: flipped ? colors.onAccent : colors.onYellow }]}>
+              {flipped ? 'ANSWER' : 'QUESTION'}
+            </Text>
+            <Glyph size={18} color={flipped ? colors.onAccent : colors.onYellow}>
+              {flipped ? glyph.check : '?'}
+            </Glyph>
+          </View>
+          <ScrollView
+            style={{ flex: 1 }}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.cardBody}
+          >
             <Text style={styles.qText}>{q.question}</Text>
 
             {!flipped ? (
-              <View style={{ marginTop: space.lg, gap: 8 }}>
+              <View style={{ marginTop: space.lg, gap: space.sm }}>
                 {q.options.map((o, i) => (
-                  <Text key={i} style={styles.optDim}>
-                    ({i + 1}) {o}
-                  </Text>
+                  <View key={i} style={styles.optLine}>
+                    <Text style={styles.optNum}>{i + 1}</Text>
+                    <Text style={styles.optDim}>{o}</Text>
+                  </View>
                 ))}
               </View>
             ) : (
               <View style={{ marginTop: space.lg }}>
                 <View style={styles.answerBox}>
-                  <View style={styles.answerCircle}>
-                    <Text style={styles.answerCircleText}>✓</Text>
-                  </View>
+                  <Glyph size={28} color={colors.onAccent}>
+                    {glyph.check}
+                  </Glyph>
                   <Text style={styles.answerText}>{q.options[q.answer - 1]}</Text>
                 </View>
                 {q.reference ? (
                   <Text style={styles.ref}>
-                    <Text style={{ fontWeight: '800' }}>📖 Reference{'\n'}</Text>
+                    <Text style={{ fontFamily: fonts.bold, color: colors.ink }}>REFERENCE{'\n'}</Text>
                     {q.reference}
                   </Text>
                 ) : null}
               </View>
             )}
           </ScrollView>
-          <Text style={styles.flipHint}>{flipped ? 'Tap to see question' : 'Tap to reveal answer'}</Text>
+          <Text style={styles.flipHint}>
+            {glyph.refresh} {flipped ? 'Tap to see question' : 'Tap to reveal answer'}
+          </Text>
         </View>
       </Pressable>
 
-      <View style={styles.footer}>
-        {isKnown ? <Pill label="✓ Marked as mastered" tone="green" /> : <View />}
+      <View style={[styles.footer, { paddingBottom: Math.max(insets.bottom, space.lg) }]}>
+        {isKnown ? <Text style={styles.mastered}>{glyph.check} MARKED AS MASTERED</Text> : null}
         <View style={styles.footRow}>
           <Button
-            label="↻ Review again"
+            label="Again"
             variant="ghost"
+            trailing={glyph.refresh}
             onPress={() => advance(false)}
             style={{ flex: 1 }}
           />
-          <Button label="✓ Got it" variant="success" onPress={() => advance(true)} style={{ flex: 1 }} />
+          <Button
+            label="Got it"
+            variant="blue"
+            trailing={glyph.check}
+            onPress={() => advance(true)}
+            style={{ flex: 1 }}
+          />
         </View>
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: colors.bg },
-  empty: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: space.xl },
-  bar: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: space.md, paddingVertical: space.sm },
-  barBtn: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
-  barBtnText: { fontSize: 20, color: colors.navy, fontWeight: '700' },
-  metaRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: space.lg,
-    marginTop: space.sm,
-  },
-  cardWrap: { flex: 1, padding: space.lg },
-  card: {
-    flex: 1,
-    borderRadius: radius.xl,
-    padding: space.xl,
-    borderWidth: 1.5,
-    ...shadow.float,
-  },
-  cardFront: { backgroundColor: colors.card, borderColor: colors.skyLine },
-  cardBack: { backgroundColor: '#F2FBF6', borderColor: colors.green },
-  face: { fontSize: 12, fontWeight: '900', letterSpacing: 1.5, marginBottom: space.md },
-  qText: { fontSize: 21, fontWeight: '700', color: colors.text, lineHeight: 29 },
-  optDim: { fontSize: 14, color: colors.textMute, lineHeight: 20 },
-  answerBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-    backgroundColor: colors.greenSoft,
-    borderRadius: radius.md,
-    padding: space.md,
-    borderWidth: 1.5,
-    borderColor: colors.green,
-  },
-  answerCircle: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: colors.green,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  answerCircleText: { color: colors.white, fontWeight: '900', fontSize: 16 },
-  answerText: { flex: 1, fontSize: 17, fontWeight: '700', color: colors.navy, lineHeight: 23 },
-  ref: { fontSize: 13, color: colors.textMute, lineHeight: 19, marginTop: space.lg },
-  flipHint: { textAlign: 'center', fontSize: 12, color: colors.textFaint, marginTop: space.md, fontWeight: '600' },
-  footer: {
-    padding: space.lg,
-    paddingTop: space.md,
-    borderTopWidth: 1,
-    borderTopColor: colors.border,
-    backgroundColor: colors.card,
-    gap: space.md,
-  },
-  footRow: { flexDirection: 'row', gap: space.md },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    root: { flex: 1, backgroundColor: colors.paper },
+    empty: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: space.xl,
+      backgroundColor: colors.paper,
+    },
+    metaRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'baseline',
+      paddingHorizontal: space.lg,
+      marginTop: space.md,
+      gap: space.md,
+    },
+    counter: { fontFamily: fonts.black, fontSize: 28, letterSpacing: -1 },
+    cardWrap: { flex: 1, padding: space.lg, paddingTop: space.md },
+    card: { flex: 1, borderWidth: rule.thick, borderColor: colors.ink, backgroundColor: colors.paper },
+    cardBack: { borderColor: colors.blue },
+    face: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: space.lg,
+      paddingVertical: space.sm,
+    },
+    faceText: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3 },
+    cardBody: { flexGrow: 1, justifyContent: 'center', padding: space.xl },
+    qText: { fontFamily: fonts.bold, fontSize: 22, color: colors.ink, lineHeight: 29 },
+    optLine: { flexDirection: 'row', gap: space.md },
+    optNum: { fontFamily: fonts.black, fontSize: 16, color: colors.inkSoft, width: 14 },
+    optDim: { flex: 1, fontFamily: fonts.regular, fontSize: 15, color: colors.inkSoft, lineHeight: 21 },
+    answerBox: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: space.md,
+      backgroundColor: colors.blue,
+      padding: space.lg,
+    },
+    answerText: { flex: 1, fontFamily: fonts.bold, fontSize: 18, color: colors.onAccent, lineHeight: 24 },
+    ref: {
+      fontFamily: fonts.regular,
+      fontSize: 14,
+      color: colors.inkSoft,
+      lineHeight: 20,
+      marginTop: space.lg,
+    },
+    flipHint: {
+      textAlign: 'center',
+      fontFamily: fonts.bold,
+      fontSize: 12,
+      letterSpacing: 1,
+      color: colors.inkSoft,
+      paddingVertical: space.sm,
+    },
+    footer: {
+      padding: space.lg,
+      paddingTop: space.md,
+      borderTopWidth: rule.thick,
+      borderTopColor: colors.ink,
+      backgroundColor: colors.paper,
+      gap: space.sm,
+    },
+    mastered: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 2, color: colors.blue },
+    footRow: { flexDirection: 'row', gap: space.md },
+  }),
+);

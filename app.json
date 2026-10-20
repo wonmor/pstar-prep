@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "pstarprep",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -39,8 +39,8 @@
       "shortName": "PSTAR·ROC-A",
       "description": "Independent study app for Canada's PSTAR aviation regulations exam and the ROC-A aeronautical radio operator certificate. Not affiliated with Transport Canada or ISED. Study material based on TP 11919E (Dec 2022) and RIC-21; always verify against current CARs, RIC-21 and the TC AIM.",
       "lang": "en",
-      "themeColor": "#0B2545",
-      "backgroundColor": "#0B2545"
+      "themeColor": "#121212",
+      "backgroundColor": "#121212"
     },
     "experiments": {
       "baseUrl": "/pstar-prep"
@@ -50,6 +50,9 @@
         "projectId": "3bd0e9f3-a693-4844-9b4e-931e482fdada"
       }
     },
-    "owner": "wonmor"
+    "owner": "wonmor",
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
