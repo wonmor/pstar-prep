@@ -16,11 +16,51 @@ the verified correct answer and the original CARs / TC AIM study reference.
 |------|--------------|
 | 📝 **Mock Exam** | 50 random questions, **90 % pass mark** — just like the real PSTAR. Answers revealed at the end with a full miss‑review. |
 | 🎯 **Practice Quiz** | Drill any single section with **instant** correct/incorrect feedback and the reference. |
-| 🗂️ **Flashcards** | Tap to flip — front shows the question, back reveals the answer (green) + reference. Mark cards as *mastered*. Decks: all, bookmarked, or per‑section. |
-| ✅ **Answer Key** | Browse **every** question with the correct option shown in a **green circle**. Full‑text search + section filters. |
+| 🗂️ **Flashcards** | Tap to flip — front shows the question, back reveals the answer + reference. Mark cards as *mastered*. Decks: all, bookmarked, or per‑section. |
+| ✅ **Answer Key** | Browse **every** question with the correct option marked **✓**. Full‑text search + section filters. |
 
 Progress, per‑section accuracy, bookmarks (★) and best exam score persist locally
 (`AsyncStorage`).
+
+## Design
+
+Bauhaus: strict grid, flat primaries (red / blue / yellow), heavy geometric type
+(**Jost**, a Futura‑style grotesk), thick rules, no gradients or shadows. Decoration
+is purely typographic — glyphs like ● ■ ▲ → ✓ ✕ and oversized numerals set as
+text, never drawn shapes. **Black** is the default theme; **Paper** (off‑white) can
+be chosen in About. All text pairs are WCAG AA in both themes. Tokens live in
+`src/theme.ts`.
+
+## Free vs Pro
+
+| | Free | Pro |
+|---|---|---|
+| Practice, flashcards, answer key | first **3 sections** of each exam | all sections |
+| Mock exam | **1 per day** per exam | unlimited |
+| Bookmarks, progress | ✓ | ✓ |
+
+One `pro` entitlement covers both PSTAR and ROC‑A. Sold as
+`pstar_pro_lifetime` (one‑time, non‑consumable) and `pstar_pro_1month`
+(auto‑renewing monthly). The **web build is fully free** (no payments on the web).
+
+* Rules: `src/gating.ts` (pure, unit‑tested) · state: `src/entitlements.tsx`
+  (`useEntitlements().isPro`, `useGate()`) · store: `src/purchases.ts`
+  (RevenueCat) / `src/purchases.web.ts` (no‑op).
+* Keys: `EXPO_PUBLIC_REVENUECAT_IOS_KEY` / `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY`
+  (see `.env.example`). Without a key — or in Expo Go — the paywall shows
+  “Store unavailable” and the free tier keeps working.
+* `react-native-purchases` is a native module: test purchases in an EAS
+  development/preview build, not Expo Go.
+* QA overrides: `EXPO_PUBLIC_FORCE_PRO=1` (native) · web query
+  `?tier=free` (preview the free tier), `?tier=pro`, `?store=demo` (fake prices
+  on the paywall), `?theme=light|dark`.
+
+## Tests
+
+```bash
+npm test          # gating rules (node --test, no extra deps)
+npm run typecheck
+```
 
 ## Run it
 
@@ -52,9 +92,14 @@ src/
   data.ts                typed dataset + quiz/shuffle helpers
   storage.ts             AsyncStorage progress, bookmarks, mastery
   nav.tsx                lightweight stack navigator (no nav dependency)
-  theme.ts               design tokens
-  components/            Button, OptionRow (green‑circle), SectionList…
-  screens/               Home, QuizSetup, Quiz, Results, CardsSetup, Flashcards, Review
+  theme.ts               Bauhaus tokens (black + paper palettes, Jost, glyphs)
+  themeMode.tsx          theme preference
+  gating.ts              free vs Pro rules (pure)
+  entitlements.tsx       isPro + purchase/restore + daily mock meter
+  purchases*.ts          RevenueCat adapter (native) / no-op (web)
+  components/            Button, OptionRow, SectionList, ProBanner…
+  screens/               Home, QuizSetup, Quiz, Results, CardsSetup, Flashcards, Review, About, Paywall
+tests/gating.test.ts     unit tests for the free/locked rules
 assets/data/pstar.json   the parsed question bank
 scripts/parse_pstar.py   regenerates pstar.json from the TC PDFs (see below)
 ```
