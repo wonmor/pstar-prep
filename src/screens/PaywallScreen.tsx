@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useEntitlements } from '../entitlements';
 import { EXAMS } from '../exams';
@@ -250,9 +250,9 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
         {!web && (
           <Text style={styles.fine}>
             Lifetime is a one-time purchase. The 1-Month Pass is an auto-renewing subscription: payment is
-            charged to your Apple ID / Google account at confirmation and renews each month unless cancelled
-            at least 24 hours before the end of the period. Manage or cancel in your account’s subscription
-            settings.
+            charged to your {Platform.OS === 'ios' ? 'Apple ID' : 'Google account'} at confirmation and renews each month unless cancelled
+            at least 24 hours before the end of the period. Manage or cancel in{' '}
+            {Platform.OS === 'ios' ? 'Settings > Apple ID > Subscriptions' : 'Google Play > Subscriptions'}.
           </Text>
         )}
       </ScrollView>
