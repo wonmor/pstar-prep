@@ -6,7 +6,7 @@
 //   EXPO_PUBLIC_REVENUECAT_IOS_KEY / EXPO_PUBLIC_REVENUECAT_ANDROID_KEY
 import { Platform } from 'react-native';
 import type { CustomerInfo, PurchasesPackage } from 'react-native-purchases';
-import { ENTITLEMENT_ID, PRODUCT_IDS, type Plan, type PlanId, type StoreAdapter } from './purchases.types';
+import { ENTITLEMENT_ID, IOS_LIFETIME_PRODUCT_ID, PRODUCT_IDS, type Plan, type PlanId, type StoreAdapter } from './purchases.types';
 
 type RC = typeof import('react-native-purchases').default;
 
@@ -26,7 +26,7 @@ function apiKey(): string | undefined {
 function planIdFor(pkg: PurchasesPackage): PlanId | null {
   const pid = pkg.product.identifier;
   // Android subscription ids may come back as "productId:basePlanId".
-  if (pid === PRODUCT_IDS.lifetime || pkg.packageType === 'LIFETIME') return 'lifetime';
+  if (pid === PRODUCT_IDS.lifetime || pid === IOS_LIFETIME_PRODUCT_ID || pkg.packageType === 'LIFETIME') return 'lifetime';
   if (pid.split(':')[0] === PRODUCT_IDS.monthly || pkg.packageType === 'MONTHLY') return 'monthly';
   return null;
 }

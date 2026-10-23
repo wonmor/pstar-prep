@@ -40,7 +40,7 @@ be chosen in About. All text pairs are WCAG AA in both themes. Tokens live in
 | Bookmarks, progress | ✓ | ✓ |
 
 One `pro` entitlement covers both PSTAR and ROC‑A. Sold as
-`pstar_pro_lifetime` (one‑time, non‑consumable) and `pstar_pro_1month`
+`pstar_pro_lifetime` (one‑time, non‑consumable; on the App Store it is `pstar_pro_lifetime_ios` because the original id was already taken in the account) and `pstar_pro_1month`
 (auto‑renewing monthly). The **web build is fully free** (no payments on the web).
 
 * Rules: `src/gating.ts` (pure, unit‑tested) · state: `src/entitlements.tsx`

@@ -7,6 +7,10 @@ export const PRODUCT_IDS = {
   lifetime: 'pstar_pro_lifetime',
   monthly: 'pstar_pro_1month',
 } as const;
+// App Store product ids are unique per developer account and
+// 'pstar_pro_lifetime' was already taken there, so the iOS lifetime product
+// uses this id. Play keeps PRODUCT_IDS.lifetime.
+export const IOS_LIFETIME_PRODUCT_ID = 'pstar_pro_lifetime_ios';
 
 export type PlanId = keyof typeof PRODUCT_IDS;
 
