@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Disclaimer } from '../components/Disclaimer';
 import { ExamSwitch } from '../components/ExamSwitch';
 import { useExam } from '../exam';
@@ -91,7 +91,7 @@ export default function HomeScreen() {
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
       <ExamSwitch style={{ marginBottom: space.xl }} />
 
-      {/* Hero — asymmetric: huge wordmark left, primary glyph column right. */}
+      {/* Hero — asymmetric: huge wordmark left, the app's brand mark right. */}
       <Kicker>{meta.kicker}</Kicker>
       <View style={styles.heroRow}>
         <View style={{ flex: 1 }}>
@@ -102,17 +102,12 @@ export default function HomeScreen() {
             {`Prep ${glyph.dot} ${meta.badge}`}
           </Text>
         </View>
-        <View style={styles.glyphCol}>
-          <Glyph size={34} color={colors.red}>
-            {glyph.circle}
-          </Glyph>
-          <Glyph size={34} color={colors.blue}>
-            {glyph.square}
-          </Glyph>
-          <Glyph size={34} color={colors.yellow}>
-            {glyph.triangle}
-          </Glyph>
-        </View>
+        <Image
+          source={require('../../assets/brand-mark.png')}
+          style={styles.mark}
+          accessibilityIgnoresInvertColors
+          accessible={false}
+        />
       </View>
       <Rule weight={rule.heavy} />
       <Text style={[type.body, styles.heroSub]}>
@@ -224,7 +219,7 @@ const styles = themed(() =>
       textTransform: 'uppercase',
       color: colors.red,
     },
-    glyphCol: { alignItems: 'center', gap: 0, paddingLeft: space.md },
+    mark: { width: 72, height: 72, marginLeft: space.md },
     heroSub: { marginTop: space.md },
     stats: {
       flexDirection: 'row',

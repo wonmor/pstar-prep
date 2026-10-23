@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useEntitlements } from '../entitlements';
 import { EXAMS } from '../exams';
@@ -119,17 +119,12 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
           <Text style={styles.hero} accessibilityRole="header" accessibilityLabel="Pro">
             PRO
           </Text>
-          <View style={styles.heroGlyphs}>
-            <Glyph size={40} color={colors.red}>
-              {glyph.circle}
-            </Glyph>
-            <Glyph size={40} color={colors.blue}>
-              {glyph.square}
-            </Glyph>
-            <Glyph size={40} color={colors.yellow}>
-              {glyph.triangle}
-            </Glyph>
-          </View>
+          <Image
+            source={require('../../assets/brand-mark.png')}
+            style={styles.mark}
+            accessibilityIgnoresInvertColors
+            accessible={false}
+          />
         </View>
         <View style={{ height: rule.heavy, backgroundColor: colors.ink }} />
         {reason && REASONS[reason] ? <Text style={styles.reason}>{REASONS[reason]}</Text> : null}
@@ -290,7 +285,7 @@ const styles = themed(() =>
       marginTop: space.xs,
     },
     hero: { fontFamily: fonts.black, fontSize: 120, lineHeight: 118, letterSpacing: -6, color: colors.ink },
-    heroGlyphs: { alignItems: 'center', paddingBottom: space.sm },
+    mark: { width: 64, height: 64, marginBottom: space.sm },
     reason: { fontFamily: fonts.bold, fontSize: 16, lineHeight: 22, color: colors.red, marginTop: space.md },
     done: { alignItems: 'flex-start', gap: space.xs, marginTop: space.lg },
     features: { marginTop: space.lg, gap: space.sm },

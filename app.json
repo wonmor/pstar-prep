@@ -2,7 +2,7 @@
   "expo": {
     "name": "PSTAR & ROC-A Trainer",
     "slug": "pstar-prep",
-    "version": "1.0.0",
+    "version": "1.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "pstarprep",
@@ -11,12 +11,12 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0B2545"
+      "backgroundColor": "#121212"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.orchestrsim.pstarprep",
-      "buildNumber": "1",
+      "buildNumber": "3",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -25,7 +25,7 @@
       "package": "com.orchestrsim.pstarprep",
       "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#0B2545",
+        "backgroundColor": "#1F4FBF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"

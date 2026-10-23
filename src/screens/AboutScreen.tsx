@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
 import { useEntitlements } from '../entitlements';
 import { useNav } from '../nav';
@@ -113,17 +113,12 @@ export default function AboutScreen() {
           <Text style={styles.brandName}>{APP_NAME}</Text>
           <Text style={type.mute}>Version {APP_VERSION}</Text>
         </View>
-        <View style={styles.brandGlyphs}>
-          <Glyph size={30} color={colors.red}>
-            {glyph.circle}
-          </Glyph>
-          <Glyph size={30} color={colors.blue}>
-            {glyph.square}
-          </Glyph>
-          <Glyph size={30} color={colors.yellow}>
-            {glyph.triangle}
-          </Glyph>
-        </View>
+        <Image
+          source={require('../../assets/brand-mark.png')}
+          style={styles.mark}
+          accessibilityIgnoresInvertColors
+          accessible={false}
+        />
       </View>
       <ExamSwitch style={{ marginTop: space.lg }} />
       <Text style={[type.mute, { marginTop: space.sm }]}>
@@ -215,7 +210,7 @@ const styles = themed(() =>
     content: { padding: space.lg, paddingBottom: 40 },
     brand: { flexDirection: 'row', alignItems: 'center', gap: space.md },
     brandName: { fontFamily: fonts.heavy, fontSize: 20, color: colors.ink },
-    brandGlyphs: { flexDirection: 'row', gap: 4 },
+    mark: { width: 56, height: 56 },
     groupTitle: { ...type.kicker, marginBottom: space.sm },
     group: { borderTopWidth: rule.thick, borderTopColor: colors.ink },
     row: {
