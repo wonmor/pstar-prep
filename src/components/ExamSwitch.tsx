@@ -2,8 +2,8 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useExam, useSetExam } from '../exam';
 import { EXAM_ORDER, EXAMS } from '../exams';
-import { colors, fonts, rule, TOUCH, themed } from '../theme';
-import { Glyph } from './ui';
+import { colors, fonts, glyph, rule, TOUCH, themed } from '../theme';
+import { Icon } from './ui';
 
 // Two-cell switch for the active exam (PSTAR / ROC-A). A strict grid: equal
 // cells, thick ink frame, the active cell inverted to ink.
@@ -28,9 +28,7 @@ export function ExamSwitch({ style }: { style?: any }) {
             accessibilityLabel={`${EXAMS[exam].shortName} exam`}
             accessibilityState={{ selected: on, checked: on }}
           >
-            <Glyph size={14} color={on ? colors.yellow : colors.inkSoft}>
-              {on ? '●' : '○'}
-            </Glyph>
+            <Icon name={exam === 'pstar' ? glyph.airplane : glyph.radio} size={18} color={on ? colors.yellow : colors.inkSoft} />
             <Text style={[styles.label, { color: on ? colors.paper : colors.ink }]}>
               {EXAMS[exam].shortName}
             </Text>

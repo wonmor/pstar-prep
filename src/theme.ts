@@ -83,31 +83,50 @@ export const rule = { hair: 1, mid: 2, thick: 4, heavy: 8 };
 // Minimum touch target (Apple HIG / Material).
 export const TOUCH = 44;
 
-// Typographic glyphs used instead of drawn shapes. ︎ forces text (not
-// emoji) presentation where a platform might otherwise swap in a colour emoji.
+// Line glyphs (Ionicons outline set — iOS-style strokes) used for every icon.
+// No circles, squares or triangles as ornaments: structure comes from colour
+// fields and rules, meaning from these glyphs and the type.
 export const glyph = {
-  circle: '●',
-  square: '■',
-  triangle: '▲',
-  arrow: '→',
-  back: '←',
-  close: '✕',
-  check: '✓',
-  star: '★︎',
-  starOpen: '☆︎',
-  lock: '■', // locked content is marked with a solid square + the word LOCKED
-  open: '□',
-  plus: '+',
-  dot: '·',
-  slash: '/',
-  diamond: '◆',
-  refresh: '↺',
-};
+  arrow: 'arrow-forward',
+  back: 'arrow-back',
+  close: 'close',
+  check: 'checkmark',
+  star: 'star',
+  starOpen: 'star-outline',
+  lock: 'lock-closed',
+  unlock: 'lock-open-outline',
+  refresh: 'refresh',
+  warning: 'alert-outline',
+  airplane: 'airplane-outline',
+  radio: 'radio-outline',
+  exam: 'stopwatch-outline',
+  practice: 'create-outline',
+  cards: 'albums-outline',
+  answers: 'list-outline',
+  home: 'home-outline',
+  about: 'information-outline',
+  book: 'book-outline',
+  document: 'document-text-outline',
+  shield: 'shield-checkmark-outline',
+  globe: 'globe-outline',
+  moon: 'moon-outline',
+  sun: 'sunny-outline',
+  trash: 'trash-outline',
+  infinite: 'infinite-outline',
+  calendar: 'calendar-outline',
+  ribbon: 'ribbon-outline',
+  swap: 'swap-horizontal-outline',
+  help: 'help',
+  mail: 'mail-outline',
+} as const;
+export type GlyphName = (typeof glyph)[keyof typeof glyph];
+// Typographic separator (punctuation, not an ornament).
+export const sep = '·';
 
 export const type = themed(() => ({
-  display: { fontFamily: fonts.black, fontSize: 56, lineHeight: 56, color: colors.ink, letterSpacing: -1.5 },
-  h1: { fontFamily: fonts.black, fontSize: 34, lineHeight: 36, color: colors.ink, letterSpacing: -0.8 },
-  h2: { fontFamily: fonts.heavy, fontSize: 22, lineHeight: 26, color: colors.ink, letterSpacing: -0.3 },
+  display: { fontFamily: fonts.black, fontSize: 56, lineHeight: 66, color: colors.ink, letterSpacing: -1.5 },
+  h1: { fontFamily: fonts.black, fontSize: 34, lineHeight: 41, color: colors.ink, letterSpacing: -0.8 },
+  h2: { fontFamily: fonts.heavy, fontSize: 22, lineHeight: 27, color: colors.ink, letterSpacing: -0.3 },
   h3: { fontFamily: fonts.bold, fontSize: 17, lineHeight: 22, color: colors.ink },
   body: { fontFamily: fonts.medium, fontSize: 16, lineHeight: 23, color: colors.ink },
   mute: { fontFamily: fonts.medium, fontSize: 14, lineHeight: 20, color: colors.inkSoft },
@@ -119,7 +138,7 @@ export const type = themed(() => ({
     color: colors.ink,
     textTransform: 'uppercase' as const,
   },
-  tiny: { fontFamily: fonts.bold, fontSize: 11, lineHeight: 14, letterSpacing: 1.5, color: colors.inkSoft },
+  tiny: { fontFamily: fonts.bold, fontSize: 11, lineHeight: 15, letterSpacing: 1.5, color: colors.inkSoft },
 }));
 
 // Back-compat name used by older imports.

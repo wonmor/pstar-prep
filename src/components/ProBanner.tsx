@@ -4,7 +4,7 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { colors, fonts, glyph, rule, space, themed } from '../theme';
-import { Glyph } from './ui';
+import { Glyph, Icon } from './ui';
 
 // Yellow upsell block shown to free users. Tapping opens the paywall.
 export function ProBanner({ style, reason = 'banner' }: { style?: any; reason?: string }) {
@@ -21,13 +21,11 @@ export function ProBanner({ style, reason = 'banner' }: { style?: any; reason?: 
       style={({ pressed }) => [styles.wrap, pressed && { opacity: 0.85 }, style]}
     >
       <View style={{ flex: 1 }}>
-        <Text style={styles.kicker}>{glyph.square} PRO</Text>
+        <Text style={styles.kicker}><Icon name={glyph.unlock} size={13} color={colors.onYellow} /> PRO</Text>
         <Text style={styles.title}>Unlock {gate.lockedCount} more sections & unlimited mock exams</Text>
         <Text style={styles.sub}>One payment · PSTAR + ROC-A · yours forever</Text>
       </View>
-      <Glyph size={34} color={colors.onYellow}>
-        {glyph.arrow}
-      </Glyph>
+      <Icon name={glyph.arrow} size={34} color={colors.onYellow} />
     </Pressable>
   );
 }

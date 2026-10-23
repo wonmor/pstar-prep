@@ -4,7 +4,7 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { colors, fonts, glyph, space, type, themed } from '../theme';
-import { Button, Glyph, ScreenHeader } from '../components/ui';
+import { Button, Glyph, ScreenHeader, Icon } from '../components/ui';
 import { SectionList } from '../components/SectionList';
 import { ExamSwitch } from '../components/ExamSwitch';
 import { ProBanner } from '../components/ProBanner';
@@ -29,20 +29,17 @@ export default function QuizSetupScreen() {
       <View style={styles.exam}>
         <View style={styles.examTop}>
           <Text style={styles.examKicker}>FULL MOCK EXAM</Text>
-          <Glyph size={28} color={colors.yellow}>
-            {glyph.triangle}
-          </Glyph>
+          <Icon name={glyph.exam} size={30} color={colors.yellow} />
         </View>
-        <Text style={styles.examBig}>{EXAM_SIZE}</Text>
+        <Text style={styles.examBig} maxFontSizeMultiplier={1.1}>{EXAM_SIZE}</Text>
         <Text style={styles.examDesc}>
           questions drawn at random from all {QUESTIONS.length}. Pass mark {PASS_PCT}%, just like the real{' '}
           {meta.shortName}. Answers revealed at the end.
         </Text>
         {!gate.isPro && (
           <Text style={styles.examQuota}>
-            {gate.canMock
-              ? `${glyph.circle} 1 free mock exam today`
-              : `${glyph.square} Today’s free mock used — unlimited with Pro`}
+            <Icon name={gate.canMock ? glyph.calendar : glyph.lock} size={14} color={colors.paper} />{' '}
+            {gate.canMock ? '1 free mock exam today' : 'Today’s free mock used — unlimited with Pro'}
           </Text>
         )}
         <Button
@@ -78,7 +75,7 @@ const styles = themed(() =>
     examBig: {
       fontFamily: fonts.black,
       fontSize: 96,
-      lineHeight: 96,
+      lineHeight: 110,
       color: colors.paper,
       letterSpacing: -4,
       marginTop: space.sm,

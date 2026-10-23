@@ -1,7 +1,7 @@
 import React from 'react';
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Button, Glyph, Rule } from './ui';
+import { Button, Glyph, Rule, Icon } from './ui';
 import { useExam } from '../exam';
 
 export function Disclaimer({
@@ -20,9 +20,7 @@ export function Disclaimer({
       <View style={styles.backdrop}>
         <View style={styles.sheet} accessibilityViewIsModal>
           <View style={styles.band}>
-            <Glyph size={22} color={colors.onYellow}>
-              {glyph.triangle}
-            </Glyph>
+            <Icon name={glyph.warning} size={22} color={colors.onYellow} />
             <Text style={styles.bandText}>IMPORTANT</Text>
           </View>
           <View style={styles.inner}>
@@ -42,9 +40,7 @@ export function Disclaimer({
                 style={styles.linkRow}
               >
                 <Text style={styles.link}>Official {meta.authority} source</Text>
-                <Glyph size={18} color={colors.blue}>
-                  {glyph.arrow}
-                </Glyph>
+                <Icon name={glyph.arrow} size={18} color={colors.blue} />
               </Pressable>
             </ScrollView>
             {firstRun ? (

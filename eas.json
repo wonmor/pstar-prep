@@ -23,6 +23,13 @@
         "buildType": "app-bundle"
       },
       "environment": "production"
+    },
+    "qa-paywall": {
+      "extends": "preview",
+      "environment": "preview",
+      "env": {
+        "EXPO_PUBLIC_QA_START_ROUTE": "paywall"
+      }
     }
   },
   "submit": {

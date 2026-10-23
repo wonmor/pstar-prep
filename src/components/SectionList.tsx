@@ -3,11 +3,11 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useProgress } from '../storage';
-import { colors, fonts, rule, space, themed } from '../theme';
-import { Glyph, LockTag, ProgressBar } from './ui';
+import { colors, fonts, glyph, rule, space, themed } from '../theme';
+import { Glyph, Icon, LockTag, ProgressBar } from './ui';
 
 // The active exam's sections as a ruled index: big numeral · name · mastery.
-// Locked sections (free tier) show ■ PRO and open the paywall instead.
+// Locked sections (free tier) show a lock + PRO and open the paywall instead.
 export function SectionList({
   onPick,
   onLocked,
@@ -50,9 +50,7 @@ export function SectionList({
               <Text style={styles.metaPct}>{open ? (total ? `${Math.round(pct * 100)}%` : '—') : ''}</Text>
               <Text style={styles.metaCount}>{total} Q</Text>
             </View>
-            <Glyph size={18} color={open ? colors.ink : colors.inkSoft}>
-              {open ? '→' : '■'}
-            </Glyph>
+            <Icon name={open ? glyph.arrow : glyph.lock} size={20} color={open ? colors.ink : colors.inkSoft} />
           </Pressable>
         );
       })}

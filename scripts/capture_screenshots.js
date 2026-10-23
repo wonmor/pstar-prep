@@ -24,6 +24,7 @@ async function clickText(page, text, { exact = true, which = 'first' } = {}) {
 }
 
 async function shot(page, dir, name) {
+  await page.evaluate(() => document.fonts.ready);
   await sleep(450); // settle layout/animation
   await page.screenshot({ path: path.join(dir, `${name}.png`) });
   console.log('   📸', name);
@@ -42,6 +43,13 @@ async function runTarget(browser, t) {
   console.log(`\n▶ ${t.id} (${t.w * t.scale}×${t.h * t.scale})`);
 
   await page.goto(BASE, { waitUntil: 'networkidle', timeout: 30000 });
+  // Wait for the Ionicons line-glyph font so icons never render as tofu.
+  await page.waitForFunction(
+    () => [...document.fonts].some((f) => /ionicons/i.test(f.family) && f.status === 'loaded'),
+    null,
+    { timeout: 20000 },
+  ).catch(() => console.log('   (ionicons font wait timed out)'));
+  await sleep(500);
   // First-launch disclaimer
   await clickText(page, 'I understand & agree');
   await page.getByText('Study modes', { exact: true }).first().waitFor({ timeout: 8000 });
@@ -57,7 +65,8 @@ async function runTarget(browser, t) {
   await page.locator('[data-testid="opt-0"]').first().waitFor({ timeout: 8000 });
   await shot(page, dir, '03-exam');
   // exit back to setup
-  await page.locator('text=✕').first().click().catch(() => {});
+  await page.reload({ waitUntil: 'networkidle' }); // full-screen flows: reset to Home
+  await clickText(page, 'Practice', { which: 'last' });
   await sleep(400);
 
   // Section practice → answer → feedback (green/red)
@@ -66,7 +75,7 @@ async function runTarget(browser, t) {
   await page.locator('[data-testid="opt-0"]').first().click();
   await sleep(500); // reveal feedback
   await shot(page, dir, '04-feedback');
-  await page.locator('text=✕').first().click().catch(() => {});
+  await page.reload({ waitUntil: 'networkidle' }); // full-screen flows: reset to Home
   await sleep(400);
 
   // Flashcards → flip to answer
@@ -76,7 +85,7 @@ async function runTarget(browser, t) {
   await page.locator('[data-testid="flashcard"]').click();
   await sleep(500);
   await shot(page, dir, '05-flashcard');
-  await page.locator('text=✕').first().click().catch(() => {});
+  await page.reload({ waitUntil: 'networkidle' }); // full-screen flows: reset to Home
   await sleep(400);
 
   // Answer key
@@ -90,6 +99,12 @@ async function runTarget(browser, t) {
 
 (async () => {
   const browser = await chromium.launch();
+  // Warm-up: the very first context can paint before the icon font is
+  // applied (tofu), so load the app once and throw that context away.
+  const warm = await browser.newContext();
+  await (await warm.newPage()).goto(BASE, { waitUntil: 'networkidle', timeout: 30000 });
+  await sleep(1500);
+  await warm.close();
   for (const t of TARGETS) {
     try {
       await runTarget(browser, t);

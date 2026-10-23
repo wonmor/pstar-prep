@@ -4,8 +4,8 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useProgress } from '../storage';
-import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Glyph, ScreenHeader } from '../components/ui';
+import { colors, fonts, glyph, type GlyphName, rule, space, type, themed } from '../theme';
+import { Glyph, Icon, ScreenHeader } from '../components/ui';
 import { SectionList } from '../components/SectionList';
 import { ExamSwitch } from '../components/ExamSwitch';
 import { ProBanner } from '../components/ProBanner';
@@ -19,7 +19,7 @@ function DeckRow({
   onPress,
   disabled,
 }: {
-  mark: string;
+  mark: GlyphName;
   tint: string;
   title: string;
   desc: string;
@@ -40,9 +40,7 @@ function DeckRow({
         pressed && { backgroundColor: colors.paperDeep },
       ]}
     >
-      <Glyph size={30} color={tint} style={{ width: 36 }}>
-        {mark}
-      </Glyph>
+      <Icon name={mark} size={30} color={tint} style={{ width: 36 }} />
       <View style={{ flex: 1 }}>
         <Text style={styles.deckTitle}>{title}</Text>
         <Text style={type.mute}>{desc}</Text>
@@ -72,7 +70,7 @@ export default function CardsSetupScreen() {
 
       <View style={styles.decks}>
         <DeckRow
-          mark={glyph.square}
+          mark={glyph.cards}
           tint={colors.blue}
           title={gate.isPro ? 'All questions' : 'All free cards'}
           desc={gate.isPro ? 'Shuffle the entire bank' : `Free sample · all ${QUESTIONS.length} with Pro`}

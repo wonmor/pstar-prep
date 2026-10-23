@@ -7,7 +7,7 @@ import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
 import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Button, FlowBar, Glyph, IconButton } from '../components/ui';
+import { Button, FlowBar, Glyph, IconButton, Icon } from '../components/ui';
 
 export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks' | number }) {
   const nav = useNav();
@@ -31,9 +31,7 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
   if (deck.length === 0) {
     return (
       <View style={styles.empty}>
-        <Glyph size={72} color={colors.yellow}>
-          {glyph.square}
-        </Glyph>
+        <Icon name={glyph.cards} size={72} color={colors.yellow} />
         <Text style={[type.h3, { marginTop: 10 }]}>No cards in this deck yet.</Text>
         <Button
           label="Back"
@@ -68,7 +66,7 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
         progress={(idx + 1) / deck.length}
         right={
           <IconButton
-            glyphText={bookmarked ? glyph.star : glyph.starOpen}
+            icon={bookmarked ? glyph.star : glyph.starOpen}
             color={bookmarked ? colors.red : colors.ink}
             label={bookmarked ? 'Remove bookmark' : 'Bookmark card'}
             onPress={() => toggleBookmark(q.id)}
@@ -98,9 +96,7 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
             <Text style={[styles.faceText, { color: flipped ? colors.onAccent : colors.onYellow }]}>
               {flipped ? 'ANSWER' : 'QUESTION'}
             </Text>
-            <Glyph size={18} color={flipped ? colors.onAccent : colors.onYellow}>
-              {flipped ? glyph.check : '?'}
-            </Glyph>
+            <Icon name={flipped ? glyph.check : glyph.help} size={18} color={flipped ? colors.onAccent : colors.onYellow} />
           </View>
           <ScrollView
             style={{ flex: 1 }}
@@ -121,9 +117,7 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
             ) : (
               <View style={{ marginTop: space.lg }}>
                 <View style={styles.answerBox}>
-                  <Glyph size={28} color={colors.onAccent}>
-                    {glyph.check}
-                  </Glyph>
+                  <Icon name={glyph.check} size={28} color={colors.onAccent} />
                   <Text style={styles.answerText}>{q.options[q.answer - 1]}</Text>
                 </View>
                 {q.reference ? (
@@ -136,13 +130,13 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
             )}
           </ScrollView>
           <Text style={styles.flipHint}>
-            {glyph.refresh} {flipped ? 'Tap to see question' : 'Tap to reveal answer'}
+            <Icon name={glyph.refresh} size={13} color={colors.inkSoft} /> {flipped ? 'Tap to see question' : 'Tap to reveal answer'}
           </Text>
         </View>
       </Pressable>
 
       <View style={[styles.footer, { paddingBottom: Math.max(insets.bottom, space.lg) }]}>
-        {isKnown ? <Text style={styles.mastered}>{glyph.check} MARKED AS MASTERED</Text> : null}
+        {isKnown ? <Text style={styles.mastered}><Icon name={glyph.check} size={14} color={colors.blue} /> MARKED AS MASTERED</Text> : null}
         <View style={styles.footRow}>
           <Button
             label="Again"

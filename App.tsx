@@ -18,8 +18,9 @@ import { EntitlementsProvider, useEntitlements } from './src/entitlements';
 import { routeAllowed } from './src/gating';
 import { ThemeModeProvider, useThemeState } from './src/themeMode';
 import { Disclaimer } from './src/components/Disclaimer';
-import { Glyph } from './src/components/ui';
-import { colors, fonts, rule, TOUCH, themed } from './src/theme';
+import { Icon } from './src/components/ui';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { colors, fonts, glyph, type GlyphName, rule, TOUCH, themed } from './src/theme';
 
 import HomeScreen from './src/screens/HomeScreen';
 import QuizSetupScreen from './src/screens/QuizSetupScreen';
@@ -31,14 +32,18 @@ import ReviewScreen from './src/screens/ReviewScreen';
 import AboutScreen from './src/screens/AboutScreen';
 import PaywallScreen from './src/screens/PaywallScreen';
 
-// Tab glyphs — typographic, coloured with the Bauhaus primaries when active.
-const TABS: { key: TabKey; label: string; glyph: string; tint: 'red' | 'blue' | 'yellow' }[] = [
-  { key: 'home', label: 'Home', glyph: '●', tint: 'red' },
-  { key: 'quizSetup', label: 'Practice', glyph: '▲', tint: 'blue' },
-  { key: 'cardsSetup', label: 'Cards', glyph: '■', tint: 'yellow' },
-  { key: 'review', label: 'Answers', glyph: '✓', tint: 'blue' },
-  { key: 'about', label: 'About', glyph: '?', tint: 'red' },
+// Tab line glyphs, coloured with the Bauhaus primaries when active.
+const TABS: { key: TabKey; label: string; icon: GlyphName; tint: 'red' | 'blue' | 'yellow' }[] = [
+  { key: 'home', label: 'Home', icon: glyph.home, tint: 'red' },
+  { key: 'quizSetup', label: 'Practice', icon: glyph.practice, tint: 'blue' },
+  { key: 'cardsSetup', label: 'Cards', icon: glyph.cards, tint: 'yellow' },
+  { key: 'review', label: 'Answers', icon: glyph.answers, tint: 'blue' },
+  { key: 'about', label: 'About', icon: glyph.about, tint: 'red' },
 ];
+
+// QA / screenshots only (like EXPO_PUBLIC_FORCE_PRO): open straight onto the
+// paywall with the disclaimer pre-accepted. Never set for store builds.
+const QA_PAYWALL = process.env.EXPO_PUBLIC_QA_START_ROUTE === 'paywall';
 
 // Routes that take over the full screen (hide the tab bar).
 const FULLSCREEN = new Set<Route['name']>(['quiz', 'cards', 'paywall']);
@@ -97,9 +102,7 @@ function TabBar({ active, onPress }: { active: TabKey; onPress: (t: TabKey) => v
             accessibilityLabel={t.label}
             accessibilityState={{ selected: on }}
           >
-            <Glyph size={20} color={on ? colors[t.tint] : colors.inkSoft}>
-              {t.glyph}
-            </Glyph>
+            <Icon name={t.icon} size={24} color={on ? colors[t.tint] : colors.inkSoft} />
             <Text
               style={[styles.tabLabel, { color: on ? colors.ink : colors.inkSoft }]}
               maxFontSizeMultiplier={1.3}
@@ -117,7 +120,7 @@ function Root() {
   const insets = useSafeAreaInsets();
   // One stack per tab so each tab keeps its own back history.
   const [stacks, setStacks] = useState<Record<TabKey, Route[]>>({
-    home: [TAB_ROOT.home],
+    home: QA_PAYWALL ? [TAB_ROOT.home, { name: 'paywall' }] : [TAB_ROOT.home],
     quizSetup: [TAB_ROOT.quizSetup],
     cardsSetup: [TAB_ROOT.cardsSetup],
     review: [TAB_ROOT.review],
@@ -187,6 +190,7 @@ export default function App() {
     Jost_700Bold,
     Jost_800ExtraBold,
     Jost_900Black,
+    ...Ionicons.font,
   });
   // Fonts are bundled locally, so this resolves within a frame or two. On
   // error we still render (system font fallback) rather than hang.
@@ -199,7 +203,7 @@ export default function App() {
           <EntitlementsProvider>
             <Root />
             {/* First-launch disclaimer — shown once on web and native until acknowledged. */}
-            <Disclaimer visible={accepted === false} onAccept={accept} />
+            <Disclaimer visible={accepted === false && !QA_PAYWALL} onAccept={accept} />
           </EntitlementsProvider>
         </ExamProvider>
       </ThemeModeProvider>

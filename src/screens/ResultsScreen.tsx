@@ -3,8 +3,8 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
-import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Button, Glyph, OptionRow, Rule } from '../components/ui';
+import { colors, fonts, glyph, sep, rule, space, type, themed } from '../theme';
+import { Button, Glyph, OptionRow, Rule, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
 
 export default function ResultsScreen({
@@ -42,9 +42,7 @@ export default function ResultsScreen({
       >
         <View style={styles.scoreTop}>
           <Text style={styles.scoreKicker}>{isExam ? 'MOCK EXAM RESULT' : 'PRACTICE RESULT'}</Text>
-          <Glyph size={30} color={passed ? colors.yellow : colors.red}>
-            {passed ? glyph.check : glyph.triangle}
-          </Glyph>
+          <Icon name={passed ? glyph.check : glyph.warning} size={30} color={passed ? colors.yellow : colors.red} />
         </View>
         <Text style={styles.scoreBig} maxFontSizeMultiplier={1.2}>
           {pct}
@@ -57,8 +55,8 @@ export default function ResultsScreen({
         {isExam && (
           <Text style={[styles.verdict, { color: colors.paper }]}>
             {passed
-              ? `PASS ${glyph.dot} ${PASS_PCT}% REQUIRED`
-              : `BELOW ${PASS_PCT}% PASS MARK ${glyph.dot} KEEP STUDYING`}
+              ? `PASS ${sep} ${PASS_PCT}% REQUIRED`
+              : `BELOW ${PASS_PCT}% PASS MARK ${sep} KEEP STUDYING`}
           </Text>
         )}
       </View>
@@ -80,7 +78,7 @@ export default function ResultsScreen({
         <>
           <Text style={[type.h2, { marginTop: space.xxl }]}>Review your misses</Text>
           <Text style={[type.mute, { marginBottom: space.md }]}>
-            {wrong.length} to revisit — correct answer marked {glyph.check}.
+            {wrong.length} to revisit — correct answer marked <Icon name={glyph.check} size={14} color={colors.blue} />.
           </Text>
           <View style={{ gap: space.xl }}>
             {wrong.map((q) => (
@@ -100,7 +98,7 @@ export default function ResultsScreen({
                 </View>
                 {q.reference ? (
                   <Text style={styles.ref}>
-                    REF {glyph.dot} {q.reference}
+                    REF {sep} {q.reference}
                   </Text>
                 ) : null}
               </View>
@@ -109,9 +107,7 @@ export default function ResultsScreen({
         </>
       ) : (
         <View style={styles.perfect}>
-          <Glyph size={64} color={colors.blue}>
-            {glyph.check}
-          </Glyph>
+          <Icon name={glyph.check} size={64} color={colors.blue} />
           <Text style={type.h3}>Perfect run — nothing to review.</Text>
         </View>
       )}
@@ -129,7 +125,7 @@ const styles = themed(() =>
     scoreBig: {
       fontFamily: fonts.black,
       fontSize: 120,
-      lineHeight: 120,
+      lineHeight: 138,
       color: colors.paper,
       letterSpacing: -5,
     },

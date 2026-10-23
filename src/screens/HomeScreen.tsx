@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { Disclaimer } from '../components/Disclaimer';
 import { ExamSwitch } from '../components/ExamSwitch';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useProgress } from '../storage';
-import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Glyph, Kicker, LockTag, ProgressBar, Rule } from '../components/ui';
+import { colors, fonts, glyph, sep, rule, space, type, themed } from '../theme';
+import { Glyph, Kicker, LockTag, ProgressBar, Rule, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
 
 function Stat({ value, label, first }: { value: string; label: string; first?: boolean }) {
@@ -58,7 +58,7 @@ function ModeRow({
         <Text style={styles.modeDesc}>{desc}</Text>
         {locked ? <LockTag /> : null}
       </View>
-      <Glyph size={26}>{glyph.arrow}</Glyph>
+      <Icon name={glyph.arrow} size={26} />
     </Pressable>
   );
 }
@@ -69,6 +69,11 @@ export default function HomeScreen() {
   const gate = useGate();
   const { meta, QUESTIONS, SECTIONS, EXAM_SIZE, PASS_PCT } = useExam();
   const [showDisclaimer, setShowDisclaimer] = useState(false);
+  // Size the wordmark to the column so it never truncates (web ignores
+  // adjustsFontSizeToFit): ~3.3 em fits a 5-letter Jost Black word.
+  const { width } = useWindowDimensions();
+  const column = Math.min(width, 720) - space.lg * 2 - 72 - space.md;
+  const heroSize = Math.max(48, Math.min(84, Math.floor(column / 3.3)));
 
   const seenIds = Object.keys(p.stats);
   const totalSeen = seenIds.length;
@@ -95,11 +100,17 @@ export default function HomeScreen() {
       <Kicker>{meta.kicker}</Kicker>
       <View style={styles.heroRow}>
         <View style={{ flex: 1 }}>
-          <Text style={styles.heroTitle} accessibilityRole="header" adjustsFontSizeToFit numberOfLines={1}>
+          <Text
+            style={[styles.heroTitle, { fontSize: heroSize, lineHeight: Math.round(heroSize * 1.16) }]}
+            accessibilityRole="header"
+            adjustsFontSizeToFit
+            numberOfLines={1}
+            maxFontSizeMultiplier={1}
+          >
             {meta.shortName}
           </Text>
           <Text style={styles.heroPrep}>
-            {`Prep ${glyph.dot} ${meta.badge}`}
+            {`Prep ${sep} ${meta.badge}`}
           </Text>
         </View>
         <Image
@@ -136,13 +147,13 @@ export default function HomeScreen() {
           </View>
           <View style={styles.counts}>
             <Text style={styles.count}>
-              <Text style={{ color: colors.red }}>{glyph.star}</Text> {p.bookmarks.length} saved
+              <Icon name={glyph.star} size={14} color={colors.red} /> {p.bookmarks.length} saved
             </Text>
             <Text style={styles.count}>
-              <Text style={{ color: colors.blue }}>{glyph.check}</Text> {p.known.length} mastered
+              <Icon name={glyph.check} size={14} color={colors.blue} /> {p.known.length} mastered
             </Text>
             <Text style={styles.count}>
-              <Text style={{ color: colors.ink }}>{glyph.square}</Text> {p.examsTaken} exams
+              <Icon name={glyph.exam} size={14} color={colors.ink} /> {p.examsTaken} exams
             </Text>
           </View>
         </View>
@@ -193,7 +204,7 @@ export default function HomeScreen() {
           Independent study aid · {meta.source}. Always verify against current official sources. Not
           affiliated with {meta.authority}.
         </Text>
-        <Text style={styles.disclaimerLink}>Read full disclaimer {glyph.arrow}</Text>
+        <Text style={styles.disclaimerLink}>Read full disclaimer <Icon name={glyph.arrow} size={13} color={colors.blue} /></Text>
       </Pressable>
 
       <Disclaimer visible={showDisclaimer} onClose={() => setShowDisclaimer(false)} />
@@ -208,7 +219,7 @@ const styles = themed(() =>
     heroTitle: {
       fontFamily: fonts.black,
       fontSize: 84,
-      lineHeight: 84,
+      lineHeight: 97,
       letterSpacing: -3,
       color: colors.ink,
     },
@@ -233,7 +244,7 @@ const styles = themed(() =>
     statValue: {
       fontFamily: fonts.black,
       fontSize: 32,
-      lineHeight: 36,
+      lineHeight: 38,
       color: colors.ink,
       letterSpacing: -1,
     },
@@ -246,7 +257,7 @@ const styles = themed(() =>
       alignItems: 'flex-end',
       marginTop: space.sm,
     },
-    bigNum: { fontFamily: fonts.black, fontSize: 48, lineHeight: 50, color: colors.ink, letterSpacing: -1.5 },
+    bigNum: { fontFamily: fonts.black, fontSize: 48, lineHeight: 56, color: colors.ink, letterSpacing: -1.5 },
     counts: { alignItems: 'flex-end', gap: 2 },
     count: { fontFamily: fonts.bold, fontSize: 14, color: colors.ink },
     modes: { borderTopWidth: rule.thick, borderTopColor: colors.ink },
@@ -259,7 +270,7 @@ const styles = themed(() =>
       borderBottomWidth: rule.mid,
       borderBottomColor: colors.ink,
     },
-    modeNum: { width: 60, letterSpacing: -2 },
+    modeNum: { width: 72, letterSpacing: -2 },
     modeTitle: { fontFamily: fonts.heavy, fontSize: 19, color: colors.ink },
     modeDesc: { fontFamily: fonts.medium, fontSize: 14, lineHeight: 19, color: colors.inkSoft },
     disclaimerBtn: { marginTop: space.xl, paddingVertical: space.sm },

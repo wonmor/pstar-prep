@@ -5,8 +5,8 @@ import { useEntitlements } from '../entitlements';
 import { useNav } from '../nav';
 import { useThemeMode } from '../themeMode';
 import { useActions, useProgress } from '../storage';
-import { colors, fonts, glyph, rule, space, TOUCH, type, themed } from '../theme';
-import { Glyph, ScreenHeader } from '../components/ui';
+import { colors, fonts, glyph, type GlyphName, sep, rule, space, TOUCH, type, themed } from '../theme';
+import { Icon, ScreenHeader } from '../components/ui';
 import { Disclaimer } from '../components/Disclaimer';
 import { ExamSwitch } from '../components/ExamSwitch';
 import {
@@ -28,7 +28,7 @@ function Row({
   danger,
   testID,
 }: {
-  mark: string;
+  mark: GlyphName;
   tint?: string;
   label: string;
   value?: string;
@@ -45,13 +45,11 @@ function Row({
       accessibilityLabel={value ? `${label}: ${value}` : label}
       style={({ pressed }) => [styles.row, pressed && onPress && { backgroundColor: colors.paperDeep }]}
     >
-      <Glyph size={18} color={danger ? colors.red : tint} style={styles.rowMark}>
-        {mark}
-      </Glyph>
+      <Icon name={mark} size={20} color={danger ? colors.red : tint} style={styles.rowMark} />
       <Text style={[styles.rowLabel, danger && { color: colors.red }]}>{label}</Text>
       <View style={{ flex: 1 }} />
       {value ? <Text style={styles.rowValue}>{value}</Text> : null}
-      {onPress ? <Glyph size={18}>{glyph.arrow}</Glyph> : null}
+      {onPress ? <Icon name={glyph.arrow} size={20} /> : null}
     </Pressable>
   );
 }
@@ -122,13 +120,13 @@ export default function AboutScreen() {
       </View>
       <ExamSwitch style={{ marginTop: space.lg }} />
       <Text style={[type.mute, { marginTop: space.sm }]}>
-        {meta.shortName} {glyph.dot} {QUESTIONS.length} questions {glyph.dot} {SECTIONS.length} sections
+        {meta.shortName} {sep} {QUESTIONS.length} questions {sep} {SECTIONS.length} sections
       </Text>
 
       <Group title="APPEARANCE">
         <Row
           testID="theme-toggle"
-          mark={theme.mode === 'dark' ? glyph.square : glyph.open}
+          mark={theme.mode === 'dark' ? glyph.moon : glyph.sun}
           label="Theme"
           value={theme.mode === 'dark' ? 'Black' : 'Paper'}
           onPress={() => theme.setMode(theme.mode === 'dark' ? 'light' : 'dark')}
@@ -155,7 +153,7 @@ export default function AboutScreen() {
         ) : (
           <Row
             testID="about-upgrade"
-            mark={glyph.square}
+            mark={glyph.unlock}
             tint={colors.red}
             label="Unlock Pro"
             value="All sections"
@@ -170,27 +168,27 @@ export default function AboutScreen() {
         </Text>
       ) : null}
 
-      <Group title={`LEGAL ${glyph.dot} ${meta.shortName}`}>
+      <Group title={`LEGAL ${sep} ${meta.shortName}`}>
         <Row
-          mark={glyph.triangle}
+          mark={glyph.warning}
           tint={colors.yellow}
           label="Disclaimer"
           onPress={() => setShowDisclaimer(true)}
         />
-        <Row mark={glyph.square} label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
-        <Row mark={glyph.circle} label={meta.sourceLabel} onPress={() => Linking.openURL(meta.sourceUrl)} />
+        <Row mark={glyph.shield} label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
+        <Row mark={glyph.book} label={meta.sourceLabel} onPress={() => Linking.openURL(meta.sourceUrl)} />
       </Group>
 
-      <Group title={`YOUR DATA ${glyph.dot} ${meta.shortName}`}>
-        <Row mark="#" label="Questions seen" value={`${Object.keys(p.stats).length}/${QUESTIONS.length}`} />
+      <Group title={`YOUR DATA ${sep} ${meta.shortName}`}>
+        <Row mark={glyph.document} label="Questions seen" value={`${Object.keys(p.stats).length}/${QUESTIONS.length}`} />
         <Row mark={glyph.star} tint={colors.red} label="Bookmarks" value={`${p.bookmarks.length}`} />
         <Row mark={glyph.check} tint={colors.blue} label="Cards mastered" value={`${p.known.length}`} />
-        <Row mark={glyph.close} label="Reset all progress" danger onPress={confirmReset} />
+        <Row mark={glyph.trash} label="Reset all progress" danger onPress={confirmReset} />
       </Group>
 
       <Group title="ABOUT">
-        <Row mark={glyph.circle} label="Website" onPress={() => Linking.openURL(SITE_URL)} />
-        <Row mark="@" label="Contact" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} />
+        <Row mark={glyph.globe} label="Website" onPress={() => Linking.openURL(SITE_URL)} />
+        <Row mark={glyph.mail} label="Contact" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} />
       </Group>
 
       <Text style={styles.fine}>

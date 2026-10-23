@@ -7,7 +7,7 @@ import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
 import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Button, FlowBar, Glyph, IconButton, OptionRow } from '../components/ui';
+import { Button, FlowBar, Glyph, IconButton, OptionRow, Icon } from '../components/ui';
 
 export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   const nav = useNav();
@@ -99,7 +99,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
         progress={(idx + (revealed || isExam ? 1 : 0)) / total}
         right={
           <IconButton
-            glyphText={bookmarked ? glyph.star : glyph.starOpen}
+            icon={bookmarked ? glyph.star : glyph.starOpen}
             color={bookmarked ? colors.red : colors.ink}
             label={bookmarked ? 'Remove bookmark' : 'Bookmark question'}
             onPress={() => toggleBookmark(cur.q.id)}
@@ -144,9 +144,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
             accessibilityLiveRegion="polite"
           >
             <View style={styles.feedbackHead}>
-              <Glyph size={30} color={isRight ? colors.blue : colors.red}>
-                {isRight ? glyph.check : glyph.close}
-              </Glyph>
+              <Icon name={isRight ? glyph.check : glyph.close} size={30} color={isRight ? colors.blue : colors.red} />
               <Text style={[styles.feedbackTitle, { color: isRight ? colors.blue : colors.red }]}>
                 {isRight ? 'Correct' : 'Not quite'}
               </Text>

@@ -1,5 +1,6 @@
-// Shared Bauhaus primitives. Decoration is typographic only — glyphs set as
-// text (● ■ ▲ → ✓ ✕) and thick rules. No drawn circles/squares/triangles.
+// Shared Bauhaus primitives. Structure comes from colour fields and thick
+// rules; icons are iOS-style line glyphs (Ionicons). No circles, squares or
+// triangles as ornaments.
 import React from 'react';
 import {
   ActivityIndicator,
@@ -11,7 +12,8 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { colors, fonts, glyph, rule, space, TOUCH, type, themed } from '../theme';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
 
 export type Tone = 'red' | 'blue' | 'yellow' | 'ink' | 'paper';
 // Getters so tones always reflect the active theme.
@@ -51,7 +53,33 @@ export const onTone: Record<Tone, string> = {
   },
 };
 
-// A decorative glyph. Hidden from screen readers; never carries meaning alone.
+// A line glyph. Hidden from screen readers; never carries meaning alone.
+export function Icon({
+  name,
+  size = 24,
+  color = colors.ink,
+  style,
+}: {
+  name: GlyphName;
+  size?: number;
+  color?: string;
+  style?: StyleProp<TextStyle>;
+}) {
+  return (
+    <Ionicons
+      name={name}
+      size={size}
+      color={color}
+      style={style}
+      accessible={false}
+      importantForAccessibility="no"
+      accessibilityElementsHidden
+      aria-hidden
+    />
+  );
+}
+
+// Oversized typographic numerals / letters (section index, option number).
 export function Glyph({
   children,
   size = 24,
@@ -70,7 +98,7 @@ export function Glyph({
       accessibilityElementsHidden
       aria-hidden
       maxFontSizeMultiplier={1.2}
-      style={[{ fontFamily: fonts.black, fontSize: size, lineHeight: size * 1.05, color }, style]}
+      style={[{ fontFamily: fonts.black, fontSize: size, lineHeight: Math.round(size * 1.2), color }, style]}
     >
       {children}
     </Text>
@@ -163,7 +191,7 @@ export function Button({
   disabled?: boolean;
   small?: boolean;
   style?: StyleProp<ViewStyle>;
-  trailing?: string; // glyph after the label, e.g. →
+  trailing?: GlyphName; // line glyph after the label, e.g. glyph.arrow
   accessibilityLabel?: string;
   testID?: string;
 }) {
@@ -199,9 +227,7 @@ export function Button({
     >
       <Text style={[styles.btnText, { color: fg }, small && { fontSize: 14 }]}>{label}</Text>
       {trailing ? (
-        <Glyph size={small ? 16 : 20} color={fg}>
-          {trailing}
-        </Glyph>
+        <Icon name={trailing} size={small ? 18 : 22} color={fg} />
       ) : null}
     </Pressable>
   );
@@ -230,7 +256,7 @@ export function Pill({
   );
 }
 
-// "■ PRO" marker on locked content.
+// Lock + "PRO" marker on locked content.
 export function LockTag({ inverse }: { inverse?: boolean }) {
   return (
     <View
@@ -238,9 +264,7 @@ export function LockTag({ inverse }: { inverse?: boolean }) {
       accessible
       accessibilityLabel="Locked, Pro only"
     >
-      <Glyph size={11} color={inverse ? colors.red : colors.onAccent}>
-        {glyph.lock}
-      </Glyph>
+      <Icon name={glyph.lock} size={11} color={inverse ? colors.red : colors.onAccent} />
       <Text style={[styles.lockText, inverse && { color: colors.red }]}>PRO</Text>
     </View>
   );
@@ -260,7 +284,7 @@ export function ProgressBar({ value, color = colors.ink }: { value: number; colo
   );
 }
 
-// An answer option. The marker is a glyph: its number, ✓ or ✕.
+// An answer option. The marker is its number, or a check / cross line glyph.
 export function OptionRow({
   index,
   text,
@@ -282,7 +306,7 @@ export function OptionRow({
     correct: { bg: colors.blue, fg: colors.onAccent, mark: colors.onAccent, border: colors.blue },
     wrong: { bg: colors.red, fg: colors.onAccent, mark: colors.onAccent, border: colors.red },
   }[state];
-  const mark = state === 'correct' ? glyph.check : state === 'wrong' ? glyph.close : `${index + 1}`;
+  const mark: GlyphName | null = state === 'correct' ? glyph.check : state === 'wrong' ? glyph.close : null;
   const a11yState =
     state === 'correct'
       ? ', correct answer'
@@ -305,9 +329,13 @@ export function OptionRow({
         pressed && !disabled && state === 'idle' && { backgroundColor: colors.paperDeep },
       ]}
     >
-      <Glyph size={26} color={t.mark} style={styles.optMark}>
-        {mark}
-      </Glyph>
+      {mark ? (
+        <Icon name={mark} size={26} color={t.mark} style={styles.optMark} />
+      ) : (
+        <Glyph size={26} color={t.mark} style={styles.optMark}>
+          {`${index + 1}`}
+        </Glyph>
+      )}
       <Text style={[styles.optionText, { color: t.fg }, state === 'correct' && { fontFamily: fonts.bold }]}>
         {text}
       </Text>
@@ -328,7 +356,7 @@ export function Divider() {
   return <Rule weight={rule.hair} style={{ marginVertical: space.md }} />;
 }
 
-// Top bar for full-screen flows (quiz, cards, paywall): ✕ · progress · action.
+// Top bar for full-screen flows (quiz, cards, paywall): close · progress · action.
 export function FlowBar({
   onClose,
   progress,
@@ -349,7 +377,7 @@ export function FlowBar({
         style={styles.barBtn}
         hitSlop={6}
       >
-        <Glyph size={24}>{glyph.close}</Glyph>
+        <Icon name={glyph.close} size={28} />
       </Pressable>
       <View style={{ flex: 1, paddingHorizontal: space.md }}>
         {progress != null ? <ProgressBar value={progress} /> : null}
@@ -360,13 +388,13 @@ export function FlowBar({
 }
 
 export function IconButton({
-  glyphText,
+  icon,
   onPress,
   label,
   color = colors.ink,
   size = 24,
 }: {
-  glyphText: string;
+  icon: GlyphName;
   onPress: () => void;
   label: string;
   color?: string;
@@ -380,9 +408,7 @@ export function IconButton({
       style={styles.barBtn}
       hitSlop={6}
     >
-      <Glyph size={size} color={color}>
-        {glyphText}
-      </Glyph>
+      <Icon name={icon} size={size} color={color} />
     </Pressable>
   );
 }
@@ -395,7 +421,7 @@ const styles = themed(() =>
       padding: space.lg,
     },
     headRow: { flexDirection: 'row', alignItems: 'flex-end', gap: space.md, marginBottom: space.sm },
-    headIndex: { letterSpacing: -3, marginBottom: -6 },
+    headIndex: { letterSpacing: -3, marginBottom: -12 },
     btn: {
       minHeight: 52,
       paddingVertical: 12,

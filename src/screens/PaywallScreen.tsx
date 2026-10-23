@@ -6,8 +6,8 @@ import { EXAMS } from '../exams';
 import { FREE_SECTION_COUNT } from '../gating';
 import { useNav } from '../nav';
 import type { Plan, PlanId } from '../purchases.types';
-import { colors, fonts, glyph, rule, space, TOUCH, type, themed } from '../theme';
-import { Button, FlowBar, Glyph } from '../components/ui';
+import { colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
+import { Button, FlowBar, Icon } from '../components/ui';
 import { APP_STORE_URL, PLAY_STORE_URL, PRIVACY_URL, TERMS_URL } from '../config';
 
 const REASONS: Record<string, string> = {
@@ -20,12 +20,10 @@ const PLAN_COPY: Record<PlanId, { name: string; note: string; tag?: string }> = 
   monthly: { name: '1-Month Pass', note: 'Renews monthly · cancel anytime' },
 };
 
-function Feature({ mark, tint, text }: { mark: string; tint: string; text: string }) {
+function Feature({ mark, tint, text }: { mark: GlyphName; tint: string; text: string }) {
   return (
     <View style={styles.feature}>
-      <Glyph size={22} color={tint} style={{ width: 28 }}>
-        {mark}
-      </Glyph>
+      <Icon name={mark} size={24} color={tint} style={{ width: 30 }} />
       <Text style={styles.featureText}>{text}</Text>
     </View>
   );
@@ -43,9 +41,9 @@ function PlanRow({ plan, selected, onPress }: { plan: Plan; selected: boolean; o
       accessibilityLabel={`${copy.name}, ${plan.priceString}${per}. ${copy.note}`}
       style={[styles.plan, selected && styles.planOn]}
     >
-      <Glyph size={22} color={selected ? colors.yellow : colors.ink} style={{ width: 26 }}>
-        {selected ? glyph.circle : '○'}
-      </Glyph>
+      <View style={{ width: 28 }}>
+        {selected ? <Icon name={glyph.check} size={26} color={colors.yellow} /> : null}
+      </View>
       <View style={{ flex: 1 }}>
         <View style={styles.planHead}>
           <Text style={[styles.planName, selected && { color: colors.paper }]}>{copy.name}</Text>
@@ -90,7 +88,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
     setMessage(null);
     const r = await ent.purchase(plan);
     setBusy(null);
-    if (r.entitled) setMessage(`${glyph.check} Pro unlocked. Thank you!`);
+    if (r.entitled) setMessage('Pro unlocked. Thank you!');
     else if (!r.cancelled) setMessage(r.error ?? 'Purchase did not complete.');
   }
 
@@ -99,7 +97,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
     setMessage(null);
     const ok = await ent.restore();
     setBusy(null);
-    setMessage(ok ? `${glyph.check} Pro restored.` : 'No previous Pro purchase found for this account.');
+    setMessage(ok ? 'Pro restored.' : 'No previous Pro purchase found for this account.');
   }
 
   const storeState = web
@@ -116,7 +114,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <Text style={type.kicker}>PSTAR & ROC-A TRAINER</Text>
         <View style={styles.heroRow}>
-          <Text style={styles.hero} accessibilityRole="header" accessibilityLabel="Pro">
+          <Text style={styles.hero} accessibilityRole="header" accessibilityLabel="Pro" maxFontSizeMultiplier={1.1}>
             PRO
           </Text>
           <Image
@@ -131,9 +129,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
 
         {ent.isPro && !web ? (
           <View style={styles.done}>
-            <Glyph size={48} color={colors.blue}>
-              {glyph.check}
-            </Glyph>
+            <Icon name={glyph.check} size={48} color={colors.blue} />
             <Text style={type.h2}>Pro is active</Text>
             <Text style={type.mute}>Every section and unlimited mock exams are unlocked.</Text>
           </View>
@@ -141,13 +137,13 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
 
         <View style={styles.features}>
           <Feature
-            mark={glyph.circle}
+            mark={glyph.book}
             tint={colors.red}
             text={`All ${sections} sections · ${questions} questions`}
           />
-          <Feature mark={glyph.square} tint={colors.blue} text="Unlimited full mock exams" />
-          <Feature mark={glyph.triangle} tint={colors.ink} text="Every flashcard & the full answer key" />
-          <Feature mark={glyph.check} tint={colors.blue} text="One unlock covers PSTAR and ROC-A" />
+          <Feature mark={glyph.exam} tint={colors.blue} text="Unlimited full mock exams" />
+          <Feature mark={glyph.cards} tint={colors.yellow} text="Every flashcard & the full answer key" />
+          <Feature mark={glyph.swap} tint={colors.ink} text="One unlock covers PSTAR and ROC-A" />
         </View>
 
         {storeState === 'web' && (
@@ -183,7 +179,10 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
 
         {storeState === 'unavailable' && (
           <View style={styles.notice} testID="store-unavailable">
-            <Text style={styles.noticeTitle}>{glyph.triangle} Store unavailable</Text>
+            <View style={styles.noticeHead}>
+              <Icon name={glyph.warning} size={20} color={colors.red} />
+              <Text style={styles.noticeTitle}>Store unavailable</Text>
+            </View>
             <Text style={type.mute}>
               Purchases can’t be loaded right now. The free tier keeps working — try again later, or restore a
               previous purchase.
@@ -284,8 +283,9 @@ const styles = themed(() =>
       justifyContent: 'space-between',
       marginTop: space.xs,
     },
-    hero: { fontFamily: fonts.black, fontSize: 120, lineHeight: 118, letterSpacing: -6, color: colors.ink },
+    hero: { fontFamily: fonts.black, fontSize: 120, lineHeight: 138, letterSpacing: -6, color: colors.ink },
     mark: { width: 64, height: 64, marginBottom: space.sm },
+    noticeHead: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
     reason: { fontFamily: fonts.bold, fontSize: 16, lineHeight: 22, color: colors.red, marginTop: space.md },
     done: { alignItems: 'flex-start', gap: space.xs, marginTop: space.lg },
     features: { marginTop: space.lg, gap: space.sm },

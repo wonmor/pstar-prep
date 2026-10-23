@@ -5,8 +5,8 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, fonts, glyph, rule, space, TOUCH, type, themed } from '../theme';
-import { Glyph, IconButton, OptionRow, ScreenHeader } from '../components/ui';
+import { colors, fonts, glyph, type GlyphName, sep, rule, space, TOUCH, type, themed } from '../theme';
+import { Glyph, IconButton, OptionRow, ScreenHeader, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
 
 type Filter = 'all' | 'bookmarks' | number;
@@ -15,9 +15,11 @@ function Chip({
   label,
   active,
   locked,
+  icon,
   onPress,
 }: {
   label: string;
+  icon?: GlyphName;
   active: boolean;
   locked?: boolean;
   onPress: () => void;
@@ -34,11 +36,8 @@ function Chip({
         pressed && !active && { backgroundColor: colors.paperDeep },
       ]}
     >
-      {locked ? (
-        <Glyph size={11} color={colors.red}>
-          {glyph.lock}
-        </Glyph>
-      ) : null}
+      {locked ? <Icon name={glyph.lock} size={12} color={colors.red} /> : null}
+      {icon ? <Icon name={icon} size={13} color={active ? colors.paper : colors.red} /> : null}
       <Text
         style={[styles.chipText, { color: active ? colors.paper : locked ? colors.inkSoft : colors.ink }]}
       >
@@ -57,7 +56,7 @@ function QuestionCard({ q }: { q: Question }) {
       <View style={styles.cardHead}>
         <Text style={styles.qNum}>Q {q.id}</Text>
         <IconButton
-          glyphText={marked ? glyph.star : glyph.starOpen}
+          icon={marked ? glyph.star : glyph.starOpen}
           color={marked ? colors.red : colors.ink}
           size={22}
           label={marked ? `Remove bookmark from question ${q.id}` : `Bookmark question ${q.id}`}
@@ -72,7 +71,7 @@ function QuestionCard({ q }: { q: Question }) {
       </View>
       {q.reference ? (
         <Text style={styles.ref}>
-          REF {glyph.dot} {q.reference}
+          REF {sep} {q.reference}
         </Text>
       ) : null}
     </View>
@@ -114,7 +113,7 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
           index="04"
           title="Answer Key"
           accent="blue"
-          sub={`Every question with the correct answer marked ${glyph.check}.`}
+          sub="Every question with the correct answer highlighted."
         />
         <View style={styles.search}>
           <TextInput
@@ -127,7 +126,7 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
             accessibilityLabel="Search questions"
           />
           {query ? (
-            <IconButton glyphText={glyph.close} size={18} label="Clear search" onPress={() => setQuery('')} />
+            <IconButton icon={glyph.close} size={18} label="Clear search" onPress={() => setQuery('')} />
           ) : null}
         </View>
       </View>
@@ -145,7 +144,8 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
           <View style={styles.chipsWrap}>
             <Chip label="All" active={filter === 'all'} onPress={() => setFilter('all')} />
             <Chip
-              label={`${glyph.star} Saved ${progress.bookmarks.length}`}
+              icon={glyph.star}
+              label={`Saved ${progress.bookmarks.length}`}
               active={filter === 'bookmarks'}
               onPress={() => setFilter('bookmarks')}
             />
@@ -164,7 +164,7 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
           hidden > 0 ? (
             <View style={{ marginTop: space.md }}>
               <Text style={[type.mute, { marginBottom: space.sm }]}>
-                {glyph.lock} {hidden} more {hidden === 1 ? 'answer' : 'answers'} in locked sections.
+                <Icon name={glyph.lock} size={13} color={colors.inkSoft} /> {hidden} more {hidden === 1 ? 'answer' : 'answers'} in locked sections.
               </Text>
               <ProBanner reason="answers" />
             </View>
@@ -173,9 +173,7 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
         ListEmptyComponent={
           hidden > 0 ? null : (
             <View style={styles.emptyState}>
-              <Glyph size={56} color={colors.red}>
-                {glyph.close}
-              </Glyph>
+              <Icon name={glyph.close} size={56} color={colors.red} />
               <Text style={[type.mute, { marginTop: 8 }]}>No questions match.</Text>
             </View>
           )
