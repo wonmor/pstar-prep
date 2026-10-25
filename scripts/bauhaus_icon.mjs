@@ -106,6 +106,56 @@ if (process.argv[2] === 'variants') {
   });
   execFileSync('magick', [...cols, '-background', '#DDD8CC', '+append', join(dir, 'icon-variants.png')]);
   console.log('wrote', join(dir, 'icon-variants.png'));
+} else if (process.argv[2] === 'apple') {
+  // Native Apple targets (apple/): macOS icon sizes and visionOS icon layers from
+  // the chosen variant, not a redesign. macOS gets Apple's template (824 px rounded
+  // rect inside a 1024 canvas); visionOS gets a back layer (field + bands) and a
+  // transparent front layer (the line glyph) so the system can add depth.
+  const v = variants[process.argv[3] || 'blue'];
+  const X = join(ROOT, 'apple', 'Resources', 'Assets.xcassets');
+  const write = (p, obj) => { mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, JSON.stringify(obj, null, 2) + '\n'); };
+  const info = { author: 'xcode', version: 1 };
+  write(join(X, 'Contents.json'), { info });
+  // macOS
+  const mac = join(X, 'AppIcon.appiconset');
+  const flat = join(tmp, 'flat.png');
+  render('flat', full(v), 1024, flat);
+  const master = join(tmp, 'mac-1024.png');
+  execFileSync('magick', ['-size', '1024x1024', 'xc:none', '(', flat, '-resize', '824x824', '-alpha', 'set',
+    '(', '-size', '824x824', 'xc:none', '-fill', 'white', '-draw', 'roundrectangle 0,0 823,823 185,185', ')',
+    '-compose', 'DstIn', '-composite', ')', '-gravity', 'center', '-compose', 'over', '-composite', master]);
+  const images = [];
+  for (const pt of [16, 32, 128, 256, 512]) {
+    for (const scale of [1, 2]) {
+      const px = pt * scale;
+      const name = `mac-${pt}@${scale}x.png`;
+      mkdirSync(mac, { recursive: true });
+      execFileSync('magick', [master, '-resize', `${px}x${px}`, join(mac, name)]);
+      images.push({ filename: name, idiom: 'mac', scale: `${scale}x`, size: `${pt}x${pt}` });
+    }
+  }
+  write(join(mac, 'Contents.json'), { images, info });
+  // visionOS
+  const stack = join(X, 'AppIconVision.solidimagestack');
+  write(join(stack, 'Contents.json'), { info, layers: [{ filename: 'Front.solidimagestacklayer' }, { filename: 'Back.solidimagestacklayer' }] });
+  for (const [layer, body, opaqueBg] of [
+    ['Back', r(0, 0, 1024, 1024, v.bg) + v.fields(), v.bg],
+    ['Front', placed(v.glyph, v.s, v.dx, v.dy), null],
+  ]) {
+    const dir = join(stack, `${layer}.solidimagestacklayer`);
+    write(join(dir, 'Contents.json'), { info });
+    const img = join(dir, 'Content.imageset');
+    const f = join(img, `${layer.toLowerCase()}.png`);
+    render(layer, body, 1024, f);
+    if (opaqueBg) opaque(f, opaqueBg);
+    write(join(img, 'Contents.json'), { images: [{ filename: `${layer.toLowerCase()}.png`, idiom: 'vision', scale: '2x' }], info });
+  }
+  // In-app brand mark (same as assets/brand-mark.png, larger for Retina / visionOS).
+  const mark = join(X, 'BrandMark.imageset');
+  render('mark512', full(v), 512, join(mark, 'brand-mark.png'));
+  opaque(join(mark, 'brand-mark.png'), v.bg);
+  write(join(mark, 'Contents.json'), { images: [{ filename: 'brand-mark.png', idiom: 'universal' }], info });
+  console.log('apple icons written to', X);
 } else {
   const pick = process.argv[2] || 'blue';
   const v = variants[pick];
