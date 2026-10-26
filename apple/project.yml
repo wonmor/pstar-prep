@@ -1,6 +1,15 @@
 # Native macOS + visionOS app for PSTAR & ROC-A Trainer.
 # Generate with `xcodegen` in this folder. Both targets ship as the Mac and
 # visionOS platforms of the same App Store Connect app (same bundle id).
+#   Tests:  xcodebuild test -scheme PSTAR-macOS -destination platform=macOS -only-testing:PSTARCoreTests
+#   Icons:  node ../scripts/bauhaus_icon.mjs apple   (regenerates Resources/Assets.xcassets icons)
+#   Data:   ../assets/data/{pstar,roca}.json are shared with the Expo app, not copied.
+# Debug-only QA launch arguments (compiled out of Release): -QAAccept YES,
+# -QAReset YES, -QASeed YES, -QAExam roca, -QADestination practice|cards|answers|about,
+# -QASession mock|practice|cards, -QAAnswer right|wrong, -QAFinish YES,
+# -QAPaywall section|mock|banner, -QADemoStore YES, -QAForcePro YES, -QAFree YES,
+# -QADetailOnly YES, and on macOS -QASnapshot <name> (renders the window to the
+# sandbox tmp dir and quits; works with the screen locked).
 name: PSTARTrainer
 options:
   bundleIdPrefix: com.orchestrsim
