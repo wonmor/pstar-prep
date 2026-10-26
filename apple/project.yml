@@ -1,0 +1,118 @@
+# Native macOS + visionOS app for PSTAR & ROC-A Trainer.
+# Generate with `xcodegen` in this folder. Both targets ship as the Mac and
+# visionOS platforms of the same App Store Connect app (same bundle id).
+name: PSTARTrainer
+options:
+  bundleIdPrefix: com.orchestrsim
+  createIntermediateGroups: true
+  deploymentTarget:
+    macOS: "14.0"
+    visionOS: "2.0"
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: Z64KRUX3W3
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    PRODUCT_BUNDLE_IDENTIFIER: com.orchestrsim.pstarprep
+    PRODUCT_NAME: PSTAR Trainer
+    PRODUCT_MODULE_NAME: PSTARTrainer
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: ""
+    DEAD_CODE_STRIPPING: YES
+
+targetTemplates:
+  App:
+    type: application
+    sources:
+      - path: Shared
+      - path: Resources
+        excludes: ["Fonts/OFL.txt"]
+      - path: ../assets/data/pstar.json
+        buildPhase: resources
+      - path: ../assets/data/roca.json
+        buildPhase: resources
+      - path: Resources/Fonts/OFL.txt
+        buildPhase: resources
+
+targets:
+  PSTAR-macOS:
+    templates: [App]
+    platform: macOS
+    info:
+      path: Config/Info-macOS.plist
+      properties:
+        CFBundleDisplayName: PSTAR & ROC-A Trainer
+        CFBundleName: PSTAR Trainer
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.education
+        ITSAppUsesNonExemptEncryption: false
+        NSHumanReadableCopyright: "Copyright 2026 Orchestr Aerospace Inc."
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+    entitlements:
+      path: Config/PSTAR-macOS.entitlements
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_HARDENED_RUNTIME: YES
+        COMBINE_HIDPI_IMAGES: YES
+
+  PSTAR-visionOS:
+    templates: [App]
+    platform: visionOS
+    info:
+      path: Config/Info-visionOS.plist
+      properties:
+        CFBundleDisplayName: PSTAR & ROC-A Trainer
+        CFBundleName: PSTAR Trainer
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UIApplicationPreferredDefaultSceneSessionRole: UIWindowSceneSessionRoleApplication
+          UISceneConfigurations: {}
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIconVision
+        TARGETED_DEVICE_FAMILY: "7"
+
+  PSTARCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Shared/Core
+      - path: Tests
+      - path: ../assets/data/pstar.json
+        buildPhase: resources
+      - path: ../assets/data/roca.json
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: PSTARCoreTests
+        PRODUCT_MODULE_NAME: PSTARCoreTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.orchestrsim.pstarprep.coretests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
+
+schemes:
+  PSTAR-macOS:
+    build:
+      targets:
+        PSTAR-macOS: all
+        PSTARCoreTests: [test]
+    test:
+      targets: [PSTARCoreTests]
+    archive:
+      config: Release
+  PSTAR-visionOS:
+    build:
+      targets:
+        PSTAR-visionOS: all
+    archive:
+      config: Release
