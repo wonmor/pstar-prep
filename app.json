@@ -61,7 +61,9 @@
             "targetSdkVersion": 36
           }
         }
-      ]
+      ],
+      "./plugins/withSceneLifecycle",
+      "./plugins/withPodDeploymentTarget"
     ]
   }
 }
