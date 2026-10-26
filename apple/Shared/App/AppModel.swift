@@ -206,6 +206,13 @@ final class AppModel: ObservableObject {
         if let e = d.string(forKey: "QAExam"), let id = ExamID(rawValue: e) { examID = id }
         if let dest = d.string(forKey: "QADestination"), let v = Destination(rawValue: dest) { destination = v }
         if d.bool(forKey: "QAAccept") { disclaimerAccepted = true }
+        if let r = d.string(forKey: "QAPaywall"), let reason = PaywallReason(rawValue: r) { paywall = reason }
+        switch d.string(forKey: "QASession") {
+        case "mock": session = .quiz(.mock)
+        case "practice": session = .quiz(.section(1))
+        case "cards": session = .cards(.all)
+        default: break
+        }
         if d.bool(forKey: "QASeed") {
             for id in ExamID.allCases {
                 guard let exam = exams[id] else { continue }

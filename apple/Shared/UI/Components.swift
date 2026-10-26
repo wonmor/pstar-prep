@@ -173,8 +173,10 @@ struct OptionRow: View {
         #if os(visionOS)
         .hoverEffect(.highlight)
         #endif
-        .disabled(disabled)
+        // Not `.disabled`: that would dim the revealed answer colours.
+        .allowsHitTesting(!disabled)
         .accessibilityLabel("Option \(index + 1): \(text)\(Self.a11y(state))")
+        .accessibilityAddTraits(disabled ? .isStaticText : [])
     }
 
     static func a11y(_ s: OptionState) -> String {

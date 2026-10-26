@@ -53,7 +53,29 @@ struct QuizView: View {
             }
         }
         .background(c.paper)
+        #if DEBUG
+        .onAppear(perform: applyQA)
+        #endif
     }
+
+    #if DEBUG
+    /// Screenshots only: `-QAAnswer wrong|right` answers the first question,
+    /// `-QAFinish YES` answers everything (about 9 in 10 right) and submits.
+    private func applyQA() {
+        let d = UserDefaults.standard
+        if d.bool(forKey: "QAFinish") {
+            for i in 0..<ctl.session.total {
+                let right = ctl.session.current.options.correctIndex
+                choose(i % 10 == 3 ? (right + 1) % 4 : right)
+                if i < ctl.session.total - 1 { ctl.session.next() }
+            }
+            finish()
+        } else if let a = d.string(forKey: "QAAnswer") {
+            let right = ctl.session.current.options.correctIndex
+            choose(a == "right" ? right : (right + 2) % 4)
+        }
+    }
+    #endif
 
     // MARK: Actions
 
@@ -83,7 +105,8 @@ struct QuizView: View {
     private var actions: StudyActions {
         StudyActions(
             answer: { choose($0) },
-            next: { next() },
+            // Return never submits a mock exam; Submit is a deliberate click.
+            next: (ctl.session.isMock && ctl.session.isLast) ? nil : { next() },
             previous: ctl.session.isMock ? { ctl.session.back() } : nil,
             bookmark: { model.toggleBookmark(ctl.session.current.question.id) },
             close: { model.endSession() })
@@ -195,7 +218,6 @@ struct QuizView: View {
                         BauhausLabel(title: s.isLast ? "Submit \(s.answeredCount)/\(s.total)" : "Next", trailing: Glyph.arrow)
                     }
                     .buttonStyle(BauhausButtonStyle(variant: s.isLast ? .red : .primary))
-                    .layoutPriority(1)
                 }
             } else {
                 Button { next() } label: {

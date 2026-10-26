@@ -4,6 +4,11 @@ struct FlashcardsView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.palette) private var c
     let scope: DeckScope
+    #if os(macOS)
+    static let verb = "Click"
+    #else
+    static let verb = "Tap"
+    #endif
     @State private var deck: [Question]
     @State private var idx = 0
     @State private var flipped = false
@@ -155,7 +160,7 @@ struct FlashcardsView: View {
 
             HStack(spacing: 6) {
                 Image(systemName: Glyph.refresh)
-                Text(flipped ? "Click to see question" : "Click to reveal answer")
+                Text(flipped ? "\(Self.verb) to see question" : "\(Self.verb) to reveal answer")
                 #if os(macOS)
                 Text("(Space)").foregroundStyle(c.inkSoft.opacity(0.8))
                 #endif

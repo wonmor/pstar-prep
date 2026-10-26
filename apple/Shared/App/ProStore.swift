@@ -30,9 +30,9 @@ struct Plan: Identifiable {
 
 @MainActor
 final class ProStore: ObservableObject {
-    static let monthlyID = "pstar_pro_1month"
-    static let lifetimeID = "pstar_pro_lifetime_ios"
-    static let productIDs: Set<String> = [monthlyID, lifetimeID]
+    nonisolated static let monthlyID = "pstar_pro_1month"
+    nonisolated static let lifetimeID = "pstar_pro_lifetime_ios"
+    nonisolated static let productIDs: Set<String> = [monthlyID, lifetimeID]
     private static let cacheKey = "pstar:pro:v1"
 
     enum LoadState: Equatable { case idle, loading, ready, unavailable }

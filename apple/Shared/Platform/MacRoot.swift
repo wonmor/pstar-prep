@@ -7,9 +7,14 @@ struct MacRoot: View {
     @EnvironmentObject private var model: AppModel
     @EnvironmentObject private var store: ProStore
     @Environment(\.palette) private var c
+    #if DEBUG
+    @State private var columns: NavigationSplitViewVisibility = UserDefaults.standard.bool(forKey: "QADetailOnly") ? .detailOnly : .automatic
+    #else
+    @State private var columns: NavigationSplitViewVisibility = .automatic
+    #endif
 
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView(columnVisibility: $columns) {
             List(selection: $model.destination) {
                 Section("Study") {
                     ForEach(Destination.allCases) { d in
@@ -35,6 +40,8 @@ struct MacRoot: View {
                 }
             }
             .listStyle(.sidebar)
+            .scrollContentBackground(.hidden)
+            .background(c.paper)
             .disabled(model.session != nil)
             .navigationSplitViewColumnWidth(min: 190, ideal: 220, max: 280)
         } detail: {

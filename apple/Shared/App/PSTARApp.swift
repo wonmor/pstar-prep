@@ -7,6 +7,9 @@ struct PSTARApp: App {
 
     init() {
         Jost.register()
+        #if DEBUG && os(macOS)
+        QASnapshot.scheduleIfRequested()
+        #endif
     }
 
     var body: some Scene {
