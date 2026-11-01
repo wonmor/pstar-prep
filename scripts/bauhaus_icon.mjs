@@ -62,11 +62,13 @@ const variants = {
     fields: () =>
       r(0, 800, 640, 224, C.yellow) + r(640, 800, 384, 224, C.red) +
       r(0, 768, 1024, 32, C.ink) + r(640, 768, 32, 256, C.ink),
-    // Android launchers crop the adaptive layers to the middle ~66%, so the
-    // foot bands start higher to stay visible in the mask.
+    // Android adaptive background, in iOS-icon coordinates. The layer is drawn
+    // through ADAPTIVE (2/3 scale about the centre), so the 72 dp launcher
+    // viewport shows exactly the iOS icon; these rects run out to the layer
+    // edges (-256..1280 in iOS space) so no launcher mask exposes a gap.
     adaptiveFields: () =>
-      r(0, 728, 600, 296, C.yellow) + r(600, 728, 424, 296, C.red) +
-      r(0, 704, 1024, 24, C.ink) + r(600, 704, 24, 320, C.ink),
+      r(-256, 800, 896, 480, C.yellow) + r(640, 800, 640, 480, C.red) +
+      r(-256, 768, 1536, 32, C.ink) + r(640, 768, 32, 512, C.ink),
   },
 };
 
@@ -115,9 +117,14 @@ if (process.argv[2] === 'variants') {
   render('fav', full(v), 196, join(A, 'favicon.png'));
   opaque(join(A, 'icon.png'), v.bg); opaque(join(A, 'icon-512.png'), v.bg); opaque(join(A, 'favicon.png'), v.bg);
   // Android adaptive: background = the colour fields, foreground = glyph inside the 66% safe zone.
-  render('bg', r(0, 0, 1024, 1024, v.bg) + (v.adaptiveFields || v.fields)(), 1024, join(A, 'android-icon-background.png'));
-  render('fg', placed(v.glyph, v.s * 0.66, v.dx * 0.66, v.dy * 0.66, STROKE * 0.66), 1024, join(A, 'android-icon-foreground.png'));
-  render('mono', placed('#FFFFFF', v.s * 0.66, v.dx * 0.66, v.dy * 0.66, STROKE * 0.66), 1024, join(A, 'android-icon-monochrome.png'));
+  // The 108 dp layers show their middle 72 dp (2/3), so scaling the iOS artwork
+  // by K about the centre makes the visible viewport identical to the iOS icon.
+  // The glyph stays inside the 66 dp safe circle (checked in the commit message).
+  const K = 2 / 3;
+  const ADAPTIVE = (body) => `<g transform="translate(512,512) scale(${K}) translate(-512,-512)">${body}</g>`;
+  render('bg', r(0, 0, 1024, 1024, v.bg) + ADAPTIVE((v.adaptiveFields || v.fields)()), 1024, join(A, 'android-icon-background.png'));
+  render('fg', placed(v.glyph, v.s * K, v.dx * K, v.dy * K, STROKE * K), 1024, join(A, 'android-icon-foreground.png'));
+  render('mono', placed('#FFFFFF', v.s * K, v.dx * K, v.dy * K, STROKE * K), 1024, join(A, 'android-icon-monochrome.png'));
   // Splash: off-white glyph on the black splash ground (app.json), matching the default Black theme.
   render('splash', placed(C.paper, 0.8), 1024, join(A, 'splash-icon.png'));
   // In-app brand mark (Home header): the full icon, small.
