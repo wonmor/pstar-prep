@@ -45,6 +45,11 @@ async function doInit(): Promise<boolean> {
   }
 }
 
+
+/** Why the last getPlans() came back empty (store code / timeout), for the paywall. */
+let lastPlansError: string | null = null;
+export const plansError = () => lastPlansError;
+
 export const store: StoreAdapter = {
   init: () => (ready ??= doInit()),
 
@@ -58,9 +63,17 @@ export const store: StoreAdapter = {
   },
 
   getPlans: async () => {
+    lastPlansError = null;
     if (!(await store.init()) || !rc) return [];
     try {
-      const offerings = await rc.getOfferings();
+      // getOfferings() waits for the Play Billing connection and never settles
+      // when Play doesn't answer ("Loading prices" forever). Bound it.
+      const offerings = await Promise.race([
+        rc.getOfferings(),
+        new Promise<never>((_, reject) =>
+          setTimeout(() => reject(Object.assign(new Error('Google Play did not respond (offerings timed out)'), { code: 'TIMEOUT' })), 12000),
+        ),
+      ]);
       const pkgs = offerings.current?.availablePackages ?? [];
       const plans: Plan[] = [];
       for (const pkg of pkgs) {
@@ -75,8 +88,11 @@ export const store: StoreAdapter = {
         });
       }
       const rank = (p: Plan) => (p.id === 'lifetime' ? 0 : 1);
+      lastPlansError = plans.length ? null : 'No plans returned by the store.';
       return plans.sort((a, b) => rank(a) - rank(b));
-    } catch {
+    } catch (e: any) {
+      lastPlansError = `${e?.code ?? ''} ${e?.message ?? ''}`.trim() || 'Store error';
+      console.warn('[purchases] getPlans failed', e);
       return [];
     }
   },

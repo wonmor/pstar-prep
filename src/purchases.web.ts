@@ -25,6 +25,9 @@ const DEMO_PLANS: Plan[] = [
   { id: 'monthly', productId: PRODUCT_IDS.monthly, priceString: '$4.99', title: 'Pro 1-Month', handle: null },
 ];
 
+
+export const plansError = (): string | null => null;
+
 export const store: StoreAdapter = {
   init: async () => demo(),
   isEntitled: async () => false,

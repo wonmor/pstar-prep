@@ -5,6 +5,7 @@ import { useEntitlements } from '../entitlements';
 import { EXAMS } from '../exams';
 import { FREE_SECTION_COUNT } from '../gating';
 import { useNav } from '../nav';
+import { plansError } from '../purchases';
 import type { Plan, PlanId } from '../purchases.types';
 import { colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
 import { Button, FlowBar, Icon } from '../components/ui';
@@ -187,6 +188,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
               Purchases can’t be loaded right now. The free tier keeps working — try again later, or restore a
               previous purchase.
             </Text>
+            {!!plansError() && <Text style={[type.mute, { fontSize: 11, marginTop: space.xs }]}>{plansError()}</Text>}
             <Button
               label="Try again"
               variant="ghost"
