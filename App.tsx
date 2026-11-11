@@ -121,6 +121,27 @@ function TabBar({ active, onPress }: { active: TabKey; onPress: (t: TabKey) => v
 // per frame; screens keep transparent roots so the grain shows through.
 const GRAIN = require('./assets/paper-grain.png');
 function PaperGrain() {
+  if (Platform.OS === 'web') {
+    // react-native-web paints a repeat Image once, so tile it with CSS instead.
+    // Metro's web asset registry hands `require()` an object with a `uri`.
+    const src: any = GRAIN;
+    const uri: string | undefined = typeof src === 'string' ? src : src?.uri ?? src?.default?.uri;
+    if (!uri) return null;
+    return (
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: `url(${uri})`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '128px 128px',
+          opacity: colors.grain,
+          pointerEvents: 'none',
+        }}
+      />
+    );
+  }
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="none">
       <Image

@@ -17,8 +17,11 @@ mkdir -p /tmp/site && cp -R dist /tmp/site/pstar-prep
 OUT_DIR=$PWD/store-assets/screenshots node scripts/capture_screenshots.js
 ```
 
-Each folder has 6 shots: `01-home`, `02-practice`, `03-exam`, `04-feedback`
-(green ✓ + reference), `05-flashcard` (answer side), `06-answers` (answer key).
+Each folder has 8 shots: `01-home`, `02-practice`, `03-exam`, `04-feedback`
+(correct answer + reference), `05-flashcard` (answer side), `06-answers` (answer
+key), `07-results` (section practice result), `08-roca` (ROC-A home). Set
+`PW_CHANNEL=chrome` to run on the installed Google Chrome instead of a
+downloaded Chromium.
 
 | Folder | Pixels | Where it goes |
 |--------|--------|---------------|

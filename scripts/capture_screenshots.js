@@ -94,6 +94,39 @@ async function runTarget(browser, t) {
   await sleep(400);
   await shot(page, dir, '06-answers');
 
+  // Results — finish a short section practice (Collision Avoidance, 10 Qs)
+  await page.reload({ waitUntil: 'networkidle' });
+  await sleep(400);
+  await clickText(page, 'Practice', { which: 'last' });
+  await clickText(page, 'Collision Avoidance');
+  // Answer from the dataset so the result shot reads 90%, not a random score.
+  const bank = require('../assets/data/pstar.json').questions;
+  for (let i = 0; i < 10; i++) {
+    await page.locator('[data-testid="opt-0"]').first().waitFor({ timeout: 8000 });
+    const heading = (await page.getByRole('heading').last().innerText()).trim();
+    const q = bank.find((x) => x.question.trim() === heading);
+    const correct = q ? q.options[q.answer - 1] : null;
+    const opts = page.locator('[data-testid^="opt-"]');
+    const texts = await opts.allInnerTexts();
+    const norm = (t) => t.replace(/\s+/g, ' ').trim();
+    const hit = correct ? texts.findIndex((t) => norm(t).endsWith(norm(correct))) : -1;
+    await opts.nth(hit >= 0 && i !== 3 ? hit : 0).click();
+    await sleep(250);
+    const next = page.getByText(i === 9 ? 'See results' : 'Next question', { exact: true }).last();
+    await next.click({ timeout: 8000 });
+    await sleep(250);
+  }
+  await page.getByText('Try again', { exact: true }).waitFor({ timeout: 8000 });
+  await shot(page, dir, '07-results');
+
+  // ROC-A home
+  await page.reload({ waitUntil: 'networkidle' });
+  await sleep(400);
+  await clickText(page, 'ROC-A', { which: 'first' });
+  await page.getByText('Study modes', { exact: true }).first().waitFor({ timeout: 8000 });
+  await sleep(300);
+  await shot(page, dir, '08-roca');
+
   await ctx.close();
 }
 
