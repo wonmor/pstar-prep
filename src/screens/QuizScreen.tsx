@@ -6,7 +6,7 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, rule, space, type, themed } from '../theme';
 import { Button, FlowBar, Glyph, IconButton, OptionRow, Icon } from '../components/ui';
 
 export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
@@ -193,7 +193,7 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
 
 const styles = themed(() =>
   StyleSheet.create({
-    root: { flex: 1, backgroundColor: colors.paper },
+    root: { flex: 1 },
     content: { padding: space.lg, paddingBottom: 24 },
     metaRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', gap: space.md },
     kicker: { ...type.kicker, flex: 1 },
@@ -206,9 +206,9 @@ const styles = themed(() =>
       marginTop: space.md,
     },
     feedback: {
-      borderLeftWidth: rule.heavy,
-      paddingLeft: space.md,
-      paddingVertical: space.xs,
+      ...cardSurface(),
+      borderLeftWidth: 4,
+      padding: space.lg,
       marginTop: space.xl,
     },
     feedbackHead: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
@@ -217,9 +217,9 @@ const styles = themed(() =>
     footer: {
       padding: space.lg,
       paddingTop: space.md,
-      borderTopWidth: rule.thick,
-      borderTopColor: colors.ink,
-      backgroundColor: colors.paper,
+      borderTopWidth: rule.hair,
+      borderTopColor: colors.line,
+      backgroundColor: colors.card,
     },
     footRow: { flexDirection: 'row', gap: space.md },
   }),

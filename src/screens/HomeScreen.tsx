@@ -6,7 +6,7 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useProgress } from '../storage';
-import { colors, fonts, glyph, sep, rule, space, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, rule, space, type, themed } from '../theme';
 import { Glyph, Kicker, LockTag, ProgressBar, Rule, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
 
@@ -87,10 +87,10 @@ export default function HomeScreen() {
   };
 
   const mockDesc = gate.isPro
-    ? `${EXAM_SIZE} random questions · ${PASS_PCT}% to pass`
+    ? `${EXAM_SIZE} random questions | ${PASS_PCT}% to pass`
     : gate.canMock
-      ? `${EXAM_SIZE} questions · 1 free mock today`
-      : 'Today’s free mock used · unlimited with Pro';
+      ? `${EXAM_SIZE} questions | 1 free mock today`
+      : 'Today’s free mock used | unlimited with Pro';
 
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -110,7 +110,7 @@ export default function HomeScreen() {
             {meta.shortName}
           </Text>
           <Text style={styles.heroPrep}>
-            {`Prep ${sep} ${meta.badge}`}
+            {`Prep | ${meta.badge}`}
           </Text>
         </View>
         <Image
@@ -120,7 +120,7 @@ export default function HomeScreen() {
           accessible={false}
         />
       </View>
-      <Rule weight={rule.heavy} />
+      <Rule weight={rule.heavy} color={colors.ink} />
       <Text style={[type.body, styles.heroSub]}>
         {meta.subtitle} {QUESTIONS.length} questions across {SECTIONS.length} sections.
       </Text>
@@ -182,7 +182,7 @@ export default function HomeScreen() {
         <ModeRow
           n="03"
           title="Flashcards"
-          desc="Flip · question, answer & reference"
+          desc="Flip | question, answer & reference"
           tint={colors.yellow}
           onPress={() => nav.resetTab('cardsSetup')}
         />
@@ -201,7 +201,7 @@ export default function HomeScreen() {
         accessibilityRole="button"
       >
         <Text style={styles.disclaimer}>
-          Independent study aid · {meta.source}. Always verify against current official sources. Not
+          Independent study aid. {meta.source}. Always verify against current official sources. Not
           affiliated with {meta.authority}.
         </Text>
         <Text style={styles.disclaimerLink}>Read full disclaimer <Icon name={glyph.arrow} size={13} color={colors.blue} /></Text>
@@ -233,14 +233,13 @@ const styles = themed(() =>
     mark: { width: 72, height: 72, marginLeft: space.md },
     heroSub: { marginTop: space.md },
     stats: {
+      ...cardSurface(),
       flexDirection: 'row',
       marginTop: space.lg,
-      borderTopWidth: rule.mid,
-      borderBottomWidth: rule.mid,
-      borderColor: colors.ink,
+      overflow: 'hidden',
     },
-    stat: { flex: 1, paddingVertical: space.md, paddingHorizontal: space.sm },
-    statDivider: { borderLeftWidth: rule.mid, borderLeftColor: colors.ink },
+    stat: { flex: 1, paddingVertical: space.md, paddingHorizontal: space.md },
+    statDivider: { borderLeftWidth: rule.hair, borderLeftColor: colors.line },
     statValue: {
       fontFamily: fonts.black,
       fontSize: 32,
@@ -249,7 +248,7 @@ const styles = themed(() =>
       letterSpacing: -1,
     },
     statLabel: { ...type.tiny, textTransform: 'uppercase' },
-    block: { marginTop: space.xl, gap: space.sm },
+    block: { ...cardSurface(), marginTop: space.xl, gap: space.sm, padding: space.lg },
     blockHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline' },
     progRow: {
       flexDirection: 'row',
@@ -267,8 +266,8 @@ const styles = themed(() =>
       gap: space.md,
       minHeight: 76,
       paddingVertical: space.md,
-      borderBottomWidth: rule.mid,
-      borderBottomColor: colors.ink,
+      borderBottomWidth: rule.hair,
+      borderBottomColor: colors.line,
     },
     modeNum: { width: 72, letterSpacing: -2 },
     modeTitle: { fontFamily: fonts.heavy, fontSize: 19, color: colors.ink },

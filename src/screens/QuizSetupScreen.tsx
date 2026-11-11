@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
-import { colors, fonts, glyph, space, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, space, type, themed } from '../theme';
 import { Button, Glyph, ScreenHeader, Icon } from '../components/ui';
 import { SectionList } from '../components/SectionList';
 import { ExamSwitch } from '../components/ExamSwitch';
@@ -29,7 +29,7 @@ export default function QuizSetupScreen() {
       <View style={styles.exam}>
         <View style={styles.examTop}>
           <Text style={styles.examKicker}>FULL MOCK EXAM</Text>
-          <Icon name={glyph.exam} size={30} color={colors.yellow} />
+          <Icon name={glyph.exam} size={30} color={colors.blue} />
         </View>
         <Text style={styles.examBig} maxFontSizeMultiplier={1.1}>{EXAM_SIZE}</Text>
         <Text style={styles.examDesc}>
@@ -38,7 +38,7 @@ export default function QuizSetupScreen() {
         </Text>
         {!gate.isPro && (
           <Text style={styles.examQuota}>
-            <Icon name={gate.canMock ? glyph.calendar : glyph.lock} size={14} color={colors.paper} />{' '}
+            <Icon name={gate.canMock ? glyph.calendar : glyph.lock} size={14} color={colors.inkSoft} />{' '}
             {gate.canMock ? '1 free mock exam today' : 'Today’s free mock used — unlimited with Pro'}
           </Text>
         )}
@@ -69,19 +69,19 @@ export default function QuizSetupScreen() {
 const styles = themed(() =>
   StyleSheet.create({
     content: { padding: space.lg, paddingBottom: 40 },
-    exam: { backgroundColor: colors.ink, padding: space.xl },
+    exam: { ...cardSurface(), padding: space.xl },
     examTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-    examKicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.paper },
+    examKicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.blue },
     examBig: {
       fontFamily: fonts.black,
       fontSize: 96,
       lineHeight: 110,
-      color: colors.paper,
+      color: colors.ink,
       letterSpacing: -4,
       marginTop: space.sm,
     },
-    examDesc: { fontFamily: fonts.medium, fontSize: 15, lineHeight: 22, color: colors.paper },
-    examQuota: { fontFamily: fonts.bold, fontSize: 14, color: colors.paper, marginTop: space.md },
+    examDesc: { fontFamily: fonts.medium, fontSize: 15, lineHeight: 22, color: colors.ink },
+    examQuota: { fontFamily: fonts.bold, fontSize: 14, color: colors.inkSoft, marginTop: space.md },
     subHead: {
       flexDirection: 'row',
       justifyContent: 'space-between',

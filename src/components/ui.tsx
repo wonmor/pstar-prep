@@ -1,6 +1,6 @@
-// Shared Bauhaus primitives. Structure comes from colour fields and thick
-// rules; icons are iOS-style line glyphs (Ionicons). No circles, squares or
-// triangles as ornaments.
+// Shared paper-and-ink primitives. Surfaces are printed cards on the sheet,
+// structure comes from faint ruled lines; icons are iOS-style line glyphs
+// (Ionicons). No circles, squares or triangles as ornaments.
 import React from 'react';
 import {
   ActivityIndicator,
@@ -13,7 +13,7 @@ import {
   StyleProp,
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, type GlyphName, radius, rule, space, TOUCH, type, themed } from '../theme';
 
 export type Tone = 'red' | 'blue' | 'yellow' | 'ink' | 'paper';
 // Getters so tones always reflect the active theme.
@@ -31,7 +31,7 @@ export const toneColor: Record<Tone, string> = {
     return colors.ink;
   },
   get paper() {
-    return colors.paper;
+    return colors.card;
   },
 };
 // Text colour that passes AA on each tone.
@@ -105,6 +105,8 @@ export function Glyph({
   );
 }
 
+// A printed card. `tone="paper"` (default) is the card surface; an accent tone
+// prints the card in that ink.
 export function Card({
   children,
   style,
@@ -114,12 +116,23 @@ export function Card({
   style?: StyleProp<ViewStyle>;
   tone?: Tone;
 }) {
-  return <View style={[styles.card, { backgroundColor: toneColor[tone] }, style]}>{children}</View>;
+  return (
+    <View
+      style={[
+        styles.card,
+        tone !== 'paper' && { backgroundColor: toneColor[tone], borderColor: toneColor[tone], borderBottomColor: toneColor[tone] },
+        style,
+      ]}
+    >
+      {children}
+    </View>
+  );
 }
 
+// A ruled line. Defaults to the faint printed rule; pass `color={colors.ink}` for emphasis.
 export function Rule({
   weight = rule.thick,
-  color = colors.ink,
+  color = colors.line,
   style,
 }: {
   weight?: number;
@@ -131,7 +144,7 @@ export function Rule({
 
 export function Kicker({
   children,
-  color = colors.ink,
+  color = colors.inkSoft,
   style,
 }: {
   children: React.ReactNode;
@@ -141,7 +154,7 @@ export function Kicker({
   return <Text style={[type.kicker, { color }, style]}>{children}</Text>;
 }
 
-// Screen header: oversized index numeral + heavy title, over a thick rule.
+// Screen header: oversized index numeral + heavy title, over an ink rule.
 export function ScreenHeader({
   index,
   title,
@@ -168,7 +181,7 @@ export function ScreenHeader({
         </View>
         {right}
       </View>
-      <Rule />
+      <Rule color={colors.ink} />
       {sub ? <Text style={[type.mute, { marginTop: space.sm }]}>{sub}</Text> : null}
     </View>
   );
@@ -205,7 +218,7 @@ export function Button({
     yellow: 'yellow',
     ghost: null,
   }[variant] as Tone | null;
-  const bg = tone ? toneColor[tone] : 'transparent';
+  const bg = tone ? toneColor[tone] : colors.card;
   const fg = tone ? onTone[tone] : colors.ink;
   return (
     <Pressable
@@ -233,7 +246,7 @@ export function Button({
   );
 }
 
-// Square label (no pill shape).
+// Small printed label (a stamp, not a pill).
 export function Pill({
   label,
   tone = 'paper',
@@ -248,7 +261,7 @@ export function Pill({
     <View
       style={[
         styles.pill,
-        { backgroundColor: toneColor[t], borderColor: t === 'paper' ? colors.ink : toneColor[t] },
+        { backgroundColor: toneColor[t], borderColor: t === 'paper' ? colors.lineStrong : toneColor[t] },
       ]}
     >
       <Text style={[styles.pillText, { color: onTone[t] }]}>{label}</Text>
@@ -260,7 +273,7 @@ export function Pill({
 export function LockTag({ inverse }: { inverse?: boolean }) {
   return (
     <View
-      style={[styles.lock, inverse && { backgroundColor: colors.paper }]}
+      style={[styles.lock, inverse && { backgroundColor: colors.card }]}
       accessible
       accessibilityLabel="Locked, Pro only"
     >
@@ -270,7 +283,7 @@ export function LockTag({ inverse }: { inverse?: boolean }) {
   );
 }
 
-// Progress as a thick rule of variable length.
+// Progress as a printed bar: faint track, inked fill.
 export function ProgressBar({ value, color = colors.ink }: { value: number; color?: string }) {
   const pct = Math.max(0, Math.min(1, value)) * 100;
   return (
@@ -279,12 +292,13 @@ export function ProgressBar({ value, color = colors.ink }: { value: number; colo
       accessibilityRole="progressbar"
       accessibilityValue={{ min: 0, max: 100, now: Math.round(pct) }}
     >
-      <View style={{ width: `${pct}%`, height: rule.thick, backgroundColor: color }} />
+      <View style={{ width: `${pct}%`, height: '100%', backgroundColor: color, borderRadius: 2 }} />
     </View>
   );
 }
 
-// An answer option. The marker is its number, or a check / cross line glyph.
+// An answer option: a printed card. The marker is its number, or a check /
+// cross line glyph.
 export function OptionRow({
   index,
   text,
@@ -301,10 +315,10 @@ export function OptionRow({
   testID?: string;
 }) {
   const t = {
-    idle: { bg: colors.paper, fg: colors.ink, mark: colors.ink, border: colors.ink },
-    selected: { bg: colors.ink, fg: colors.paper, mark: colors.paper, border: colors.ink },
-    correct: { bg: colors.blue, fg: colors.onAccent, mark: colors.onAccent, border: colors.blue },
-    wrong: { bg: colors.red, fg: colors.onAccent, mark: colors.onAccent, border: colors.red },
+    idle: { bg: colors.card, fg: colors.ink, mark: colors.inkSoft, border: colors.line, bottom: colors.lineStrong },
+    selected: { bg: colors.card, fg: colors.ink, mark: colors.blue, border: colors.ink, bottom: colors.ink },
+    correct: { bg: colors.blue, fg: colors.onAccent, mark: colors.onAccent, border: colors.blue, bottom: colors.blue },
+    wrong: { bg: colors.red, fg: colors.onAccent, mark: colors.onAccent, border: colors.red, bottom: colors.red },
   }[state];
   const mark: GlyphName | null = state === 'correct' ? glyph.check : state === 'wrong' ? glyph.close : null;
   const a11yState =
@@ -325,14 +339,15 @@ export function OptionRow({
       accessibilityState={{ selected: state === 'selected', disabled: !!disabled }}
       style={({ pressed }) => [
         styles.option,
-        { backgroundColor: t.bg, borderColor: t.border },
+        { backgroundColor: t.bg, borderColor: t.border, borderBottomColor: t.bottom },
+        state === 'selected' && { borderWidth: rule.thick },
         pressed && !disabled && state === 'idle' && { backgroundColor: colors.paperDeep },
       ]}
     >
       {mark ? (
         <Icon name={mark} size={26} color={t.mark} style={styles.optMark} />
       ) : (
-        <Glyph size={26} color={t.mark} style={styles.optMark}>
+        <Glyph size={24} color={t.mark} style={styles.optMark}>
           {`${index + 1}`}
         </Glyph>
       )}
@@ -356,7 +371,7 @@ export function Divider() {
   return <Rule weight={rule.hair} style={{ marginVertical: space.md }} />;
 }
 
-// Top bar for full-screen flows (quiz, cards, paywall): close · progress · action.
+// Top bar for full-screen flows (quiz, cards, paywall): close, progress, action.
 export function FlowBar({
   onClose,
   progress,
@@ -416,8 +431,7 @@ export function IconButton({
 const styles = themed(() =>
   StyleSheet.create({
     card: {
-      borderWidth: rule.mid,
-      borderColor: colors.ink,
+      ...cardSurface(),
       padding: space.lg,
     },
     headRow: { flexDirection: 'row', alignItems: 'flex-end', gap: space.md, marginBottom: space.sm },
@@ -430,9 +444,15 @@ const styles = themed(() =>
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: space.md,
+      borderRadius: radius,
     },
     btnSmall: { minHeight: TOUCH, paddingVertical: 8, paddingHorizontal: 14 },
-    btnGhost: { borderWidth: rule.mid, borderColor: colors.ink },
+    btnGhost: {
+      borderWidth: rule.hair,
+      borderColor: colors.lineStrong,
+      borderBottomWidth: rule.thick,
+      borderBottomColor: colors.lineStrong,
+    },
     btnText: {
       fontFamily: fonts.heavy,
       fontSize: 16,
@@ -443,7 +463,8 @@ const styles = themed(() =>
     pill: {
       paddingVertical: 3,
       paddingHorizontal: 8,
-      borderWidth: rule.mid,
+      borderWidth: rule.hair,
+      borderRadius: 3,
       alignSelf: 'flex-start',
     },
     pillText: { fontFamily: fonts.bold, fontSize: 11, letterSpacing: 1.2, textTransform: 'uppercase' },
@@ -454,14 +475,15 @@ const styles = themed(() =>
       backgroundColor: colors.red,
       paddingVertical: 2,
       paddingHorizontal: 6,
+      borderRadius: 3,
       alignSelf: 'flex-start',
     },
     lockText: { fontFamily: fonts.heavy, fontSize: 11, letterSpacing: 1.5, color: colors.onAccent },
-    track: { height: rule.thick, backgroundColor: colors.paperDeep, alignSelf: 'stretch' },
+    track: { height: 6, backgroundColor: colors.paperDeep, alignSelf: 'stretch', borderRadius: 2 },
     option: {
+      ...cardSurface(),
       flexDirection: 'row',
       alignItems: 'center',
-      borderWidth: rule.mid,
       minHeight: 56,
       paddingVertical: 12,
       paddingHorizontal: 14,
@@ -475,8 +497,8 @@ const styles = themed(() =>
       alignItems: 'center',
       paddingHorizontal: space.sm,
       paddingVertical: space.xs,
-      borderBottomWidth: rule.thick,
-      borderBottomColor: colors.ink,
+      borderBottomWidth: rule.hair,
+      borderBottomColor: colors.line,
     },
     barBtn: { width: TOUCH, height: TOUCH, alignItems: 'center', justifyContent: 'center' },
   }),

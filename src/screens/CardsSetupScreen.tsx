@@ -73,7 +73,7 @@ export default function CardsSetupScreen() {
           mark={glyph.cards}
           tint={colors.blue}
           title={gate.isPro ? 'All questions' : 'All free cards'}
-          desc={gate.isPro ? 'Shuffle the entire bank' : `Free sample · all ${QUESTIONS.length} with Pro`}
+          desc={gate.isPro ? 'Shuffle the entire bank' : `Free sample | all ${QUESTIONS.length} with Pro`}
           count={allCount}
           onPress={() => nav.push({ name: 'cards', scope: 'all' })}
         />
@@ -109,8 +109,8 @@ const styles = themed(() =>
       gap: space.md,
       minHeight: 64,
       paddingVertical: space.md,
-      borderBottomWidth: rule.mid,
-      borderBottomColor: colors.ink,
+      borderBottomWidth: rule.hair,
+      borderBottomColor: colors.line,
     },
     deckTitle: { fontFamily: fonts.heavy, fontSize: 18, color: colors.ink },
     deckCount: { fontFamily: fonts.black, fontSize: 30, color: colors.ink, letterSpacing: -1 },

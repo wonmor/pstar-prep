@@ -6,7 +6,7 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, radius, rule, space, type, themed } from '../theme';
 import { Button, FlowBar, Glyph, IconButton, Icon } from '../components/ui';
 
 export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks' | number }) {
@@ -160,13 +160,12 @@ export default function FlashcardsScreen({ scope }: { scope: 'all' | 'bookmarks'
 
 const styles = themed(() =>
   StyleSheet.create({
-    root: { flex: 1, backgroundColor: colors.paper },
+    root: { flex: 1 },
     empty: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
       padding: space.xl,
-      backgroundColor: colors.paper,
     },
     metaRow: {
       flexDirection: 'row',
@@ -178,14 +177,16 @@ const styles = themed(() =>
     },
     counter: { fontFamily: fonts.black, fontSize: 28, letterSpacing: -1 },
     cardWrap: { flex: 1, padding: space.lg, paddingTop: space.md },
-    card: { flex: 1, borderWidth: rule.thick, borderColor: colors.ink, backgroundColor: colors.paper },
-    cardBack: { borderColor: colors.blue },
+    card: { ...cardSurface(), flex: 1, overflow: 'hidden' },
+    cardBack: { borderColor: colors.blue, borderBottomColor: colors.blue },
     face: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
       paddingHorizontal: space.lg,
       paddingVertical: space.sm,
+      borderTopLeftRadius: radius - 1,
+      borderTopRightRadius: radius - 1,
     },
     faceText: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3 },
     cardBody: { flexGrow: 1, justifyContent: 'center', padding: space.xl },
@@ -199,6 +200,7 @@ const styles = themed(() =>
       gap: space.md,
       backgroundColor: colors.blue,
       padding: space.lg,
+      borderRadius: radius,
     },
     answerText: { flex: 1, fontFamily: fonts.bold, fontSize: 18, color: colors.onAccent, lineHeight: 24 },
     ref: {
@@ -219,9 +221,9 @@ const styles = themed(() =>
     footer: {
       padding: space.lg,
       paddingTop: space.md,
-      borderTopWidth: rule.thick,
-      borderTopColor: colors.ink,
-      backgroundColor: colors.paper,
+      borderTopWidth: rule.hair,
+      borderTopColor: colors.line,
+      backgroundColor: colors.card,
       gap: space.sm,
     },
     mastered: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 2, color: colors.blue },

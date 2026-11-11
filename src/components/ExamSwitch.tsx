@@ -2,11 +2,11 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useExam, useSetExam } from '../exam';
 import { EXAM_ORDER, EXAMS } from '../exams';
-import { colors, fonts, glyph, rule, TOUCH, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, radius, rule, TOUCH, themed } from '../theme';
 import { Icon } from './ui';
 
-// Two-cell switch for the active exam (PSTAR / ROC-A). A strict grid: equal
-// cells, thick ink frame, the active cell inverted to ink.
+// Two-cell switch for the active exam (PSTAR / ROC-A): a printed card split
+// in two, the active cell inked in.
 export function ExamSwitch({ style }: { style?: any }) {
   const { id } = useExam();
   const setExam = useSetExam();
@@ -28,7 +28,7 @@ export function ExamSwitch({ style }: { style?: any }) {
             accessibilityLabel={`${EXAMS[exam].shortName} exam`}
             accessibilityState={{ selected: on, checked: on }}
           >
-            <Icon name={exam === 'pstar' ? glyph.airplane : glyph.radio} size={18} color={on ? colors.yellow : colors.inkSoft} />
+            <Icon name={exam === 'pstar' ? glyph.airplane : glyph.radio} size={18} color={on ? colors.paper : colors.inkSoft} />
             <Text style={[styles.label, { color: on ? colors.paper : colors.ink }]}>
               {EXAMS[exam].shortName}
             </Text>
@@ -41,7 +41,7 @@ export function ExamSwitch({ style }: { style?: any }) {
 
 const styles = themed(() =>
   StyleSheet.create({
-    wrap: { flexDirection: 'row', borderWidth: rule.mid, borderColor: colors.ink },
+    wrap: { ...cardSurface(), flexDirection: 'row', overflow: 'hidden' },
     seg: {
       flex: 1,
       minHeight: TOUCH,
@@ -49,9 +49,10 @@ const styles = themed(() =>
       gap: 8,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: colors.paper,
+      backgroundColor: colors.card,
+      borderRadius: radius - 1,
     },
-    segDivider: { borderLeftWidth: rule.mid, borderLeftColor: colors.ink },
+    segDivider: { borderLeftWidth: rule.hair, borderLeftColor: colors.line },
     segOn: { backgroundColor: colors.ink },
     label: { fontFamily: fonts.heavy, fontSize: 15, letterSpacing: 2 },
   }),

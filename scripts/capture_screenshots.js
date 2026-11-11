@@ -98,7 +98,8 @@ async function runTarget(browser, t) {
 }
 
 (async () => {
-  const browser = await chromium.launch();
+  // PW_CHANNEL=chrome uses the installed Google Chrome instead of a downloaded Chromium.
+  const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
   // Warm-up: the very first context can paint before the icon font is
   // applied (tofu), so load the app once and throw that context away.
   const warm = await browser.newContext();

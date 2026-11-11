@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
-import { colors, fonts, glyph, sep, rule, space, type, themed } from '../theme';
+import { colors, fonts, glyph, radius, rule, space, type, themed } from '../theme';
 import { Button, Glyph, OptionRow, Rule, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
 
@@ -31,7 +31,7 @@ export default function ResultsScreen({
   const pct = Math.round((correct / total) * 100);
   const passed = pct >= PASS_PCT;
   const wrong = QUESTIONS.filter((q) => wrongIds.includes(q.id));
-  const bg = passed ? colors.blue : colors.ink;
+  const bg = passed ? colors.blue : colors.red;
 
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -42,21 +42,21 @@ export default function ResultsScreen({
       >
         <View style={styles.scoreTop}>
           <Text style={styles.scoreKicker}>{isExam ? 'MOCK EXAM RESULT' : 'PRACTICE RESULT'}</Text>
-          <Icon name={passed ? glyph.check : glyph.warning} size={30} color={passed ? colors.yellow : colors.red} />
+          <Icon name={passed ? glyph.check : glyph.warning} size={30} color={colors.onAccent} />
         </View>
         <Text style={styles.scoreBig} maxFontSizeMultiplier={1.2}>
           {pct}
           <Text style={styles.scorePct}>%</Text>
         </Text>
-        <Rule color={colors.paper} weight={rule.mid} />
+        <Rule color={colors.onAccent} weight={rule.mid} />
         <Text style={styles.scoreSub}>
           {correct} of {total} correct
         </Text>
         {isExam && (
-          <Text style={[styles.verdict, { color: colors.paper }]}>
+          <Text style={styles.verdict}>
             {passed
-              ? `PASS ${sep} ${PASS_PCT}% REQUIRED`
-              : `BELOW ${PASS_PCT}% PASS MARK ${sep} KEEP STUDYING`}
+              ? `PASS | ${PASS_PCT}% REQUIRED`
+              : `BELOW ${PASS_PCT}% PASS MARK | KEEP STUDYING`}
           </Text>
         )}
       </View>
@@ -98,7 +98,7 @@ export default function ResultsScreen({
                 </View>
                 {q.reference ? (
                   <Text style={styles.ref}>
-                    REF {sep} {q.reference}
+                    Ref. {q.reference}
                   </Text>
                 ) : null}
               </View>
@@ -119,21 +119,21 @@ export default function ResultsScreen({
 const styles = themed(() =>
   StyleSheet.create({
     content: { padding: space.lg, paddingBottom: 40 },
-    score: { padding: space.xl },
+    score: { padding: space.xl, borderRadius: radius },
     scoreTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-    scoreKicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.paper },
+    scoreKicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.onAccent },
     scoreBig: {
       fontFamily: fonts.black,
       fontSize: 120,
       lineHeight: 138,
-      color: colors.paper,
+      color: colors.onAccent,
       letterSpacing: -5,
     },
     scorePct: { fontSize: 48, letterSpacing: 0 },
-    scoreSub: { fontFamily: fonts.bold, fontSize: 17, color: colors.paper, marginTop: space.sm },
-    verdict: { fontFamily: fonts.heavy, fontSize: 13, letterSpacing: 1.5, marginTop: space.sm },
+    scoreSub: { fontFamily: fonts.bold, fontSize: 17, color: colors.onAccent, marginTop: space.sm },
+    verdict: { fontFamily: fonts.heavy, fontSize: 13, letterSpacing: 1.5, marginTop: space.sm, color: colors.onAccent },
     actions: { flexDirection: 'row', gap: space.md, marginTop: space.lg },
-    miss: { borderTopWidth: rule.thick, borderTopColor: colors.ink, paddingTop: space.md },
+    miss: { borderTopWidth: rule.hair, borderTopColor: colors.lineStrong, paddingTop: space.md },
     qNum: { ...type.kicker, color: colors.red },
     qText: { fontFamily: fonts.bold, fontSize: 17, color: colors.ink, marginTop: 4, lineHeight: 23 },
     ref: {
@@ -147,7 +147,8 @@ const styles = themed(() =>
       alignItems: 'center',
       gap: space.sm,
       marginTop: space.xl,
-      borderTopWidth: rule.thick,
+      borderTopWidth: rule.hair,
+      borderTopColor: colors.line,
       paddingTop: space.lg,
     },
   }),

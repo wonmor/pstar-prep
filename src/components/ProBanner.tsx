@@ -3,10 +3,11 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
-import { colors, fonts, glyph, rule, space, themed } from '../theme';
-import { Glyph, Icon } from './ui';
+import { cardSurface, colors, fonts, glyph, space, themed } from '../theme';
+import { Icon } from './ui';
 
-// Yellow upsell block shown to free users. Tapping opens the paywall.
+// Upsell card shown to free users: a printed card with an ochre stamp.
+// Tapping opens the paywall.
 export function ProBanner({ style, reason = 'banner' }: { style?: any; reason?: string }) {
   const nav = useNav();
   const gate = useGate();
@@ -18,14 +19,17 @@ export function ProBanner({ style, reason = 'banner' }: { style?: any; reason?: 
       onPress={() => nav.push({ name: 'paywall', reason })}
       accessibilityRole="button"
       accessibilityLabel={`Unlock Pro: all ${SECTIONS.length} sections and unlimited mock exams`}
-      style={({ pressed }) => [styles.wrap, pressed && { opacity: 0.85 }, style]}
+      style={({ pressed }) => [styles.wrap, pressed && { backgroundColor: colors.paperDeep }, style]}
     >
-      <View style={{ flex: 1 }}>
-        <Text style={styles.kicker}><Icon name={glyph.unlock} size={13} color={colors.onYellow} /> PRO</Text>
-        <Text style={styles.title}>Unlock {gate.lockedCount} more sections & unlimited mock exams</Text>
-        <Text style={styles.sub}>One payment · PSTAR + ROC-A · yours forever</Text>
+      <View style={styles.stamp}>
+        <Icon name={glyph.unlock} size={14} color={colors.onYellow} />
+        <Text style={styles.stampText}>PRO</Text>
       </View>
-      <Icon name={glyph.arrow} size={34} color={colors.onYellow} />
+      <View style={{ flex: 1 }}>
+        <Text style={styles.title}>Unlock {gate.lockedCount} more sections & unlimited mock exams</Text>
+        <Text style={styles.sub}>One payment | PSTAR + ROC-A | yours forever</Text>
+      </View>
+      <Icon name={glyph.arrow} size={28} color={colors.ink} />
     </Pressable>
   );
 }
@@ -33,16 +37,24 @@ export function ProBanner({ style, reason = 'banner' }: { style?: any; reason?: 
 const styles = themed(() =>
   StyleSheet.create({
     wrap: {
+      ...cardSurface(),
+      borderColor: colors.yellow,
+      borderBottomColor: colors.yellow,
       flexDirection: 'row',
       alignItems: 'center',
       gap: space.md,
-      backgroundColor: colors.yellow,
-      borderWidth: rule.thick,
-      borderColor: colors.ink,
       padding: space.lg,
     },
-    kicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.onYellow },
-    title: { fontFamily: fonts.heavy, fontSize: 19, lineHeight: 23, color: colors.onYellow, marginTop: 4 },
-    sub: { fontFamily: fonts.medium, fontSize: 13, color: colors.onYellow, marginTop: 4 },
+    stamp: {
+      backgroundColor: colors.yellow,
+      borderRadius: 3,
+      paddingHorizontal: 8,
+      paddingVertical: 6,
+      alignItems: 'center',
+      gap: 2,
+    },
+    stampText: { fontFamily: fonts.heavy, fontSize: 11, letterSpacing: 2, color: colors.onYellow },
+    title: { fontFamily: fonts.heavy, fontSize: 17, lineHeight: 21, color: colors.ink },
+    sub: { fontFamily: fonts.medium, fontSize: 13, color: colors.inkSoft, marginTop: 4 },
   }),
 );

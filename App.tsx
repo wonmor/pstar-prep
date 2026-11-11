@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
@@ -32,7 +32,7 @@ import ReviewScreen from './src/screens/ReviewScreen';
 import AboutScreen from './src/screens/AboutScreen';
 import PaywallScreen from './src/screens/PaywallScreen';
 
-// Tab line glyphs, coloured with the Bauhaus primaries when active.
+// Tab line glyphs, printed in the accent inks when active.
 const TABS: { key: TabKey; label: string; icon: GlyphName; tint: 'red' | 'blue' | 'yellow' }[] = [
   { key: 'home', label: 'Home', icon: glyph.home, tint: 'red' },
   { key: 'quizSetup', label: 'Practice', icon: glyph.practice, tint: 'blue' },
@@ -116,6 +116,24 @@ function TabBar({ active, onPress }: { active: TabKey; onPress: (t: TabKey) => v
   );
 }
 
+// Paper grain: one small noise tile repeated over the whole sheet at low
+// opacity, behind every screen. A single static Image, so it costs nothing
+// per frame; screens keep transparent roots so the grain shows through.
+const GRAIN = require('./assets/paper-grain.png');
+function PaperGrain() {
+  return (
+    <View style={StyleSheet.absoluteFill} pointerEvents="none">
+      <Image
+        source={GRAIN}
+        resizeMode="repeat"
+        style={[StyleSheet.absoluteFill, { opacity: colors.grain }]}
+        accessible={false}
+        accessibilityIgnoresInvertColors
+      />
+    </View>
+  );
+}
+
 function Root() {
   const insets = useSafeAreaInsets();
   // One stack per tab so each tab keeps its own back history.
@@ -170,6 +188,7 @@ function Root() {
   return (
     <NavContext.Provider value={api}>
       <View style={styles.app}>
+        <PaperGrain />
         <View style={[styles.body, { paddingTop: insets.top }]}>
           <View style={styles.column}>
             <Screen route={current} />
@@ -221,9 +240,9 @@ const styles = themed(() =>
     },
     tabBar: {
       flexDirection: 'row',
-      backgroundColor: colors.paper,
-      borderTopWidth: rule.thick,
-      borderTopColor: colors.ink,
+      backgroundColor: colors.card,
+      borderTopWidth: rule.hair,
+      borderTopColor: colors.line,
       ...(Platform.OS === 'web' ? { maxWidth: 720, width: '100%', alignSelf: 'center' } : null),
     },
     tab: {
@@ -236,9 +255,9 @@ const styles = themed(() =>
       gap: 2,
       borderTopWidth: rule.thick,
       borderTopColor: 'transparent',
-      marginTop: -rule.thick,
+      marginTop: -rule.hair,
     },
-    tabOn: { borderTopColor: colors.yellow },
+    tabOn: { borderTopColor: colors.ink },
     tabLabel: { fontFamily: fonts.bold, fontSize: 11, letterSpacing: 1, textTransform: 'uppercase' },
   }),
 );

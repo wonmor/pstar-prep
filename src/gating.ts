@@ -2,10 +2,10 @@
 // runtime values) so they can be unit-tested with `node --test`.
 //
 // Free tier (per exam):
-//   · the first FREE_SECTION_COUNT sections in practice, flashcards and the answer key
-//   · FREE_MOCKS_PER_DAY full mock exam(s) per calendar day
+//   - the first FREE_SECTION_COUNT sections in practice, flashcards and the answer key
+//   - FREE_MOCKS_PER_DAY full mock exam(s) per calendar day
 // Pro (one "pro" entitlement, covers both PSTAR and ROC-A):
-//   · every section, unlimited mock exams
+//   - every section, unlimited mock exams
 //
 // Bookmarks and progress are never gated — a free user keeps everything they saved.
 

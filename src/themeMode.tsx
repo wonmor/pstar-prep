@@ -1,4 +1,4 @@
-// Theme preference (Black / Paper). Black is the default Bauhaus look.
+// Theme preference (Paper / Night paper). Paper (light) is the default.
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
@@ -17,7 +17,7 @@ function queryTheme(): ThemeMode | null {
 }
 
 type Ctx = { mode: ThemeMode; setMode: (m: ThemeMode) => void; ready: boolean };
-const ThemeContext = createContext<Ctx>({ mode: 'dark', setMode: () => {}, ready: true });
+const ThemeContext = createContext<Ctx>({ mode: 'light', setMode: () => {}, ready: true });
 
 export function useThemeMode(): Ctx {
   return useContext(ThemeContext);
@@ -27,7 +27,7 @@ export function useThemeMode(): Ctx {
 // whole tree re-renders against the new colours in the same pass.
 export function useThemeState(): Ctx {
   const forced = queryTheme();
-  const [mode, setModeState] = useState<ThemeMode>(forced ?? 'dark');
+  const [mode, setModeState] = useState<ThemeMode>(forced ?? 'light');
   const [ready, setReady] = useState(forced != null);
   useEffect(() => {
     if (forced) return;

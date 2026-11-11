@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { colors, fonts, glyph, rule, space, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, radius, rule, space, type, themed } from '../theme';
 import { Button, Glyph, Rule, Icon } from './ui';
 import { useExam } from '../exam';
 
@@ -27,7 +27,7 @@ export function Disclaimer({
             <Text style={type.h1} accessibilityRole="header">
               Disclaimer
             </Text>
-            <Rule style={{ marginTop: space.sm, marginBottom: space.md }} />
+            <Rule color={colors.ink} style={{ marginTop: space.sm, marginBottom: space.md }} />
             <ScrollView style={styles.body} showsVerticalScrollIndicator={false}>
               {meta.disclaimer.map((p, i) => (
                 <Text key={i} style={styles.para}>
@@ -64,9 +64,8 @@ const styles = themed(() =>
       padding: space.lg,
     },
     sheet: {
-      backgroundColor: colors.paper,
-      borderWidth: rule.thick,
-      borderColor: colors.ink,
+      ...cardSurface(),
+      overflow: 'hidden',
       maxWidth: 520,
       width: '100%',
       alignSelf: 'center',
@@ -79,8 +78,8 @@ const styles = themed(() =>
       backgroundColor: colors.yellow,
       paddingHorizontal: space.xl,
       paddingVertical: space.sm,
-      borderBottomWidth: rule.thick,
-      borderBottomColor: colors.ink,
+      borderTopLeftRadius: radius - 1,
+      borderTopRightRadius: radius - 1,
     },
     bandText: { fontFamily: fonts.heavy, fontSize: 13, letterSpacing: 3, color: colors.onYellow },
     inner: { padding: space.xl, flexShrink: 1 },

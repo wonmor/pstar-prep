@@ -7,7 +7,7 @@ import { FREE_SECTION_COUNT } from '../gating';
 import { useNav } from '../nav';
 import { plansError } from '../purchases';
 import type { Plan, PlanId } from '../purchases.types';
-import { colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
 import { Button, FlowBar, Icon } from '../components/ui';
 import { APP_STORE_URL, PLAY_STORE_URL, PRIVACY_URL, TERMS_URL } from '../config';
 
@@ -17,8 +17,8 @@ const REASONS: Record<string, string> = {
 };
 
 const PLAN_COPY: Record<PlanId, { name: string; note: string; tag?: string }> = {
-  lifetime: { name: 'Lifetime', note: 'Pay once · yours forever', tag: 'BEST VALUE' },
-  monthly: { name: '1-Month Pass', note: 'Renews monthly · cancel anytime' },
+  lifetime: { name: 'Lifetime', note: 'Pay once, yours forever', tag: 'BEST VALUE' },
+  monthly: { name: '1-Month Pass', note: 'Renews monthly, cancel anytime' },
 };
 
 function Feature({ mark, tint, text }: { mark: GlyphName; tint: string; text: string }) {
@@ -43,20 +43,20 @@ function PlanRow({ plan, selected, onPress }: { plan: Plan; selected: boolean; o
       style={[styles.plan, selected && styles.planOn]}
     >
       <View style={{ width: 28 }}>
-        {selected ? <Icon name={glyph.check} size={26} color={colors.yellow} /> : null}
+        {selected ? <Icon name={glyph.check} size={26} color={colors.onAccent} /> : null}
       </View>
       <View style={{ flex: 1 }}>
         <View style={styles.planHead}>
-          <Text style={[styles.planName, selected && { color: colors.paper }]}>{copy.name}</Text>
+          <Text style={[styles.planName, selected && { color: colors.onAccent }]}>{copy.name}</Text>
           {copy.tag ? (
             <View style={styles.tag}>
               <Text style={styles.tagText}>{copy.tag}</Text>
             </View>
           ) : null}
         </View>
-        <Text style={[styles.planNote, selected && { color: colors.paper }]}>{copy.note}</Text>
+        <Text style={[styles.planNote, selected && { color: colors.onAccent }]}>{copy.note}</Text>
       </View>
-      <Text style={[styles.planPrice, selected && { color: colors.paper }]}>
+      <Text style={[styles.planPrice, selected && { color: colors.onAccent }]}>
         {plan.priceString}
         <Text style={styles.planPer}>{per}</Text>
       </Text>
@@ -140,7 +140,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
           <Feature
             mark={glyph.book}
             tint={colors.red}
-            text={`All ${sections} sections · ${questions} questions`}
+            text={`All ${sections} sections | ${questions} questions`}
           />
           <Feature mark={glyph.exam} tint={colors.blue} text="Unlimited full mock exams" />
           <Feature mark={glyph.cards} tint={colors.yellow} text="Every flashcard & the full answer key" />
@@ -261,8 +261,8 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
               busy === 'buy'
                 ? 'Processing…'
                 : plan.id === 'lifetime'
-                  ? `Unlock forever · ${plan.priceString}`
-                  : `Start pass · ${plan.priceString}`
+                  ? `Unlock forever | ${plan.priceString}`
+                  : `Start pass | ${plan.priceString}`
             }
             variant="red"
             trailing={glyph.arrow}
@@ -277,7 +277,7 @@ export default function PaywallScreen({ reason }: { reason?: string }) {
 
 const styles = themed(() =>
   StyleSheet.create({
-    root: { flex: 1, backgroundColor: colors.paper },
+    root: { flex: 1 },
     content: { padding: space.lg, paddingBottom: 32 },
     heroRow: {
       flexDirection: 'row',
@@ -293,7 +293,7 @@ const styles = themed(() =>
     features: { marginTop: space.lg, gap: space.sm },
     feature: { flexDirection: 'row', alignItems: 'center', gap: space.sm, minHeight: 32 },
     featureText: { flex: 1, fontFamily: fonts.bold, fontSize: 16, lineHeight: 21, color: colors.ink },
-    notice: { marginTop: space.xl, borderWidth: rule.mid, borderColor: colors.ink, padding: space.lg },
+    notice: { ...cardSurface(), marginTop: space.xl, padding: space.lg },
     noticeTitle: { fontFamily: fonts.heavy, fontSize: 18, color: colors.ink, marginBottom: space.xs },
     plan: {
       flexDirection: 'row',
@@ -301,11 +301,9 @@ const styles = themed(() =>
       gap: space.md,
       minHeight: 72,
       padding: space.md,
-      borderWidth: rule.thick,
-      borderColor: colors.ink,
-      backgroundColor: colors.paper,
+      ...cardSurface(),
     },
-    planOn: { backgroundColor: colors.ink },
+    planOn: { backgroundColor: colors.blue, borderColor: colors.blue, borderBottomColor: colors.blue },
     planHead: { flexDirection: 'row', alignItems: 'center', gap: space.sm, flexWrap: 'wrap' },
     planName: { fontFamily: fonts.heavy, fontSize: 18, color: colors.ink },
     planNote: { fontFamily: fonts.medium, fontSize: 13, color: colors.inkSoft, marginTop: 2 },
@@ -327,8 +325,9 @@ const styles = themed(() =>
     footer: {
       padding: space.lg,
       paddingTop: space.md,
-      borderTopWidth: rule.thick,
-      borderTopColor: colors.ink,
+      borderTopWidth: rule.hair,
+      borderTopColor: colors.line,
+      backgroundColor: colors.card,
     },
   }),
 );

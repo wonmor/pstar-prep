@@ -29,8 +29,8 @@ export const EXAMS: Record<ExamId, ExamMeta> = {
     id: 'pstar',
     shortName: 'PSTAR',
     title: 'PSTAR Prep',
-    kicker: 'TRANSPORT CANADA · TP 11919E',
-    badge: '7th ED · 2022',
+    kicker: 'TRANSPORT CANADA | TP 11919E',
+    badge: '7th ed. 2022',
     subtitle:
       'Aviation Regulations for the Student Pilot Permit & Private Pilot Licence.',
     examSize: 50,
@@ -52,7 +52,7 @@ export const EXAMS: Record<ExamId, ExamMeta> = {
     id: 'roca',
     shortName: 'ROC-A',
     title: 'ROC-A Prep',
-    kicker: 'ISED CANADA · RIC-21',
+    kicker: 'ISED CANADA | RIC-21',
     badge: 'RADIO LICENCE',
     subtitle:
       'Aeronautical radio operating for the Restricted Operator Certificate (Aeronautical).',

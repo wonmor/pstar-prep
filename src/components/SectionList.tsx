@@ -6,7 +6,7 @@ import { useProgress } from '../storage';
 import { colors, fonts, glyph, rule, space, themed } from '../theme';
 import { Glyph, Icon, LockTag, ProgressBar } from './ui';
 
-// The active exam's sections as a ruled index: big numeral · name · mastery.
+// The active exam's sections as a ruled index: big numeral, name, mastery.
 // Locked sections (free tier) show a lock + PRO and open the paywall instead.
 export function SectionList({
   onPick,
@@ -69,7 +69,7 @@ const styles = themed(() =>
       paddingRight: space.xs,
       gap: space.md,
       borderBottomWidth: rule.hair,
-      borderBottomColor: colors.ink,
+      borderBottomColor: colors.line,
     },
     num: { width: 46, letterSpacing: -1 },
     name: { fontFamily: fonts.bold, fontSize: 15, lineHeight: 19, color: colors.ink },

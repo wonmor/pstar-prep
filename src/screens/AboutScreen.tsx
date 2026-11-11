@@ -5,7 +5,7 @@ import { useEntitlements } from '../entitlements';
 import { useNav } from '../nav';
 import { useThemeMode } from '../themeMode';
 import { useActions, useProgress } from '../storage';
-import { colors, fonts, glyph, type GlyphName, sep, rule, space, TOUCH, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, type GlyphName, rule, space, TOUCH, type, themed } from '../theme';
 import { Icon, ScreenHeader } from '../components/ui';
 import { Disclaimer } from '../components/Disclaimer';
 import { ExamSwitch } from '../components/ExamSwitch';
@@ -120,7 +120,7 @@ export default function AboutScreen() {
       </View>
       <ExamSwitch style={{ marginTop: space.lg }} />
       <Text style={[type.mute, { marginTop: space.sm }]}>
-        {meta.shortName} {sep} {QUESTIONS.length} questions {sep} {SECTIONS.length} sections
+        {meta.shortName} | {QUESTIONS.length} questions | {SECTIONS.length} sections
       </Text>
 
       <Group title="APPEARANCE">
@@ -128,7 +128,7 @@ export default function AboutScreen() {
           testID="theme-toggle"
           mark={theme.mode === 'dark' ? glyph.moon : glyph.sun}
           label="Theme"
-          value={theme.mode === 'dark' ? 'Black' : 'Paper'}
+          value={theme.mode === 'dark' ? 'Night paper' : 'Paper'}
           onPress={() => theme.setMode(theme.mode === 'dark' ? 'light' : 'dark')}
         />
       </Group>
@@ -168,7 +168,7 @@ export default function AboutScreen() {
         </Text>
       ) : null}
 
-      <Group title={`LEGAL ${sep} ${meta.shortName}`}>
+      <Group title={`LEGAL | ${meta.shortName}`}>
         <Row
           mark={glyph.warning}
           tint={colors.yellow}
@@ -179,7 +179,7 @@ export default function AboutScreen() {
         <Row mark={glyph.book} label={meta.sourceLabel} onPress={() => Linking.openURL(meta.sourceUrl)} />
       </Group>
 
-      <Group title={`YOUR DATA ${sep} ${meta.shortName}`}>
+      <Group title={`YOUR DATA | ${meta.shortName}`}>
         <Row mark={glyph.document} label="Questions seen" value={`${Object.keys(p.stats).length}/${QUESTIONS.length}`} />
         <Row mark={glyph.star} tint={colors.red} label="Bookmarks" value={`${p.bookmarks.length}`} />
         <Row mark={glyph.check} tint={colors.blue} label="Cards mastered" value={`${p.known.length}`} />
@@ -210,7 +210,7 @@ const styles = themed(() =>
     brandName: { fontFamily: fonts.heavy, fontSize: 20, color: colors.ink },
     mark: { width: 56, height: 56 },
     groupTitle: { ...type.kicker, marginBottom: space.sm },
-    group: { borderTopWidth: rule.thick, borderTopColor: colors.ink },
+    group: { ...cardSurface(), paddingHorizontal: space.md, overflow: 'hidden' },
     row: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -218,7 +218,7 @@ const styles = themed(() =>
       paddingVertical: space.sm,
       gap: space.md,
       borderBottomWidth: rule.hair,
-      borderBottomColor: colors.ink,
+      borderBottomColor: colors.line,
     },
     rowMark: { width: 22, textAlign: 'center' },
     rowLabel: { fontFamily: fonts.bold, fontSize: 16, color: colors.ink, flexShrink: 1 },

@@ -5,7 +5,7 @@ import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
-import { colors, fonts, glyph, type GlyphName, sep, rule, space, TOUCH, type, themed } from '../theme';
+import { cardSurface, colors, fonts, glyph, type GlyphName, radius, rule, space, TOUCH, type, themed } from '../theme';
 import { Glyph, IconButton, OptionRow, ScreenHeader, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
 
@@ -37,9 +37,9 @@ function Chip({
       ]}
     >
       {locked ? <Icon name={glyph.lock} size={12} color={colors.red} /> : null}
-      {icon ? <Icon name={icon} size={13} color={active ? colors.paper : colors.red} /> : null}
+      {icon ? <Icon name={icon} size={13} color={active ? colors.card : colors.red} /> : null}
       <Text
-        style={[styles.chipText, { color: active ? colors.paper : locked ? colors.inkSoft : colors.ink }]}
+        style={[styles.chipText, { color: active ? colors.card : locked ? colors.inkSoft : colors.ink }]}
       >
         {label}
       </Text>
@@ -71,7 +71,7 @@ function QuestionCard({ q }: { q: Question }) {
       </View>
       {q.reference ? (
         <Text style={styles.ref}>
-          REF {sep} {q.reference}
+          Ref. {q.reference}
         </Text>
       ) : null}
     </View>
@@ -185,14 +185,13 @@ export default function ReviewScreen({ initialSection }: { initialSection?: numb
 
 const styles = themed(() =>
   StyleSheet.create({
-    root: { flex: 1, backgroundColor: colors.paper },
+    root: { flex: 1 },
     header: { paddingHorizontal: space.lg, paddingTop: space.lg },
     search: {
+      ...cardSurface(),
       flexDirection: 'row',
       alignItems: 'center',
       gap: space.sm,
-      borderWidth: rule.mid,
-      borderColor: colors.ink,
       paddingLeft: space.md,
       minHeight: TOUCH + 4,
       marginBottom: space.md,
@@ -206,15 +205,17 @@ const styles = themed(() =>
       minHeight: TOUCH,
       paddingVertical: 6,
       paddingHorizontal: 10,
-      borderWidth: rule.mid,
-      borderColor: colors.ink,
+      borderWidth: rule.hair,
+      borderColor: colors.lineStrong,
+      borderRadius: radius,
+      backgroundColor: colors.card,
     },
-    chipOn: { backgroundColor: colors.ink },
+    chipOn: { backgroundColor: colors.ink, borderColor: colors.ink },
     chipText: { fontFamily: fonts.bold, fontSize: 13 },
     listContent: { paddingHorizontal: space.lg, paddingBottom: 40 },
     card: {
-      borderTopWidth: rule.thick,
-      borderTopColor: colors.ink,
+      borderTopWidth: rule.hair,
+      borderTopColor: colors.lineStrong,
       paddingTop: space.xs,
       marginBottom: space.xl,
     },
