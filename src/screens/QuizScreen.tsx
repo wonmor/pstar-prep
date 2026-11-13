@@ -1,20 +1,52 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { shuffleOptions } from '../data';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
 import { useActions, useProgress } from '../storage';
+import { illustrationFor } from '../illustrations';
+import { dur, useReducedMotion } from '../motion';
 import { cardSurface, colors, fonts, glyph, rule, space, type, themed } from '../theme';
-import { Button, FlowBar, Glyph, IconButton, OptionRow, Icon } from '../components/ui';
+import { Button, FlowBar, IconButton, OptionRow, Icon } from '../components/ui';
+import { Illustration } from '../components/Illustration';
+import { Ring } from '../components/Ring';
+
+function fmt(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
+// Mock exam pace: a small ring that fills over the suggested time and turns
+// red once the time is up (the exam keeps going; nothing is auto-submitted).
+function PaceTimer({ elapsed, paceSeconds }: { elapsed: number; paceSeconds: number }) {
+  const over = elapsed > paceSeconds;
+  const value = Math.min(1, elapsed / paceSeconds);
+  return (
+    <View
+      style={styles.timer}
+      accessible
+      accessibilityLabel={over ? `${fmt(elapsed - paceSeconds)} over the suggested ${Math.round(paceSeconds / 60)} minutes` : `${fmt(paceSeconds - elapsed)} remaining of the suggested ${Math.round(paceSeconds / 60)} minutes`}
+      testID="pace-timer"
+    >
+      <Ring value={value} size={30} stroke={4} color={over ? colors.red : colors.blue} accessibilityLabel="pace" />
+      <View>
+        <Text style={[styles.timerText, over && { color: colors.red }]}>{over ? `+${fmt(elapsed - paceSeconds)}` : fmt(paceSeconds - elapsed)}</Text>
+        <Text style={styles.timerSub}>{over ? 'OVER PACE' : `PACE ${Math.round(paceSeconds / 60)} MIN`}</Text>
+      </View>
+    </View>
+  );
+}
 
 export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   const nav = useNav();
-  const { buildQuiz, sectionName } = useExam();
+  const { id: examId, meta, buildQuiz, sectionName } = useExam();
   const { recordAnswer, recordExam, toggleBookmark } = useActions();
   const gate = useGate();
   const progress = useProgress();
+  const reduced = useReducedMotion();
   const isExam = scope === 'exam';
   const insets = useSafeAreaInsets();
 
@@ -34,11 +66,20 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Elapsed seconds (both modes; shown as a pace ring in the mock exam).
+  const startedAt = useRef(Date.now());
+  const [elapsed, setElapsed] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setElapsed(Math.floor((Date.now() - startedAt.current) / 1000)), 1000);
+    return () => clearInterval(t);
+  }, []);
+
   const [idx, setIdx] = useState(0);
   // selected shuffled-option index per question (-1 = unanswered)
   const [picks, setPicks] = useState<number[]>(() => prepared.map(() => -1));
   // for section mode, whether the current question is revealed
   const [revealed, setRevealed] = useState(false);
+  const fb = useRef(new Animated.Value(0)).current;
 
   const total = prepared.length;
   const cur = prepared[idx];
@@ -46,6 +87,8 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
   const showFeedback = !isExam && revealed;
   const bookmarked = progress.bookmarks.includes(cur.q.id);
   const isRight = picked === cur.opts.correctIndex;
+  // Diagrams accompany practice; the mock exam stays text-only like the real one.
+  const ill = isExam ? undefined : illustrationFor(examId, cur.q.id);
 
   function choose(optionIndex: number) {
     if (isExam) {
@@ -55,6 +98,8 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
     if (revealed) return; // locked after reveal in section mode
     setPicks((p) => p.map((v, i) => (i === idx ? optionIndex : v)));
     setRevealed(true);
+    fb.setValue(0);
+    Animated.timing(fb, { toValue: 1, duration: dur(260, reduced), useNativeDriver: true }).start();
     recordAnswer(cur.q.id, optionIndex === cur.opts.correctIndex);
   }
 
@@ -77,8 +122,9 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
       if (isExam) recordAnswer(q.id, ok); // exam records on submit
     });
     const pct = Math.round((correct / total) * 100);
-    if (isExam) recordExam(pct);
-    nav.push({ name: 'results', scope, correct, total, isExam, wrongIds });
+    const seconds = Math.floor((Date.now() - startedAt.current) / 1000);
+    if (isExam) recordExam(pct, seconds);
+    nav.push({ name: 'results', scope, correct, total, isExam, wrongIds, ids: prepared.map((p) => p.q.id), seconds });
   }
 
   function optState(i: number): 'idle' | 'selected' | 'correct' | 'wrong' {
@@ -109,9 +155,13 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.metaRow}>
-          <Text style={styles.kicker} numberOfLines={1}>
-            {isExam ? 'MOCK EXAM' : sectionName(cur.q.section).toUpperCase()}
-          </Text>
+          {isExam ? (
+            <PaceTimer elapsed={elapsed} paceSeconds={meta.paceMinutes * 60} />
+          ) : (
+            <Text style={styles.kicker} numberOfLines={1}>
+              {sectionName(cur.q.section).toUpperCase()}
+            </Text>
+          )}
           <Text style={styles.counter} accessibilityLabel={`Question ${idx + 1} of ${total}`}>
             <Text style={{ color: isExam ? colors.red : colors.blue }}>
               {String(idx + 1).padStart(2, '0')}
@@ -119,10 +169,13 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
             <Text style={{ color: colors.inkSoft }}>/{total}</Text>
           </Text>
         </View>
+        {isExam ? <Text style={[type.kicker, { marginTop: space.sm }]}>MOCK EXAM</Text> : null}
 
         <Text style={styles.question} accessibilityRole="header">
           {cur.q.question}
         </Text>
+
+        {ill ? <Illustration ill={ill} caption={revealed} maxHeight={280} style={{ marginTop: space.lg }} /> : null}
 
         <View style={{ gap: space.sm, marginTop: space.xl }}>
           {cur.opts.labels.map((label, i) => (
@@ -139,8 +192,12 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
         </View>
 
         {showFeedback && (
-          <View
-            style={[styles.feedback, { borderLeftColor: isRight ? colors.blue : colors.red }]}
+          <Animated.View
+            style={[
+              styles.feedback,
+              { borderLeftColor: isRight ? colors.blue : colors.red },
+              { opacity: fb, transform: [{ translateY: fb.interpolate({ inputRange: [0, 1], outputRange: [8, 0] }) }] },
+            ]}
             accessibilityLiveRegion="polite"
           >
             <View style={styles.feedbackHead}>
@@ -155,7 +212,13 @@ export default function QuizScreen({ scope }: { scope: 'exam' | number }) {
                 {cur.q.reference}
               </Text>
             ) : null}
-          </View>
+            {ill ? (
+              <Text style={[styles.refText, { marginTop: space.sm }]}>
+                <Text style={{ fontFamily: fonts.bold, color: colors.ink }}>DIAGRAM </Text>
+                {ill.explanation}
+              </Text>
+            ) : null}
+          </Animated.View>
         )}
       </ScrollView>
 
@@ -195,9 +258,12 @@ const styles = themed(() =>
   StyleSheet.create({
     root: { flex: 1 },
     content: { padding: space.lg, paddingBottom: 24 },
-    metaRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', gap: space.md },
+    metaRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: space.md },
     kicker: { ...type.kicker, flex: 1 },
     counter: { fontFamily: fonts.black, fontSize: 28, letterSpacing: -1 },
+    timer: { flexDirection: 'row', alignItems: 'center', gap: space.sm, flex: 1 },
+    timerText: { fontFamily: fonts.black, fontSize: 18, color: colors.ink, letterSpacing: 0.5, fontVariant: ['tabular-nums'] },
+    timerSub: { ...type.tiny, fontSize: 9 },
     question: {
       fontFamily: fonts.bold,
       fontSize: 22,

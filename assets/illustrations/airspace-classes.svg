@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>Canadian airspace classes, vertical cross-section</title>
+<defs><pattern id="fHatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#9B3A2B" stroke-width="1"/></pattern></defs>
+<text x="20" y="14" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">CANADIAN AIRSPACE, VERTICAL CROSS-SECTION (NOT TO SCALE)</text>
+<line x1="20" y1="320" x2="580" y2="320" stroke="#231F1A" stroke-width="2" stroke-linecap="round"/>
+<rect x="40" y="20" width="420" height="60" rx="2" fill="#2E4B70" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="52" y="44" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="900" fill="#FBF6EA" letter-spacing="1">CLASS A</text>
+<text x="52" y="62" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#FBF6EA">High level controlled airspace, 18,000 ft ASL to FL 600. IFR only.</text>
+<rect x="40" y="92" width="420" height="52" rx="2" fill="#E9E0CB" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="52" y="112" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="900" fill="#2E4B70" letter-spacing="1">CLASS B</text>
+<text x="52" y="130" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">Low level controlled airspace, 12,500 ft ASL (or MEA) up to 18,000 ft. VFR only with an ATC clearance.</text>
+<rect x="60" y="180" width="180" height="60" rx="2" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="70" y="200" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" fill="#2E4B70" letter-spacing="1">CLASS E</text>
+<text x="70" y="216" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#231F1A">low level airway, base 2,200 ft AGL</text>
+<text x="70" y="230" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#625A4E">no clearance needed for VFR</text>
+<path d="M280 190 L520 190 L520 230 L480 230 L480 270 L440 270 L440 320 L360 320 L360 270 L320 270 L320 230 L280 230 Z" fill="#E9E0CB" stroke="#2E4B70" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="400" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="900" text-anchor="middle" fill="#2E4B70">CLASS C terminal control area</text>
+<text x="400" y="224" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#231F1A">clearance required to enter</text>
+<rect x="360" y="262" width="80" height="58" rx="0" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="400" y="284" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="900" text-anchor="middle" fill="#2E4B70" letter-spacing="1">CONTROL</text>
+<text x="400" y="296" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="900" text-anchor="middle" fill="#2E4B70" letter-spacing="1">ZONE</text>
+<text x="400" y="310" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">C or D, to 3,000 AAE</text>
+<rect x="392" y="314" width="16" height="6" rx="0" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/>
+<rect x="60" y="262" width="70" height="58" rx="0" fill="url(#fHatch)" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="95" y="285" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="900" text-anchor="middle" fill="#9B3A2B">CLASS F</text>
+<text x="95" y="299" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#9B3A2B">CYR restricted</text>
+<text x="95" y="311" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#9B3A2B">CYA advisory</text>
+<text x="210" y="300" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#625A4E">CLASS G</text>
+<text x="210" y="313" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">uncontrolled</text>
+<text x="150" y="165" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#625A4E">CLASS G uncontrolled</text>
+<line x1="470" y1="20" x2="480" y2="20" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="486" y="24" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">FL 600</text>
+<line x1="470" y1="86" x2="480" y2="86" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="486" y="90" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">18,000 ft ASL</text>
+<line x1="470" y1="144" x2="480" y2="144" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="486" y="148" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">12,500 ft ASL</text>
+<line x1="470" y1="320" x2="480" y2="320" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="486" y="324" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">surface</text>
+<line x1="470" y1="20" x2="470" y2="320" stroke="#CFC4AB" stroke-width="1" stroke-linecap="round"/>
+<line x1="40" y1="86" x2="460" y2="86" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+<line x1="560" y1="88" x2="560" y2="318" stroke="#625A4E" stroke-width="1" stroke-linecap="round"/><line x1="555" y1="88" x2="565" y2="88" stroke="#625A4E" stroke-width="1" stroke-linecap="round"/><line x1="555" y1="318" x2="565" y2="318" stroke="#625A4E" stroke-width="1" stroke-linecap="round"/>
+<g transform="translate(575 203) rotate(-90)"><text x="0" y="0" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#625A4E" letter-spacing="1">LOW LEVEL AIRSPACE</text></g>
+<g transform="translate(575 50) rotate(-90)"><text x="0" y="0" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#625A4E" letter-spacing="1">HIGH LEVEL</text></g>
+<text x="300" y="346" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#625A4E">Controlled airspace: airspace within which an ATC service is provided. Class D needs two-way radio contact before entry.</text>
+</svg>

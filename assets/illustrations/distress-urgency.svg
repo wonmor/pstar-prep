@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 372" width="600" height="372" role="img">
+<title>Distress and urgency procedures</title>
+<text x="20" y="40" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#9B3A2B" letter-spacing="2">DISTRESS</text>
+<text x="20" y="56" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#625A4E">grave and imminent danger, immediate help needed</text>
+<rect x="20" y="66" width="270" height="44" rx="3" fill="#9B3A2B" stroke="#9B3A2B" stroke-width="1.5"/><text x="155" y="93" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">MAYDAY  MAYDAY  MAYDAY</text>
+<text x="24" y="130" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#231F1A">THIS IS + call sign x 3</text>
+<text x="24" y="151" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Message: position, nature of distress, intentions</text>
+<text x="24" y="172" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Send on the frequency in use; if no reply, 121.5 MHz</text>
+<text x="24" y="193" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Later transmissions begin with MAYDAY once</text>
+<text x="24" y="214" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Relaying another station: MAYDAY RELAY x 3</text>
+<text x="24" y="235" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Acknowledging: ... RECEIVED MAYDAY</text>
+<rect x="20" y="258" width="250" height="40" rx="3" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/><text x="145" y="275.1" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">SEELONCE MAYDAY</text><text x="145" y="288.8" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">IMPOSES RADIO SILENCE</text>
+<rect x="20" y="302" width="250" height="40" rx="3" fill="#2E4B70" stroke="#2E4B70" stroke-width="1.5"/><text x="145" y="319.1" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">SEELONCE FEENEE</text><text x="145" y="332.8" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">DISTRESS ENDED</text>
+<text x="310" y="40" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#C9972E" letter-spacing="2">URGENCY</text>
+<text x="310" y="56" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#625A4E">safety of an aircraft or person; no immediate help needed</text>
+<rect x="310" y="66" width="270" height="44" rx="3" fill="#C9972E" stroke="#C9972E" stroke-width="1.5"/><text x="445" y="92.7" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#231F1A" letter-spacing="1">PAN PAN  PAN PAN  PAN PAN</text>
+<text x="314" y="130" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#231F1A">Addressed to ALL STATIONS or one station</text>
+<text x="314" y="151" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Sent on the frequency in use</text>
+<text x="314" y="172" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Priority over everything except distress</text>
+<text x="314" y="193" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Stations hearing it keep listening at least 3 minutes</text>
+<text x="314" y="214" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">Sent only on the authority of the person in charge</text>
+<rect x="310" y="250" width="270" height="92" rx="4" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="320" y="266" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#625A4E" letter-spacing="1.5">PRIORITY OF COMMUNICATIONS</text>
+<text x="320" y="284" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#9B3A2B">1 Distress</text>
+<text x="320" y="302" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">2 Urgency</text>
+<text x="320" y="320" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">3 Direction finding</text>
+<text x="455" y="284" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">4 Flight safety</text>
+<text x="455" y="302" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">5 Meteorological</text>
+<text x="455" y="320" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">6 Flight regularity</text>
+<text x="300" y="362" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">Both signals are spoken three times. Knowingly sending a false distress signal is an offence.</text>
+</svg>

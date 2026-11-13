@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>The left-hand circuit and how to join it</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">STANDARD LEFT-HAND CIRCUIT, 1,000 FT AAE</text>
+<rect x="230" y="268" width="230" height="22" rx="0" fill="#625A4E" stroke="#625A4E" stroke-width="1.5"/>
+<line x1="250" y1="279" x2="440" y2="279" stroke="#FBF6EA" stroke-width="2" stroke-linecap="butt" stroke-dasharray="8 8"/>
+<path d="M235 279 L505 279 Q515 279 515 269 L515 75 Q515 65 505 65 L110 65 Q100 65 100 75 L100 269 Q100 279 110 279 L228 279" fill="none" stroke="#2E4B70" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="380" y1="279" x2="394.6" y2="279" stroke="#2E4B70" stroke-width="2.5" stroke-linecap="round"/><polygon points="400,279 391.9,282.9 391.9,275.1" fill="#2E4B70"/>
+<line x1="515" y1="200" x2="515" y2="185.4" stroke="#2E4B70" stroke-width="2.5" stroke-linecap="round"/><polygon points="515,180 518.9,188.1 511.1,188.1" fill="#2E4B70"/>
+<line x1="320" y1="65" x2="305.4" y2="65" stroke="#2E4B70" stroke-width="2.5" stroke-linecap="round"/><polygon points="300,65 308.1,61.1 308.1,68.9" fill="#2E4B70"/>
+<line x1="100" y1="150" x2="100" y2="164.6" stroke="#2E4B70" stroke-width="2.5" stroke-linecap="round"/><polygon points="100,170 96.1,161.9 103.9,161.9" fill="#2E4B70"/>
+<line x1="170" y1="279" x2="184.6" y2="279" stroke="#2E4B70" stroke-width="2.5" stroke-linecap="round"/><polygon points="190,279 181.9,282.9 181.9,275.1" fill="#2E4B70"/>
+<g transform="translate(200 65) rotate(-90) scale(0.8)"><path d="M0 -22 C3 -22 4.5 -16 4.5 -8 L4.5 -4 L26 6 L26 10 L4.5 6 L3.5 14 L10 19 L10 22 L0 20 L-10 22 L-10 19 L-3.5 14 L-4.5 6 L-26 10 L-26 6 L-4.5 -4 L-4.5 -8 C-4.5 -16 -3 -22 0 -22 Z" fill="#2E4B70"/></g>
+<text x="345" y="258" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#2E4B70" letter-spacing="1.5">UPWIND</text>
+<g transform="translate(533 170) rotate(90)"><text x="0" y="0" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#2E4B70" letter-spacing="1.5">CROSSWIND</text></g>
+<text x="300" y="50" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#2E4B70" letter-spacing="1.5">DOWNWIND</text>
+<text x="300" y="88" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#625A4E">1,000 ft AAE, parallel to the runway</text>
+<g transform="translate(84 170) rotate(-90)"><text x="0" y="0" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#2E4B70" letter-spacing="1.5">BASE</text></g>
+<text x="165" y="300" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#2E4B70" letter-spacing="1.5">FINAL</text>
+<path d="M400 345 Q400 90 362 65" fill="none" stroke="#9B3A2B" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 5"/><polygon points="362,65 370.9,66.2 366.6,72.7" fill="#9B3A2B"/>
+<text x="410" y="318" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#9B3A2B">cross mid-field at</text>
+<text x="410" y="330" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#9B3A2B">circuit height, partial</text>
+<text x="410" y="342" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#9B3A2B">right turn onto downwind</text>
+<path d="M590 340 Q560 300 522 250" fill="none" stroke="#9B3A2B" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 5"/><polygon points="522,250 530,254.1 523.8,258.8" fill="#9B3A2B"/>
+<text x="585" y="325" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" text-anchor="end" fill="#9B3A2B">or turn right to</text>
+<text x="585" y="337" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="end" fill="#9B3A2B">join crosswind</text>
+<text x="20" y="330" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#231F1A">Cleared to the circuit = join the</text>
+<text x="20" y="343" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#231F1A">downwind leg at circuit height.</text>
+<text x="20" y="356" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">All other turns are to the left.</text>
+</svg>

@@ -18,6 +18,7 @@ const light = {
   red: '#9B3A2B', // brick printing ink (5.9:1 on paper; onAccent text 6.4:1)
   blue: '#2E4B70', // indigo ink (7.6:1; onAccent 8.3:1)
   yellow: '#C9972E', // ochre; only behind onYellow text (6.2:1) or as a glyph
+  green: '#3F6B3A', // printing green, diagrams only (light signals, threshold lights)
   onAccent: '#FBF6EA', // text on red / blue fills
   onYellow: '#231F1A', // text on ochre, both modes
   white: '#FFFFFF',
@@ -36,6 +37,7 @@ const dark: typeof light = {
   red: '#E0836C', // 6.4:1 on night paper; night-paper text on it 6.4:1
   blue: '#8FB0DE', // 7.9:1
   yellow: '#DDB35A', // 9:1
+  green: '#8DBB85',
   onAccent: '#1B1814',
   onYellow: '#1B1814',
   white: '#FFFFFF',
@@ -143,6 +145,13 @@ export const glyph = {
   swap: 'swap-horizontal-outline',
   help: 'help',
   mail: 'mail-outline',
+  spot: 'scan-outline',
+  progress: 'stats-chart-outline',
+  diagram: 'image-outline',
+  flame: 'flame-outline',
+  timer: 'timer-outline',
+  eye: 'eye-outline',
+  flip: 'sync-outline',
 } as const;
 export type GlyphName = (typeof glyph)[keyof typeof glyph];
 

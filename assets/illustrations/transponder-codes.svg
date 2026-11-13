@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>VFR transponder codes by altitude</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">VFR TRANSPONDER CODES</text>
+<rect x="60" y="40" width="220" height="110" rx="0" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<rect x="60" y="150" width="220" height="170" rx="0" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<line x1="60" y1="150" x2="280" y2="150" stroke="#231F1A" stroke-width="2" stroke-linecap="round"/>
+<text x="290" y="154" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">12,500 ft ASL</text>
+<text x="170" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="900" text-anchor="middle" fill="#2E4B70">1400</text>
+<text x="170" y="108" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">above 12,500 ft ASL</text>
+<text x="170" y="225" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="900" text-anchor="middle" fill="#9B3A2B">1200</text>
+<text x="170" y="248" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">at or below 12,500 ft ASL</text>
+<line x1="20" y1="320" x2="580" y2="320" stroke="#231F1A" stroke-width="2" stroke-linecap="round"/>
+<text x="170" y="338" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#625A4E">surface</text>
+<g transform="translate(258 70) rotate(0) scale(0.6)"><path d="M0 -22 C3 -22 4.5 -16 4.5 -8 L4.5 -4 L26 6 L26 10 L4.5 6 L3.5 14 L10 19 L10 22 L0 20 L-10 22 L-10 19 L-3.5 14 L-4.5 6 L-26 10 L-26 6 L-4.5 -4 L-4.5 -8 C-4.5 -16 -3 -22 0 -22 Z" fill="#2E4B70"/></g>
+<g transform="translate(258 300) rotate(0) scale(0.6)"><path d="M0 -22 C3 -22 4.5 -16 4.5 -8 L4.5 -4 L26 6 L26 10 L4.5 6 L3.5 14 L10 19 L10 22 L0 20 L-10 22 L-10 19 L-3.5 14 L-4.5 6 L-26 10 L-26 6 L-4.5 -4 L-4.5 -8 C-4.5 -16 -3 -22 0 -22 Z" fill="#9B3A2B"/></g>
+<rect x="340" y="180" width="240" height="90" rx="6" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/>
+<rect x="356" y="198" width="110" height="40" rx="3" fill="#E9E0CB" stroke="#9C917B" stroke-width="1.5"/>
+<text x="411" y="227" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="900" text-anchor="middle" fill="#231F1A">1200</text>
+<circle cx="500" cy="218" r="14" fill="#C9972E" stroke="#C9972E" stroke-width="1.5"/>
+<text x="500" y="250" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1.5">IDENT</text>
+<text x="545" y="213" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#FBF6EA">ALT</text>
+<text x="545" y="226" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8" font-weight="500" text-anchor="middle" fill="#CFC4AB">mode C</text>
+<text x="460" y="290" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">Press IDENT only when ATC asks</text>
+<text x="460" y="305" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#625A4E">ATC may assign a discrete code instead</text>
+<text x="460" y="60" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#231F1A">Unless ATC instructs otherwise:</text>
+<text x="460" y="80" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#231F1A">code 1200 at or below 12,500 ft ASL,</text>
+<text x="460" y="96" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#231F1A">code 1400 above 12,500 ft ASL.</text>
+<text x="300" y="352" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">TC AIM COM: VFR operations. Transponders are required in Class A, B and C airspace.</text>
+</svg>

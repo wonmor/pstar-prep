@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>Runway and taxiway markings</title>
+<defs><pattern id="closedHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#CFC4AB" stroke-width="1"/></pattern></defs>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">RUNWAY AND TAXIWAY MARKINGS (PLAN VIEW, NORTH UP)</text>
+<rect x="455" y="24" width="70" height="116" rx="0" fill="#625A4E" stroke="#625A4E" stroke-width="1.5"/>
+<line x1="462" y1="36" x2="518" y2="116" stroke="#FBF6EA" stroke-width="6" stroke-linecap="round"/>
+<line x1="518" y1="36" x2="462" y2="116" stroke="#FBF6EA" stroke-width="6" stroke-linecap="round"/>
+<text x="532" y="60" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">white X</text>
+<text x="532" y="73" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">closed</text>
+<text x="532" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">runway</text>
+<rect x="40" y="140" width="520" height="100" rx="0" fill="#625A4E" stroke="#625A4E" stroke-width="1.5"/>
+<rect x="56" y="150" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="56" y="172" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="56" y="194" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="56" y="216" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="518" y="150" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="518" y="172" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="518" y="194" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="518" y="216" width="26" height="14" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<text x="118" y="199" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="900" text-anchor="middle" fill="#FBF6EA">09</text>
+<text x="482" y="199" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="900" text-anchor="middle" fill="#FBF6EA">27</text>
+<line x1="150" y1="190" x2="170" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="184" y1="190" x2="204" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="218" y1="190" x2="238" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="252" y1="190" x2="272" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="286" y1="190" x2="306" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="320" y1="190" x2="340" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="354" y1="190" x2="374" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="388" y1="190" x2="408" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<line x1="422" y1="190" x2="442" y2="190" stroke="#FBF6EA" stroke-width="3" stroke-linecap="butt"/>
+<rect x="160" y="160" width="30" height="8" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="160" y="212" width="30" height="8" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="410" y="160" width="30" height="8" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="410" y="212" width="30" height="8" rx="0" fill="#FBF6EA" stroke="#FBF6EA" stroke-width="1.5"/>
+<rect x="160" y="240" width="60" height="120" rx="0" fill="#E9E0CB" stroke="#E9E0CB" stroke-width="1.5"/>
+<line x1="190" y1="360" x2="190" y2="262" stroke="#C9972E" stroke-width="3" stroke-linecap="round"/>
+<line x1="160" y1="262" x2="220" y2="262" stroke="#C9972E" stroke-width="3" stroke-linecap="butt" stroke-dasharray="6 5"/>
+<line x1="160" y1="268" x2="220" y2="268" stroke="#C9972E" stroke-width="3" stroke-linecap="butt" stroke-dasharray="6 5"/>
+<line x1="160" y1="276" x2="220" y2="276" stroke="#C9972E" stroke-width="3" stroke-linecap="butt"/>
+<line x1="160" y1="282" x2="220" y2="282" stroke="#C9972E" stroke-width="3" stroke-linecap="butt"/>
+<g transform="translate(190 318) rotate(0) scale(0.75)"><path d="M0 -22 C3 -22 4.5 -16 4.5 -8 L4.5 -4 L26 6 L26 10 L4.5 6 L3.5 14 L10 19 L10 22 L0 20 L-10 22 L-10 19 L-3.5 14 L-4.5 6 L-26 10 L-26 6 L-4.5 -4 L-4.5 -8 C-4.5 -16 -3 -22 0 -22 Z" fill="#2E4B70"/></g>
+<text x="232" y="274" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">hold here:</text>
+<text x="232" y="286" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">solid lines on your side</text>
+<text x="232" y="262" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">dashed lines face the runway</text>
+<rect x="420" y="240" width="70" height="100" rx="0" fill="#E9E0CB" stroke="#E9E0CB" stroke-width="1.5"/>
+<line x1="430" y1="268" x2="480" y2="334" stroke="#C9972E" stroke-width="6" stroke-linecap="round"/>
+<line x1="480" y1="268" x2="430" y2="334" stroke="#C9972E" stroke-width="6" stroke-linecap="round"/>
+<text x="455" y="352" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#625A4E">yellow X: closed taxiway</text>
+<g transform="translate(100 330) rotate(0) scale(0.7)"><path d="M0 -22 C3 -22 4.5 -16 4.5 -8 L4.5 -4 L26 6 L26 10 L4.5 6 L3.5 14 L10 19 L10 22 L0 20 L-10 22 L-10 19 L-3.5 14 L-4.5 6 L-26 10 L-26 6 L-4.5 -4 L-4.5 -8 C-4.5 -16 -3 -22 0 -22 Z" fill="#231F1A"/></g>
+<line x1="70" y1="240" x2="70" y2="310" stroke="#9B3A2B" stroke-width="1" stroke-linecap="round"/><line x1="65" y1="240" x2="75" y2="240" stroke="#9B3A2B" stroke-width="1" stroke-linecap="round"/><line x1="65" y1="310" x2="75" y2="310" stroke="#9B3A2B" stroke-width="1" stroke-linecap="round"/>
+<text x="62" y="280" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="end" fill="#9B3A2B">200 ft</text>
+<text x="62" y="292" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" text-anchor="end" fill="#625A4E">min. with</text>
+<text x="62" y="302" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" text-anchor="end" fill="#625A4E">no hold line</text>
+<text x="40" y="130" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">heading 090 from the west end (09), 270 from the east end (27)</text>
+<text x="232" y="312" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">manoeuvring area =</text>
+<text x="232" y="324" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">runways + taxiways</text>
+<text x="232" y="336" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">(not the apron)</text>
+</svg>

@@ -78,7 +78,7 @@ export function logMockStart(startedDays: readonly string[], today: string, keep
 // Routes that need a check before they are shown.
 export type GatedRoute =
   | { name: 'quiz'; scope: 'exam' | number }
-  | { name: 'cards'; scope: 'all' | 'bookmarks' | number }
+  | { name: 'cards'; scope: 'all' | 'bookmarks' | 'visual' | number }
   | { name: string; scope?: unknown };
 
 // Is a route viewable right now? Mock exams are metered at start time (see

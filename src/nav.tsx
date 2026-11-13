@@ -12,9 +12,13 @@ export type Route =
       total: number;
       isExam: boolean;
       wrongIds: string[];
+      ids?: string[]; // every question id in the run, for the per-section breakdown
+      seconds?: number; // time taken
     }
   | { name: 'cardsSetup' }
-  | { name: 'cards'; scope: 'all' | 'bookmarks' | number }
+  | { name: 'cards'; scope: 'all' | 'bookmarks' | 'visual' | number }
+  | { name: 'spot' }
+  | { name: 'progress' }
   | { name: 'review'; initialSection?: number | 'bookmarks' }
   | { name: 'about' }
   | { name: 'paywall'; reason?: string };
@@ -51,10 +55,12 @@ export const TAB_ROOT: Record<TabKey, Route> = {
 export function tabForRoute(r: Route): TabKey | null {
   switch (r.name) {
     case 'home':
+    case 'progress':
       return 'home';
     case 'quizSetup':
     case 'quiz':
     case 'results':
+    case 'spot':
       return 'quizSetup';
     case 'cardsSetup':
     case 'cards':

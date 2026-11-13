@@ -16,6 +16,7 @@ export type ExamMeta = {
   subtitle: string; // hero description ({n} fills with question count)
   examSize: number;
   passPct: number;
+  paceMinutes: number; // suggested time for a mock exam (the pace ring in the quiz)
   source: string; // short attribution shown in copy
   sourceUrl: string;
   sourceLabel: string; // About-screen row label for the official source
@@ -35,6 +36,7 @@ export const EXAMS: Record<ExamId, ExamMeta> = {
       'Aviation Regulations for the Student Pilot Permit & Private Pilot Licence.',
     examSize: 50,
     passPct: 90,
+    paceMinutes: 60,
     source: 'Transport Canada TP 11919E, 7th Edition (Dec 2022)',
     sourceUrl:
       'https://tc.canada.ca/en/aviation/publications/student-pilot-permit-private-pilot-licence-foreign-military-applicants-aviation-regulations-tp-11919',
@@ -58,6 +60,7 @@ export const EXAMS: Record<ExamId, ExamMeta> = {
       'Aeronautical radio operating for the Restricted Operator Certificate (Aeronautical).',
     examSize: 25,
     passPct: 70,
+    paceMinutes: 30,
     source: 'Based on ISED RIC-21, Issue 3 (Feb 2010)',
     sourceUrl:
       'https://ised-isde.canada.ca/site/spectrum-management-telecommunications/en/managing-spectrum/radiocommunication-information-circulars-ric/ric-21-study-guide-restricted-operator-certificate-aeronautical-roc',

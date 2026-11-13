@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>Transmitting numbers and time</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">TRANSMITTING NUMBERS AND TIME (RIC-21 SECTIONS 5.2 AND 5.4)</text>
+<rect x="20" y="34" width="560" height="42" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="61" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#2E4B70">11,000</text>
+<line x1="170" y1="55" x2="191.8" y2="55" stroke="#625A4E" stroke-width="1.5" stroke-linecap="round"/><polygon points="196,55 189.7,58 189.7,52" fill="#625A4E"/>
+<text x="206" y="61" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#9B3A2B">one one thousand</text>
+<text x="568" y="61" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="end" fill="#625A4E">whole thousands use "thousand"</text>
+<rect x="20" y="82" width="560" height="42" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="109" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#2E4B70">5,800</text>
+<line x1="170" y1="103" x2="191.8" y2="103" stroke="#625A4E" stroke-width="1.5" stroke-linecap="round"/><polygon points="196,103 189.7,106 189.7,100" fill="#625A4E"/>
+<text x="206" y="109" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#9B3A2B">five eight zero zero</text>
+<text x="568" y="109" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="end" fill="#625A4E">everything else, digit by digit</text>
+<rect x="20" y="130" width="560" height="42" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="157" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#2E4B70">121.5 MHz</text>
+<line x1="170" y1="151" x2="191.8" y2="151" stroke="#625A4E" stroke-width="1.5" stroke-linecap="round"/><polygon points="196,151 189.7,154 189.7,148" fill="#625A4E"/>
+<text x="206" y="157" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#9B3A2B">one two one decimal five</text>
+<text x="568" y="157" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="end" fill="#625A4E">frequencies use "decimal"</text>
+<rect x="20" y="178" width="560" height="42" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="205" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#2E4B70">2,700 ft ASL</text>
+<line x1="170" y1="199" x2="191.8" y2="199" stroke="#625A4E" stroke-width="1.5" stroke-linecap="round"/><polygon points="196,199 189.7,202 189.7,196" fill="#625A4E"/>
+<text x="206" y="205" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#9B3A2B">two thousand seven hundred</text>
+<text x="568" y="205" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="end" fill="#625A4E">thousands and hundreds</text>
+<rect x="20" y="226" width="560" height="42" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="253" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#2E4B70">heading 090</text>
+<line x1="170" y1="247" x2="191.8" y2="247" stroke="#625A4E" stroke-width="1.5" stroke-linecap="round"/><polygon points="196,247 189.7,250 189.7,244" fill="#625A4E"/>
+<text x="206" y="253" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#9B3A2B">zero niner zero</text>
+<text x="568" y="253" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="end" fill="#625A4E">headings: three digits</text>
+<rect x="20" y="274" width="560" height="42" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="301" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" fill="#2E4B70">1:45 p.m.</text>
+<line x1="170" y1="295" x2="191.8" y2="295" stroke="#625A4E" stroke-width="1.5" stroke-linecap="round"/><polygon points="196,295 189.7,298 189.7,292" fill="#625A4E"/>
+<text x="206" y="301" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" fill="#9B3A2B">1345: one three four five</text>
+<text x="568" y="301" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="end" fill="#625A4E">24-hour clock, four figures, UTC (zulu)</text>
+<text x="300" y="348" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">Time is referenced to Coordinated Universal Time. Only the minutes are needed when there is no risk of confusion.</text>
+</svg>

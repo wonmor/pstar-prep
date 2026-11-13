@@ -24,6 +24,12 @@ export type Progress = {
   // best exam score (percent) and number of exams completed
   bestExamPct: number | null;
   examsTaken: number;
+  // study activity: answers recorded per local calendar day ("2026-11-13")
+  activity: Record<string, number>;
+  // mock exam history, oldest first (kept to the last 30)
+  examHistory: { day: string; pct: number; seconds?: number }[];
+  // spot-it results keyed by illustration id: last attempt correct?
+  spots: Record<string, boolean>;
 };
 
 const EMPTY: Progress = {
@@ -32,7 +38,28 @@ const EMPTY: Progress = {
   known: [],
   bestExamPct: null,
   examsTaken: 0,
+  activity: {},
+  examHistory: [],
+  spots: {},
 };
+
+// Local calendar day key, e.g. "2026-11-13" (device time zone).
+export function todayKey(d = new Date()): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+// Trim the activity log to the last ~400 days so storage stays small.
+function trimActivity(a: Record<string, number>): Record<string, number> {
+  const keys = Object.keys(a).sort();
+  if (keys.length <= 400) return a;
+  const keep = keys.slice(-400);
+  const out: Record<string, number> = {};
+  for (const k of keep) out[k] = a[k];
+  return out;
+}
 
 const caches: Partial<Record<ExamId, Progress>> = {};
 const listenerMap: Partial<Record<ExamId, Set<(p: Progress) => void>>> = {};
@@ -76,16 +103,44 @@ export async function recordAnswer(exam: ExamId, id: string, correct: boolean) {
       lastCorrect: correct,
     },
   };
-  await persist(exam, { ...p, stats });
+  const day = todayKey();
+  const activity = trimActivity({ ...p.activity, [day]: (p.activity?.[day] ?? 0) + 1 });
+  await persist(exam, { ...p, stats, activity });
 }
 
-export async function recordExam(exam: ExamId, pct: number) {
+export async function recordExam(exam: ExamId, pct: number, seconds?: number) {
   const p = await load(exam);
+  const examHistory = [...(p.examHistory ?? []), { day: todayKey(), pct, seconds }].slice(-30);
   await persist(exam, {
     ...p,
     examsTaken: p.examsTaken + 1,
     bestExamPct: p.bestExamPct == null ? pct : Math.max(p.bestExamPct, pct),
+    examHistory,
   });
+}
+
+export async function recordSpot(exam: ExamId, illustrationId: string, correct: boolean) {
+  const p = await load(exam);
+  const day = todayKey();
+  const activity = trimActivity({ ...p.activity, [day]: (p.activity?.[day] ?? 0) + 1 });
+  await persist(exam, { ...p, spots: { ...(p.spots ?? {}), [illustrationId]: correct }, activity });
+}
+
+// Consecutive study days ending today (or yesterday, so an evening session
+// does not break the streak before the day is over).
+export function streakDays(activity: Record<string, number>, now = new Date()): number {
+  const has = (d: Date) => (activity[todayKey(d)] ?? 0) > 0;
+  const d = new Date(now);
+  if (!has(d)) {
+    d.setDate(d.getDate() - 1);
+    if (!has(d)) return 0;
+  }
+  let n = 0;
+  while (has(d)) {
+    n++;
+    d.setDate(d.getDate() - 1);
+  }
+  return n;
 }
 
 export async function toggleBookmark(exam: ExamId, id: string) {
@@ -152,7 +207,8 @@ export function useActions() {
   const exam = useExamId();
   return {
     recordAnswer: useCallback((id: string, correct: boolean) => recordAnswer(exam, id, correct), [exam]),
-    recordExam: useCallback((pct: number) => recordExam(exam, pct), [exam]),
+    recordExam: useCallback((pct: number, seconds?: number) => recordExam(exam, pct, seconds), [exam]),
+    recordSpot: useCallback((id: string, correct: boolean) => recordSpot(exam, id, correct), [exam]),
     toggleBookmark: useCallback((id: string) => toggleBookmark(exam, id), [exam]),
     setKnown: useCallback((id: string, known: boolean) => setKnown(exam, id, known), [exam]),
     resetProgress: useCallback(() => resetProgress(exam), [exam]),

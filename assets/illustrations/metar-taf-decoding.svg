@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 376" width="600" height="376" role="img">
+<title>Decoding a METAR and a TAF</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">METAR: OBSERVED WEATHER</text>
+<rect x="24" y="30" width="65.2" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="56.6" y="48" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">METAR</text>
+<text x="56.6" y="70" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">report type</text>
+<rect x="95.2" y="30" width="44.8" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="117.6" y="48" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">CYOW</text>
+<text x="117.6" y="70" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">station</text>
+<text x="117.6" y="81" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">Ottawa</text>
+<rect x="146" y="30" width="69.4" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="180.7" y="48" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">131800Z</text>
+<text x="180.7" y="70" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">day + time</text>
+<text x="180.7" y="81" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">13th, 1800 UTC</text>
+<rect x="221.4" y="30" width="94" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="268.4" y="48" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">27012G18KT</text>
+<text x="268.4" y="70" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">wind</text>
+<text x="268.4" y="81" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">270 at 12, gusts 18 kt</text>
+<rect x="321.4" y="30" width="60" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="351.4" y="48" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">15SM</text>
+<text x="351.4" y="70" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">visibility</text>
+<text x="351.4" y="81" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">statute miles</text>
+<rect x="24" y="96" width="61.2" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="54.6" y="114" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">FEW040</text>
+<text x="54.6" y="136" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">few cloud</text>
+<text x="54.6" y="147" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">4,000 ft AGL</text>
+<rect x="91.2" y="96" width="101.6" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="142" y="114" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">OVC010</text>
+<text x="142" y="136" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">overcast = ceiling</text>
+<text x="142" y="147" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">1,000 ft AGL</text>
+<rect x="198.8" y="96" width="91.2" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="244.4" y="114" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">22/10</text>
+<text x="244.4" y="136" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">temp / dew point</text>
+<text x="244.4" y="147" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">degrees C</text>
+<rect x="296" y="96" width="54.8" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="323.4" y="114" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">A2992</text>
+<text x="323.4" y="136" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">altimeter</text>
+<text x="323.4" y="147" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">29.92 in Hg</text>
+<rect x="356.8" y="96" width="94" height="26" rx="3" fill="#FBF6EA" stroke="#2E4B70" stroke-width="1.5"/>
+<text x="403.8" y="114" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#2E4B70">RMK SLP131</text>
+<text x="403.8" y="136" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">remarks</text>
+<text x="403.8" y="147" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">sea level pressure</text>
+<text x="20" y="182" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">TAF: FORECAST</text>
+<rect x="24" y="192" width="49.6" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="48.8" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">TAF</text>
+<text x="48.8" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">forecast</text>
+<rect x="79.6" y="192" width="44.8" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="102" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">CYOW</text>
+<text x="102" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">station</text>
+<rect x="130.4" y="192" width="69.4" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="165.1" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">131740Z</text>
+<text x="165.1" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">issued</text>
+<text x="165.1" y="243" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">13th 1740 UTC</text>
+<rect x="205.8" y="192" width="85.8" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="248.7" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">1318/1418</text>
+<text x="248.7" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">valid period</text>
+<text x="248.7" y="243" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">13th 18Z to 14th 18Z</text>
+<rect x="297.6" y="192" width="69.4" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="332.3" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">27012KT</text>
+<text x="332.3" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">wind</text>
+<rect x="373" y="192" width="60" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="403" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">P6SM</text>
+<text x="403" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">visibility</text>
+<text x="403" y="243" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">more than 6 SM</text>
+<rect x="439" y="192" width="61.2" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="469.6" y="210" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">BKN040</text>
+<text x="469.6" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">broken</text>
+<text x="469.6" y="243" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">4,000 ft</text>
+<rect x="24" y="258" width="135" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="91.5" y="276" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">TEMPO 1320/1323</text>
+<text x="91.5" y="298" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">temporary change</text>
+<text x="91.5" y="309" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">between 20Z and 23Z</text>
+<rect x="165" y="258" width="143.2" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="236.6" y="276" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">3SM -SHRA OVC015</text>
+<text x="236.6" y="298" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">in those periods</text>
+<text x="236.6" y="309" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">light rain showers, ceiling 1,500</text>
+<rect x="314.2" y="258" width="77.6" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="353" y="276" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">FM140200</text>
+<text x="353" y="298" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">from</text>
+<text x="353" y="309" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" fill="#625A4E">14th at 0200 UTC onward</text>
+<rect x="397.8" y="258" width="167.8" height="26" rx="3" fill="#FBF6EA" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="481.7" y="276" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" fill="#9B3A2B">32008KT P6SM SCT030</text>
+<text x="481.7" y="298" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#231F1A">new prevailing weather</text>
+<text x="24" y="336" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">Cloud heights are hundreds of feet AGL; the lowest BKN or OVC layer is the ceiling.</text>
+<text x="24" y="350" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#231F1A">Wind is true direction in degrees and speed in knots; G marks gusts.</text>
+<text x="24" y="364" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" fill="#625A4E">OVC010 with 3SM in a control zone means a circuit flown 500 ft below the cloud base.</text>
+</svg>

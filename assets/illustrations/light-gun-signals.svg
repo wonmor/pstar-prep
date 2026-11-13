@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>Tower light gun signals</title>
+<text x="20" y="28" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">ATC LIGHT GUN SIGNALS</text>
+<rect x="20" y="44" width="560" height="22" rx="3" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/>
+<text x="95" y="59" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1.5">SIGNAL</text>
+<text x="282" y="59" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1.5">IN FLIGHT</text>
+<text x="490" y="59" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1.5">ON THE GROUND</text>
+<rect x="20" y="70" width="560" height="46" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<circle cx="46" cy="93" r="10" fill="#3F6B3A" stroke="#231F1A" stroke-width="1.5"/>
+<text x="68" y="97" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">Steady green</text>
+<text x="180" y="97" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Cleared to land</text>
+<text x="395" y="97" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Cleared for take-off</text>
+<rect x="20" y="118" width="560" height="46" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<circle cx="46" cy="141" r="10" fill="#3F6B3A" stroke="#231F1A" stroke-width="1.5"/><line x1="58.9" y1="146.4" x2="63.6" y2="148.3" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="51.4" y1="153.9" x2="53.3" y2="158.6" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="40.6" y1="153.9" x2="38.7" y2="158.6" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="33.1" y1="146.4" x2="28.4" y2="148.3" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="33.1" y1="135.6" x2="28.4" y2="133.7" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="40.6" y1="128.1" x2="38.7" y2="123.4" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="51.4" y1="128.1" x2="53.3" y2="123.4" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="58.9" y1="135.6" x2="63.6" y2="133.7" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="68" y="145" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">Flashing green</text>
+<text x="180" y="145" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Return for landing</text>
+<text x="395" y="145" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Cleared to taxi</text>
+<rect x="20" y="166" width="560" height="46" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<circle cx="46" cy="189" r="10" fill="#9B3A2B" stroke="#231F1A" stroke-width="1.5"/>
+<text x="68" y="193" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">Steady red</text>
+<text x="180" y="186" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Give way to other</text><text x="180" y="201" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">aircraft and continue circling</text>
+<text x="395" y="193" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Stop</text>
+<rect x="20" y="214" width="560" height="46" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<circle cx="46" cy="237" r="10" fill="#9B3A2B" stroke="#231F1A" stroke-width="1.5"/><line x1="58.9" y1="242.4" x2="63.6" y2="244.3" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="51.4" y1="249.9" x2="53.3" y2="254.6" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="40.6" y1="249.9" x2="38.7" y2="254.6" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="33.1" y1="242.4" x2="28.4" y2="244.3" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="33.1" y1="231.6" x2="28.4" y2="229.7" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="40.6" y1="224.1" x2="38.7" y2="219.4" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="51.4" y1="224.1" x2="53.3" y2="219.4" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="58.9" y1="231.6" x2="63.6" y2="229.7" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="68" y="241" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">Flashing red</text>
+<text x="180" y="234" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Airport unsafe, do</text><text x="180" y="249" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">not land</text>
+<text x="395" y="234" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Taxi clear of landing</text><text x="395" y="249" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">area in use</text>
+<rect x="20" y="262" width="560" height="46" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<circle cx="46" cy="285" r="10" fill="#FBF6EA" stroke="#231F1A" stroke-width="1.5"/><line x1="58.9" y1="290.4" x2="63.6" y2="292.3" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="51.4" y1="297.9" x2="53.3" y2="302.6" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="40.6" y1="297.9" x2="38.7" y2="302.6" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="33.1" y1="290.4" x2="28.4" y2="292.3" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="33.1" y1="279.6" x2="28.4" y2="277.7" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="40.6" y1="272.1" x2="38.7" y2="267.4" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="51.4" y1="272.1" x2="53.3" y2="267.4" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/><line x1="58.9" y1="279.6" x2="63.6" y2="277.7" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="68" y="289" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">Flashing white</text>
+<text x="180" y="289" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">(no meaning in flight)</text>
+<text x="395" y="282" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">Return to starting</text><text x="395" y="297" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#231F1A">point on airport</text>
+<rect x="20" y="310" width="560" height="34" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<circle cx="32" cy="327" r="3.2" fill="#FBF6EA" stroke="#231F1A" stroke-width="1.2"/>
+<circle cx="43" cy="327" r="3.2" fill="#FBF6EA" stroke="#231F1A" stroke-width="1.2"/>
+<circle cx="54" cy="327" r="3.2" fill="#FBF6EA" stroke="#231F1A" stroke-width="1.2"/>
+<circle cx="65" cy="327" r="3.2" fill="#FBF6EA" stroke="#231F1A" stroke-width="1.2"/>
+<text x="84" y="331" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#231F1A">Blinking runway lights</text>
+<text x="240" y="331" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#231F1A">Vehicles and pedestrians: vacate the runway immediately</text>
+<text x="300" y="357" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">Acknowledge in flight by rocking the wings (day) or flashing the landing light (night).</text>
+</svg>

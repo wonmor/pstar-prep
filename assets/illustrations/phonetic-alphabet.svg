@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" role="img">
+<title>ITU phonetic alphabet and numbers</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">ITU PHONETIC ALPHABET (RIC-21 SECTION 5.3)</text>
+<rect x="20" y="30" width="134" height="30" rx="3" fill="#E9E0CB" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="30" y="52" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">A</text>
+<text x="56" y="51" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#9B3A2B">Alfa</text>
+<rect x="160" y="30" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="170" y="52" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">B</text>
+<text x="196" y="51" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Bravo</text>
+<rect x="300" y="30" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="52" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">C</text>
+<text x="336" y="51" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Charlie</text>
+<rect x="440" y="30" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="450" y="52" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">D</text>
+<text x="476" y="51" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Delta</text>
+<rect x="20" y="64" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="86" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">E</text>
+<text x="56" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Echo</text>
+<rect x="160" y="64" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="170" y="86" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">F</text>
+<text x="196" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Foxtrot</text>
+<rect x="300" y="64" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="86" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">G</text>
+<text x="336" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Golf</text>
+<rect x="440" y="64" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="450" y="86" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">H</text>
+<text x="476" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Hotel</text>
+<rect x="20" y="98" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="120" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">I</text>
+<text x="56" y="119" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">India</text>
+<rect x="160" y="98" width="134" height="30" rx="3" fill="#E9E0CB" stroke="#9B3A2B" stroke-width="1.5"/>
+<text x="170" y="120" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">J</text>
+<text x="196" y="119" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#9B3A2B">Juliett</text>
+<rect x="300" y="98" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="120" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">K</text>
+<text x="336" y="119" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Kilo</text>
+<rect x="440" y="98" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="450" y="120" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">L</text>
+<text x="476" y="119" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Lima</text>
+<rect x="20" y="132" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="154" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">M</text>
+<text x="56" y="153" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Mike</text>
+<rect x="160" y="132" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="170" y="154" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">N</text>
+<text x="196" y="153" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">November</text>
+<rect x="300" y="132" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="154" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">O</text>
+<text x="336" y="153" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Oscar</text>
+<rect x="440" y="132" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="450" y="154" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">P</text>
+<text x="476" y="153" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Papa</text>
+<rect x="20" y="166" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="188" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">Q</text>
+<text x="56" y="187" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Quebec</text>
+<rect x="160" y="166" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="170" y="188" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">R</text>
+<text x="196" y="187" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Romeo</text>
+<rect x="300" y="166" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="188" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">S</text>
+<text x="336" y="187" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Sierra</text>
+<rect x="440" y="166" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="450" y="188" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">T</text>
+<text x="476" y="187" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Tango</text>
+<rect x="20" y="200" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="222" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">U</text>
+<text x="56" y="221" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Uniform</text>
+<rect x="160" y="200" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="170" y="222" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">V</text>
+<text x="196" y="221" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Victor</text>
+<rect x="300" y="200" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="222" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">W</text>
+<text x="336" y="221" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Whiskey</text>
+<rect x="440" y="200" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="450" y="222" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">X</text>
+<text x="476" y="221" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">X-ray</text>
+<rect x="20" y="234" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="256" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">Y</text>
+<text x="56" y="255" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Yankee</text>
+<rect x="160" y="234" width="134" height="30" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="170" y="256" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="900" fill="#2E4B70">Z</text>
+<text x="196" y="255" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="700" fill="#231F1A">Zulu</text>
+<text x="300" y="262" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#9B3A2B">Watch the spellings: Alfa (not Alpha) and Juliett (not Juliet).</text>
+<text x="20" y="300" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">NUMBERS</text>
+<rect x="20" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="45" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">0</text>
+<text x="45" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">zero</text>
+<rect x="76" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="101" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">1</text>
+<text x="101" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">wun</text>
+<rect x="132" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="157" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">2</text>
+<text x="157" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">too</text>
+<rect x="188" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="213" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">3</text>
+<text x="213" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#9B3A2B">tree</text>
+<rect x="244" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="269" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">4</text>
+<text x="269" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#9B3A2B">fower</text>
+<rect x="300" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="325" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">5</text>
+<text x="325" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#9B3A2B">fife</text>
+<rect x="356" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="381" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">6</text>
+<text x="381" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">six</text>
+<rect x="412" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="437" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">7</text>
+<text x="437" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">seven</text>
+<rect x="468" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="493" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">8</text>
+<text x="493" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">ait</text>
+<rect x="524" y="308" width="50" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="549" y="334" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">9</text>
+<text x="549" y="353" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#9B3A2B">niner</text>
+<rect x="20" y="372" width="270" height="30" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="30" y="392" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" fill="#231F1A">decimal</text>
+<text x="100" y="392" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">the point: one two one decimal fife</text>
+<rect x="300" y="372" width="280" height="30" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="310" y="392" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="900" fill="#231F1A">thousand</text>
+<text x="392" y="392" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">whole thousands: one one thousand</text>
+<text x="300" y="426" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">Call signs are always spelled phonetically. The alphabet is the ITU alphabet, not a military or police code.</text>
+</svg>

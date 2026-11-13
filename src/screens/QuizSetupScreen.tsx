@@ -8,11 +8,13 @@ import { Button, Glyph, ScreenHeader, Icon } from '../components/ui';
 import { SectionList } from '../components/SectionList';
 import { ExamSwitch } from '../components/ExamSwitch';
 import { ProBanner } from '../components/ProBanner';
+import { spotsForExam } from '../illustrations';
 
 export default function QuizSetupScreen() {
   const nav = useNav();
   const gate = useGate();
-  const { meta, QUESTIONS, EXAM_SIZE, PASS_PCT } = useExam();
+  const { id: examId, meta, QUESTIONS, EXAM_SIZE, PASS_PCT } = useExam();
+  const spotCount = spotsForExam(examId).length;
   const startMock = () =>
     gate.canMock ? nav.push({ name: 'quiz', scope: 'exam' }) : nav.push({ name: 'paywall', reason: 'mock' });
   return (
@@ -34,7 +36,7 @@ export default function QuizSetupScreen() {
         <Text style={styles.examBig} maxFontSizeMultiplier={1.1}>{EXAM_SIZE}</Text>
         <Text style={styles.examDesc}>
           questions drawn at random from all {QUESTIONS.length}. Pass mark {PASS_PCT}%, just like the real{' '}
-          {meta.shortName}. Answers revealed at the end.
+          {meta.shortName}. Answers revealed at the end. A pace ring keeps you to {meta.paceMinutes} minutes.
         </Text>
         {!gate.isPro && (
           <Text style={styles.examQuota}>
@@ -51,6 +53,19 @@ export default function QuizSetupScreen() {
           style={{ marginTop: space.lg }}
         />
       </View>
+
+      {spotCount > 0 && (
+        <View style={[styles.exam, styles.spot]}>
+          <View style={{ flex: 1 }}>
+            <Text style={[styles.examKicker, { color: colors.green }]}>SPOT IT</Text>
+            <Text style={[type.h3, { marginTop: 4 }]}>Tap the answer on the diagram</Text>
+            <Text style={[type.mute, { marginTop: 2 }]}>
+              {spotCount} diagrams: light signals, markings, signs, the circuit and more.
+            </Text>
+          </View>
+          <Button small label="Start" variant="primary" trailing={glyph.spot} onPress={() => nav.push({ name: 'spot' })} testID="start-spot" />
+        </View>
+      )}
 
       <View style={styles.subHead}>
         <Text style={type.h2}>By section</Text>
@@ -70,6 +85,7 @@ const styles = themed(() =>
   StyleSheet.create({
     content: { padding: space.lg, paddingBottom: 40 },
     exam: { ...cardSurface(), padding: space.xl },
+    spot: { flexDirection: 'row', alignItems: 'center', gap: space.md, padding: space.lg, marginTop: space.md },
     examTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
     examKicker: { fontFamily: fonts.heavy, fontSize: 12, letterSpacing: 3, color: colors.blue },
     examBig: {

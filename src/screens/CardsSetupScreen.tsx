@@ -9,6 +9,7 @@ import { Glyph, Icon, ScreenHeader } from '../components/ui';
 import { SectionList } from '../components/SectionList';
 import { ExamSwitch } from '../components/ExamSwitch';
 import { ProBanner } from '../components/ProBanner';
+import { illustrationsForExam, questionIdsFor } from '../illustrations';
 
 function DeckRow({
   mark,
@@ -54,8 +55,12 @@ export default function CardsSetupScreen() {
   const nav = useNav();
   const p = useProgress();
   const gate = useGate();
-  const { QUESTIONS } = useExam();
+  const { id: examId, QUESTIONS } = useExam();
   const allCount = gate.visible().length;
+  const visual = illustrationsForExam(examId).filter((ill) => {
+    const qids = questionIdsFor(ill, examId);
+    return qids.length === 0 || gate.visible(QUESTIONS.filter((q) => qids.includes(q.id))).length > 0;
+  }).length;
   const saved = gate.visible(QUESTIONS.filter((q) => p.bookmarks.includes(q.id))).length;
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -76,6 +81,15 @@ export default function CardsSetupScreen() {
           desc={gate.isPro ? 'Shuffle the entire bank' : `Free sample | all ${QUESTIONS.length} with Pro`}
           count={allCount}
           onPress={() => nav.push({ name: 'cards', scope: 'all' })}
+        />
+        <DeckRow
+          mark={glyph.diagram}
+          tint={colors.yellow}
+          title="Visual cards"
+          desc="Diagram on the front, explanation on the back"
+          count={visual}
+          disabled={visual === 0}
+          onPress={() => nav.push({ name: 'cards', scope: 'visual' })}
         />
         <DeckRow
           mark={glyph.star}

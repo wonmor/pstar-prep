@@ -1,0 +1,1123 @@
+{
+  "version": 1,
+  "notes": "Original line-art diagrams drawn for PSTAR & ROC-A Trainer in the paper-and-ink palette. Platform neutral: every file is a standalone SVG that uses only the palette colours below, so a client may recolour it for a dark theme by substituting those hex values. Question keys are '<exam>:<question id>'. Spot targets are rectangles in the SVG viewBox (x, y, w, h). Not Transport Canada or ISED artwork; verify against the current TC AIM, CARs and RIC-21.",
+  "palette": {
+    "paper": "#F4EDDD",
+    "paperDeep": "#E9E0CB",
+    "card": "#FBF6EA",
+    "line": "#CFC4AB",
+    "lineStrong": "#9C917B",
+    "ink": "#231F1A",
+    "inkSoft": "#625A4E",
+    "red": "#9B3A2B",
+    "blue": "#2E4B70",
+    "yellow": "#C9972E",
+    "green": "#3F6B3A"
+  },
+  "fontFamily": "Jost, Helvetica Neue, Arial, sans-serif",
+  "illustrations": [
+    {
+      "id": "right-of-way-converging",
+      "file": "right-of-way-converging.svg",
+      "topic": "Right of way",
+      "title": "Converging: the aircraft with the other on its right gives way",
+      "alt": "Two aeroplanes converging at the same altitude. The aeroplane that sees the other on its right side is marked Give way and turns away; the aeroplane on the right continues and is marked Right of way.",
+      "caption": "Converging at the same altitude: look right. If the other aircraft is on your right, you give way.",
+      "explanation": "When two aircraft converge at approximately the same altitude, the aircraft that has the other on its right shall give way (CARs 602.19). Put another way, the aircraft on the right has the right of way. Give way early and clearly, and never pass over, under or ahead of the other aircraft unless well clear.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:1.02",
+        "pstar:1.07"
+      ],
+      "spot": {
+        "prompt": "Two aircraft are converging at the same altitude. Tap the aircraft that must give way.",
+        "targets": [
+          {
+            "id": "left-plane",
+            "label": "Aircraft with the other on its right",
+            "rect": [
+              70,
+              150,
+              150,
+              150
+            ],
+            "correct": true
+          },
+          {
+            "id": "right-plane",
+            "label": "Aircraft on the right",
+            "rect": [
+              380,
+              150,
+              150,
+              150
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:1.02",
+          "pstar:1.07"
+        ]
+      }
+    },
+    {
+      "id": "right-of-way-head-on",
+      "file": "right-of-way-head-on.svg",
+      "topic": "Right of way",
+      "title": "Head-on and overtaking: alter heading to the right",
+      "alt": "Left panel: two aeroplanes approaching head-on, each turning to its own right, labelled Both alter heading right. Right panel: a faster aeroplane overtaking a slower one directly ahead, swinging out to the right, labelled Overtake on the right; the aircraft being overtaken keeps the right of way.",
+      "caption": "Head-on: both turn right. Overtaking: pass on the right. The aircraft being overtaken has the right of way.",
+      "explanation": "Approaching head-on or nearly so with a risk of collision, each pilot alters heading to the right (CARs 602.19). When overtaking an aircraft at your 12 o'clock at your altitude, alter heading to the right and keep clear; the aircraft being overtaken has the right of way. Climbing or descending is not the prescribed avoidance.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:1.08",
+        "pstar:1.09"
+      ]
+    },
+    {
+      "id": "right-of-way-categories",
+      "file": "right-of-way-categories.svg",
+      "topic": "Right of way",
+      "title": "Who gives way to whom",
+      "alt": "A ladder of five rungs from top to bottom: balloons, gliders, airships, power-driven aircraft towing, power-driven heavier-than-air aircraft such as aeroplanes and helicopters. An arrow down the side reads Gives way to everything above.",
+      "caption": "The less manoeuvrable aircraft has the right of way: balloons over gliders over airships over towing aircraft over everything power-driven.",
+      "explanation": "CARs 602.19: power-driven heavier-than-air aircraft (aeroplanes, helicopters) give way to airships, gliders and balloons; airships give way to gliders and balloons; gliders give way to balloons; and every power-driven aircraft gives way to an aircraft seen to be towing. A towing aeroplane is still power-driven heavier-than-air, so it gives way to balloons, gliders and airships.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:1.01",
+        "pstar:1.03",
+        "pstar:1.04",
+        "pstar:1.05",
+        "pstar:1.06"
+      ]
+    },
+    {
+      "id": "right-of-way-landing",
+      "file": "right-of-way-landing.svg",
+      "topic": "Right of way",
+      "title": "Two aircraft on approach: the lower one has the right of way",
+      "alt": "Side view of a runway with two aeroplanes on final approach. The lower aeroplane, closer to the runway, is labelled Right of way. The higher aeroplane behind it is labelled Gives way and must not cut in front or overtake.",
+      "caption": "On approach the aircraft at the lower altitude has the right of way, but it may not use that to cut in front of or overtake another aircraft on final.",
+      "explanation": "When two aircraft are approaching to land, the aircraft at the higher altitude gives way to the one at the lower altitude (CARs 602.19). The lower aircraft shall not take advantage of this rule to cut in front of, or overtake, an aircraft on final approach.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:1.10"
+      ]
+    },
+    {
+      "id": "light-gun-signals",
+      "file": "light-gun-signals.svg",
+      "topic": "ATC light signals",
+      "title": "Tower light gun signals",
+      "alt": "A table of ATC light gun signals. Rows: steady green, flashing green, steady red, flashing red, flashing white, blinking runway lights. Columns: meaning to an aircraft in flight and meaning on the ground. Steady green: cleared to land; cleared for take-off. Flashing green: return for landing; cleared to taxi. Steady red: give way to other aircraft and continue circling; stop. Flashing red: airport unsafe, do not land; taxi clear of the landing area in use. Flashing white: no meaning in flight; return to starting point on the airport. Blinking runway lights: vehicles and pedestrians vacate the runway immediately.",
+      "caption": "Green clears you, red stops you, flashing means change what you are doing. White only applies on the ground.",
+      "explanation": "Light gun signals (TC AIM RAC): steady green = cleared to land (in flight) / cleared for take-off (on the ground). Flashing green = return for landing / cleared to taxi. Steady red = give way to other aircraft and continue circling / stop. Flashing red = airport unsafe, do not land / taxi clear of the landing area in use. Flashing white = return to your starting point on the airport (ground only). Blinking runway lights tell vehicles and pedestrians to vacate the runway immediately. Acknowledge in flight by rocking the wings (day) or flashing the landing light (night).",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:2.01",
+        "pstar:2.02",
+        "pstar:2.03",
+        "pstar:2.04",
+        "pstar:2.05",
+        "pstar:2.06"
+      ],
+      "spot": {
+        "prompt": "You are on final at a controlled airport. Tap the light signal that means cleared to land.",
+        "targets": [
+          {
+            "id": "steady-green",
+            "label": "Steady green",
+            "rect": [
+              20,
+              70,
+              150,
+              46
+            ],
+            "correct": true
+          },
+          {
+            "id": "flashing-green",
+            "label": "Flashing green",
+            "rect": [
+              20,
+              118,
+              150,
+              46
+            ],
+            "correct": false
+          },
+          {
+            "id": "steady-red",
+            "label": "Steady red",
+            "rect": [
+              20,
+              166,
+              150,
+              46
+            ],
+            "correct": false
+          },
+          {
+            "id": "flashing-red",
+            "label": "Flashing red",
+            "rect": [
+              20,
+              214,
+              150,
+              46
+            ],
+            "correct": false
+          },
+          {
+            "id": "flashing-white",
+            "label": "Flashing white",
+            "rect": [
+              20,
+              262,
+              150,
+              46
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:2.04"
+        ]
+      }
+    },
+    {
+      "id": "wind-indicator",
+      "file": "wind-indicator.svg",
+      "topic": "Aerodromes",
+      "title": "Reading a standard windsock",
+      "alt": "Three windsocks on poles. Left: hanging limp, labelled calm. Middle: drooping at an angle, labelled less than 15 knots. Right: fully horizontal, labelled 15 knots or more, with the wind arrow showing the sock points downwind.",
+      "caption": "A dry standard wind direction indicator flies fully horizontal at 15 knots or more. The sock points away from the wind, so land toward its open end.",
+      "explanation": "The standard wind direction indicator (windsock) is calibrated so that, when dry, it stands fully horizontal in a wind of 15 knots or more (TC AIM AGA). Lower speeds let it droop. The open end faces into wind and the tail points downwind, so take off and land toward the open, upwind end.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:4.02"
+      ]
+    },
+    {
+      "id": "runway-markings",
+      "file": "runway-markings.svg",
+      "topic": "Runway and taxiway markings",
+      "title": "Runway and taxiway markings",
+      "alt": "Plan view of an east-west runway. The west end is numbered 09 and the east end 27. Each end has threshold stripes and a dashed centreline runs between them. A taxiway joins from the south with a holding position marking of two solid lines on the taxiway side and two dashed lines on the runway side. A closed taxiway stub carries a yellow X and a closed cross runway carries a white X. A dimension of 200 feet from the runway edge marks where to hold when no holding position is painted.",
+      "caption": "Runway numbers are the magnetic heading divided by ten. Hold on the solid side of the hold line, or 200 feet from the runway edge when none is painted. Closed: white X on runways, yellow X on taxiways.",
+      "explanation": "A runway is numbered from its magnetic heading rounded to the nearest ten degrees, so the west end of an east-west runway (facing 090) is 09 and the east end is 27. Threshold stripes mark the landing surface, the centreline is dashed, and taxiway markings are yellow. A taxiway holding position has two solid lines on the taxiway side (hold here) and two dashed lines on the runway side. Where no holding position exists, hold at least 200 feet from the runway edge (TC AIM RAC). Closed runways carry white X marks and closed taxiways yellow X marks. The manoeuvring area is the part used for taxiing, take-off and landing: runways and taxiways, not the apron.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:4.04",
+        "pstar:4.05",
+        "pstar:4.06",
+        "pstar:4.07"
+      ],
+      "spot": {
+        "prompt": "Tap the marking that shows a runway closed to aircraft.",
+        "targets": [
+          {
+            "id": "closed-runway-x",
+            "label": "White X on the closed runway",
+            "rect": [
+              430,
+              30,
+              110,
+              90
+            ],
+            "correct": true
+          },
+          {
+            "id": "closed-taxiway-x",
+            "label": "Yellow X on a closed taxiway",
+            "rect": [
+              420,
+              262,
+              70,
+              80
+            ],
+            "correct": false
+          },
+          {
+            "id": "hold-line",
+            "label": "Taxiway holding position",
+            "rect": [
+              130,
+              250,
+              120,
+              40
+            ],
+            "correct": false
+          },
+          {
+            "id": "threshold",
+            "label": "Threshold stripes",
+            "rect": [
+              50,
+              150,
+              70,
+              90
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:4.04"
+        ]
+      }
+    },
+    {
+      "id": "airport-signs",
+      "file": "airport-signs.svg",
+      "topic": "Airport signs",
+      "title": "Airport signs",
+      "alt": "Five airport signs. A red sign with white text reading 04-22 is a mandatory runway holding position sign. A red sign reading NO ENTRY is a mandatory sign. A black sign with yellow border and the letter A is a taxiway location sign. A yellow sign with black text B and an arrow is a direction sign. A yellow sign reading APRON with an arrow is a destination sign. A caption reads: never cross a red sign without a clearance.",
+      "caption": "Red with white text: mandatory, stop unless cleared. Black with yellow: where you are. Yellow with black: where to go.",
+      "explanation": "Mandatory instruction signs are red with white inscriptions: runway holding positions (such as 04-22), NO ENTRY and ILS critical areas. Never pass one without an ATC clearance or, at an uncontrolled airport, without confirming the runway is clear. Location signs are black with a yellow inscription and border and tell you which taxiway you are on. Direction and destination signs are yellow with black text and arrows. A hold short instruction (such as HOLD SHORT OF RUNWAY 04) must be read back in full and means stopping before the holding position sign and line for that runway.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:3.13",
+        "pstar:3.14",
+        "pstar:11.14"
+      ],
+      "spot": {
+        "prompt": "You were told to hold short of runway 04. Tap the sign where you must stop.",
+        "targets": [
+          {
+            "id": "mandatory-0422",
+            "label": "Mandatory sign 04-22",
+            "rect": [
+              30,
+              70,
+              160,
+              90
+            ],
+            "correct": true
+          },
+          {
+            "id": "location-a",
+            "label": "Location sign A",
+            "rect": [
+              220,
+              70,
+              110,
+              90
+            ],
+            "correct": false
+          },
+          {
+            "id": "direction-b",
+            "label": "Direction sign B",
+            "rect": [
+              360,
+              70,
+              120,
+              90
+            ],
+            "correct": false
+          },
+          {
+            "id": "no-entry",
+            "label": "NO ENTRY sign",
+            "rect": [
+              30,
+              200,
+              160,
+              90
+            ],
+            "correct": false
+          },
+          {
+            "id": "apron",
+            "label": "Destination sign APRON",
+            "rect": [
+              360,
+              200,
+              170,
+              90
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:3.14"
+        ]
+      }
+    },
+    {
+      "id": "airport-lighting",
+      "file": "airport-lighting.svg",
+      "topic": "Airport lighting",
+      "title": "Runway lighting, PAPI and VASI",
+      "alt": "Top: a runway seen from the approach at night with green threshold lights across the near end, white edge lights along both sides, red end lights at the far end and blue taxiway edge lights to one side. Bottom left: five PAPI light bars of four lights each, from four white meaning too high, through three white one red, two white two red meaning on slope, one white three red, to four red meaning too low. Bottom right: a two-bar VASI showing the far bar red over the near bar white, meaning on slope.",
+      "caption": "Threshold green, edges white, end red, taxiways blue. PAPI on slope is two white and two red; VASI on slope is red over white.",
+      "explanation": "At night an aerodrome must be lighted as prescribed before you take off or land there (CARs 602.14 series). Runway threshold lights show green toward the approach and runway end lights show red; runway edge lights are white; taxiway edge lights are blue. A PAPI uses four lights in a row: 4 white = too high, 3 white 1 red = slightly high, 2 white 2 red = on slope, 1 white 3 red = slightly low, 4 red = too low. A two-bar VASI shows red over white when on slope, white over white when high and red over red when low. Blinking runway lights order vehicles and pedestrians off the runway immediately.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:5.08"
+      ],
+      "spot": {
+        "prompt": "Tap the PAPI indication that means you are on the glide path.",
+        "targets": [
+          {
+            "id": "papi-4w",
+            "label": "Four white, too high",
+            "rect": [
+              20,
+              236,
+              100,
+              110
+            ],
+            "correct": false
+          },
+          {
+            "id": "papi-3w",
+            "label": "Three white one red, slightly high",
+            "rect": [
+              122,
+              236,
+              100,
+              110
+            ],
+            "correct": false
+          },
+          {
+            "id": "papi-2w2r",
+            "label": "Two white two red, on slope",
+            "rect": [
+              224,
+              236,
+              100,
+              110
+            ],
+            "correct": true
+          },
+          {
+            "id": "papi-1w",
+            "label": "One white three red, slightly low",
+            "rect": [
+              326,
+              236,
+              100,
+              110
+            ],
+            "correct": false
+          },
+          {
+            "id": "papi-4r",
+            "label": "Four red, too low",
+            "rect": [
+              428,
+              236,
+              100,
+              110
+            ],
+            "correct": false
+          }
+        ],
+        "questions": []
+      }
+    },
+    {
+      "id": "circuit-pattern",
+      "file": "circuit-pattern.svg",
+      "topic": "Traffic circuit",
+      "title": "The left-hand circuit and how to join it",
+      "alt": "Plan view of a standard left-hand circuit around a runway, flown counter-clockwise: upwind leg along the runway, crosswind, downwind parallel to the runway, base, and final. Circuit height is labelled 1,000 feet above aerodrome elevation. Arrows show the two joins after being cleared to the circuit: joining the downwind leg directly at circuit height, or crossing from the upwind side to join crosswind, which may involve a right turn.",
+      "caption": "Cleared to the circuit means join the downwind leg at circuit height. From the upwind side you may turn right to join crosswind or make a partial right turn onto downwind.",
+      "explanation": "A standard circuit is left-hand (all turns to the left) at 1,000 feet above aerodrome elevation: upwind, crosswind, downwind, base, final. At a controlled airport, cleared to the circuit means join the downwind leg at circuit height. Where a left circuit is in effect, the only right turns permitted without further approval are a turn to join crosswind or a partial right turn onto downwind (TC AIM RAC). A straight-in clearance, a NOTAM circuit altitude, or weather can all change the normal 1,000 foot join.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:6.04",
+        "pstar:6.06",
+        "pstar:6.10"
+      ],
+      "spot": {
+        "prompt": "ATC says cleared to the circuit. Tap the leg you should join.",
+        "targets": [
+          {
+            "id": "downwind",
+            "label": "Downwind leg",
+            "rect": [
+              150,
+              40,
+              300,
+              50
+            ],
+            "correct": true
+          },
+          {
+            "id": "base",
+            "label": "Base leg",
+            "rect": [
+              60,
+              90,
+              80,
+              150
+            ],
+            "correct": false
+          },
+          {
+            "id": "final",
+            "label": "Final",
+            "rect": [
+              60,
+              255,
+              150,
+              50
+            ],
+            "correct": false
+          },
+          {
+            "id": "crosswind",
+            "label": "Crosswind leg",
+            "rect": [
+              470,
+              90,
+              80,
+              150
+            ],
+            "correct": false
+          },
+          {
+            "id": "upwind",
+            "label": "Upwind leg",
+            "rect": [
+              230,
+              255,
+              230,
+              50
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:6.04"
+        ]
+      }
+    },
+    {
+      "id": "circuit-height-ceiling",
+      "file": "circuit-height-ceiling.svg",
+      "topic": "Traffic circuit",
+      "title": "Circuit height under a low ceiling",
+      "alt": "Side view with the airport at 400 feet above sea level. A dashed line at 1,500 feet above sea level is the NOTAM circuit height. A cloud layer sits at 1,000 feet above the ground, which is 1,400 feet above sea level. A solid line 500 feet below the cloud base, at 900 feet above sea level, is labelled fly here to stay VFR.",
+      "caption": "When a ceiling is too low for the published circuit height, fly 500 feet below the cloud base to keep VFR cloud clearance in the control zone.",
+      "explanation": "Within controlled airspace VFR flight must stay 500 feet vertically from cloud (CARs 602.114). With the airport at 400 feet ASL and a NOTAM circuit of 1,500 feet ASL, a ceiling of 1,000 feet overcast (cloud base 1,400 feet ASL) makes the published circuit impossible, so the circuit is flown 500 feet below the cloud base, here 900 feet ASL, which is 500 feet above the airport. Visibility of 3 miles meets the control zone minimum.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:6.08",
+        "pstar:6.09"
+      ]
+    },
+    {
+      "id": "transponder-codes",
+      "file": "transponder-codes.svg",
+      "topic": "Transponder",
+      "title": "VFR transponder codes by altitude",
+      "alt": "A vertical altitude scale. Below a line at 12,500 feet above sea level the band is labelled code 1200. Above the line the band is labelled code 1400. A note says squawk ident only when ATC asks.",
+      "caption": "VFR: 1200 at or below 12,500 feet ASL, 1400 above it, unless ATC assigns a code. Press ident only when asked.",
+      "explanation": "Unless ATC assigns a discrete code, VFR aircraft in Canada squawk 1200 at or below 12,500 feet ASL and 1400 above 12,500 feet ASL (TC AIM COM). Activate the ident feature only when ATC requests it. Transponders are required in Class A, B and C airspace and in designated transponder airspace.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:6.18",
+        "pstar:6.19"
+      ]
+    },
+    {
+      "id": "wake-turbulence",
+      "file": "wake-turbulence.svg",
+      "topic": "Wake turbulence",
+      "title": "Avoiding wake turbulence",
+      "alt": "Two side-view panels. Landing behind a heavy: the heavy's flight path to its touchdown point is shown with vortex spirals trailing behind and sinking; the light aircraft flies above that path and touches down beyond the heavy's touchdown point. Departing behind a heavy: vortices start at the heavy's rotation point; the light aircraft rotates before that point and climbs on the upwind side above the heavy's path. A note shows a light crosswind holding the upwind vortex over the runway.",
+      "caption": "Vortices start at rotation and end at touchdown. Landing: stay above the heavy's path and land beyond its touchdown. Departing: rotate before its rotation point and climb upwind of its path.",
+      "explanation": "Wing tip vortices are produced whenever a wing makes lift; they begin at rotation and stop at touchdown, and are strongest behind an aeroplane that is heavy, clean and slow. In still air they sink a few hundred feet per minute and may persist for 5 minutes or more; a light crosswind can hold the upwind vortex over the runway. Land beyond a heavier aircraft's touchdown point while staying at or above its approach path; when departing behind a departing heavy, rotate before its rotation point and climb above and upwind of its path. Helicopters in forward flight shed similar vortices from their rotor tips.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:7.01",
+        "pstar:7.02",
+        "pstar:7.03",
+        "pstar:7.04",
+        "pstar:7.05",
+        "pstar:7.06",
+        "pstar:7.08",
+        "pstar:7.09",
+        "pstar:7.10",
+        "pstar:7.11",
+        "pstar:7.12",
+        "pstar:7.15"
+      ],
+      "spot": {
+        "prompt": "You are landing behind a heavy aeroplane. Tap where you should plan to touch down.",
+        "targets": [
+          {
+            "id": "before",
+            "label": "Before the heavy's touchdown point",
+            "rect": [
+              60,
+              120,
+              150,
+              50
+            ],
+            "correct": false
+          },
+          {
+            "id": "at",
+            "label": "At the heavy's touchdown point",
+            "rect": [
+              215,
+              120,
+              110,
+              50
+            ],
+            "correct": false
+          },
+          {
+            "id": "beyond",
+            "label": "Beyond the heavy's touchdown point",
+            "rect": [
+              330,
+              120,
+              230,
+              50
+            ],
+            "correct": true
+          }
+        ],
+        "questions": [
+          "pstar:7.06"
+        ]
+      }
+    },
+    {
+      "id": "blast-danger",
+      "file": "blast-danger.svg",
+      "topic": "Jet and propeller blast",
+      "title": "Jet and propeller blast danger areas",
+      "alt": "Horizontal bars drawn behind the tail of each aircraft type, to scale. Executive jet at ground idle: 200 feet. Medium jet at ground idle: 450 feet. Jumbo jet at ground idle: 600 feet. Medium jet at take-off thrust: 1,200 feet. Large turboprop taxiing: a 45 knot blast reaches 60 feet behind the propellers.",
+      "caption": "Ground idle: 200 feet behind an executive jet, 450 behind a medium jet, 600 behind a jumbo. Take-off thrust from a medium jet reaches 1,200 feet.",
+      "explanation": "Jet blast danger areas extend back from the tail (TC AIM AIR): at ground idle about 200 feet for an executive jet, 450 feet for a medium jet transport and 600 feet for a jumbo jet. At take-off thrust a medium jet's danger area reaches 1,200 feet or more. A large turboprop at taxi power produces a 45 knot blast about 60 feet behind its propellers. Light aircraft taxiing or holding behind these aircraft should keep well outside these distances.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:11.08",
+        "pstar:11.09",
+        "pstar:11.10",
+        "pstar:11.11",
+        "pstar:11.12"
+      ]
+    },
+    {
+      "id": "airspace-classes",
+      "file": "airspace-classes.svg",
+      "topic": "Canadian airspace",
+      "title": "Canadian airspace classes, vertical cross-section",
+      "alt": "A vertical cross-section from the surface to flight level 600. Class A fills everything from 18,000 feet above sea level up to FL600 and is labelled high level airspace, IFR only. Below it, from 12,500 feet above sea level to 18,000 feet, Class B is labelled low level controlled airspace, VFR only with a clearance. Everything below 18,000 feet is bracketed as low level airspace. Near the ground an airport sits under a Class D or C control zone to 3,000 feet above the aerodrome, inside a Class C terminal control area. A Class E low level airway starts 2,200 feet above ground. Class G uncontrolled airspace fills the gaps, and a Class F restricted area labelled CYR stands to one side.",
+      "caption": "A above 18,000, B from 12,500 to 18,000, C and D around busy airports, E airways from 2,200 AGL, F special use, G uncontrolled.",
+      "explanation": "Low level airspace is all Canadian Domestic Airspace below 18,000 feet ASL; high level airspace starts at 18,000 feet. Class A (18,000 to FL600) is IFR only. Class B is controlled airspace from 12,500 feet ASL (or the MEA, whichever is higher) up to 18,000 feet; VFR flight there needs an ATC clearance. Class C (terminal control areas and some control zones) needs a clearance to enter; Class D needs two-way radio contact before entry. Class E includes low level airways (base 2,200 feet AGL), control area extensions and transition areas. Class F is special use: CYA advisory (non-participating VFR aircraft should avoid it while active) and CYR restricted (permission of the user agency required). Class G is uncontrolled. Controlled airspace is simply airspace within which an ATC service is provided.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:12.11",
+        "pstar:12.12",
+        "pstar:12.20",
+        "pstar:13.01",
+        "pstar:13.10"
+      ],
+      "spot": {
+        "prompt": "Tap the airspace where VFR flight is allowed only with an ATC clearance between 12,500 and 18,000 feet.",
+        "targets": [
+          {
+            "id": "class-a",
+            "label": "Class A",
+            "rect": [
+              40,
+              20,
+              420,
+              60
+            ],
+            "correct": false
+          },
+          {
+            "id": "class-b",
+            "label": "Class B",
+            "rect": [
+              40,
+              92,
+              420,
+              52
+            ],
+            "correct": true
+          },
+          {
+            "id": "class-e",
+            "label": "Class E airway",
+            "rect": [
+              60,
+              180,
+              180,
+              60
+            ],
+            "correct": false
+          },
+          {
+            "id": "class-c",
+            "label": "Class C terminal control area",
+            "rect": [
+              280,
+              190,
+              240,
+              80
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:13.10"
+        ]
+      }
+    },
+    {
+      "id": "control-zone-tca",
+      "file": "control-zone-tca.svg",
+      "topic": "Canadian airspace",
+      "title": "Control zone and terminal control area",
+      "alt": "Side view of a controlled airport. A cylinder from the surface to 3,000 feet above aerodrome elevation, 5 nautical miles in radius, is labelled control zone. Above and around it an inverted wedding cake of wider steps is labelled Class C terminal control area, clearance required. An arriving aeroplane outside the zone is labelled make initial contact with the tower before entering the control zone.",
+      "caption": "A control zone normally runs from the surface to 3,000 feet above the aerodrome within 5 NM. Call the tower before you enter it, and get a clearance for Class C.",
+      "explanation": "A control zone is controlled airspace extending upward from the surface, normally to 3,000 feet above aerodrome elevation, with a 5 NM radius (7 or 10 NM at busier airports). It exists so that IFR arrivals and departures can be protected and so VFR traffic is known. An arriving VFR flight makes initial radio contact with the tower before entering the zone; in Class C, a clearance is required and you must establish and maintain two-way communication with ATC. A terminal control area (TCA) surrounds the zone like an inverted wedding cake. Special VFR is only authorized within a control zone.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:12.21",
+        "pstar:13.05",
+        "pstar:13.08",
+        "pstar:13.09",
+        "pstar:13.11",
+        "pstar:13.12"
+      ]
+    },
+    {
+      "id": "vfr-weather-minima",
+      "file": "vfr-weather-minima.svg",
+      "topic": "VFR weather minima",
+      "title": "VFR weather minima",
+      "alt": "A table of VFR weather minima with columns for flight visibility and distance from cloud. Controlled airspace: 3 miles, 500 feet vertically and 1 mile horizontally. Control zone: 3 miles, 500 feet vertically and 1 mile horizontally, and not below 500 feet above ground. Uncontrolled at or above 1,000 feet above ground: 1 mile by day, 3 miles by night, 500 feet vertically and 2,000 feet horizontally. Uncontrolled below 1,000 feet above ground: 2 miles by day for aeroplanes, 1 mile for helicopters, clear of cloud. Special VFR in a control zone: 1 mile for aeroplanes, half a mile for helicopters, clear of cloud. A side sketch shows an aeroplane 500 feet below a cloud and 1 mile beside it.",
+      "caption": "Controlled: 3 miles, 500 feet below, 1 mile beside. Uncontrolled high: 1 mile and 2,000 feet beside. Uncontrolled low: 2 miles (helicopter 1) clear of cloud. Special VFR: 1 mile (helicopter half).",
+      "explanation": "CARs 602.114: in controlled airspace, including control zones and low level airways, VFR needs at least 3 miles flight visibility and 500 feet vertically and 1 mile horizontally from cloud; in a control zone you also need 3 miles ground visibility when reported and must stay at least 500 feet AGL except to take off or land. CARs 602.115: in uncontrolled airspace at or above 1,000 feet AGL, 1 mile by day (3 at night), 500 feet vertically and 2,000 feet horizontally from cloud; below 1,000 feet AGL, aeroplanes need 2 miles by day (helicopters 1 mile) and must stay clear of cloud. CARs 602.117: Special VFR in a control zone needs ATC authorization, 1 mile visibility for aeroplanes (half a mile for helicopters) and clear of cloud.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:12.02",
+        "pstar:12.03",
+        "pstar:12.04",
+        "pstar:13.02",
+        "pstar:13.03",
+        "pstar:13.04",
+        "pstar:13.06",
+        "pstar:13.07"
+      ]
+    },
+    {
+      "id": "cruising-altitudes",
+      "file": "cruising-altitudes.svg",
+      "topic": "Cruising altitudes",
+      "title": "Hemispheric cruising altitudes and altimeter regions",
+      "alt": "A compass rose split into two halves. The eastern half, magnetic tracks 000 to 179, is labelled odd thousands plus 500 feet VFR, for example 3,500, 5,500, 7,500. The western half, tracks 180 to 359, is labelled even thousands plus 500 feet VFR, for example 4,500, 6,500, 8,500. A note says the rule applies above 3,000 feet above ground and uses magnetic track in the Southern Domestic Airspace. To the right, an altitude scale shows the altimeter setting region below 18,000 feet, where you set the current station altimeter setting, and the standard pressure region at and above 18,000 feet, where you set 29.92.",
+      "caption": "Above 3,000 feet AGL: eastbound (000 to 179) odd thousands plus 500; westbound (180 to 359) even thousands plus 500. Use magnetic track in the south. Below 18,000 set the local altimeter setting; above, 29.92.",
+      "explanation": "CARs 602.34: in level cruising flight more than 3,000 feet AGL, VFR aircraft on magnetic tracks 000 to 179 fly odd thousands plus 500 feet (3,500, 5,500, 7,500) and on tracks 180 to 359 fly even thousands plus 500 (4,500, 6,500, 8,500). In the Southern Domestic Airspace the rule uses magnetic track; in the Northern Domestic Airspace true track. Below 18,000 feet, in the altimeter setting region, set the current altimeter setting of the nearest station; at and above 18,000 feet, in the standard pressure region, set 29.92 inches.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:12.16",
+        "pstar:12.17",
+        "pstar:12.18"
+      ],
+      "spot": {
+        "prompt": "You are cruising VFR above 3,000 feet AGL on a magnetic track of 290. Tap the half of the rose with your cruising altitudes.",
+        "targets": [
+          {
+            "id": "east-half",
+            "label": "Tracks 000 to 179, odd plus 500",
+            "rect": [
+              180,
+              40,
+              140,
+              280
+            ],
+            "correct": false
+          },
+          {
+            "id": "west-half",
+            "label": "Tracks 180 to 359, even plus 500",
+            "rect": [
+              30,
+              40,
+              150,
+              280
+            ],
+            "correct": true
+          }
+        ],
+        "questions": [
+          "pstar:12.17"
+        ]
+      }
+    },
+    {
+      "id": "wind-components",
+      "file": "wind-components.svg",
+      "topic": "Wind components",
+      "title": "Headwind and crosswind components",
+      "alt": "Runway 27 with the wind arrow from 300 degrees at 20 knots, 30 degrees off the runway heading. The wind is split into a headwind component along the runway of about 17 knots and a crosswind component across it of 10 knots. A small table of rules of thumb: 30 degrees off gives half the wind as crosswind, 45 degrees gives seven tenths, 60 degrees gives nine tenths, 90 degrees gives the full wind.",
+      "caption": "Crosswind = wind speed times the sine of the angle off the runway: 30 degrees off is half, 45 is 0.7, 60 is 0.9. If the crosswind is beyond your limit, overshoot and ask for an into-wind runway.",
+      "explanation": "Split the reported wind into a component along the runway (headwind) and one across it (crosswind). Crosswind equals wind speed multiplied by the sine of the angle between the wind and the runway heading; headwind uses the cosine. Rules of thumb: 30 degrees off gives half the wind as crosswind, 45 degrees about 0.7, 60 degrees about 0.9, and 90 degrees the whole wind. A pilot cleared to land who is concerned about the crosswind component should overshoot and request an into-wind runway rather than accept a landing beyond the aircraft's or pilot's limits.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:6.12"
+      ]
+    },
+    {
+      "id": "notam-decoding",
+      "file": "notam-decoding.svg",
+      "topic": "NOTAM",
+      "title": "Reading a NOTAM",
+      "alt": "A printed NOTAM card with callouts. The header shows the series and number followed by NOTAMN, annotated: N new, R replacing, C cancelling. Line A gives the aerodrome CYXU. Line B gives the start time 2511131400. Line C gives the end time 2511152200 EST, annotated: EST means estimated, the NOTAM stays valid until a replacing or cancelling NOTAM is issued; without EST it expires at the time shown. Line E holds the plain text RWY 09/27 CLSD. A note says NOTAMs are available from every Flight Information Centre.",
+      "caption": "N new, R replacing, C cancelling. Line B starts it, line C ends it. An end time marked EST holds until a NOTAMR or NOTAMC appears; without EST the NOTAM expires at the end time.",
+      "explanation": "A NOTAM announces information essential to flight that is not yet in the publications. The header suffix shows the type: NOTAMN (new), NOTAMR (replacing) and NOTAMC (cancelling). Line A is the location, line B the start time and line C the end time, both in UTC. A NOTAM without EST is valid until the end time quoted; one marked EST (estimated) stays in force until a replacing or cancelling NOTAM is issued. PERM means the change is permanent and will appear in the publications. NOTAMs are available from every Flight Information Centre (FIC) and online.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:3.26",
+        "pstar:3.27",
+        "pstar:3.28"
+      ]
+    },
+    {
+      "id": "metar-taf-decoding",
+      "file": "metar-taf-decoding.svg",
+      "topic": "Weather reports",
+      "title": "Decoding a METAR and a TAF",
+      "alt": "Two printed weather cards with callouts. The METAR reads METAR CYOW 131800Z 27012G18KT 15SM FEW040 OVC010 22/10 A2992, annotated as station, day and time in UTC, wind 270 at 12 gusting 18 knots, visibility 15 statute miles, few cloud at 4,000 feet and overcast at 1,000 feet, temperature 22 and dew point 10, altimeter 29.92. The TAF reads TAF CYOW 131740Z 1318/1418 27012KT P6SM BKN040 TEMPO 1320/1323 3SM -SHRA OVC015 FM140200 32008KT P6SM SCT030, annotated as the forecast period, prevailing conditions, a temporary change and a from group.",
+      "caption": "Wind is direction and speed in knots, visibility in statute miles, cloud heights in hundreds of feet AGL. OVC010 is a ceiling of 1,000 feet. The TAF carries the same code plus a forecast period and TEMPO or FM changes.",
+      "explanation": "A METAR gives the observed weather: station, day and time (UTC), wind direction and speed with gusts (27012G18KT), visibility in statute miles (15SM), cloud amount and height in hundreds of feet AGL (FEW040, OVC010: the lowest broken or overcast layer is the ceiling), temperature and dew point in degrees Celsius (22/10) and altimeter setting in inches (A2992). A TAF forecasts the same elements for a period (1318/1418 means from 1800Z on the 13th to 1800Z on the 14th), with TEMPO for temporary fluctuations and FM for a lasting change from the time shown. Ceilings and visibilities from these reports decide whether the circuit can be flown VFR.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": []
+    },
+    {
+      "id": "radio-frequencies",
+      "file": "radio-frequencies.svg",
+      "topic": "Frequencies",
+      "title": "VHF frequencies to know",
+      "alt": "A frequency band from 118.0 to 136.975 megahertz drawn as a ruler. Marked points: 121.5 the international VHF emergency frequency, 126.7 the en route frequency for VFR in uncontrolled airspace, 122.2 Flight Information Centre, 123.2 the aerodrome traffic frequency where no UNICOM exists, and 122.8 a common UNICOM. The band 121.9825 to 123.5875 is bracketed as general aviation communications. A note says monitor 126.7 and 121.5 en route when practical.",
+      "caption": "121.5 is the emergency frequency. En route in uncontrolled airspace monitor 126.7 and 121.5. 123.2 is the ATF where there is no UNICOM; 121.9825 to 123.5875 is the general aviation band.",
+      "explanation": "The aeronautical VHF band runs from 118.0 to 136.975 MHz. 121.5 MHz is the international VHF emergency frequency: keep a listening watch on it whenever possible, and it is where ELTs transmit. VFR aircraft en route in uncontrolled airspace should monitor 126.7 MHz and 121.5 MHz when practical and not communicating on an MF or ATF. Where an aerodrome has no UNICOM, 123.2 MHz is the aerodrome traffic frequency. The band 121.9825 to 123.5875 MHz is assigned primarily to general aviation communications (RIC-21 Appendix E).",
+      "exams": [
+        "pstar",
+        "roca"
+      ],
+      "questions": [
+        "pstar:3.07",
+        "pstar:3.08",
+        "pstar:3.11",
+        "pstar:5.07",
+        "roca:10.06",
+        "roca:10.07"
+      ]
+    },
+    {
+      "id": "traffic-clock",
+      "file": "traffic-clock.svg",
+      "topic": "Radar traffic information",
+      "title": "Traffic by the clock",
+      "alt": "A clock face with an aeroplane at the centre pointing to 12 o'clock, heading 270. The 2 o'clock position is highlighted with a second aeroplane 60 degrees to the right of the nose, labelled Traffic 2 o'clock, 5 miles, eastbound. A note says altitude unknown unless ATC states it.",
+      "caption": "12 o'clock is your nose. Each hour is 30 degrees, so 2 o'clock is 60 degrees right. Clock calls are relative to your track, and the altitude is unknown unless given.",
+      "explanation": "Radar traffic information uses a clock with your aircraft at the centre and 12 o'clock straight ahead along your track. Each hour is 30 degrees: 2 o'clock is 60 degrees to the right, 10 o'clock 60 degrees to the left, 3 and 9 o'clock are abeam. Heading 270 with traffic at 2 o'clock, 5 miles, eastbound means the traffic is 60 degrees right of the nose, 5 miles away, flying toward you from the north-west side; its altitude is unknown unless ATC includes it. Look for it and report traffic in sight or no contact.",
+      "exams": [
+        "pstar"
+      ],
+      "questions": [
+        "pstar:3.16"
+      ],
+      "spot": {
+        "prompt": "ATC calls traffic at 2 o'clock. Tap where to look.",
+        "targets": [
+          {
+            "id": "ten",
+            "label": "10 o'clock",
+            "rect": [
+              60,
+              50,
+              90,
+              90
+            ],
+            "correct": false
+          },
+          {
+            "id": "two",
+            "label": "2 o'clock",
+            "rect": [
+              250,
+              50,
+              90,
+              90
+            ],
+            "correct": true
+          },
+          {
+            "id": "three",
+            "label": "3 o'clock",
+            "rect": [
+              290,
+              150,
+              80,
+              80
+            ],
+            "correct": false
+          },
+          {
+            "id": "nine",
+            "label": "9 o'clock",
+            "rect": [
+              30,
+              150,
+              80,
+              80
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "pstar:3.16"
+        ]
+      }
+    },
+    {
+      "id": "readability-scale",
+      "file": "readability-scale.svg",
+      "topic": "Radio checks",
+      "title": "The readability scale",
+      "alt": "Five signal bars of increasing height numbered 1 to 5. 1 unreadable, bad. 2 readable now and then, poor. 3 readable with difficulty, fair. 4 readable, good. 5 perfectly readable, excellent. A note says a radio check transmission lasts no more than 10 seconds and a check before departure is a preflight check.",
+      "caption": "Readability 1 unreadable, 2 now and then, 3 with difficulty, 4 readable, 5 perfectly readable.",
+      "explanation": "Radio checks are reported on a five point readability scale: 1 unreadable (bad), 2 readable now and then (poor), 3 readable with difficulty (fair), 4 readable (good), 5 perfectly readable (excellent). A signal check transmission should not last more than 10 seconds, and a check made before departure is called a preflight check. Readability three therefore means your transmissions are readable with difficulty.",
+      "exams": [
+        "pstar",
+        "roca"
+      ],
+      "questions": [
+        "pstar:3.29",
+        "roca:7.07",
+        "roca:7.08",
+        "roca:7.09",
+        "roca:7.10"
+      ]
+    },
+    {
+      "id": "phonetic-alphabet",
+      "file": "phonetic-alphabet.svg",
+      "topic": "Phonetic alphabet",
+      "title": "ITU phonetic alphabet and numbers",
+      "alt": "A grid of the 26 letters with their phonetic words: Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu. Below, the digits 0 to 9 with their spoken forms: zero, wun, too, tree, fower, fife, six, seven, ait, niner, plus decimal and thousand.",
+      "caption": "The ITU alphabet: note the spellings Alfa and Juliett. Numbers: tree, fower, fife, niner, and decimal for the point.",
+      "explanation": "The aeronautical service uses the ITU phonetic alphabet (RIC-21 section 5.3): Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu. Note the spellings Alfa and Juliett, chosen so every language pronounces them the same. Numbers are spoken zero, wun, too, tree, fower, fife, six, seven, ait, niner; the point in a frequency is decimal; whole thousands use the word thousand. Call signs are always spelled phonetically.",
+      "exams": [
+        "roca",
+        "pstar"
+      ],
+      "questions": [
+        "roca:3.01",
+        "roca:3.02",
+        "roca:3.03",
+        "roca:3.04",
+        "roca:3.05",
+        "roca:3.06",
+        "roca:3.07",
+        "roca:3.08",
+        "roca:3.09",
+        "pstar:3.01",
+        "pstar:3.02"
+      ]
+    },
+    {
+      "id": "number-transmission",
+      "file": "number-transmission.svg",
+      "topic": "Numbers and time",
+      "title": "Transmitting numbers and time",
+      "alt": "Worked examples printed as rows. 11,000 is spoken one one thousand. 5,800 is spoken five eight zero zero. Frequency 121.5 is spoken one two one decimal five. Altitude 2,700 feet is spoken two thousand seven hundred. Heading 090 is spoken zero niner zero. Time 1:45 p.m. is 1345, spoken one three four five, using the 24 hour clock in UTC.",
+      "caption": "Whole thousands say thousand; everything else is digit by digit. Altitudes use thousands and hundreds. Frequencies use decimal. Time is four figures, 24 hour, UTC.",
+      "explanation": "RIC-21 section 5.4: numbers are transmitted digit by digit except whole thousands, which use the word thousand (11,000 is one one thousand). Altitudes are given in thousands and hundreds (2,700 feet is two thousand seven hundred). Frequencies use decimal for the point (121.5 is one two one decimal five). Headings use three digits (090 is zero niner zero). Time uses the 24 hour clock in four figures referenced to UTC, so 1:45 p.m. is 1345, spoken one three four five; only the minutes are needed when there is no confusion.",
+      "exams": [
+        "roca"
+      ],
+      "questions": [
+        "roca:4.01",
+        "roca:4.02",
+        "roca:4.03",
+        "roca:4.04",
+        "roca:4.05",
+        "roca:4.06",
+        "roca:4.07",
+        "roca:4.08"
+      ]
+    },
+    {
+      "id": "radio-call-structure",
+      "file": "radio-call-structure.svg",
+      "topic": "Radio call structure",
+      "title": "Structure of a radio call",
+      "alt": "A radio call laid out as labelled blocks: Timmins Radio, the station being called, said first; THIS IS; Cessna Golf Alfa Bravo Charlie, the calling station: manufacturer or type and the last four letters of the registration C-GABC; the message; and OVER, meaning a reply is expected. Below, the abbreviated form Golf Bravo Charlie is shown as allowed after contact is established if ATS initiates it, and OUT is shown as ending a conversation with no reply expected. Ground stations are named by location plus function: Timmins Radio, Toronto Tower, Ottawa Ground.",
+      "caption": "Called station first, THIS IS, your call sign, the message, OVER. A Canadian private aircraft is type plus the last four letters; abbreviate only after ATS does.",
+      "explanation": "Listen before transmitting. A call names the station being called first, then THIS IS, then your own call sign, then the message, then OVER when you expect a reply (OUT ends the exchange). A Canadian privately registered aircraft identifies as the manufacturer's name or type followed by the last four letters of its registration in phonetics: C-GABC becomes Cessna Golf Alfa Bravo Charlie. After contact is established, the first letters may be dropped (Golf Bravo Charlie) if ATS initiates the abbreviation and there is no risk of confusion. Ground stations are identified by location plus function: Timmins Radio (FSS or FIC), Toronto Tower, Ottawa Ground. Full call signs are used at the start and the end of a communication.",
+      "exams": [
+        "roca",
+        "pstar"
+      ],
+      "questions": [
+        "roca:6.03",
+        "roca:6.04",
+        "roca:6.05",
+        "roca:6.06",
+        "roca:7.01",
+        "roca:7.02",
+        "roca:7.03",
+        "roca:7.04",
+        "roca:7.05",
+        "roca:7.06",
+        "roca:5.05",
+        "roca:5.06",
+        "pstar:3.03",
+        "pstar:3.04",
+        "pstar:3.24"
+      ]
+    },
+    {
+      "id": "distress-urgency",
+      "file": "distress-urgency.svg",
+      "topic": "Distress and urgency",
+      "title": "Distress and urgency procedures",
+      "alt": "Two columns. Distress: MAYDAY spoken three times, then THIS IS and the call sign three times, then the message: position, nature of distress, intentions. Transmit first on the frequency in use, then on 121.5 if there is no reply. Later transmissions start with MAYDAY once. SEELONCE MAYDAY imposes silence; SEELONCE FEENEE ends the distress. Urgency: PAN PAN spoken three times, addressed to all stations or one station, priority over everything except distress; stations hearing it listen for at least three minutes. A priority ladder on the side reads distress, urgency, direction finding, flight safety, meteorological, flight regularity.",
+      "caption": "Distress: MAYDAY times three, on the frequency in use, then 121.5. Urgency: PAN PAN times three. SEELONCE MAYDAY imposes silence; SEELONCE FEENEE lifts it.",
+      "explanation": "Distress means grave and imminent danger needing immediate assistance. The distress call is MAYDAY three times, THIS IS, your call sign three times, then the message (position, nature of the distress, intentions). Send it on the air-ground frequency in use; if that fails use 121.5 MHz. Once distress traffic is under way each transmission begins with MAYDAY once. A station relaying uses MAYDAY RELAY three times; a receiving station acknowledges ending with RECEIVED MAYDAY. SEELONCE MAYDAY imposes silence and SEELONCE FEENEE announces that the distress has ended, sent as MAYDAY once, HELLO ALL STATIONS three times, THIS IS, call sign, time, the distressed station's call sign, SEELONCE FEENEE, OUT. Urgency concerns the safety of an aircraft or person without needing immediate assistance: PAN PAN three times, sent on the frequency in use, to all stations or a specific station; it has priority over everything except distress, and stations hearing it keep listening for at least three minutes. Priority order: distress, urgency, direction finding, flight safety, meteorological, flight regularity.",
+      "exams": [
+        "roca",
+        "pstar"
+      ],
+      "questions": [
+        "roca:2.01",
+        "roca:2.02",
+        "roca:2.03",
+        "roca:8.01",
+        "roca:8.02",
+        "roca:8.03",
+        "roca:8.04",
+        "roca:8.05",
+        "roca:8.06",
+        "roca:8.07",
+        "roca:8.08",
+        "roca:8.09",
+        "roca:8.10",
+        "roca:8.11",
+        "roca:8.12",
+        "roca:9.01",
+        "roca:9.02",
+        "roca:9.03",
+        "roca:9.04",
+        "roca:9.05",
+        "roca:9.06",
+        "roca:9.07",
+        "roca:9.08",
+        "pstar:3.18",
+        "pstar:3.19",
+        "pstar:3.20"
+      ],
+      "spot": {
+        "prompt": "The station controlling distress traffic needs everyone else off the frequency. Tap the words it transmits.",
+        "targets": [
+          {
+            "id": "seelonce-mayday",
+            "label": "SEELONCE MAYDAY",
+            "rect": [
+              20,
+              258,
+              250,
+              40
+            ],
+            "correct": true
+          },
+          {
+            "id": "seelonce-feenee",
+            "label": "SEELONCE FEENEE",
+            "rect": [
+              20,
+              302,
+              250,
+              40
+            ],
+            "correct": false
+          },
+          {
+            "id": "pan-pan",
+            "label": "PAN PAN PAN PAN PAN PAN",
+            "rect": [
+              310,
+              66,
+              270,
+              44
+            ],
+            "correct": false
+          },
+          {
+            "id": "mayday",
+            "label": "MAYDAY MAYDAY MAYDAY",
+            "rect": [
+              20,
+              66,
+              270,
+              44
+            ],
+            "correct": false
+          }
+        ],
+        "questions": [
+          "roca:8.10"
+        ]
+      }
+    }
+  ]
+}

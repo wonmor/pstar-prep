@@ -5,7 +5,8 @@ import { ExamSwitch } from '../components/ExamSwitch';
 import { useExam } from '../exam';
 import { useGate } from '../entitlements';
 import { useNav } from '../nav';
-import { useProgress } from '../storage';
+import { streakDays, useProgress } from '../storage';
+import { Ring } from '../components/Ring';
 import { cardSurface, colors, fonts, glyph, rule, space, type, themed } from '../theme';
 import { Glyph, Kicker, LockTag, ProgressBar, Rule, Icon } from '../components/ui';
 import { ProBanner } from '../components/ProBanner';
@@ -80,6 +81,7 @@ export default function HomeScreen() {
   const totalCorrect = seenIds.reduce((n, id) => n + (p.stats[id].lastCorrect ? 1 : 0), 0);
   const accuracy = totalSeen ? Math.round((totalCorrect / totalSeen) * 100) : 0;
   const coverage = QUESTIONS.length ? totalSeen / QUESTIONS.length : 0;
+  const streak = streakDays(p.activity ?? {});
 
   const startMock = () => {
     if (!gate.canMock) return nav.push({ name: 'paywall', reason: 'mock' });
@@ -132,32 +134,52 @@ export default function HomeScreen() {
       </View>
 
       {/* Progress */}
-      <View style={styles.block}>
+      <Pressable
+        testID="home-progress"
+        onPress={() => nav.push({ name: 'progress' })}
+        accessibilityRole="button"
+        accessibilityLabel={`Your progress: ${totalSeen} of ${QUESTIONS.length} seen, recall accuracy ${totalSeen ? accuracy : 0} percent, ${streak} day streak. Opens the progress screen.`}
+        style={({ pressed }) => [styles.block, pressed && { backgroundColor: colors.paperDeep }]}
+      >
         <View style={styles.blockHead}>
           <Kicker>Your progress</Kicker>
-          <Text style={type.mute}>
-            {totalSeen}/{QUESTIONS.length} seen
+          <Text style={styles.blockLink}>
+            Details <Icon name={glyph.arrow} size={12} color={colors.blue} />
           </Text>
         </View>
-        <ProgressBar value={coverage} color={colors.blue} />
         <View style={styles.progRow}>
-          <View>
-            <Text style={styles.bigNum}>{totalSeen ? `${accuracy}%` : '—'}</Text>
-            <Text style={type.tiny}>RECALL ACCURACY</Text>
-          </View>
-          <View style={styles.counts}>
-            <Text style={styles.count}>
-              <Icon name={glyph.star} size={14} color={colors.red} /> {p.bookmarks.length} saved
-            </Text>
-            <Text style={styles.count}>
-              <Icon name={glyph.check} size={14} color={colors.blue} /> {p.known.length} mastered
-            </Text>
-            <Text style={styles.count}>
-              <Icon name={glyph.exam} size={14} color={colors.ink} /> {p.examsTaken} exams
-            </Text>
+          <Ring
+            value={totalSeen ? accuracy / 100 : 0}
+            size={92}
+            stroke={10}
+            color={accuracy >= 90 ? colors.blue : colors.red}
+            label={totalSeen ? `${accuracy}%` : '--'}
+            sub="recall"
+            accessibilityLabel={`Recall accuracy ${accuracy} percent`}
+          />
+          <View style={{ flex: 1, gap: space.sm }}>
+            <View>
+              <Text style={styles.bigNum}>
+                {totalSeen}
+                <Text style={styles.bigUnit}> / {QUESTIONS.length}</Text>
+              </Text>
+              <Text style={type.tiny}>QUESTIONS SEEN</Text>
+            </View>
+            <ProgressBar value={coverage} color={colors.blue} />
+            <View style={styles.countRow}>
+              <Text style={styles.count}>
+                <Icon name={glyph.flame} size={14} color={streak > 0 ? colors.red : colors.inkSoft} /> {streak} day{streak === 1 ? '' : 's'}
+              </Text>
+              <Text style={styles.count}>
+                <Icon name={glyph.check} size={14} color={colors.blue} /> {p.known.length} mastered
+              </Text>
+              <Text style={styles.count}>
+                <Icon name={glyph.exam} size={14} color={colors.ink} /> {p.examsTaken} exams
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
+      </Pressable>
 
       {!gate.isPro && <ProBanner style={{ marginTop: space.xl }} />}
 
@@ -192,6 +214,14 @@ export default function HomeScreen() {
           desc="Every question with its correct answer"
           tint={colors.ink}
           onPress={() => nav.resetTab('review')}
+        />
+        <ModeRow
+          testID="mode-spot"
+          n="05"
+          title="Spot It"
+          desc="Tap the right light, marking, sign or leg on a diagram"
+          tint={colors.green}
+          onPress={() => nav.push({ name: 'spot' })}
         />
       </View>
 
@@ -252,13 +282,15 @@ const styles = themed(() =>
     blockHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline' },
     progRow: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'flex-end',
+      alignItems: 'center',
+      gap: space.lg,
       marginTop: space.sm,
     },
-    bigNum: { fontFamily: fonts.black, fontSize: 48, lineHeight: 56, color: colors.ink, letterSpacing: -1.5 },
-    counts: { alignItems: 'flex-end', gap: 2 },
-    count: { fontFamily: fonts.bold, fontSize: 14, color: colors.ink },
+    bigNum: { fontFamily: fonts.black, fontSize: 34, lineHeight: 40, color: colors.ink, letterSpacing: -1 },
+    bigUnit: { fontFamily: fonts.bold, fontSize: 16, color: colors.inkSoft, letterSpacing: 0 },
+    blockLink: { fontFamily: fonts.bold, fontSize: 13, color: colors.blue },
+    countRow: { flexDirection: 'row', flexWrap: 'wrap', columnGap: space.md, rowGap: 2 },
+    count: { fontFamily: fonts.bold, fontSize: 13, color: colors.ink },
     modes: { borderTopWidth: rule.thick, borderTopColor: colors.ink },
     mode: {
       flexDirection: 'row',

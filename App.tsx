@@ -31,6 +31,8 @@ import FlashcardsScreen from './src/screens/FlashcardsScreen';
 import ReviewScreen from './src/screens/ReviewScreen';
 import AboutScreen from './src/screens/AboutScreen';
 import PaywallScreen from './src/screens/PaywallScreen';
+import SpotScreen from './src/screens/SpotScreen';
+import ProgressScreen from './src/screens/ProgressScreen';
 
 // Tab line glyphs, printed in the accent inks when active.
 const TABS: { key: TabKey; label: string; icon: GlyphName; tint: 'red' | 'blue' | 'yellow' }[] = [
@@ -46,7 +48,7 @@ const TABS: { key: TabKey; label: string; icon: GlyphName; tint: 'red' | 'blue' 
 const QA_PAYWALL = process.env.EXPO_PUBLIC_QA_START_ROUTE === 'paywall';
 
 // Routes that take over the full screen (hide the tab bar).
-const FULLSCREEN = new Set<Route['name']>(['quiz', 'cards', 'paywall']);
+const FULLSCREEN = new Set<Route['name']>(['quiz', 'cards', 'paywall', 'spot']);
 
 function Screen({ route }: { route: Route }) {
   const { isPro } = useEntitlements();
@@ -68,8 +70,14 @@ function Screen({ route }: { route: Route }) {
           total={route.total}
           isExam={route.isExam}
           wrongIds={route.wrongIds}
+          ids={route.ids}
+          seconds={route.seconds}
         />
       );
+    case 'spot':
+      return <SpotScreen />;
+    case 'progress':
+      return <ProgressScreen />;
     case 'cardsSetup':
       return <CardsSetupScreen />;
     case 'cards':

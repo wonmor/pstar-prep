@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>Hemispheric cruising altitudes and altimeter regions</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">CRUISING ALTITUDES ABOVE 3,000 FT AGL (VFR)</text>
+<path d="M180 52 A128 128 0 0 1 180 308 Z" fill="#E9E0CB" stroke="#231F1A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M180 52 A128 128 0 0 0 180 308 Z" fill="#FBF6EA" stroke="#231F1A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="180" y1="52" x2="180" y2="308" stroke="#231F1A" stroke-width="2" stroke-linecap="round"/>
+<text x="180" y="40" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle" fill="#231F1A">N</text>
+<text x="324" y="184" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle" fill="#231F1A">E</text>
+<text x="180" y="328" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle" fill="#231F1A">S</text>
+<text x="36" y="184" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" text-anchor="middle" fill="#231F1A">W</text>
+<line x1="180" y1="60" x2="180" y2="52" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="240" y1="76.1" x2="244" y2="69.1" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="283.9" y1="120" x2="290.9" y2="116" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="300" y1="180" x2="308" y2="180" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="283.9" y1="240" x2="290.9" y2="244" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="240" y1="283.9" x2="244" y2="290.9" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="180" y1="300" x2="180" y2="308" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="120" y1="283.9" x2="116" y2="290.9" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="76.1" y1="240" x2="69.1" y2="244" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="60" y1="180" x2="52" y2="180" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="76.1" y1="120" x2="69.1" y2="116" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="120" y1="76.1" x2="116" y2="69.1" stroke="#231F1A" stroke-width="1.5" stroke-linecap="round"/>
+<text x="246" y="140" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#625A4E">000 to 179</text>
+<text x="246" y="162" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#2E4B70">ODD</text>
+<text x="246" y="182" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="900" text-anchor="middle" fill="#2E4B70">+ 500</text>
+<text x="246" y="204" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#231F1A">3,500  5,500</text>
+<text x="246" y="218" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#231F1A">7,500  9,500</text>
+<text x="114" y="140" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#625A4E">180 to 359</text>
+<text x="114" y="162" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="900" text-anchor="middle" fill="#9B3A2B">EVEN</text>
+<text x="114" y="182" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="900" text-anchor="middle" fill="#9B3A2B">+ 500</text>
+<text x="114" y="204" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#231F1A">4,500  6,500</text>
+<text x="114" y="218" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#231F1A">8,500  10,500</text>
+<text x="180" y="338" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">by MAGNETIC track in the Southern Domestic Airspace (true track in the north)</text>
+<text x="350" y="52" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">ALTIMETER SETTING</text>
+<rect x="350" y="60" width="230" height="90" rx="0" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<rect x="350" y="150" width="230" height="130" rx="0" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<line x1="350" y1="150" x2="580" y2="150" stroke="#231F1A" stroke-width="2" stroke-linecap="round"/>
+<text x="465" y="85" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#2E4B70" letter-spacing="1">STANDARD PRESSURE REGION</text>
+<text x="465" y="110" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="900" text-anchor="middle" fill="#231F1A">29.92</text>
+<text x="465" y="130" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="middle" fill="#625A4E">at and above 18,000 ft ASL</text>
+<text x="465" y="165" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#231F1A">18,000 ft ASL</text>
+<text x="465" y="195" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#9B3A2B" letter-spacing="1">ALTIMETER SETTING REGION</text>
+<text x="465" y="222" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#231F1A">current setting of the</text>
+<text x="465" y="238" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#231F1A">nearest station</text>
+<text x="465" y="262" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">reset en route as you pass stations</text>
+<line x1="350" y1="280" x2="580" y2="280" stroke="#231F1A" stroke-width="2" stroke-linecap="round"/>
+<text x="465" y="296" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">surface</text>
+<text x="300" y="356" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">CARs 602.34: the rule applies in level cruising flight more than 3,000 ft above ground.</text>
+</svg>

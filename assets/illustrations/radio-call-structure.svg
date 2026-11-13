@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img">
+<title>Structure of a radio call</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">STRUCTURE OF A RADIO CALL</text>
+<rect x="20" y="40" width="150" height="40" rx="3" fill="#2E4B70" stroke="#2E4B70" stroke-width="1.5"/><text x="95" y="64.1" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">TIMMINS RADIO</text>
+<text x="95" y="98" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" fill="#231F1A">station being called</text>
+<text x="95" y="111" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">said first</text>
+<rect x="176" y="40" width="70" height="40" rx="3" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/><text x="211" y="64.1" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">THIS IS</text>
+<text x="211" y="98" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" fill="#231F1A">link words</text>
+<rect x="252" y="40" width="238" height="40" rx="3" fill="#9B3A2B" stroke="#9B3A2B" stroke-width="1.5"/><text x="371" y="63.6" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">CESSNA GOLF ALFA BRAVO CHARLIE</text>
+<text x="371" y="98" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" fill="#231F1A">your call sign</text>
+<text x="371" y="111" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">type + last four letters</text>
+<rect x="496" y="40" width="84" height="40" rx="3" fill="#625A4E" stroke="#625A4E" stroke-width="1.5"/><text x="538" y="64.1" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">[MESSAGE]</text>
+<text x="538" y="98" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" fill="#231F1A">your message</text>
+<rect x="20" y="124" width="90" height="32" rx="3" fill="#2E4B70" stroke="#2E4B70" stroke-width="1.5"/><text x="65" y="144.3" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">OVER</text>
+<text x="118" y="138" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">my transmission is ended and I expect a reply</text>
+<rect x="20" y="162" width="90" height="32" rx="3" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/><text x="65" y="182.3" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1">OUT</text>
+<text x="118" y="176" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="500" fill="#231F1A">conversation ended, no reply expected</text>
+<text x="360" y="136" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">CANADIAN PRIVATE REGISTRATION</text>
+<text x="360" y="174" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="900" fill="#625A4E">C-</text>
+<text x="392" y="174" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="900" fill="#9B3A2B" letter-spacing="2">GABC</text>
+<line x1="392" y1="180" x2="470" y2="180" stroke="#9B3A2B" stroke-width="2" stroke-linecap="round"/>
+<text x="392" y="194" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#9B3A2B">last four letters, in phonetics</text>
+<text x="360" y="194" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" fill="#625A4E">drop</text>
+<rect x="20" y="212" width="270" height="92" rx="4" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="32" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#231F1A">After contact is established</text>
+<text x="32" y="250" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="900" fill="#9B3A2B">Golf Bravo Charlie</text>
+<text x="32" y="266" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#625A4E">the first letters may be dropped, but only if</text>
+<text x="32" y="278" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#625A4E">ATS starts it and there is no risk of confusion.</text>
+<text x="32" y="294" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#231F1A">Use the full call sign at the start and the end.</text>
+<rect x="310" y="212" width="270" height="92" rx="4" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="322" y="232" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" fill="#231F1A">Ground stations: location + function</text>
+<text x="322" y="252" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" fill="#2E4B70">Timmins Radio</text>
+<text x="430" y="252" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">FSS or FIC</text>
+<text x="322" y="270" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" fill="#2E4B70">Toronto Tower</text>
+<text x="430" y="270" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">airport control</text>
+<text x="322" y="288" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="900" fill="#2E4B70">Ottawa Ground</text>
+<text x="430" y="288" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="500" fill="#625A4E">ground control</text>
+<text x="300" y="328" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" fill="#231F1A">Listen before you transmit. In good conditions say each call sign once; "GO AHEAD" invites the message.</text>
+<text x="300" y="346" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">Unsure a call is for you? Wait until it is repeated and understood. Air carriers use the company name plus flight number.</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img">
+<title>VFR weather minima</title>
+<text x="20" y="20" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">VFR WEATHER MINIMA (CARS 602.114, 602.115, 602.117)</text>
+<rect x="20" y="32" width="400" height="22" rx="3" fill="#231F1A" stroke="#231F1A" stroke-width="1.5"/>
+<text x="28" y="47" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#FBF6EA" letter-spacing="1.5">AIRSPACE</text>
+<text x="262" y="47" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1.5">FLIGHT VIS</text>
+<text x="360" y="47" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle" fill="#FBF6EA" letter-spacing="1.5">FROM CLOUD</text>
+<rect x="20" y="58" width="400" height="54" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="28" y="80" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#231F1A">Controlled airspace</text>
+<text x="28" y="96" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" fill="#625A4E">incl. low level airways</text>
+<text x="262" y="91" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#2E4B70">3 mi</text>
+<text x="360" y="84" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">500 ft vert.</text>
+<text x="360" y="100" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">1 mi horiz.</text>
+<rect x="20" y="116" width="400" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="28" y="138" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#231F1A">Control zone</text>
+<text x="28" y="154" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" fill="#625A4E">ground vis 3 mi if reported; not below 500 ft AGL</text>
+<text x="262" y="149" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#2E4B70">3 mi</text>
+<text x="360" y="142" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">500 ft vert.</text>
+<text x="360" y="158" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">1 mi horiz.</text>
+<rect x="20" y="174" width="400" height="54" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="28" y="196" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#231F1A">Uncontrolled, 1,000 ft AGL or above</text>
+<text x="28" y="212" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" fill="#625A4E">night: 3 mi</text>
+<text x="262" y="207" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#2E4B70">1 mi day</text>
+<text x="360" y="200" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">500 ft vert.</text>
+<text x="360" y="216" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">2,000 ft horiz.</text>
+<rect x="20" y="232" width="400" height="54" rx="3" fill="#FBF6EA" stroke="#CFC4AB" stroke-width="1"/>
+<text x="28" y="254" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#231F1A">Uncontrolled, below 1,000 ft AGL</text>
+<text x="28" y="270" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" fill="#625A4E">helicopter: 1 mi</text>
+<text x="262" y="265" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#2E4B70">2 mi day</text>
+<text x="360" y="265" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">clear of cloud</text>
+<rect x="20" y="290" width="400" height="54" rx="3" fill="#E9E0CB" stroke="#CFC4AB" stroke-width="1"/>
+<text x="28" y="312" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#231F1A">Special VFR in a control zone</text>
+<text x="28" y="328" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9" font-weight="500" fill="#625A4E">ATC authorization; helicopter: 1/2 mi</text>
+<text x="262" y="323" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#2E4B70">1 mi</text>
+<text x="360" y="323" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#231F1A">clear of cloud</text>
+<text x="436" y="70" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#625A4E" letter-spacing="1.5">DISTANCE FROM CLOUD</text>
+<path d="M450 150 C443.5 129.2 465.6 118.8 478.6 127.1 C486.4 100.1 515 98 522.8 120.9 C541 108.4 567 116.7 561.8 133.4 C582.6 133.4 585.2 147.9 580 150 Z" fill="#FBF6EA" stroke="#625A4E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<g transform="translate(515 232) rotate(0) scale(0.9)"><path d="M0 -22 C3 -22 4.5 -16 4.5 -8 L4.5 -4 L26 6 L26 10 L4.5 6 L3.5 14 L10 19 L10 22 L0 20 L-10 22 L-10 19 L-3.5 14 L-4.5 6 L-26 10 L-26 6 L-4.5 -4 L-4.5 -8 C-4.5 -16 -3 -22 0 -22 Z" fill="#2E4B70"/></g>
+<line x1="462" y1="152" x2="462" y2="222" stroke="#2E4B70" stroke-width="1" stroke-linecap="round"/><line x1="457" y1="152" x2="467" y2="152" stroke="#2E4B70" stroke-width="1" stroke-linecap="round"/><line x1="457" y1="222" x2="467" y2="222" stroke="#2E4B70" stroke-width="1" stroke-linecap="round"/><text x="440" y="187" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#2E4B70">500 ft</text>
+<text x="515" y="262" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle" fill="#625A4E">below the cloud</text>
+<text x="436" y="290" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="700" fill="#231F1A">Beside the cloud:</text>
+<text x="436" y="305" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2E4B70">1 mi in controlled airspace</text>
+<text x="436" y="319" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2E4B70">2,000 ft in uncontrolled</text>
+<text x="436" y="333" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="9.5" font-weight="500" fill="#625A4E">airspace at 1,000 ft AGL or above</text>
+<text x="300" y="388" font-family="Jost, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" fill="#625A4E">Below 1,000 ft AGL and in Special VFR, the only cloud rule is: stay clear of it.</text>
+</svg>
